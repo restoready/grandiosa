@@ -1,0 +1,25 @@
+{% if menu.children? %}
+  <hr class="separator-2 hide-medium-up" />
+  <ol class="menus-nav">
+    {% for child in menu.children %}
+      <li>
+        <a href="{{ menu.url }}#menu-{{child.id}}">
+          {% if child.main_image? %}
+            <figure>
+              {{ child | small_image_url: 'main_image' | image_tag }}
+            </figure>
+          {% endif %}
+          <h4 class="menu-item-title">
+            {{ child.name }}
+          </h4>
+        </a>
+      </li>
+    {% endfor %}
+  </ol>
+  {% for child in menu.children %}
+    <hr class="separator-2" />
+    {% include 'menu' with menu:child, title:true %}
+  {% endfor %}
+{% else %}
+  {% include 'menu' with menu:menu, title:false %}
+{% endif %}

@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="{{ current_locale }}">
+  <head>
+    <meta charset="utf-8" />
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+    <meta content='width=device-width,minimum-scale=1.0,maximum-scale=10.0,initial-scale=1.0' id='viewport' name='viewport'>
+    {% title_tag %}
+    {% description_tag %}
+    <meta content='' name='description'>
+    {{ 'app' | asset_url | stylesheet_tag }}
+
+    {% if settings.header_font contains 'Google' %}
+      <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family={{ settings.header_font | remove: 'Google+' }}:300,400,700">
+    {% endif %}
+    {% if settings.base_font contains 'Google' %}
+      <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family={{ settings.base_font | remove: 'Google+' }}:300,400,700">
+    {% endif %}
+    <script src="//polyfill.io"></script>
+    {{ current_tenant.host | url_canonical | canonical_tag }}
+    <link rel="icon" href="{{ 'favicon.ico' | asset_url }}" />
+    <link rel="icon" href="{{ 'favicon.png' | asset_url }}" />
+    <meta name="google-site-verification" content="">
+  </head>
+
+  <body class="app-theme" itemscope="" itemtype="http://schema.org/Restaurant">
+
+    <header>
+      <nav class="menu-small medium--show large--hide" role="navigation"> 
+        <img src="{{'logo.png' | image_url}}" alt="logo" title="logo" width="200px" class="logo"/>
+        
+        <div class="restaurant-name">
+          <a href="{{ localized_root_path }}">
+            <h1 class="name_resto">{{ current_tenant.name }}</h1>
+          </a>
+        </div>
+      </nav>
+
+      <nav class="menu-large large--show small--hide medium--hide" role="navigation">
+        <img src="{{'logo.png' | image_url}}" alt="logo" title="logo" width="200px" class="logo"/>
+
+        <div class="restaurant-name">
+          <a href="{{ localized_root_path }}">
+            <h1 class="name_resto">{{ current_tenant.name }}</h1>
+          </a>
+        </div>
+
+        <ul class="menu_site">
+          <li>Cartes</li>
+          <li>Formules</li>
+          <li>Boissons</li>
+          <li>Le restaurant</li>
+          <li>Contact</li>
+        </ul>
+  
+        <div class="social">
+          <div class="fb"></div>
+          <div class="twitt"></div>
+          <div class="mail"></div>
+        </div>
+  
+        <div class="infos">
+          {% if current_tenant.phone? %}
+            <a href="tel:{{current_tenant.phone_uri}}">  
+              <span class="number">{{ current_tenant.phone }}</span>
+            </a>
+            <br />
+          {%endif%}
+ 
+          {% if current_tenant.street_address? %}
+            <span class="adress" itemprop="streetAddress">{{ current_tenant.street_address }}</span>
+            <br />
+          {% endif %}
+          {% if current_tenant.zip_code? %}
+            <span class="adress" itemprop="postalCode">{{ current_tenant.zip_code }}</span>
+          {% endif %}
+          {% if current_tenant.city? %}
+             <span class="adress" itemprop="addressLocality">{{ current_tenant.city }}</span>
+              <br />
+          {% endif %}
+        </div>
+      </nav>
+    </header>
+
+    <section class="content" role="main">
+        {{ content_for_layout }}
+    </section>
+
+  </body>
+</html>

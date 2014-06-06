@@ -1,0 +1,21 @@
+<h2 class="content-title">{{ message_settings.contact_title }}</h2>
+
+<div id="contact">
+  {% contactForm %}
+    <div class="contact-description">{{ message_settings.contact_content }}</div>
+
+    <label for="message_from_name">{{ "Nom" | t }}</label>
+    <input class="name-contact" id="message_from_name" name="message[from_name]" placeholder="Entrez votre nom" type="text">
+    
+    <label for="message_from_email">{{ "Email" | t }}</label>
+    <input class="email-contact" id="message_from_email" name="message[from_email]" placeholder="Entrez votre email" type="text">
+    
+    <label for="message_phone">{{ "Téléphone" | t }}</label>
+    <input class="phone-contact" id="message_phone" name="message[phone]" placeholder="Entrez votre téléphone" type="text">
+    
+    <label for="message_body">{{ "Message" | t }}</label>
+    <textarea class="message-contact" id="message_body" name="message[body]"></textarea>
+    
+    <button class="submit-contact action" name="button" type="submit"><span>{{ "Envoyer" | t }}</span></button>
+  {% endcontactForm %}
+</div>

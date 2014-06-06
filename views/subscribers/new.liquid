@@ -1,0 +1,20 @@
+<h2 class="content-title">
+  Newsletter
+</h2>
+<div class="create-subscriber">
+  {% subscriberForm %}
+    {% if form.created_successfully? %}
+      <div class="newsletter-description">{{ "Abonnez-vous à notre newsletter pour recevoir les dernières nouveautés du restaurant." | t }}</div>
+    {% else %}
+      <div class="newsletter-description-error">{{ "Une erreur s'est produite lors de votre abonnement." | t }}</div>
+    {% endif %}
+
+    {{ form.email }}
+    {% unless form.created_successfully? %}
+      <p class="subscriber-error">
+        {{ form.error }}
+      </p>
+    {% endunless %}
+    {{ form.submit }}
+  {% endsubscriberForm %}
+</div>

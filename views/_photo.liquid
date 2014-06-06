@@ -1,0 +1,19 @@
+{% if photo %}
+  <figure class="gallery-item">
+    {{ photo | small_image_url: 'photo' | image_tag }}
+    {% if photo.caption %}
+      <figcaption class="gallery-caption">
+        {{ photo.caption }}
+      </figcaption>
+    {% endif %}
+  </figure>
+{% elsif current_tenant.main_photo? %}
+  <figure class="gallery-item">
+    {{ current_tenant | small_image_url: 'main_photo' | image_tag }}
+    {% if current_tenant.main_photo_caption %}
+      <figcaption class="gallery-caption">
+        {{ current_tenant.main_photo_caption }}
+      </figcaption>
+    {% endif %}
+  </figure>
+{% endif %}

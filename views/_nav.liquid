@@ -1,0 +1,96 @@
+<div class="logo">
+  {% if current_tenant.logo? %}
+    <a href="{{ localized_root_path }}">
+      {{ current_tenant.logo_url | image_tag }}
+    </a>
+  {% endif %}
+  <div class="restaurant-name hide-small">
+    <a href="{{ localized_root_path }}">
+      {{ current_tenant.name }}
+    </a>
+    {% if current_tenant.slogan? %}
+      <div class="layout-slogan-wrapper">
+        <div class="layout-slogan">
+          {{ current_tenant.slogan }}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+<label for='toggle' onClick=''>
+  <div class="icon-bar"></div>
+  <div class="icon-bar"></div>
+  <div class="icon-bar"></div>
+</label>
+
+<div class="restaurant-name hide-small-up">
+  <a href="{{ localized_root_path }}">
+    {{ current_tenant.name }}
+  </a>
+  {% if current_tenant.slogan? %}
+    <div class="layout-slogan-wrapper">
+      <div class="layout-slogan">
+        {{ current_tenant.slogan }}
+      </div>
+    </div>
+  {% endif %}
+</div>
+
+<div class="layout-coordinate-wrapper">
+  {% if current_tenant.phone? %}
+    <div class="layout-phone-wrapper">
+      <div class="layout-phone">
+        <a href="tel:{{ current_tenant.phone_uri }}">
+          <span>
+            {{ current_tenant.phone }}
+          </span>
+        </a>
+      </div>
+    </div>
+  {% endif %}
+  {% if current_tenant.street_address? %}
+    <span itemprop="streetAddress">{{ current_tenant.street_address }}</span>
+  {% endif %}
+  {% if current_tenant.zip_code? %}
+    <span itemprop="postalCode">{{ current_tenant.zip_code }}</span>
+  {% endif %}
+  {% if current_tenant.city? %}
+    <span itemprop="addressLocality">{{ current_tenant.city }}</span>
+  {% endif %}
+</div>
+
+<input id="toggle" type='checkbox' aria-hidden='true' required='required' />
+<ul class="main-nav-links">
+  <hr class="separator-2" />
+  <li class="back-home">
+    <a href="{{ localized_root_path }}" id="back-home">{{ "Accueil" | t }}</a>
+  </li>
+  {% for menu in menus %}
+    <li>
+      <a href="{{ menu.url }}">{{ menu.name }}</a>
+    </li>
+  {% endfor %}
+  <li>
+    <a href="{{ current_tenant.url }}">{{ "Le restaurant" | t }}</a>
+  </li>
+  {% if settings.display_contact_form %}
+    <li>
+      {% if message_settings.navigation_label? %}
+        <a href="{{ current_tenant.contact_path }}">{{ message_settings.navigation_label }}</a>
+      {% else %}
+        <a href="{{ current_tenant.contact_path }}">{{ message_settings.contact_title }}</a>
+      {% endif %}
+    </li>
+  {% endif %}
+  <li class="lang-switch">
+    {% for path in alternate_paths %}
+      <a href="{{ path.url }}">
+        <img class="locale-flag" alt="Flag-{{ path.locale_code }}" src="{{ path.flag_url }}" />
+        <span>{{ path.locale_name }}</span>
+        <span style="float:none;"></span>
+      </a>
+    {% endfor %}
+  </li>
+  <hr class="separator-2" />
+</ul>

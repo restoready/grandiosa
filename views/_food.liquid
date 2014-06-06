@@ -1,0 +1,39 @@
+<div id="food-item-{{food.id}}" class="food-item {{ food.item_css_class }}">
+  {% if food.main_image? %}
+    <figure class="food-image">
+      {{ food | custom_image_url: "90x90#", "main_image" | image_tag }}
+    </figure>
+  {% endif %}
+  <div class="food-description">
+    <h5 class="food-title">{{ food.name }}</h5>
+    {% if food.tags? %}
+      <div class="labels">
+        {% for tag in food.tags %}
+          <i class="label-{{ tag.css_class }}">{{ tag.name }}</i>
+        {% endfor %}
+      </div>
+    {% endif %}
+    {% unless menu.nil? %}
+      {% if food.featured_in_menu? %}
+        <div class="featured-description">{{ "Recommandé par le chef" | t }}</div>
+      {% endif %}
+    {% endunless %}
+    {% if food.summary? %}
+      <p>{{ food.summary }}</p>
+    {% endif %}
+  </div>
+  {% if prices %}
+    <div class="food-price">
+      {% if prices.size > 1 or prices.first.title %}
+        <dl>
+          {% for price in prices %}
+            <dt class="price-label">{{ price.title }}</dt>
+            <dd class="price-value">{{ price.amount_with_decimals | currency }}</dd>
+          {% endfor %}
+        </dl>
+      {% else %}
+        <span class="price-value">{{ prices.first.amount_with_decimals | currency }}</span>
+      {% endif %}
+    </div>
+  {% endif %}
+</div>

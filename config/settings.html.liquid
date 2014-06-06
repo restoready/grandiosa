@@ -1,0 +1,393 @@
+<div class="tabs-wrapper">
+  <input checked="checked" class="tab-head" id="tab1" name="tab" type="radio">
+  <label for="tab1">
+    Général
+  </label>
+  <input class="tab-head" id="tab2" name="tab" type="radio">
+  <label for="tab2">
+    Entête
+  </label>
+  <input class="tab-head" id="tab3" name="tab" type="radio">
+  <label for="tab3">
+    Page d'accueil
+  </label>
+  <input class="tab-head" id="tab4" name="tab" type="radio">
+  <label for="tab4">
+    Plats
+  </label>
+  <input class="tab-head" id="tab5" name="tab" type="radio">
+  <label for="tab5">
+    Pied de page
+  </label>
+  <input class="tab-head" id="tab6" name="tab" type="radio">
+  <label for="tab6">
+    Modules
+  </label>
+  <div class="tab-body-wrapper">
+    <div class="tab-body" id="tab-body-1">
+      <fieldset>
+        <legend>Polices</legend>
+        <div class="small-12 medium-6 large-4 columns">
+          <label for="base_font">Police générale</label>
+          <select id="base_font" name="current[base_font]">
+            <optgroup label="Google Web Fonts">
+              <option value="{{ settings.base_font }}" selected>{{ settings.base_font | remove: 'Google+' | replace: '+', ' ' }}</option>
+              <option value='Google+Arvo'>Arvo</option>
+              <option value='Google+Asap'>Asap</option>
+              <option value='Google+Cabin'>Cabin</option>
+              <option value='Google+Copse'>Copse</option>
+              <option value='Google+Droid+Sans'>Droid Sans</option>
+              <option value='Google+Droid+Serif'>Droid Serif</option>
+              <option value='Google+Gentium+Book+Basic'>Gentium Book Basic</option>
+              <option value='Google+Josefin+Slab'>Josefin Slab</option>
+              <option value='Google+Josefin+Sans'>Josefin Sans</option>
+              <option value='Google+Kreon'>Kreon</option>
+              <option value='Google+Lato'>Lato</option>
+              <option value='Google+Merriweather'>Merriweather</option>
+              <option value='Google+Old+Standard+TT'>Old Standard TT</option>
+              <option value='Google+Open+Sans'>Open Sans</option>
+            </optgroup>
+          </select>
+        </div>
+
+        <div class="small-12 medium-6 large-4 columns end">
+          <label for="header_font">Police d'entête</label>
+          <select id="header_font" name="current[header_font]">
+            <optgroup label="Google Web Fonts">
+              <option value="{{ settings.header_font }}" selected>{{ settings.header_font | remove: 'Google+' | replace: '+', ' ' }}</option>
+              <option value='Google+Arvo'>Arvo</option>
+              <option value='Google+Asap'>Asap</option>
+              <option value='Google+Cabin'>Cabin</option>
+              <option value='Google+Copse'>Copse</option>
+              <option value='Google+Droid+Sans'>Droid Sans</option>
+              <option value='Google+Droid+Serif'>Droid Serif</option>
+              <option value='Google+Gentium+Book+Basic'>Gentium Book Basic</option>
+              <option value='Google+Josefin+Slab'>Josefin Slab</option>
+              <option value='Google+Josefin+Sans'>Josefin Sans</option>
+              <option value='Google+Kreon'>Kreon</option>
+              <option value='Google+Lato'>Lato</option>
+              <option value='Google+Merriweather'>Merriweather</option>
+              <option value='Google+Old+Standard+TT'>Old Standard TT</option>
+              <option value='Google+Open+Sans'>Open Sans</option>
+            </optgroup>
+          </select>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Couleurs du site</legend>
+        <div class="small-12 medium-6 large-4 columns">
+          <label for="main_color">Principale</label>
+          <input name="current[main_color]" type="text" id="main_color" value="{{ settings.main_color }}" class="minicolors">
+        </div>
+
+        <div class="small-12 medium-6 large-4 columns end">
+          <label for="restaurant_name_color">Nom du restaurant</label>
+          <input name="current[restaurant_name_color]" type="text" id="restaurant_name_color" value="{{ settings.restaurant_name_color }}" class="minicolors">
+        </div>
+
+        <div class="small-12 medium-6 large-4 columns">
+          <label for="body_background_color">Fond du site</label>
+          <input name="current[body_background_color]" type="text" id="body_background_color" value="{{ settings.body_background_color }}" class="minicolors">
+        </div>
+
+        <div class="small-12 medium-6 large-4 columns">
+          <label for="main_background_color">Fond du contenu</label>
+          <input name="current[main_background_color]" type="text" id="main_background_color" value="{{ settings.main_background_color }}" class="minicolors">
+        </div>
+
+        <div class="small-12 medium-6 large-4 columns">
+          <label for="content_title_background_color">Fond titres principaux</label>
+          <input name="current[content_title_background_color]" type="text" id="content_title_background_color" value="{{ settings.content_title_background_color }}" class="minicolors">
+        </div>
+
+        <div class="small-12 medium-6 large-4 columns">
+          <label for="body_color">Textes du site</label>
+          <input name="current[body_color]" type="text" id="body_color" value="{{ settings.body_color }}" class="minicolors">
+        </div>
+
+        <div class="small-12 medium-6 large-4 columns">
+          <label for="content_title_color">Texte titres principaux</label>
+          <input name="current[content_title_color]" type="text" id="content_title_color" value="{{ settings.content_title_color }}" class="minicolors">
+        </div>
+
+        <div class="small-12 medium-6 large-4 columns">
+          <label for="errors_color">Texte erreurs</label>
+          <input name="current[errors_color]" type="text" id="errors_color" value="{{ settings.errors_color }}" class="minicolors">
+        </div>
+
+        <div class="small-12 medium-6 large-4 columns end">
+          <label for="separator2_color">Séparateur</label>
+          <input name="current[separator2_color]" type="text" id="separator2_color" value="{{ settings.separator2_color }}" class="minicolors">
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Couleurs des photos</legend>
+        <div class="small-12 medium-6 large-4 columns">
+          <label for="gallery_caption_color">Texte des légendes</label>
+          <input name="current[gallery_caption_color]" type="text" id="gallery_caption_color" value="{{ settings.gallery_caption_color }}" class="minicolors">
+        </div>
+        <div class="small-12 medium-6 large-4 columns end">
+          <label for="gallery_caption_background_color">Fond des légendes</label>
+          <input name="current[gallery_caption_background_color]" type="text" id="gallery_caption_background_color" value="{{ settings.gallery_caption_background_color }}" class="minicolors">
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Couleurs des boutons</legend>
+        <div class="small-12 medium-6 large-4 columns">
+          <label for="buttons_background_color">Fond</label>
+          <input name="current[buttons_background_color]" type="text" id="buttons_background_color" value="{{ settings.buttons_background_color }}" class="minicolors">
+        </div>
+
+        <div class="small-12 medium-6 large-4 columns">
+          <label for="buttons_background_color_hover">Survol du fond</label>
+          <input name="current[buttons_background_color_hover]" type="text" id="buttons_background_color_hover" value="{{ settings.buttons_background_color_hover }}" class="minicolors">
+        </div>
+
+        <div class="small-12 medium-6 large-4 columns">
+          <label for="buttons_color">Texte</label>
+          <input name="current[buttons_color]" type="text" id="buttons_color" value="{{ settings.buttons_color }}" class="minicolors">
+        </div>
+
+        <div class="small-12 medium-6 large-4 columns">
+          <label for="buttons_hover_color">Survol du texte</label>
+          <input name="current[buttons_hover_color]" type="text" id="buttons_hover_color" value="{{ settings.buttons_hover_color }}" class="minicolors">
+        </div>
+
+        <div class="small-12 medium-6 large-4 columns end">
+          <label for="buttons_border_color">Bordure</label>
+          <input name="current[buttons_border_color]" type="text" id="buttons_border_color" value="{{ settings.buttons_border_color }}" class="minicolors">
+        </div>
+      </fieldset>
+
+
+      <fieldset>
+        <legend>Couleurs des liens</legend>
+        <div class="small-12 medium-6 large-4 columns">
+          <label for="link_color">Texte</label>
+          <input name="current[link_color]" type="text" id="link_color" value="{{ settings.link_color }}" class="minicolors">
+        </div>
+
+        <div class="small-12 medium-6 large-4 columns end">
+          <label for="link_hover_color">Survol du texte</label>
+          <input name="current[link_hover_color]" type="text" id="link_hover_color" value="{{ settings.link_hover_color }}" class="minicolors">
+        </div>
+      </fieldset>
+    </div>
+    <div class="tab-body" id="tab-body-2">
+      <fieldset>
+        <legend>Couleurs du slogan</legend>
+        <div class="small-12 medium-6 large-4 columns">
+          <label for="slogan_background_color">Fond</label>
+          <input name="current[slogan_background_color]" type="text" id="slogan_background_color" value="{{ settings.slogan_background_color }}" class="minicolors">
+        </div>
+
+        <div class="small-12 medium-6 large-4 columns end">
+          <label for="slogan_color">Texte</label>
+          <input name="current[slogan_color]" type="text" id="slogan_color" value="{{ settings.slogan_color }}" class="minicolors">
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Couleurs du téléphone</legend>
+        <div class="small-12 medium-6 large-4 columns">
+          <label for="phone_color">Texte</label>
+          <input name="current[phone_color]" type="text" id="phone_color" value="{{ settings.phone_color }}" class="minicolors">
+        </div>
+
+        <div class="small-12 medium-6 large-4 columns end">
+          <label for="phone_hover_color">Survol du texte</label>
+          <input name="current[phone_hover_color]" type="text" id="phone_hover_color" value="{{ settings.phone_hover_color }}" class="minicolors">
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Couleurs du menu principal</legend>
+        <div class="small-12 medium-6 large-4 columns">
+          <label for="nav_background_color">Fond</label>
+          <input name="current[nav_background_color]" type="text" id="nav_background_color" value="{{ settings.nav_background_color }}" class="minicolors">
+        </div>
+
+        <div class="small-12 medium-6 large-4 columns">
+          <label for="nav_link_background_color">Fond des éléments</label>
+          <input name="current[nav_link_background_color]" type="text" id="nav_link_background_color" value="{{ settings.nav_link_background_color }}" class="minicolors">
+        </div>
+
+        <div class="small-12 medium-6 large-4 columns">
+          <label for="nav_link_color">Texte</label>
+          <input name="current[nav_link_color]" type="text" id="nav_link_color" value="{{ settings.nav_link_color }}" class="minicolors">
+        </div>
+
+        <div class="small-12 medium-6 large-4 columns">
+          <label for="nav_link_background_hover_color">Survol du fond</label>
+          <input name="current[nav_link_background_hover_color]" type="text" id="nav_link_background_hover_color" value="{{ settings.nav_link_background_hover_color }}" class="minicolors">
+        </div>
+
+        <div class="small-12 medium-6 large-4 columns end">
+          <label for="nav_link_hover_color">Survol du texte</label>
+          <input name="current[nav_link_hover_color]" type="text" id="nav_link_hover_color" value="{{ settings.nav_link_hover_color }}" class="minicolors">
+        </div>
+      </fieldset>
+    </div>
+    <div class="tab-body" id="tab-body-3">
+      <fieldset>
+        <legend>Couleurs du diaporama</legend>
+        <div class="small-12 medium-6 large-4 columns">
+          <label for="slider_background_color">Fond</label>
+          <input name="current[slider_background_color]" type="text" id="slider_background_color" value="{{ settings.slider_background_color }}" class="minicolors">
+        </div>
+
+        <div class="small-12 medium-6 large-4 columns">
+          <label for="slider_arrows_color">Flèches</label>
+          <input name="current[slider_arrows_color]" type="text" id="slider_arrows_color" value="{{ settings.slider_arrows_color }}" class="minicolors">
+        </div>
+
+        <div class="small-12 medium-6 large-4 columns end">
+          <label for="slider_arrows_hover_color">Survol des flèches</label>
+          <input name="current[slider_arrows_hover_color]" type="text" id="slider_arrows_hover_color" value="{{ settings.slider_arrows_hover_color }}" class="minicolors">
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Couleurs des horaires</legend>
+        <div class="small-12 medium-6 large-4 columns">
+          <label for="day_even_background_color">Lignes paires</label>
+          <input name="current[day_even_background_color]" type="text" id="day_even_background_color" value="{{ settings.day_even_background_color }}" class="minicolors">
+        </div>
+
+        <div class="small-12 medium-6 large-4 columns">
+          <label for="day_odd_background_color">Lignes impaires</label>
+          <input name="current[day_odd_background_color]" type="text" id="day_odd_background_color" value="{{ settings.day_odd_background_color }}" class="minicolors">
+        </div>
+
+        <div class="small-12 medium-6 large-4 columns">
+          <label for="day_name_color">Texte des jours</label>
+          <input name="current[day_name_color]" type="text" id="day_name_color" value="{{ settings.day_name_color }}" class="minicolors">
+        </div>
+
+        <div class="small-12 medium-6 large-4 columns">
+          <label for="day_shift_color">Texte des heures</label>
+          <input name="current[day_shift_color]" type="text" id="day_shift_color" value="{{ settings.day_shift_color }}" class="minicolors">
+        </div>
+
+        <div class="small-12 medium-6 large-4 columns end">
+          <label for="day_border_color">Bordures</label>
+          <input name="current[day_border_color]" type="text" id="day_border_color" value="{{ settings.day_border_color }}" class="minicolors">
+        </div>
+      </fieldset>
+    </div>
+    <div class="tab-body" id="tab-body-4">
+      <fieldset>
+        <legend>Couleurs des informations</legend>
+        <div class="small-12 medium-6 large-4 columns">
+          <label for="food_title_color">Texte intitulé</label>
+          <input name="current[food_title_color]" type="text" id="food_title_color" value="{{ settings.food_title_color }}" class="minicolors">
+        </div>
+
+        <div class="small-12 medium-6 large-4 columns">
+          <label for="food_description_color">Texte description</label>
+          <input name="current[food_description_color]" type="text" id="food_description_color" value="{{ settings.food_description_color }}" class="minicolors">
+        </div>
+
+        <div class="small-12 medium-6 large-4 columns end">
+          <label for="food_item_border_color">Bordure haute</label>
+          <input name="current[food_item_border_color]" type="text" id="food_item_border_color" value="{{ settings.food_item_border_color }}" class="minicolors">
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Couleurs des prix</legend>
+        <div class="small-12 medium-6 large-4 columns">
+          <label for="prices_label_background_color">Fond intitulé</label>
+          <input name="current[prices_label_background_color]" type="text" id="prices_label_background_color" value="{{ settings.prices_label_background_color }}" class="minicolors">
+        </div>
+
+        <div class="small-12 medium-6 large-4 columns">
+          <label for="prices_label_color">Texte intitulé</label>
+          <input name="current[prices_label_color]" type="text" id="prices_label_color" value="{{ settings.prices_label_color }}" class="minicolors">
+        </div>
+
+        <div class="small-12 medium-6 large-4 columns">
+          <label for="prices_value_background_color">Fond montant</label>
+          <input name="current[prices_value_background_color]" type="text" id="prices_value_background_color" value="{{ settings.prices_value_background_color }}" class="minicolors">
+        </div>
+
+        <div class="small-12 medium-6 large-4 columns end">
+          <label for="prices_value_color">Texte montant</label>
+          <input name="current[prices_value_color]" type="text" id="prices_value_color" value="{{ settings.prices_value_color }}" class="minicolors">
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Couleurs des plats mis en avant</legend>
+        <div class="small-12 medium-6 large-4 columns">
+          <label for="food_featured_background_color">Fond</label>
+          <input name="current[food_featured_background_color]" type="text" id="food_featured_background_color" value="{{ settings.food_featured_background_color }}" class="minicolors">
+        </div>
+
+        <div class="small-12 medium-6 large-4 columns end">
+          <label for="description_food_featured_color">Texte</label>
+          <input name="current[description_food_featured_color]" type="text" id="description_food_featured_color" value="{{ settings.description_food_featured_color }}" class="minicolors">
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Couleurs des étiquettes</legend>
+        <div class="small-12 medium-6 large-4 columns">
+          <label for="label_background_color">Fond</label>
+          <input name="current[label_background_color]" type="text" id="label_background_color" value="{{ settings.label_background_color }}" class="minicolors">
+        </div>
+
+        <div class="small-12 medium-6 large-4 columns end">
+          <label for="label_color">Texte</label>
+          <input name="current[label_color]" type="text" id="label_color" value="{{ settings.label_color }}" class="minicolors">
+        </div>
+
+        <div class="small-12 medium-6 large-4 columns end">
+          <label for="label_border_color">Bordure</label>
+          <input name="current[label_border_color]" type="text" id="label_border_color" value="{{ settings.label_border_color }}" class="minicolors">
+        </div>
+      </fieldset>
+    </div>
+
+    <div class="tab-body" id="tab-body-5">
+      <fieldset>
+        <legend>Couleurs du contenu</legend>
+        <div class="small-12 medium-6 large-4 columns">
+          <label for="footer_background_color">Fond</label>
+          <input name="current[footer_background_color]" type="text" id="footer_background_color" value="{{ settings.footer_background_color }}" class="minicolors">
+        </div>
+
+        <div class="small-12 medium-6 large-4 columns end">
+          <label for="footer_title_color">Texte titres</label>
+          <input name="current[footer_title_color]" type="text" id="footer_title_color" value="{{ settings.footer_title_color }}" class="minicolors">
+        </div>
+      </fieldset>
+    </div>
+
+    <div class="tab-body" id="tab-body-6">
+      <fieldset>
+        <legend>Modules</legend>
+        <div class="small-12 medium-6 large-4 columns">
+          {% if settings.footer_display_newsletter %}
+            <input class="icheck-me" name="current[footer_display_newsletter]" id="footer_display_newsletter" type="checkbox" value="{{ settings.footer_display_newsletter }}" data-skin='black-green' checked/>
+          {% else %}
+            <input class="icheck-me" name="current[footer_display_newsletter]" id="footer_display_newsletter" type="checkbox" value="{{ settings.footer_display_newsletter }}" data-skin='black-green' />
+          {% endif %}
+          <label style="margin-right:.5em;" for="footer_display_newsletter">Afficher la newsletter</label>
+        </div>
+
+        <div class="small-12 medium-6 large-4 columns end">
+          {% if settings.display_contact_form %}
+            <input class="icheck-me" name="current[display_contact_form]" id="display_contact_form" type="checkbox" value="{{ settings.display_contact_form }}" data-skin='black-green' checked/>
+          {% else %}
+            <input class="icheck-me" name="current[display_contact_form]" id="display_contact_form" type="checkbox" value="{{ settings.display_contact_form }}" data-skin='black-green' />
+          {% endif %}
+          <label style="margin-right:.5em;" for="display_contact_form">Afficher le formulaire de contact</label>
+        </div>
+      </fieldset>
+    </div>
+  </div>
+</div>

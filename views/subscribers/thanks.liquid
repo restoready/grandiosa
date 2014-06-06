@@ -1,0 +1,31 @@
+<h2 class="content-title">
+  Newsletter
+</h2>
+<div class="thanks-subscriber">
+  <div class="newsletter-description">{{ "Votre inscription à la newsletter a bien été enregistrée." | t }}</div>
+</div>
+
+{% if featured_menus.size > 0 %}
+  <section class="featured">
+    <header class="featured-header">
+      <h2 class="content-title">{{ "Les incontournables" | t }}</h2>
+    </header>
+    {% for menu in featured_menus %}
+      <header>
+        <h3 class="featured-menu-title">{{ menu.name }}</h3>
+      </header>
+      {% if menu.summary? %}
+        <div class="content-description">{{ menu.summary }}</div>
+      {% endif %}
+      {% for food in menu.foods %}
+        {% assign_prices prices for food in menu %}
+        {% include 'food' with food:food %}
+      {% endfor %}
+    {% endfor %}
+    <footer class="featured-footer">
+      <a class="action home-main-action" href="{{ current_tenant.menus_path }}">
+        {{ "Voir toute la carte" | t }}
+      </a>
+    </footer>
+  </section>
+{% endif %}

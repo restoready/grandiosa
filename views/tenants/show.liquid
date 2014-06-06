@@ -1,0 +1,19 @@
+<section class="page-header">
+  <header>
+    <h2 class="content-title">{{ "Le restaurant" | t }}</h2>
+  </header>
+  {% if current_tenant.summary? %}
+    <div class="restaurant-description restaurant-description-long user-content" itemprop="description">
+      {{ current_tenant.summary }}
+    </div>
+  {% endif %}
+  {% if current_tenant.main_photo? or photos.size > 0 %}
+    <div class="gallery">
+      {% if photos.size > 0 %}
+        {% for photo in photos %}
+          {% include 'shared/photo' with photo:photo %}
+        {% endfor %}
+      {% endif %}
+    </div>
+  {% endif %}
+</section>
