@@ -8,6 +8,61 @@
 
 <section class="news">
   <article class="week grid--full">
+    {% if featured_menus.size > 0 %}
+      {% if featured_foods.size == 0 %}
+        <section class="featured featured-menus featured-one-col">
+      {% else %}
+        <section class="featured featured-menus">
+      {% endif %}
+        <header class="featured-header">
+          <h2 class="title_section">{{ "Cette semaine" | t }}</h2>
+        </header>
+        {% for menu in featured_menus %}
+          <header>
+            <h3 class="resume_section featured-menu-title">{{ menu.name }}</h3>
+          </header>
+          {% if menu.summary? %}
+            <div class="details_section">{{ menu.summary }}</div>
+          {% endif %}
+    
+          {% for food in menu.foods %}
+            {% assign_prices prices for food in menu %}
+            {% include 'food' with food:food %}
+          {% endfor %}
+        {% endfor %}
+      </section>
+    {% endif %}
+  </article>
+  
+  <article class="new_dish grid--full">
+    {% if featured_foods.size > 0 %}
+      {% if featured_menus.size == 0 %}
+        <section class="featured featured-foods featured-one-col">
+      {% else %}
+        <section class="featured featured-foods">
+      {% endif %}
+        <header class="featured-header">
+          <h2 class="title_section">{{ "Plats de la semaine" | t }}</h2>
+        </header>
+        <header>
+          <h3 class="resume_section">{{ "Nouveaux plats" | t }}</h3>
+        </header>
+        <div class="details_section">{{ "Venez découvrir nos derniers plats." | t }}</div>
+        
+        {% for food in featured_foods %}
+          {% include 'food' with food:food %}
+        {% endfor %}
+        <footer class="featured-footer">
+          <a class="btn action home-main-action" href="{{ current_tenant.menus_path }}">
+            {{ "Voir toute la carte" | t }}
+          </a>
+        </footer>
+      </section>
+    {% endif %}
+  </article>
+</section>
+<!--<section class="news">
+  <article class="week grid--full">
     <h2 class="title_section">Cette semaine</h2>
     <h3 class="resume_section">Formule du jour 17€</h3>
     <h4 class="details_section">Entrée - Plat - Dessert</h4>
@@ -45,4 +100,81 @@
       <p class="price">petit 7,50€<br/>grand 9,00€</p>
     </div>
   </article>
+  <footer class="featured-footer">
+      <a class="btn action home-main-action" href="{{ current_tenant.menus_path }}">
+        {{ "Voir toute la carte" | t }}
+      </a>
+  </footer>
+</section>-->
+
+<section class="presentation">
+    {% if current_tenant.summary? %}
+      <section class="home-description-wrapper grid--full">
+        <header>
+          <h2 class="title_section title_presentation">{{ "Notre restaurant" | t }}</h2>
+        </header>
+        {% if current_tenant.summary? %}
+          <div class="home-description-no-image small--one-whole large--one-half">
+            {{ current_tenant.summary }}
+          </div>
+        {% endif %}
+        <footer class="page-header-footer">
+          <a class="btn action home-main-action" href="{{ current_tenant.menus_path }}">
+            {{ "Voir toute la carte" | t }}
+          </a>
+        </footer>
+      </section>
+    {% endif %}
 </section>
+
+<aside class="opening-hours">
+  <div class="hours">
+    <header>
+      <h2 class="content-title">{{ "Horaires" | t }}</h2>
+    </header>
+    <table>
+      <tbody>
+        {% for day in days %}
+          <tr class="day day-{{ day.number }} {% cycle 'even', 'odd' %}">
+            <th class="day-name">{{ day.name }}</th>
+            <td class="day-shifts">
+              {{ day.shifts }}
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <footer>
+      {% if current_tenant.opening_hours_information? %}
+        <div class="opening-hours-information">
+          {{ current_tenant.opening_hours_information }}
+        </div>
+      {% endif %}
+    </footer>
+  </div>
+</aside>
+
+<aside id="directions" class="directions">
+  <a class="map" href="{{ current_tenant.google_maps_url }}">
+    <img src="{{ current_tenant | static_map_url: '600x300' }}" />
+  </a>
+  <div class="informations_localisation">
+    {% if current_tenant.street_address? || current_tenant.zip_code? || current_tenant.city? %}
+      <p class="address_map">
+        <span>
+          {% if current_tenant.street_address? %}
+            {{ current_tenant.street_address }}
+            <br />
+          {% endif %}
+          {% if current_tenant.zip_code? %} {{ current_tenant.zip_code }} {% endif %}
+          {% if current_tenant.city? %} <strong>{{ current_tenant.city }}</strong> {% endif %}
+        </span>
+      </p>
+    {% endif %}
+    <footer class="page-header-footer btn_itineraire">
+      <a href="{{ current_tenant.google_maps_url }}" class="btn action">
+        {{ "Voir l'itinéraire" | t }}
+      </a>
+    </footer>
+  </div>
+</aside>

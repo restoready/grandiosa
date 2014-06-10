@@ -1,11 +1,11 @@
 <div id="food-item-{{food.id}}" class="food-item {{ food.item_css_class }}">
+  <h5 class="food-title">{{ food.name }}</h5>
   {% if food.main_image? %}
     <figure class="food-image">
       {{ food | custom_image_url: "90x90#", "main_image" | image_tag }}
     </figure>
   {% endif %}
   <div class="food-description">
-    <h5 class="food-title">{{ food.name }}</h5>
     {% if food.tags? %}
       <div class="labels">
         {% for tag in food.tags %}
@@ -21,7 +21,7 @@
     {% if food.summary? %}
       <p>{{ food.summary }}</p>
     {% endif %}
-  </div>
+  </div> a
   {% if prices %}
     <div class="food-price">
       {% if prices.size > 1 or prices.first.title %}

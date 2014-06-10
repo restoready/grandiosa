@@ -25,65 +25,15 @@
   <body class="app-theme" itemscope="" itemtype="http://schema.org/Restaurant">
 
     <header>
-      <nav class="menu-small medium--show large--hide" role="navigation"> 
-        <img src="{{'logo.png' | image_url}}" alt="logo" title="logo" width="200px" class="logo"/>
-        
-        <div class="restaurant-name">
-          <a href="{{ localized_root_path }}">
-            <h1 class="name_resto">{{ current_tenant.name }}</h1>
-          </a>
-        </div>
-      </nav>
-
-      <nav class="menu-large large--show small--hide medium--hide" role="navigation">
-        <img src="{{'logo.png' | image_url}}" alt="logo" title="logo" width="200px" class="logo"/>
-
-        <div class="restaurant-name">
-          <a href="{{ localized_root_path }}">
-            <h1 class="name_resto">{{ current_tenant.name }}</h1>
-          </a>
-        </div>
-
-        <ul class="menu_site">
-          <li>Cartes</li>
-          <li>Formules</li>
-          <li>Boissons</li>
-          <li>Le restaurant</li>
-          <li>Contact</li>
-        </ul>
-  
-        <div class="social">
-          <div class="fb"></div>
-          <div class="twitt"></div>
-          <div class="mail"></div>
-        </div>
-  
-        <div class="infos">
-          {% if current_tenant.phone? %}
-            <a href="tel:{{current_tenant.phone_uri}}">  
-              <span class="number">{{ current_tenant.phone }}</span>
-            </a>
-            <br />
-          {%endif%}
- 
-          {% if current_tenant.street_address? %}
-            <span class="adress" itemprop="streetAddress">{{ current_tenant.street_address }}</span>
-            <br />
-          {% endif %}
-          {% if current_tenant.zip_code? %}
-            <span class="adress" itemprop="postalCode">{{ current_tenant.zip_code }}</span>
-          {% endif %}
-          {% if current_tenant.city? %}
-             <span class="adress" itemprop="addressLocality">{{ current_tenant.city }}</span>
-              <br />
-          {% endif %}
-        </div>
+      <nav class="main-nav" role="navigation">
+        {% include 'nav' %}
       </nav>
     </header>
-
-    <section class="content" role="main">
-        {{ content_for_layout }}
-    </section>
-
+    {{ content_for_layout }}
+    <footer class="main-footer" role="contentinfo">
+        <div>
+          {% include 'footer' %}
+        </div>
+    </footer>
   </body>
 </html>

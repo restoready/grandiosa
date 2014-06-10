@@ -916,7 +916,6 @@ hr {
 // ==============================================================================
 a {
   color: $colorLink;
-  text-decoration: underline;
 }
 
 a:hover,
@@ -1943,6 +1942,8 @@ $red: #e62f2f;
 $dark-grey: #1D1D1D;
 $white: #EEEEEE;
 $light-grey: #4A4A4A;
+$soft-grey: #dddddd;
+$grey: #606060;
 
 // ==============================================================================
 // #Proxy color
@@ -1952,21 +1953,26 @@ $dark: $dark-grey;
 $hover: $red;
 $clear: $white;
 $border: $light-grey;
+$color-font-button: $soft-grey;
+$bgc-footer: $grey;
 
 // ==============================================================================
 // #Style theme blank 2 -- RestoReady -- Défault mobile first
 // ==============================================================================
 
-html, body, .content {
-	width: 100%;
-	min-height: 100%;
+html, body {
+  width: 100%;
+  min-height: 100%;
 	overflow-x: hidden;
 }
 
-h1, span {
+h1, span, tbody {
 	color: $clear;
 }
 
+table, tr, td, th {
+  border:0;
+}
 
 // ===================== Menu styles ============================================
 
@@ -1978,13 +1984,49 @@ h1, span {
 }
 
 .logo {
-	margin-top: 15px;
+	padding-top: 15px;
+
+  img {
+    width: 200px;
+  }
 }
 
 .name_resto {
 	width: 100%;
 	font-size: 1.5em;
 	margin-top: 15px;
+  padding-bottom: 15px;
+}
+
+.main-nav-links {
+  text-align: left;
+  list-style: none;
+  margin-top: 40px;
+  margin-left: 0;
+  border-bottom: solid 2px $border;
+  
+  li {
+    cursor: pointer;
+    font-size: 1.5em;
+    border-top: solid 2px $border;
+    padding-left: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    transition: background-color 0.5s;
+    font-weight: 200;
+    
+    a {
+      color: $clear;
+      text-decoration: none;
+    }
+
+    &:hover {
+      background-color: $hover;
+    }
+  }
+}
+
+.layout-coordinate-wrapper {
   padding-bottom: 15px;
 }
 
@@ -2010,8 +2052,12 @@ h1, span {
 
 // ===================== Section week styles ============================================
 
-.week, .new_dish {
+.news {
   margin-left: 25px;
+  margin-right: 25px;
+}
+
+.week, .new_dish {
   margin-top: 25px;
 }
 
@@ -2023,7 +2069,7 @@ hr {
 }
 
 .title_section {
-	font-size: 1.5em;
+	font-size: 2em;
 	font-weight: 700;
   margin-top: 15px;
 }
@@ -2058,15 +2104,150 @@ hr {
   text-align: right;
 }
 
+.featured-footer, .page-header-footer {
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn {
+  background-color: $hover;
+  color: $clear;
+  margin-top: 50px;
+  margin-bottom: 25px;
+  width: 200px;
+  height: 45px;
+  font-size: 1.3em;
+  transition: color 0.2s;
+
+  &:hover {
+    background-color: $hover;
+    color: $dark;
+    transition: color 0.2s;
+  }
+}
+
+.presentation {
+  width: 100%;
+  height: auto;
+  background: url(/assets/full-visual-theme/images/pres.jpg) no-repeat center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.home-description-wrapper {
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+.title_presentation, .content-title {
+  padding-top: 25px;
+  color: $clear;
+  font-style: italic;
+  font-size: 2em;
+  font-weight: 700;
+}
+
+.content-title {
+  margin-bottom: 25px;
+}
+
+.home-description-no-image {
+  margin-top: 25px;
+  color: $clear;
+  font-weight: 600;
+}
+
+.opening-hours {
+  width: 100%;
+  height: auto;
+  background: url(/assets/full-visual-theme/images/horaires.jpg) no-repeat center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.hours {
+  width: auto;
+  margin-left: 25px;
+}
+
+.opening-hours-information {
+  color: $clear;
+  margin-top: 25px;
+  font-weight: 600;
+  padding-bottom: 25px;
+}
+
+.day-name {
+  font-size: 1.3em;
+  font-style: italic;
+}
+
+.day-shifts {
+  font-size: 1.3em;
+}
+
+.directions, .map {
+  width: 100%;
+}
+
+.map img {
+  width: 100%;
+}
+
+.informations_localisation {
+  text-align: center;
+  margin-top: -140px;
+}
+
+.address_map span {
+  color: $dark;
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+.btn_itineraire {
+  margin-top: -50px;
+}
+
+.main-footer {
+  width: 100%;
+  background-color: $bgc-footer;
+  margin-top: -12px;
+}
+
+.quick-contact, .main-footer-actions {
+  margin-left: 25px;
+  color: $clear;
+}
+
+.main-footer-actions {
+  margin-top: 25px;
+}
+
+.footer-name, .footer-follow-title {
+  padding-top: 25px;
+  margin-bottom: 15px;
+  font-size: 2em;
+  font-weight: 600;
+}
+
+.footer-street-address, .footer-postal-code, .footer-address-locality, .footer-telephone, .footer-email, .footer-mentions {
+  font-weight: 600;
+}
+
+.footer-link {
+  text-decoration: none;
+}
 // ==============================================================================
 // #Style theme blank 2 -- Breakpoint large - min 1024px
 // ==============================================================================
 
 @media only screen and (min-width: $large) {
-
-html, body, .content {
-  height: 100%;
-}
 
 // ===================== Menu styles ============================================
 
@@ -2085,30 +2266,6 @@ html, body, .content {
 	font-size: 1.5em;
 	margin-top: 15px;
 	font-weight: 300;
-}
-
-.menu_site {
-	text-align: left;
-	list-style: none;
-	margin-top: 40px;
-	margin-left: 0;
-	color: $clear;
-  border-bottom: solid 2px $border;
-	
-  li {
-		cursor: pointer;
-		font-size: 1.5em;
-		border-top: solid 2px $border;
-		padding-left: 15px;
-		padding-top: 10px;
-    padding-bottom: 10px;
-		transition: background-color 0.5s;
-		font-weight: 200;
-		
-    &:hover {
-			background-color: $hover;
-		}
-	}
 }
 	
 .social {
@@ -2147,13 +2304,13 @@ html, body, .content {
 	vertical-align: bottom;
 }
 
-.infos {
+.layout-coordinate-wrapper {
 	bottom: 25px;
 	position: fixed;
 	width: 300px;
 }
 
-.number, .adress {
+.number, .address {
 	font-size: 1em;
 	margin-top: 10px;
 	font-weight: 200;
@@ -2180,12 +2337,16 @@ html, body, .content {
 
 // ===================== Section week styles ============================================
 
-.week, .new_dish {
+.news, .home-description-wrapper, .hours, .informations_localisation, .main-footer-actions {
 	margin-left: 400px;
 }
 
 .dish {
   padding-right: 40px;
+}
+
+.main-footer {
+  margin-top: -35px;
 }
 }
 

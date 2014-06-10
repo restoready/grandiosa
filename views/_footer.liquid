@@ -4,6 +4,33 @@
   </div>
 </a>
 
+<div class="quick-contact large--hide" itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
+  <h3 class="footer-name">{{ current_tenant.name }}</h3>
+  {% if current_tenant.street_address? %}
+    <span class="footer-street-address" itemprop="streetAddress">{{ current_tenant.street_address }}</span>
+    <br />
+  {% endif %}
+  {% if current_tenant.zip_code? %}
+    <span class="footer-postal-code" itemprop="postalCode">{{ current_tenant.zip_code }}</span>
+  {% endif %}
+  {% if current_tenant.city? %}
+    <span class="footer-address-locality" itemprop="addressLocality">{{ current_tenant.city }}</span>
+    <br />
+  {% endif %}
+  {% if current_tenant.phone? %}
+    <a class="footer-link" href="tel:#{{current_tenant.phone_uri}}">
+      <span class="footer-telephone" itemprop="telephone">{{ current_tenant.phone }}</span>
+    </a>
+    <br />
+  {% endif %}
+  {% if current_tenant.email %}
+    <a class="footer-link" href="mailto:#{{current_tenant.email}}">
+      <span class="footer-email" itemprop="email">{{ current_tenant.email }}</span>
+    </a>
+    <br />
+  {% endif %}
+</div>
+
 {% if settings.footer_display_newsletter %}
   <div class="subscribe">
     <h3>{{ "Abonnement Newsletter" | t }}</h3>
@@ -15,50 +42,20 @@
   </div>
 {% endif %}
 
-<div class="quick-contact" itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
-  <h3>{{ current_tenant.name }}</h3>
-  {% if current_tenant.street_address? %}
-    <span itemprop="streetAddress">{{ current_tenant.street_address }}</span>
-    <br />
-  {% endif %}
-  {% if current_tenant.zip_code? %}
-    <span itemprop="postalCode">{{ current_tenant.zip_code }}</span>
-  {% endif %}
-  {% if current_tenant.city? %}
-    <span itemprop="addressLocality">{{ current_tenant.city }}</span>
-    <br />
-  {% endif %}
-  {% if current_tenant.phone? %}
-    <a href="tel:#{{current_tenant.phone_uri}}">
-      <span itemprop="telephone">{{ current_tenant.phone }}</span>
-    </a>
-    <br />
-  {% endif %}
-  {% if current_tenant.email %}
-    <a href="mailto:#{{current_tenant.email}}">
-      <span itemprop="email">{{ current_tenant.email }}</span>
-    </a>
-    <br />
-  {% endif %}
-  <a href="{{ current_tenant.terms_of_use_url }}">
-    <span itemprop="terms-of-use">{{ "Mentions légales" | t }}</span>
-  </a>
-</div>
-
 {% if current_tenant.social_urls? %}
   <div class="main-footer-actions">
-    <h3>{{ "Suivez-nous" | t }}</h3>
+    <h3 class="footer-follow-title">{{ "Suivez-nous" | t }}</h3>
     <ul class="social-networks">
       {% if current_tenant.facebook_url? %}
         <li>
-          <a href="{{current_tenant.facebook_url}}" class="social-facebook">
+          <a href="{{current_tenant.facebook_url}}" class="social-facebook footer-link>
             Facebook
           </a>
         </li>
       {% endif %}
       {% if current_tenant.twitter_url? %}
         <li>
-          <a href="{{current_tenant.twitter_url}}" class="social-facebook">
+          <a href="{{current_tenant.twitter_url}}" class="social-facebook footer-link>
             Twitter
           </a>
         </li>
@@ -66,3 +63,6 @@
     </ul>
   </div>
 {% endif %}
+<a class="footer-link" href="{{ current_tenant.terms_of_use_url }}">
+  <span class="footer-mentions" itemprop="terms-of-use">{{ "Mentions légales" | t }}</span>
+</a>
