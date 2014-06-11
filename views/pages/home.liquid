@@ -1,13 +1,13 @@
-<section class="img">
-    {% if current_tenant.slogan? %}
-      <div class="layout-slogan-wrapper">
-        <h1 class="slogan">{{ current_tenant.slogan }}</h1>
-      </div>
-    {% endif %}
-</section>
+<div class="img">
+      {% if current_tenant.slogan? %}
+        <div class="layout-slogan-wrapper">
+          <h1 class="slogan">{{ current_tenant.slogan }}</h1>
+        </div>
+      {% endif %}
+</div>
 
 <section class="news">
-  <article class="week grid--full">
+  <article class="week">
     {% if featured_menus.size > 0 %}
       {% if featured_foods.size == 0 %}
         <section class="featured featured-menus featured-one-col">
@@ -17,18 +17,20 @@
         <header class="featured-header">
           <h2 class="title_section">{{ "Cette semaine" | t }}</h2>
         </header>
+      
         {% for menu in featured_menus %}
-          <header>
-            <h3 class="resume_section featured-menu-title">{{ menu.name }}</h3>
-          </header>
-          {% if menu.summary? %}
-            <div class="details_section">{{ menu.summary }}</div>
-          {% endif %}
-    
-          {% for food in menu.foods %}
-            {% assign_prices prices for food in menu %}
-            {% include 'food' with food:food %}
-          {% endfor %}
+          <div class="grid--full">
+            <header>
+              <h3 class="resume_section featured-menu-title">{{ menu.name }}</h3>
+            </header>
+            {% if menu.summary? %}
+              <div class="details_section">{{ menu.summary }}</div>
+            {% endif %}
+            {% for food in menu.foods %}
+              {% assign_prices prices for food in menu %}
+              {% include 'food' with food:food %}
+            {% endfor %}
+          </div>
         {% endfor %}
       </section>
     {% endif %}
@@ -48,64 +50,18 @@
           <h3 class="resume_section">{{ "Nouveaux plats" | t }}</h3>
         </header>
         <div class="details_section">{{ "Venez découvrir nos derniers plats." | t }}</div>
-        
         {% for food in featured_foods %}
           {% include 'food' with food:food %}
         {% endfor %}
-        <footer class="featured-footer">
-          <a class="btn action home-main-action" href="{{ current_tenant.menus_path }}">
-            {{ "Voir toute la carte" | t }}
-          </a>
-        </footer>
       </section>
     {% endif %}
-  </article>
-</section>
-<!--<section class="news">
-  <article class="week grid--full">
-    <h2 class="title_section">Cette semaine</h2>
-    <h3 class="resume_section">Formule du jour 17€</h3>
-    <h4 class="details_section">Entrée - Plat - Dessert</h4>
-  
-    <div class="dish grid-item small--one-whole medium--one-half large--one-third">
-      <h5 class="name_dish">Gambas Flambées</h5>
-      <img src="{{'img.jpg' | image_url}}" alt="img" title="img" class="image_dish"/>
-      <p class="description_dish">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas debitis quisquam odit cum  tenetur at sneque. Expedita amet temporibus reprehenderit saepe voluptates est laborum.</p>
-      <p class="price">7,00€</p>
-    </div>
-
-    <div class="dish grid-item small--one-whole medium--one-half large--one-third">
-      <h5 class="name_dish">Gambas Flambées</h5>
-      <img src="{{'img.jpg' | image_url}}" alt="img" title="img" class="image_dish"/>
-      <p class="description_dish">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas debitis quisquam odit cum  tenetur at sneque. Expedita amet temporibus reprehenderit saepe voluptates est laborum.</p>
-      <p class="price">petit 7,00€<br/>grand 8,50€</p>
-    </div>
-  
-    <div class="dish grid-item small--one-whole medium--one-half large--one-third">
-      <h5 class="name_dish">Gambas Flambées</h5>
-      <img src="{{'img.jpg' | image_url}}" alt="img" title="img" class="image_dish"/>
-      <p class="description_dish">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas debitis quisquam odit cum  tenetur at sneque. Expedita amet temporibus reprehenderit saepe voluptates est laborum.</p>
-      <p class="price">3,00€</p>
-    </div>
-  </article>
-  <article class="new_dish grid--full">
-    <hr>
-    <h2 class="title_section">Nouveaux plats</h2>
-    <h3 class="resume_section">Venez découvrir nos derniers plats</h3>
-      
-    <div class="dish grid-item small--one-whole medium--one-half large--one-third">
-      <h5 class="name_dish">Gambas Flambées</h5>
-      <img src="{{'img.jpg' | image_url}}" alt="img" title="img" class="image_dish"/>
-      <p class="description_dish">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas debitis quisquam oditcum   tenetur at sneque. Expedita amet temporibus reprehenderit saepe voluptates est laborum.</p>
-      <p class="price">petit 7,50€<br/>grand 9,00€</p>
-    </div>
   </article>
   <footer class="featured-footer">
       <a class="btn action home-main-action" href="{{ current_tenant.menus_path }}">
         {{ "Voir toute la carte" | t }}
       </a>
   </footer>
-</section>-->
+</section>
 
 <section class="presentation">
     {% if current_tenant.summary? %}
