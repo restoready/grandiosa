@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
 * RestoReady v1.0
 * Copyright 2014 MH Communication.
@@ -22,6 +23,13 @@
   Helper Classes
   Links and Buttons
   Icons
+  Color
+  Proxy Color
+  Style Full-visual theme -- RestoReady -- Défault mobile first
+  Style Full-visual theme -- Breakpoint large - min 1024px
+  Style Full-visual theme -- Breakpoint large - min 1350px
+  Style Full-visual theme -- Breakpoint large - min 1500px
+  Style Full-visual theme -- Breakpoint large - min 1730px
 ================================================== */
 *, input, :before, :after {
   -webkit-box-sizing: border-box;
@@ -29,9 +37,6 @@
   box-sizing: border-box; }
 
 /* The following are dependencies of csswizardry grid */
-/* Button colors */
-/* Border colors */
-/* Helper colors */
 /* Width variables */
 /* Radius */
 /* Typography */
@@ -1125,7 +1130,7 @@ pre {
   display: table-cell;
   vertical-align: middle; }
 
-.btn, .btn-secondary {
+.btn {
   display: inline-block;
   padding: 8px 10px;
   margin: 0;
@@ -1143,33 +1148,12 @@ pre {
   -o-user-select: none;
   user-select: none;
   -webkit-appearance: none;
-  border-radius: 3px;
-  background-color: #1d1d1d;
-  color: #fff; }
-  .btn.btn--small, .btn--small.btn-secondary {
+  border-radius: 3px; }
+  .btn.btn--small {
     padding: 4px 5px;
     font-size: 0.75em; }
-  .btn.btn--full, .btn--full.btn-secondary {
+  .btn.btn--full {
     width: 100%; }
-  .btn:hover, .btn-secondary:hover {
-    background-color: #040404;
-    color: #fff; }
-  .btn:active, .btn-secondary:active, .btn:focus, .btn-secondary:focus {
-    background-color: black;
-    color: #fff; }
-  .btn[disabled], [disabled].btn-secondary, .btn.disabled, .disabled.btn-secondary {
-    cursor: default;
-    color: #b6b6b6;
-    background-color: #f6f6f6; }
-
-.btn-secondary {
-  background-color: #e62f2f; }
-  .btn-secondary:hover {
-    background-color: #ca1818;
-    color: #fff; }
-  .btn-secondary:active, .btn-secondary:focus {
-    background-color: #9c1313;
-    color: #fff; }
 
 .text-link {
   display: inline;
@@ -1310,70 +1294,146 @@ pre {
     .social-icons li a:hover {
       color: #0000cc; }
 
-html, body {
+html,
+body {
   font-family: "Helvetica", sans-serif;
   width: 100%;
   height: 100%;
   overflow-x: hidden; }
 
 a {
-  text-decoration: none; }
-
-h1, span, tbody {
+  text-decoration: none;
   color: #eeeeee; }
 
-table, tr, td, th {
+h1,
+span,
+tbody {
+  color: #eeeeee; }
+
+table,
+tr,
+td,
+th {
   border: 0; }
+
+hr {
+  border: solid 1px #1d1d1d;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto; }
+
+.btn {
+  background-color: #e62f2f;
+  color: #eeeeee;
+  margin-top: 50px;
+  margin-bottom: 25px;
+  width: 200px;
+  height: 45px;
+  font-size: 1.3em;
+  transition: color 0.2s; }
+  .btn:hover {
+    background-color: #e62f2f;
+    color: #1d1d1d;
+    transition: color 0.2s; }
+
+.footer__infos {
+  width: 100%;
+  background-color: #606060; }
 
 .menu-small {
   position: relative;
   width: 100%;
-  background-color: #1d1d1d;
-  text-align: center; }
+  background-color: #1d1d1d; }
 
-.logo {
-  padding-top: 15px; }
-  .logo img {
-    width: 200px; }
+.menu-small__logo {
+  padding-top: 15px;
+  display: inline-block; }
+  .menu-small__logo img {
+    width: 60px; }
 
-.name_resto {
+.menu-small__btn {
+  display: inline-block;
+  right: 30px;
+  margin-top: 20px;
+  position: absolute;
+  cursor: pointer; }
+  .menu-small__btn div {
+    width: 30px;
+    height: 5px;
+    margin-top: 5px;
+    background-color: #FFF; }
+
+.menu-small__name-resto {
   width: 100%;
-  font-size: 1.5em;
-  margin-top: 15px;
-  padding-bottom: 15px; }
+  margin-left: 85px;
+  top: 25px;
+  font-size: 1.2em;
+  padding-bottom: 15px;
+  position: absolute; }
 
-.main-nav-links {
+.sb-slidebar {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 100%;
+  overflow-y: auto;
+  /* Enable vertical scrolling on Slidebars when needed. */
+  position: fixed;
+  top: 55px;
+  width: 250px;
+  display: none;
+  z-index: 999;
+  /* Slidebars sit behind sb-site. */
+  background-color: #1d1d1d;
+  /* Default Slidebars background colour, overwrite this with your own css. */ }
+
+.sb-right {
+  right: 0;
+  /* Set Slidebar to the right. */ }
+
+.menu-small__list,
+.menu-large__list {
   text-align: left;
   list-style: none;
   margin-top: 40px;
   margin-left: 0;
   border-bottom: solid 2px #4a4a4a; }
-  .main-nav-links li {
-    cursor: pointer;
-    font-size: 1.5em;
-    border-top: solid 2px #4a4a4a;
-    padding-left: 25px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    transition: background-color 0.5s;
-    font-weight: 200; }
-    .main-nav-links li a {
-      color: #eeeeee;
-      text-decoration: none; }
-    .main-nav-links li:hover {
-      background-color: #e62f2f; }
 
-.layout-coordinate-wrapper {
+.menu-small__item,
+.menu-large__item {
+  cursor: pointer;
+  width: 250px;
+  font-size: 1.2em;
+  border-top: solid 2px #4a4a4a;
+  padding-left: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  transition: background-color 0.5s;
+  font-weight: 200; }
+  .menu-small__item:hover,
+  .menu-large__item:hover {
+    background-color: #e62f2f; }
+
+.menu-small__item-links,
+.menu-large__item-links {
+  color: #eeeeee;
+  text-decoration: none; }
+
+.coordinate {
   padding-bottom: 15px;
-  margin-top: 25px; }
+  margin-top: 25px;
+  margin-left: 15px;
+  width: 200px; }
 
-.img {
+.full-background {
   width: 100%;
   height: auto;
   display: inline-block;
   background: url(/assets/full-visual-theme/images/resto.jpg) no-repeat center; }
 
-.slogan {
+.slogan__slogan {
   font-size: 2.5em;
   line-height: 1;
   width: 80%;
@@ -1388,26 +1448,27 @@ table, tr, td, th {
   margin-left: 25px;
   margin-right: 25px; }
 
-.week, .new_dish {
+.week,
+.new-dish {
   margin-top: 25px; }
 
-hr {
-  border: solid 1px #1d1d1d;
-  width: 75%;
-  margin-left: auto;
-  margin-right: auto; }
-
-.title_section {
+.week__title,
+.new-dish__title,
+.home-description__title,
+.hours__title {
   font-size: 2em;
   font-weight: 700;
   margin-top: 15px; }
 
-.resume_section {
+.week__resume,
+.new-dish__resume {
   font-size: 1.2em;
   font-weight: 200;
-  font-style: italic; }
+  font-style: italic;
+  margin-top: 25px; }
 
-.details_section {
+.week__details,
+.new-dish__details {
   font-size: 1em;
   font-weight: 200;
   font-style: italic; }
@@ -1416,32 +1477,21 @@ hr {
   margin-top: 25px;
   padding-right: 25px; }
 
-.image_dish {
+.dish__image-dish {
   width: 100%; }
 
-.price-label, .price-value {
+.food-price__price-label,
+.food-price__price-value {
   font-weight: 800;
   font-style: italic;
-  text-align: right; }
+  display: inline-block; }
 
-.featured-footer, .page-header-footer {
+.news-footer,
+.presentation-footer,
+.directions-footer {
   width: 200px;
   margin-left: auto;
   margin-right: auto; }
-
-.btn, .btn-secondary {
-  background-color: #e62f2f;
-  color: #eeeeee;
-  margin-top: 50px;
-  margin-bottom: 25px;
-  width: 200px;
-  height: 45px;
-  font-size: 1.3em;
-  transition: color 0.2s; }
-  .btn:hover, .btn-secondary:hover {
-    background-color: #e62f2f;
-    color: #1d1d1d;
-    transition: color 0.2s; }
 
 .presentation {
   width: 100%;
@@ -1452,24 +1502,18 @@ hr {
   -o-background-size: cover;
   background-size: cover; }
 
-.home-description-wrapper {
+.home-description {
   margin-left: 25px;
   margin-right: 25px; }
 
-.title_presentation, .content-title {
-  padding-top: 25px;
-  color: #eeeeee;
-  font-style: italic;
-  font-size: 2em;
-  font-weight: 700; }
-
-.content-title {
-  margin-bottom: 25px; }
-
-.home-description-no-image {
+.home-description__summary {
   margin-top: 25px;
+  color: #eeeeee; }
+
+.home-description__title,
+.hours__title {
   color: #eeeeee;
-  font-weight: 600; }
+  padding-top: 25px; }
 
 .opening-hours {
   width: 100%;
@@ -1478,64 +1522,78 @@ hr {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover; }
+  background-size: cover;
+  margin-top: -15px; }
 
 .hours {
   width: auto;
   margin-left: 25px; }
 
-.opening-hours-information {
+.hours__title {
+  margin-bottom: 25px; }
+
+.hours__information {
   color: #eeeeee;
   margin-top: 25px;
   font-weight: 600;
   padding-bottom: 25px; }
 
-.day-name {
+.hours__day {
+  line-height: 2; }
+
+.hours__day-name {
+  font-size: 0.85em;
+  font-style: italic;
+  text-align: left; }
+
+.hours__day-shifts {
   font-size: 1.3em;
-  font-style: italic; }
+  padding-left: 25px; }
 
-.day-shifts {
-  font-size: 1.3em; }
-
-.directions, .map {
+.directions,
+.directions__map-link {
   width: 100%; }
 
-.map img {
+.directions__map-image {
   width: 100%; }
 
-.informations_localisation {
+.infos-local {
   text-align: center;
-  margin-top: -140px; }
+  margin-top: -120px; }
 
-.address_map span {
+.infos-local__address {
   color: #1d1d1d;
-  font-size: 1.5em;
+  font-size: 1em;
   font-weight: 600; }
 
 .btn_itineraire {
-  margin-top: -50px; }
+  margin-top: -35px; }
 
-.main-footer {
-  width: 100%;
-  background-color: #606060; }
-
-.quick-contact, .layout-footer-wrapper {
+.footer,
+.contact-footer {
   margin-left: 25px;
   color: #eeeeee; }
 
-.main-footer-actions {
+.social-footer {
   margin-top: 25px; }
 
-.footer-name, .footer-follow-title {
+.contact-footer__name,
+.socail-footer__title {
   padding-top: 25px;
   margin-bottom: 15px;
   font-size: 2em;
   font-weight: 600; }
 
-.footer-street-address, .footer-postal-code, .footer-address-locality, .footer-telephone, .footer-email, .footer-mentions {
+.contact-footer__street-address,
+.contact-footer__postal-code,
+.contact-footer__address-locality,
+.contact-footer__phone,
+.contact-footer__mail,
+.contact-footer__mentions {
   font-weight: 600; }
 
-.footer-link {
+.contact-footer__phone-link,
+.contact-footer__mail-link {
   text-decoration: none; }
 
 @media only screen and (min-width: 1024px) {
@@ -1549,86 +1607,64 @@ hr {
     text-align: center;
     top: 0; }
 
-  .name_resto {
+  .menu-large__logo {
+    padding-top: 15px; }
+    .menu-large__logo img {
+      width: 200px; }
+
+  .menu-large__name-resto {
     width: 100%;
     font-size: 1.5em;
     margin-top: 15px;
     font-weight: 300; }
 
-  .social {
-    width: 75%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 25px; }
-
-  .fb {
-    width: 11px;
-    height: 25px;
-    background: url(/assets/full-visual-theme/images/fb.png) no-repeat;
-    cursor: pointer;
-    display: inline-block;
-    vertical-align: bottom; }
-
-  .twitt {
-    width: 35px;
-    height: 24px;
-    background: url(/assets/full-visual-theme/images/twitt.png) no-repeat;
-    cursor: pointer;
-    display: inline-block;
-    margin-left: 35px;
-    vertical-align: bottom; }
-
-  .mail {
-    width: 25px;
-    height: 18px;
-    background: url(/assets/full-visual-theme/images/mail.png) no-repeat;
-    cursor: pointer;
-    display: inline-block;
-    margin-left: 35px;
-    vertical-align: bottom; }
-
-  .layout-coordinate-wrapper {
+  .coordinate {
     bottom: 25px;
     position: fixed;
     width: 300px; }
 
-  .number, .address {
+  .coordinate__number,
+  .coordinate__address {
     font-size: 1em;
     margin-top: 10px;
     font-weight: 200; }
 
-  .number {
+  .coordinate__number {
     font-size: 1.4em;
     margin-top: 50px; }
 
-  .img {
+  .full-background {
     height: 100%; }
 
-  .slogan {
+  .slogan__slogan {
     font-size: 3em;
     width: 40%;
     margin-left: 48%;
     padding-top: 30%; }
 
-  .news, .home-description-wrapper, .hours, .informations_localisation, .layout-footer-wrapper {
+  .news,
+  .home-description,
+  .hours,
+  .infos-local,
+  .footer {
     margin-left: 400px; }
 
-  .subscribe {
-    padding-top: 25px; }
-
   .dish {
-    padding-right: 40px; } }
+    padding-right: 40px; }
+
+  .subscribe {
+    padding-top: 25px; } }
 @media only screen and (min-width: 1350px) {
-  .slogan {
+  .slogan__slogan {
     font-size: 3.5em;
     margin-left: 43%;
     padding-top: 25%; } }
 @media only screen and (min-width: 1500px) {
-  .slogan {
+  .slogan__slogan {
     font-size: 3.5em;
     margin-left: 43%;
     padding-top: 25%; } }
 @media only screen and (min-width: 1730px) {
-  .slogan {
+  .slogan__slogan {
     font-size: 4em;
     margin-left: 40%; } }

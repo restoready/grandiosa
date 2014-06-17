@@ -1,21 +1,21 @@
-<div id="food-item-{{food.id}}" class="food-item {{ food.item_css_class }} dish grid-item small--one-whole medium--one-half large--one-third">
-  <h5 class="food-title name_dish">{{ food.name }}</h5>
+<div id="food-item-{{food.id}}" class="dish grid-item small--one-whole medium--one-half large--one-third">
+  <h5 class="dish__name-dish">{{ food.name }}</h5>
   {% if food.main_image? %}
-    <figure class="food-image image_dish">
+    <figure class="dish__image-dish">
       {{ food | custom_image_url: "90x90#", "main_image" | image_tag }}
     </figure>
   {% endif %}
-  <div class="food-description description_dish">
+  <div class="dish__description--dish">
     {% if food.tags? %}
-      <div class="labels">
+      <div>
         {% for tag in food.tags %}
-          <i class="label-{{ tag.css_class }}">{{ tag.name }}</i>
+          <i>{{ tag.name }}</i>
         {% endfor %}
       </div>
     {% endif %}
     {% unless menu.nil? %}
       {% if food.featured_in_menu? %}
-        <div class="featured-description">{{ "Recommandé par le chef" | t }}</div>
+        <div>{{ "Recommandé par le chef" | t }}</div>
       {% endif %}
     {% endunless %}
     {% if food.summary? %}
@@ -27,13 +27,12 @@
       {% if prices.size > 1 or prices.first.title %}
         <dl>
           {% for price in prices %}
-            <dt class="price-label">{{ price.title }}</dt>
-            <dd class="price-value">{{ price.amount_with_decimals | currency }}</dd>
-            </br>
+            <dt class="food-price__price-label">{{ price.title }} :</dt>
+            <dd class="food-price__price-value">{{ price.amount_with_decimals | currency }} /</dd>
           {% endfor %}
         </dl>
       {% else %}
-        <span class="price-value">{{ prices.first.amount_with_decimals | currency }}</span>
+        <span class="food-price__price-value">{{ prices.first.amount_with_decimals | currency }}</span>
       {% endif %}
     </div>
   {% endif %}

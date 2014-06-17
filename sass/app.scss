@@ -12,7 +12,6 @@
     - Helpers variables, mixins, and starter classes are provided. Change as needed.
     - The file is prepped with a CSS reset
 */
-
 /* Table of Contents
 ==================================================
   Breakpoint and Grid Variables
@@ -23,14 +22,19 @@
   Helper Classes
   Links and Buttons
   Icons
+  Color
+  Proxy Color
+  Style Full-visual theme -- RestoReady -- Défault mobile first
+  Style Full-visual theme -- Breakpoint large - min 1024px
+  Style Full-visual theme -- Breakpoint large - min 1350px
+  Style Full-visual theme -- Breakpoint large - min 1500px
+  Style Full-visual theme -- Breakpoint large - min 1730px
 ================================================== */
-
 *, input, :before, :after {
   -webkit-box-sizing:border-box;
   -moz-box-sizing:border-box;
   box-sizing:border-box;
 }
-
 // ==============================================================================
 // #Breakpoint and Grid Variables
 // ==============================================================================
@@ -58,29 +62,6 @@ $breakpoint-has-pull:  ('medium', 'medium-down', 'large');
 // ==============================================================================
 // #General Variables
 // ==============================================================================
-
-// Timber Colors
-$colorPrimary: #1D1D1D;
-$colorSecondary: #e62f2f;
-
-/* Button colors */
-$colorBtnPrimary: $colorPrimary;
-$colorBtnPrimaryHover: darken($colorBtnPrimary, 10%);
-$colorBtnPrimaryActive: darken($colorBtnPrimaryHover, 10%);
-
-$colorBtnSecondary: $colorSecondary;
-$colorBtnSecondaryHover: darken($colorBtnSecondary, 10%);
-$colorBtnSecondaryActive: darken($colorBtnSecondaryHover, 10%);
-
-/* Border colors */
-$borderColor: #e5e5e5;
-
-/* Helper colors */
-$disabledGrey: #f6f6f6;
-$disabledBorder: darken($disabledGrey, 25%);
-$errorRed: #dc0000;
-$errorRedBg: lighten($errorRed, 55%);
-$successGreen: #0a942a;
 
 /* Width variables */
 $siteWidth: 1180px;
@@ -678,44 +659,6 @@ $class-type: unquote(".");
   &.btn--full {
     width: 100%;
   }
-
-  // Set primary button colors - can override later
-  background-color: $colorBtnPrimary;
-  color: #fff;
-
-  &:hover {
-    background-color: $colorBtnPrimaryHover;
-    color: #fff;
-  }
-
-  &:active,
-  &:focus {
-   background-color: $colorBtnPrimaryActive;
-   color: #fff;
-  }
-
-  &[disabled],
-  &.disabled {
-    cursor: default;
-    color: $disabledBorder;
-    background-color: $disabledGrey;
-  }
-}
-
-.btn-secondary {
-  @extend .btn;
-  background-color: $colorBtnSecondary;
-
-  &:hover {
-    background-color: $colorBtnSecondaryHover;
-    color: #fff;
-  }
-
-  &:active,
-  &:focus {
-   background-color: $colorBtnSecondaryActive;
-   color: #fff;
-  }
 }
 
 // Force an input/button to look like a text link
@@ -837,187 +780,56 @@ $class-type: unquote(".");
   }
 }
 
-
 // ==============================================================================
 // #Color
 // ==============================================================================
-
 $red: #e62f2f;
 $dark-grey: #1D1D1D;
 $white: #EEEEEE;
 $light-grey: #4A4A4A;
 $soft-grey: #dddddd;
 $grey: #606060;
-
 // ==============================================================================
 // #Proxy color
 // ==============================================================================
-
 $dark: $dark-grey;
 $hover: $red;
 $clear: $white;
 $border: $light-grey;
 $color-font-button: $soft-grey;
 $bgc-footer: $grey;
-
 // ==============================================================================
-// #Style theme blank 2 -- RestoReady -- Défault mobile first
+// #Style Full-visual theme -- RestoReady -- Défault mobile first
 // ==============================================================================
-
-html, body {
+// =====================      Layout      ============================================
+html, 
+body {
   font-family: "Helvetica", sans-serif;
   width: 100%;
   height: 100%;
   overflow-x: hidden;
 }
-
 a {
   text-decoration: none;
+  color: $clear;
 }
-
-h1, span, tbody {
+h1,
+span, 
+tbody {
 	color: $clear;
 }
-
-table, tr, td, th {
+table, 
+tr, 
+td, 
+th {
   border:0;
 }
-
-// ===================== Menu styles ============================================
-
-.menu-small {
-	position: relative;
-	width: 100%;
-	background-color: $dark;
-	text-align: center;
-}
-
-.logo {
-	padding-top: 15px;
-
-  img {
-    width: 200px;
-  }
-}
-
-.name_resto {
-	width: 100%;
-	font-size: 1.5em;
-	margin-top: 15px;
-  padding-bottom: 15px;
-}
-
-.main-nav-links {
-  text-align: left;
-  list-style: none;
-  margin-top: 40px;
-  margin-left: 0;
-  border-bottom: solid 2px $border;
-  
-  li {
-    cursor: pointer;
-    font-size: 1.5em;
-    border-top: solid 2px $border;
-    padding-left: 25px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    transition: background-color 0.5s;
-    font-weight: 200;
-    
-    a {
-      color: $clear;
-      text-decoration: none;
-    }
-
-    &:hover {
-      background-color: $hover;
-    }
-  }
-}
-
-.layout-coordinate-wrapper {
-  padding-bottom: 15px;
-  margin-top: 25px;
-}
-
-// ===================== Background img styles ============================================
-
-.img {
-	width: 100%;
-  height: auto;
-  display: inline-block;
-  background: url(/assets/full-visual-theme/images/resto.jpg) no-repeat center;
-}
-
-.slogan {
-	font-size: 2.5em;
-	line-height: 1;
-	width: 80%;
-	text-align: center;
-	margin-left: auto;
-	margin-right: auto;
-	font-family: "Great Vibes";
-  padding-top: 25px;
-  padding-bottom: 25px;
-}
-
-// ===================== Section week styles ============================================
-
-.news {
-  margin-left: 25px;
-  margin-right: 25px;
-}
-
-.week, .new_dish {
-  margin-top: 25px;
-}
-
 hr {
   border: solid 1px $dark;
   width: 75%;
   margin-left: auto;
   margin-right: auto;
 }
-
-.title_section {
-	font-size: 2em;
-	font-weight: 700;
-  margin-top: 15px;
-}
-
-.resume_section {
-	font-size: 1.2em;
-	font-weight: 200;
-	font-style: italic;
-}
-
-.details_section {
-	font-size: 1em;
-	font-weight: 200;
-	font-style: italic;
-}
-
-.dish {
-  margin-top: 25px;
-  padding-right: 25px;
-}
-
-.image_dish {
-  width: 100%;
-}
-
-.price-label, .price-value {
-  font-weight: 800;
-  font-style: italic;
-  text-align: right;
-}
-
-.featured-footer, .page-header-footer {
-  width: 200px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .btn {
   background-color: $hover;
   color: $clear;
@@ -1034,7 +846,167 @@ hr {
     transition: color 0.2s;
   }
 }
+// ===================== Content styles -- front.liquid ============================================
+.footer__infos {
+  width: 100%;
+  background-color: $bgc-footer;
+}
+// ===================== Menu styles -- _nav.liquid ============================================
+.menu-small {
+	position: relative;
+	width: 100%;
+	background-color: $dark;
+}
+.menu-small__logo {
+	padding-top: 15px;
+  display: inline-block;
+  img {
+    width: 60px;
+  }
+}
+.menu-small__btn {
+  display: inline-block;
+  right: 30px;
+  margin-top: 20px;
+  position: absolute;
+  cursor: pointer;
+  div {
+    width: 30px;
+    height: 5px;
+    margin-top: 5px;
+    background-color: #FFF;
+  }
+}
+.menu-small__name-resto {
+	width: 100%;
+  margin-left: 85px;
+  top: 25px;
+	font-size: 1.2em;
+  padding-bottom: 15px;
+  position: absolute;
+}
 
+.sb-slidebar {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 100%;
+  overflow-y: auto; /* Enable vertical scrolling on Slidebars when needed. */
+  position: fixed;
+  top: 55px;
+  width: 250px;
+  display: none;
+  z-index: 999; /* Slidebars sit behind sb-site. */
+  background-color: $dark; /* Default Slidebars background colour, overwrite this with your own css. */
+}
+.sb-right {
+  right: 0; /* Set Slidebar to the right. */
+}
+.menu-small__list, 
+.menu-large__list {
+  text-align: left;
+  list-style: none;
+  margin-top: 40px;
+  margin-left: 0;
+  border-bottom: solid 2px $border;
+}
+.menu-small__item, 
+.menu-large__item {
+    cursor: pointer;
+    width: 250px;
+    font-size: 1.2em;
+    border-top: solid 2px $border;
+    padding-left: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    transition: background-color 0.5s;
+    font-weight: 200;
+    &:hover {
+      background-color: $hover;
+    }
+}
+.menu-small__item-links, 
+.menu-large__item-links {
+  color: $clear;
+  text-decoration: none;
+}
+.coordinate {
+  padding-bottom: 15px;
+  margin-top: 25px;
+  margin-left: 15px;
+  width: 200px;
+}
+// ===================== Background img styles -- home.liquid ============================================
+.full-background {
+	width: 100%;
+  height: auto;
+  display: inline-block;
+  background: url(/assets/full-visual-theme/images/resto.jpg) no-repeat center;
+}
+.slogan__slogan {
+	font-size: 2.5em;
+	line-height: 1;
+	width: 80%;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	font-family: "Great Vibes";
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+// ===================== Section week & new-dish styles -- home.liquid ============================================
+.news {
+  margin-left: 25px;
+  margin-right: 25px;
+}
+.week,
+.new-dish {
+  margin-top: 25px;
+}
+.week__title, 
+.new-dish__title, 
+.home-description__title, 
+.hours__title {
+	font-size: 2em;
+	font-weight: 700;
+  margin-top: 15px;
+}
+.week__resume, 
+.new-dish__resume {
+	font-size: 1.2em;
+	font-weight: 200;
+	font-style: italic;
+  margin-top: 25px;
+}
+.week__details, 
+.new-dish__details {
+	font-size: 1em;
+	font-weight: 200;
+	font-style: italic;
+}
+.dish {
+  margin-top: 25px;
+  padding-right: 25px;
+}
+.dish__image-dish {
+  width: 100%;
+}
+.food-price__price-label, 
+.food-price__price-value {
+  font-weight: 800;
+  font-style: italic;
+  display: inline-block;
+}
+.news-footer, 
+.presentation-footer, 
+.directions-footer {
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+// ===================== Section presentation styles -- home.liquid ============================================
 .presentation {
   width: 100%;
   height: auto;
@@ -1044,30 +1016,20 @@ hr {
   -o-background-size: cover;
   background-size: cover;
 }
-
-.home-description-wrapper {
+.home-description {
   margin-left: 25px;
   margin-right: 25px;
 }
-
-.title_presentation, .content-title {
-  padding-top: 25px;
-  color: $clear;
-  font-style: italic;
-  font-size: 2em;
-  font-weight: 700;
-}
-
-.content-title {
-  margin-bottom: 25px;
-}
-
-.home-description-no-image {
+.home-description__summary {
   margin-top: 25px;
   color: $clear;
-  font-weight: 600;
 }
-
+.home-description__title, 
+.hours__title {
+  color: $clear;
+  padding-top: 25px;
+}
+// ===================== Section horaires styles -- home.liquid ============================================
 .opening-hours {
   width: 100%;
   height: auto;
@@ -1076,222 +1038,178 @@ hr {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  margin-top: -15px;
 }
-
 .hours {
   width: auto;
   margin-left: 25px;
 }
-
-.opening-hours-information {
+.hours__title {
+  margin-bottom: 25px;
+}
+.hours__information {
   color: $clear;
   margin-top: 25px;
   font-weight: 600;
   padding-bottom: 25px;
 }
-
-.day-name {
-  font-size: 1.3em;
+.hours__day {
+  line-height: 2;
+}
+.hours__day-name {
+  font-size: 0.85em;
   font-style: italic;
+  text-align: left;
 }
-
-.day-shifts {
+.hours__day-shifts {
   font-size: 1.3em;
+  padding-left: 25px;
 }
-
-.directions, .map {
+// ===================== Section map styles -- home.liquid ============================================
+.directions, 
+.directions__map-link {
   width: 100%;
 }
-
-.map img {
+.directions__map-image {
   width: 100%;
 }
-
-.informations_localisation {
+.infos-local {
   text-align: center;
-  margin-top: -140px;
+  margin-top: -120px;
 }
-
-.address_map span {
+.infos-local__address {
   color: $dark;
-  font-size: 1.5em;
+  font-size: 1em;
   font-weight: 600;
 }
-
 .btn_itineraire {
-  margin-top: -50px;
+  margin-top: -35px;
 }
-
-.main-footer {
-  width: 100%;
-  background-color: $bgc-footer;
-}
-
-.quick-contact, .layout-footer-wrapper {
+// ===================== Footer styles -- _footer.liquid ============================================
+.footer, 
+.contact-footer {
   margin-left: 25px;
   color: $clear;
 }
-
-.main-footer-actions {
+.social-footer {
   margin-top: 25px;
 }
-
-.footer-name, .footer-follow-title {
+.contact-footer__name, 
+.socail-footer__title {
   padding-top: 25px;
   margin-bottom: 15px;
   font-size: 2em;
   font-weight: 600;
 }
-
-.footer-street-address, .footer-postal-code, .footer-address-locality, .footer-telephone, .footer-email, .footer-mentions {
+.contact-footer__street-address, 
+.contact-footer__postal-code, 
+.contact-footer__address-locality, 
+.contact-footer__phone, 
+.contact-footer__mail, 
+.contact-footer__mentions {
   font-weight: 600;
 }
-
-.footer-link {
+.contact-footer__phone-link, 
+.contact-footer__mail-link {
   text-decoration: none;
 }
 // ==============================================================================
 // #Style theme blank 2 -- Breakpoint large - min 1024px
 // ==============================================================================
-
 @media only screen and (min-width: $large) {
-
-// ===================== Menu styles ============================================
-
-.menu-large {
-	width: 300px;
-	height: 100%;
-	background-color: $dark;
-	position: fixed;
-	display: inline-block;
-	margin-left: 75px;
-	text-align: center;
-  top: 0;
+// ===================== Menu styles -- _nav.liquid ============================================
+  .menu-large {
+  	width: 300px;
+  	height: 100%;
+  	background-color: $dark;
+  	position: fixed;
+  	display: inline-block;
+  	margin-left: 75px;
+  	text-align: center;
+    top: 0;
+  }
+  .menu-large__logo {
+    padding-top: 15px;
+    img {
+      width: 200px;
+    }
+  }
+  .menu-large__name-resto {
+  	width: 100%;
+  	font-size: 1.5em;
+  	margin-top: 15px;
+  	font-weight: 300;
+  }
+  .coordinate {
+  	bottom: 25px;
+  	position: fixed;
+  	width: 300px;
+  }
+  .coordinate__number, 
+  .coordinate__address {
+  	font-size: 1em;
+  	margin-top: 10px;
+  	font-weight: 200;
+  }
+  .coordinate__number {
+  	font-size: 1.4em;
+  	margin-top: 50px;
+  }
+// ===================== Background img styles -- home.liquid ============================================
+  .full-background {
+    height: 100%;
+  }
+  .slogan__slogan {
+  	font-size: 3em;
+  	width: 40%;
+  	margin-left: 48%;
+  	padding-top: 30%;
+  }
+// ===================== Section week styles -- home.liquid ============================================
+  .news, 
+  .home-description, 
+  .hours, 
+  .infos-local, 
+  .footer {
+  	margin-left: 400px;
+  }
+  .dish {
+    padding-right: 40px;
+  }
+// ===================== Footer styles -- home.liquid ============================================
+  .subscribe {
+    padding-top: 25px;
+  }
 }
-
-.name_resto {
-	width: 100%;
-	font-size: 1.5em;
-	margin-top: 15px;
-	font-weight: 300;
-}
-	
-.social {
-	width: 75%;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 25px;
-}
-
-.fb {
-	width: 11px;
-	height: 25px;
-	background: url(/assets/full-visual-theme/images/fb.png) no-repeat;
-	cursor: pointer;
-	display: inline-block;
-	vertical-align: bottom;
-}
-
-.twitt {
-	width: 35px;
-	height: 24px;
-	background: url(/assets/full-visual-theme/images/twitt.png) no-repeat;
-	cursor: pointer;
-	display: inline-block;
-	margin-left: 35px;	
-	vertical-align: bottom;
-}
-
-.mail {
-	width: 25px;
-	height: 18px;
-	background: url(/assets/full-visual-theme/images/mail.png) no-repeat;
-	cursor: pointer;
-	display: inline-block;
-	margin-left: 35px;
-	vertical-align: bottom;
-}
-
-.layout-coordinate-wrapper {
-	bottom: 25px;
-	position: fixed;
-	width: 300px;
-}
-
-.number, .address {
-	font-size: 1em;
-	margin-top: 10px;
-	font-weight: 200;
-}
-
-.number {
-	font-size: 1.4em;
-	margin-top: 50px;
-}
-
-// ===================== Background img styles ============================================
-
-.img {
-  height: 100%;
-}
-
-.slogan {
-	font-size: 3em;
-	width: 40%;
-	margin-left: 48%;
-	padding-top: 30%;
-}
-
-
-// ===================== Section week styles ============================================
-
-.news, .home-description-wrapper, .hours, .informations_localisation, .layout-footer-wrapper {
-	margin-left: 400px;
-}
-
-.subscribe {
-  padding-top: 25px;
-}
-
-.dish {
-  padding-right: 40px;
-}
-}
-
 // ==============================================================================
 // #Style theme blank 2 -- Breakpoint - min 1350px
 // ==============================================================================
-
 @media only screen and (min-width: 1350px) {
-
-.slogan {
-	font-size: 3.5em;
-	margin-left: 43%;
-	padding-top: 25%;
+// ===================== Background img styles -- home.liquid ============================================
+  .slogan__slogan {
+    font-size: 3.5em;
+    margin-left: 43%;
+    padding-top: 25%;
+  }
 }
-}
-
 // ==============================================================================
 // #Style theme blank 2 -- Breakpoint - min 1500px
 // ==============================================================================
-
 @media only screen and (min-width: 1500px) {
-
-.slogan {
-	font-size: 3.5em;
-	margin-left: 43%;
-	padding-top: 25%;
+// ===================== Background img styles -- home.liquid ============================================
+  .slogan__slogan {
+    font-size: 3.5em;
+    margin-left: 43%;
+    padding-top: 25%;
+  }
 }
-}
-
 // ==============================================================================
 // #Style theme blank 2 -- Breakpoint - min 1730px
 // ==============================================================================
-
 @media only screen and (min-width: 1730px) {
-
-.slogan  {
-	font-size: 4em;
-	margin-left: 40%;
-}
+// ===================== Background img styles -- home.liquid ============================================
+  .slogan__slogan  {
+	   font-size: 4em;
+	   margin-left: 40%;
+  }
 }

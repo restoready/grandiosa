@@ -1,38 +1,38 @@
 <div class="menu-large small--hide medium--hide">
   {% if current_tenant.logo? %}
     <a href="{{ localized_root_path }}">
-      <div class="logo">{{ current_tenant.logo_url | image_tag }}</div>
+      <div class="menu-large__logo">{{ current_tenant.logo_url | image_tag }}</div>
     </a>
   {% endif %}
   <a href="{{ localized_root_path }}">
-    <h1 class="name_resto">{{ current_tenant.name }}</h1>
+    <h1 class="menu-large__name-resto">{{ current_tenant.name }}</h1>
   </a>
 
-  <ul class="main-nav-links">
-    <li class="back-home">
-      <a href="{{ localized_root_path }}" id="back-home">{{ "Accueil" | t }}</a>
+  <ul class="menu-large__list">
+    <li class="menu-large__item">
+      <a class="menu-large__item-links" href="{{ localized_root_path }}" id="back-home">{{ "Accueil" | t }}</a>
     </li>
     {% for menu in menus %}
-      <li>
-        <a href="{{ menu.url }}">{{ menu.name }}</a>
+      <li class="menu-large__item">
+        <a class="menu-large__item-links" href="{{ menu.url }}">{{ menu.name }}</a>
       </li>
     {% endfor %}
-    <li>
-      <a href="{{ current_tenant.url }}">{{ "Le restaurant" | t }}</a>
+    <li class="menu-large__item">
+      <a class="menu-large__item-links" href="{{ current_tenant.url }}">{{ "Le restaurant" | t }}</a>
     </li>
     {% if settings.display_contact_form %}
-      <li>
+      <li class="menu-large__item">
         {% if message_settings.navigation_label? %}
-          <a href="{{ current_tenant.contact_path }}">{{ message_settings.navigation_label }}</a>
+          <a class="menu-large__item-links" href="{{ current_tenant.contact_path }}">{{ message_settings.navigation_label }}</a>
         {% else %}
-          <a href="{{ current_tenant.contact_path }}">{{ message_settings.contact_title }}</a>
+          <a class="menu-large__item-links" href="{{ current_tenant.contact_path }}">{{ message_settings.contact_title }}</a>
         {% endif %}
       </li>
     {% endif %}
-    <li class="lang-switch">
+    <li class="lang-switch menu-large__item">
       {% for path in alternate_paths %}
-        <a href="{{ path.url }}">
-          <img class="locale-flag" alt="Flag-{{ path.locale_code }}" src="{{ path.flag_url }}" />
+        <a class="menu-large__item-links" href="{{ path.url }}">
+          <img alt="Flag-{{ path.locale_code }}" src="{{ path.flag_url }}" />
           <span>{{ path.locale_name }}</span>
           <span style="float:none;"></span>
         </a>
@@ -40,27 +40,22 @@
     </li>
   </ul>
 
-  <div class="layout-coordinate-wrapper">
+  <div class="coordinate">
     {% if current_tenant.phone? %}
-      <div class="layout-phone-wrapper">
-        <div class="layout-phone">
-          <a href="tel:{{ current_tenant.phone_uri }}">
-            <span class="number">
-              {{ current_tenant.phone }}
-            </span>
-          </a>
-        </div>
-      </div>
+      <a class="coordinate__number" href="tel:{{ current_tenant.phone_uri }}">
+          {{ current_tenant.phone }}
+      </a>
+      </br>
     {% endif %}
     {% if current_tenant.street_address? %}
-      <span class="address" itemprop="streetAddress">{{ current_tenant.street_address }}</span>
-      <br />
+      <span class="coordinate__address" itemprop="streetAddress">{{ current_tenant.street_address }}</span>
+      </br>
     {% endif %}
     {% if current_tenant.zip_code? %}
-      <span class="address" itemprop="postalCode">{{ current_tenant.zip_code }}</span>
+      <span class="coordinate__address" itemprop="postalCode">{{ current_tenant.zip_code }}</span>
     {% endif %}
     {% if current_tenant.city? %}
-      <span class="address" itemprop="addressLocality">{{ current_tenant.city }}</span>
+      <span class="coordinate__address" itemprop="addressLocality">{{ current_tenant.city }}</span>
     {% endif %}
   </div>
 </div>
@@ -76,67 +71,70 @@
 <div class="menu-small large--hide">
   {% if current_tenant.logo? %}
     <a href="{{ localized_root_path }}">
-      <div class="logo">{{ current_tenant.logo_url | image_tag }}</div>
+      <div class="menu-small__logo">{{ current_tenant.logo_url | image_tag }}</div>
     </a>
   {% endif %}
   <a href="{{ localized_root_path }}">
-    <h1 class="name_resto">{{ current_tenant.name }}</h1>
+    <h1 class="menu-small__name-resto">{{ current_tenant.name }}</h1>
   </a>
 
-  <ul class="main-nav-links">
-    <li class="back-home">
-      <a href="{{ localized_root_path }}" id="back-home">{{ "Accueil" | t }}</a>
-    </li>
-    {% for menu in menus %}
-      <li>
-        <a href="{{ menu.url }}">{{ menu.name }}</a>
-      </li>
-    {% endfor %}
-    <li>
-      <a href="{{ current_tenant.url }}">{{ "Le restaurant" | t }}</a>
-    </li>
-    {% if settings.display_contact_form %}
-      <li>
-        {% if message_settings.navigation_label? %}
-          <a href="{{ current_tenant.contact_path }}">{{ message_settings.navigation_label }}</a>
-        {% else %}
-          <a href="{{ current_tenant.contact_path }}">{{ message_settings.contact_title }}</a>
-        {% endif %}
-      </li>
-    {% endif %}
-    <li class="lang-switch">
-      {% for path in alternate_paths %}
-        <a href="{{ path.url }}">
-          <img class="locale-flag" alt="Flag-{{ path.locale_code }}" src="{{ path.flag_url }}" />
-          <span>{{ path.locale_name }}</span>
-          <span style="float:none;"></span>
-        </a>
-      {% endfor %}
-    </li>
-  </ul>
+  <div class="menu-small__btn">
+      <div></div>
+      <div></div>
+      <div></div>
+  </div>
 
-  <div class="layout-coordinate-wrapper">
-    {% if current_tenant.phone? %}
-      <div class="layout-phone-wrapper">
-        <div class="layout-phone">
-          <a href="tel:{{ current_tenant.phone_uri }}">
-            <span class="number">
-              {{ current_tenant.phone }}
-            </span>
+  <div class="sb-slidebar sb-right">
+    <ul class="menu-small__list">
+      <li class="menu-small__item">
+        <a class="menu-small__item-links" href="{{ localized_root_path }}" id="back-home">{{ "Accueil" | t }}</a>
+      </li>
+      {% for menu in menus %}
+        <li class="menu-small__item">
+          <a class="menu-small__item-links" href="{{ menu.url }}">{{ menu.name }}</a>
+        </li>
+      {% endfor %}
+      <li class="menu-small__item">
+        <a class="menu-small__item-links" href="{{ current_tenant.url }}">{{ "Le restaurant" | t }}</a>
+      </li>
+      {% if settings.display_contact_form %}
+        <li class="menu-small__item">
+          {% if message_settings.navigation_label? %}
+            <a class="menu-small__item-links" href="{{ current_tenant.contact_path }}">{{ <message_settings class="na"></message_settings>vigation_label }}</a>
+          {% else %}
+            <a class="menu-small__item-links" href="{{ current_tenant.contact_path }}">{{ <message_settings class=""></message_settings>contact_title }}</a>
+          {% endif %}
+        </li>
+      {% endif %}
+      <li class="menu-small__item">
+        {% for path in alternate_paths %}
+          <a class="menu-small__item-links" href="{{ path.url }}">
+            <img alt="Flag-{{ path.locale_code }}" src="{{ path.flag_url }}" />
+            <span>{{ path.locale_name }}</span>
+            <span style="float:none;"></span>
           </a>
-        </div>
-      </div>
-    {% endif %}
-    {% if current_tenant.street_address? %}
-      <span class="address" itemprop="streetAddress">{{ current_tenant.street_address }}</span>
-      <br />
-    {% endif %}
-    {% if current_tenant.zip_code? %}
-      <span class="address" itemprop="postalCode">{{ current_tenant.zip_code }}</span>
-    {% endif %}
-    {% if current_tenant.city? %}
-      <span class="address" itemprop="addressLocality">{{ current_tenant.city }}</span>
-    {% endif %}
+        {% endfor %}
+      </li>
+    </ul>
+
+    <div class="coordinate">
+      {% if current_tenant.phone? %}
+        <a class="coordinate__number" href="tel:{{ current_tenant.phone_uri }}">
+          {{ current_tenant.phone }}
+        </a>
+        </br>
+      {% endif %}
+      {% if current_tenant.street_address? %}
+        <span class="coordinate__address" itemprop="streetAddress">{{ current_tenant.street_address }}</span>
+        </br>
+      {% endif %}
+      {% if current_tenant.zip_code? %}
+        <span class="coordinate__address" itemprop="postalCode">{{ current_tenant.zip_code }}</span>
+      {% endif %}
+      {% if current_tenant.city? %}
+        <span class="coordinate__address" itemprop="addressLocality">{{ current_tenant.city }}</span>
+      {% endif %}
+    </div>
   </div>
 </div>
 

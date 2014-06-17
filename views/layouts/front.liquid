@@ -8,7 +8,8 @@
     {% description_tag %}
     <meta content='' name='description'>
     {{ 'app' | asset_url | stylesheet_tag }}
-
+    {{ 'jquery-2.1.0' | asset_url | javascript_tag }}
+    {{ 'script' | asset_url | javascript_tag }}
     {% if settings.header_font contains 'Google' %}
       <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family={{ settings.header_font | remove: 'Google+' }}:300,400,700">
     {% endif %}
@@ -22,15 +23,15 @@
     <meta name="google-site-verification" content="">
   </head>
 
-  <body class="app-theme" itemscope="" itemtype="http://schema.org/Restaurant">
+  <body itemscope="" itemtype="http://schema.org/Restaurant">
 
     <header>
-      <nav class="main-nav" role="navigation">
+      <nav class="head__nav" role="navigation">
         {% include 'nav' %}
       </nav>
     </header>
         {{ content_for_layout }}
-    <footer class="main-footer" role="contentinfo">
+    <footer class="footer__infos" role="contentinfo">
         <div>
           {% include 'footer' %}
         </div>

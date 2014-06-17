@@ -1,32 +1,32 @@
-<section class="layout-footer-wrapper">
+<section class="footer">
   <a class="back-to-top" href="#top">
     <div class="ico">
       <div class="arrow-up"></div>
     </div>
   </a>
   
-  <div class="quick-contact large--hide" itemprop="address" itemscope="" itemtype="http://schema.org/ PostalAddress">
-    <h3 class="footer-name">{{ current_tenant.name }}</h3>
+  <div class="contact-footer large--hide" itemprop="address" itemscope="" itemtype="http://schema.org/ PostalAddress">
+    <h3 class="contact-footer__name">{{ current_tenant.name }}</h3>
     {% if current_tenant.street_address? %}
-      <span class="footer-street-address" itemprop="streetAddress">{{ current_tenant.street_address }}</span>
+      <span class="contact-footer__street-address" itemprop="streetAddress">{{ current_tenant.street_address }}</span>
       <br />
     {% endif %}
     {% if current_tenant.zip_code? %}
-      <span class="footer-postal-code" itemprop="postalCode">{{ current_tenant.zip_code }}</span>
+      <span class="contact-footer__postal-code" itemprop="postalCode">{{ current_tenant.zip_code }}</span>
     {% endif %}
     {% if current_tenant.city? %}
-      <span class="footer-address-locality" itemprop="addressLocality">{{ current_tenant.city }}</span>
+      <span class="contact-footer__address-locality" itemprop="addressLocality">{{ current_tenant.city }}</span>
       <br />
     {% endif %}
     {% if current_tenant.phone? %}
-      <a class="footer-link" href="tel:#{{current_tenant.phone_uri}}">
-        <span class="footer-telephone" itemprop="telephone">{{ current_tenant.phone }}</span>
+      <a class="contact-footer__phone-link" href="tel:#{{current_tenant.phone_uri}}">
+        <span class="contact-footer__phone" itemprop="telephone">{{ current_tenant.phone }}</span>
       </a>
       <br />
     {% endif %}
     {% if current_tenant.email %}
-      <a class="footer-link" href="mailto:#{{current_tenant.email}}">
-        <span class="footer-email" itemprop="email">{{ current_tenant.email }}</span>
+      <a class="contact-footer__mail-link" href="mailto:#{{current_tenant.email}}">
+        <span class="contact-footer__mail" itemprop="email">{{ current_tenant.email }}</span>
       </a>
       <br />
     {% endif %}
@@ -37,27 +37,27 @@
       <h3>{{ "Abonnement Newsletter" | t }}</h3>
       <br />
       {% subscriberForm %}
-        <input class="email-subscriber" id="subscriber_email" name="subscriber[email]" placeholder="Entrez votre  email" type="text">
+        <input class="subscribe__email-subscriber" id="subscriber_email" name="subscriber[email]" placeholder="Entrez votre  email" type="text">
         <br />
-        <button class="submit-subscriber" name="button" type="submit"><span>{{ "S'abonner" | t }}</span></button>
+        <button class="subscribe__submit-subscriber" name="button" type="submit">{{ "S'abonner" | t }}</button>
       {% endsubscriberForm %}
     </div>
   {% endif %}
   
   {% if current_tenant.social_urls? %}
-    <div class="main-footer-actions">
-      <h3 class="footer-follow-title">{{ "Suivez-nous" | t }}</h3>
-      <ul class="social-networks">
+    <div class="social-footer large--hide">
+      <h3 class="social-footer__title">{{ "Suivez-nous" | t }}</h3>
+      <ul class="social-footer__networks">
         {% if current_tenant.facebook_url? %}
           <li>
-            <a href="{{current_tenant.facebook_url}}" class="social-facebook footer-link>
+            <a href="{{current_tenant.facebook_url}}" class="social-footer__facebook">
               Facebook
             </a>
           </li>
         {% endif %}
         {% if current_tenant.twitter_url? %}
           <li>
-            <a href="{{current_tenant.twitter_url}}" class="social-facebook footer-link>
+            <a href="{{current_tenant.twitter_url}}" class="social-footer__twitter">
               Twitter
             </a>
           </li>
@@ -66,6 +66,6 @@
     </div>
   {% endif %}
   <a class="footer-link" href="{{ current_tenant.terms_of_use_url }}">
-    <span class="footer-mentions" itemprop="terms-of-use">{{ "Mentions légales" | t }}</span>
+    <span class="contact-footer__mentions" itemprop="terms-of-use">{{ "Mentions légales" | t }}</span>
   </a>
 </section>
