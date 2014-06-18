@@ -1297,9 +1297,7 @@ pre {
 html,
 body {
   font-family: "Helvetica", sans-serif;
-  width: 100%;
-  height: 100%;
-  overflow-x: hidden; }
+  height: 100%; }
 
 a {
   text-decoration: none;
@@ -1336,37 +1334,56 @@ hr {
     color: #1d1d1d;
     transition: color 0.2s; }
 
+.facebook {
+  height: 25px;
+  width: 20px;
+  background: url(/assets/full-visual-theme/images/fb.png) no-repeat center;
+  display: inline-block;
+  margin-bottom: 15px; }
+
+.twitter {
+  height: 25px;
+  width: 30px;
+  background: url(/assets/full-visual-theme/images/twitt.png) no-repeat center;
+  display: inline-block;
+  margin-left: 15px;
+  margin-bottom: 15px; }
+
 .footer__infos {
   width: 100%;
   background-color: #606060; }
 
-.menu-small {
-  position: relative;
+.nav-small {
+  position: fixed;
+  top: 0;
+  z-index: 9999;
   width: 100%;
   background-color: #1d1d1d; }
 
-.menu-small__logo {
-  padding-top: 15px;
+.nav-small__logo {
+  padding-top: 5px;
+  padding-bottom: 5px;
   display: inline-block; }
-  .menu-small__logo img {
+  .nav-small__logo img {
     width: 60px; }
 
-.menu-small__btn {
+.nav-small__btn {
   display: inline-block;
   right: 30px;
-  margin-top: 20px;
+  margin-top: 10px;
   position: absolute;
-  cursor: pointer; }
-  .menu-small__btn div {
+  cursor: pointer;
+  z-index: 9999; }
+  .nav-small__btn div {
     width: 30px;
     height: 5px;
     margin-top: 5px;
     background-color: #FFF; }
 
-.menu-small__name-resto {
+.nav-small__name-resto {
   width: 100%;
-  margin-left: 85px;
-  top: 25px;
+  margin-left: 75px;
+  top: 16px;
   font-size: 1.2em;
   padding-bottom: 15px;
   position: absolute; }
@@ -1374,6 +1391,7 @@ hr {
 .sb-slidebar {
   margin: 0;
   padding: 0;
+  margin-top: 50px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -1381,30 +1399,29 @@ hr {
   overflow-y: auto;
   /* Enable vertical scrolling on Slidebars when needed. */
   position: fixed;
-  top: 55px;
   width: 250px;
   display: none;
-  z-index: 999;
+  z-index: 99;
   /* Slidebars sit behind sb-site. */
   background-color: #1d1d1d;
   /* Default Slidebars background colour, overwrite this with your own css. */ }
 
 .sb-right {
   right: 0;
-  /* Set Slidebar to the right. */ }
+  /* Set Slidebar to the right. */
+  top: 0; }
 
-.menu-small__list,
-.menu-large__list {
+.nav-small__list,
+.nav-large__list {
   text-align: left;
   list-style: none;
   margin-top: 40px;
   margin-left: 0;
   border-bottom: solid 2px #4a4a4a; }
 
-.menu-small__item,
-.menu-large__item {
+.nav-small__item,
+.nav-large__item {
   cursor: pointer;
-  width: 250px;
   font-size: 1.2em;
   border-top: solid 2px #4a4a4a;
   padding-left: 25px;
@@ -1412,12 +1429,15 @@ hr {
   padding-bottom: 10px;
   transition: background-color 0.5s;
   font-weight: 200; }
-  .menu-small__item:hover,
-  .menu-large__item:hover {
+  .nav-small__item:hover,
+  .nav-large__item:hover {
     background-color: #e62f2f; }
 
-.menu-small__item-links,
-.menu-large__item-links {
+.nav-small__item {
+  width: 250px; }
+
+.nav-small__item-links,
+.nav-large__item-links {
   color: #eeeeee;
   text-decoration: none; }
 
@@ -1427,9 +1447,120 @@ hr {
   margin-left: 15px;
   width: 200px; }
 
+.menus-nav {
+  margin-top: 55px; }
+
+.menus-nav__item {
+  width: 49%;
+  display: inline-block;
+  background-color: #ffff00; }
+
+.menus-nav__item img {
+  width: 100%; }
+
+.menus-nav__title {
+  color: white;
+  position: absolute;
+  margin-top: -100px;
+  margin-left: 45px; }
+
+.dish {
+  margin-top: 25px;
+  padding-right: 25px;
+  padding-left: 0px; }
+
+.dish__name-dish {
+  font-weight: 600;
+  margin-bottom: 10px; }
+
+.dish__image-dish {
+  position: relative;
+  z-index: 9; }
+
+.dish__description--label {
+  background-color: #e62f2f;
+  width: 260px;
+  height: 25px;
+  padding-top: 4px;
+  text-align: center;
+  margin-top: -28px;
+  position: relative;
+  z-index: 10;
+  margin-bottom: 5px; }
+
+.label-new {
+  color: white; }
+
+.food-price__price-label,
+.food-price__price-value {
+  font-weight: 800;
+  font-style: italic;
+  display: inline-block; }
+
+.footer__infos {
+  width: 100%; }
+
+.footer,
+.contact-footer {
+  color: #eeeeee; }
+
+.footer {
+  text-align: center;
+  margin-top: -10px;
+  width: 230px;
+  margin-left: auto;
+  margin-right: auto; }
+
+.social-footer {
+  margin-top: 0px; }
+
+.social-footer__item {
+  display: inline-block; }
+
+.contact-footer__name,
+.socail-footer__title {
+  padding-top: 15px;
+  margin-bottom: 15px;
+  font-size: 2em;
+  font-weight: 500; }
+
+.contact-footer__street-address,
+.contact-footer__postal-code,
+.contact-footer__address-locality,
+.contact-footer__phone,
+.contact-footer__mail,
+.contact-footer__mentions {
+  font-weight: 500; }
+
+.contact-footer__phone-link,
+.contact-footer__mail-link {
+  text-decoration: none; }
+
+.subscribe {
+  margin-top: 25px; }
+
+.subscribe__title {
+  color: #1d1d1d;
+  font-style: italic; }
+
+.subscribers-form {
+  margin-top: -10px; }
+
+.subscribe__email-subscriber {
+  width: 70%;
+  height: 30px; }
+
+.subscribe__submit-subscriber {
+  margin-top: 15px;
+  width: 70%; }
+
+.footer-link {
+  margin-bottom: 15px; }
+
 .full-background {
   width: 100%;
   height: auto;
+  margin-top: 53px;
   display: inline-block;
   background: url(/assets/full-visual-theme/images/resto.jpg) no-repeat center; }
 
@@ -1463,7 +1594,7 @@ hr {
 .week__resume,
 .new-dish__resume {
   font-size: 1.2em;
-  font-weight: 200;
+  font-weight: 500;
   font-style: italic;
   margin-top: 25px; }
 
@@ -1472,19 +1603,6 @@ hr {
   font-size: 1em;
   font-weight: 200;
   font-style: italic; }
-
-.dish {
-  margin-top: 25px;
-  padding-right: 25px; }
-
-.dish__image-dish {
-  width: 100%; }
-
-.food-price__price-label,
-.food-price__price-value {
-  font-weight: 800;
-  font-style: italic;
-  display: inline-block; }
 
 .news-footer,
 .presentation-footer,
@@ -1569,35 +1687,8 @@ hr {
 .btn_itineraire {
   margin-top: -35px; }
 
-.footer,
-.contact-footer {
-  margin-left: 25px;
-  color: #eeeeee; }
-
-.social-footer {
-  margin-top: 25px; }
-
-.contact-footer__name,
-.socail-footer__title {
-  padding-top: 25px;
-  margin-bottom: 15px;
-  font-size: 2em;
-  font-weight: 600; }
-
-.contact-footer__street-address,
-.contact-footer__postal-code,
-.contact-footer__address-locality,
-.contact-footer__phone,
-.contact-footer__mail,
-.contact-footer__mentions {
-  font-weight: 600; }
-
-.contact-footer__phone-link,
-.contact-footer__mail-link {
-  text-decoration: none; }
-
 @media only screen and (min-width: 1024px) {
-  .menu-large {
+  .nav-large {
     width: 300px;
     height: 100%;
     background-color: #1d1d1d;
@@ -1607,16 +1698,19 @@ hr {
     text-align: center;
     top: 0; }
 
-  .menu-large__logo {
+  .nav-large__logo {
     padding-top: 15px; }
-    .menu-large__logo img {
+    .nav-large__logo img {
       width: 200px; }
 
-  .menu-large__name-resto {
+  .nav-large__name-resto {
     width: 100%;
     font-size: 1.5em;
     margin-top: 15px;
     font-weight: 300; }
+
+  .social-nav__item {
+    display: inline-block; }
 
   .coordinate {
     bottom: 25px;
@@ -1626,15 +1720,14 @@ hr {
   .coordinate__number,
   .coordinate__address {
     font-size: 1em;
-    margin-top: 10px;
     font-weight: 200; }
 
   .coordinate__number {
-    font-size: 1.4em;
-    margin-top: 50px; }
+    font-size: 1.4em; }
 
   .full-background {
-    height: 100%; }
+    height: 100%;
+    margin-top: 0px; }
 
   .slogan__slogan {
     font-size: 3em;
@@ -1653,7 +1746,10 @@ hr {
     padding-right: 40px; }
 
   .subscribe {
-    padding-top: 25px; } }
+    padding-top: 25px; }
+
+  .footer {
+    margin-top: -30px; } }
 @media only screen and (min-width: 1350px) {
   .slogan__slogan {
     font-size: 3.5em;

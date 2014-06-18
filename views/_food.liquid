@@ -2,14 +2,14 @@
   <h5 class="dish__name-dish">{{ food.name }}</h5>
   {% if food.main_image? %}
     <figure class="dish__image-dish">
-      {{ food | custom_image_url: "90x90#", "main_image" | image_tag }}
+      {{ food | custom_image_url: "260x180#", "main_image" | image_tag }}
     </figure>
   {% endif %}
   <div class="dish__description--dish">
     {% if food.tags? %}
-      <div>
+      <div class="dish__description--label">
         {% for tag in food.tags %}
-          <i>{{ tag.name }}</i>
+          <i class="label-{{ tag.css_class }}">{{ tag.name }}</i>
         {% endfor %}
       </div>
     {% endif %}

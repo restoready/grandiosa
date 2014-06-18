@@ -34,31 +34,30 @@
   
   {% if settings.footer_display_newsletter %}
     <div class="subscribe">
-      <h3>{{ "Abonnement Newsletter" | t }}</h3>
+      <h3 class="subscribe__title">{{ "Abonnement Newsletter" | t }}</h3>
       <br />
       {% subscriberForm %}
         <input class="subscribe__email-subscriber" id="subscriber_email" name="subscriber[email]" placeholder="Entrez votre  email" type="text">
         <br />
-        <button class="subscribe__submit-subscriber" name="button" type="submit">{{ "S'abonner" | t }}</button>
+        <button class="subscribe__submit-subscriber btn" name="button" type="submit">{{ "S'abonner" | t }}</button>
       {% endsubscriberForm %}
     </div>
   {% endif %}
   
   {% if current_tenant.social_urls? %}
     <div class="social-footer large--hide">
-      <h3 class="social-footer__title">{{ "Suivez-nous" | t }}</h3>
       <ul class="social-footer__networks">
         {% if current_tenant.facebook_url? %}
-          <li>
+          <li class="social-footer__item">
             <a href="{{current_tenant.facebook_url}}" class="social-footer__facebook">
-              Facebook
+              <div class="facebook"></div>
             </a>
           </li>
         {% endif %}
         {% if current_tenant.twitter_url? %}
-          <li>
+          <li class="social-footer__item">
             <a href="{{current_tenant.twitter_url}}" class="social-footer__twitter">
-              Twitter
+              <div class="twitter"></div>
             </a>
           </li>
         {% endif %}
