@@ -2,11 +2,9 @@
   <ol class="menus-nav">
     {% for child in menu.children %}
       <li class="menus-nav__item">
-        <a href="{{ menu.url }}#menu-{{child.id}}">
+        <a href="{{ menu.url }}#menu-{{child.id}}" class="menus-nav__link">
           {% if child.main_image? %}
-            <figure class="menus-nav__image">
-              {{ child | small_image_url: 'main_image' | image_tag }}
-            </figure>
+            {{ child | small_image_url: 'main_image' | image_tag: 'class:menus-nav__image' }}
           {% endif %}
           <h4 class="menus-nav__title">
             {{ child.name }}

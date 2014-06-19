@@ -41,6 +41,7 @@
 $viewportIncrement: 1px;
 
 $small: 480px;
+$small-up: 480px;
 $medium: 1023px;
 $large: 1024px;
 
@@ -799,7 +800,7 @@ $border: $light-grey;
 $color-font-button: $soft-grey;
 $bgc-footer: $grey;
 // ==============================================================================
-// #Style Full-visual theme -- RestoReady -- Défault mobile first
+// #Style full-visual theme -- RestoReady -- Défault mobile first
 // ==============================================================================
 // =====================      #layout      ============================================
 html, 
@@ -960,26 +961,50 @@ hr {
 }
 // ===================== #menu styles -- _show.liquid ============================================
 .menus-nav {
-  margin-top: 55px;
+  margin-top: 50px;
+  width: 100%;
+  position: relative;
 }
 .menus-nav__item {
-  width: 49%;
-  display: inline-block;
-  background-color: #ffff00;
+  width: 50%;
+  float: left;
+  background-color: black;
 }
-.menus-nav__item img {
+.menus-nav__link {
+  display: block;
+  position: relative;
+}
+.menus-nav__image {
   width: 100%;
+  display: block;
+  position: relative;
+  opacity: 0.7;
 }
 .menus-nav__title {
   color: white;
   position: absolute;
-  margin-top: -100px;
-  margin-left: 45px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  left: 10%;
+  font-family: "Great Vibes";
+  font-size: 1.5em;
+}
+// ===================== #menus-food styles -- _menu.liquid ============================================
+.menus-food {
+  margin-top: 25px;
+}
+.content-menus-food__title-1 {
+  font-size: 2em;
+}
+.content-menus-food__title-2 {
+  font-size: 1.5em;
+}
+.content-menus-food__description-title-1 {
+  font-size: 1em;
 }
 // ===================== #food styles -- _food.liquid ============================================
 .dish {
   margin-top: 25px;
-  padding-right: 25px;
   padding-left: 0px;
 }
 .dish__name-dish {
@@ -987,18 +1012,13 @@ hr {
   margin-bottom: 10px;
 }
 .dish__image-dish {
-  position: relative;
-  z-index: 9;
+  max-width: 100%;
 }
 .dish__description--label {
   background-color: $hover;
-  width: 260px;
-  height: 25px;
   padding-top: 4px;
+  padding-bottom: 4px;
   text-align: center;
-  margin-top: -28px;
-  position: relative;
-  z-index: 10;
   margin-bottom: 5px;
 }
 .label-new {
@@ -1077,7 +1097,7 @@ hr {
   height: auto;
   margin-top: 53px;
   display: inline-block;
-  background: url(/assets/full-visual-theme/images/resto.jpg) no-repeat center;
+  background: url(/assets/full-visual-theme/images/design.jpg) no-repeat center;
 }
 .slogan__slogan {
 	font-size: 2.5em;
@@ -1207,7 +1227,20 @@ hr {
   margin-top: -35px;
 }
 // ==============================================================================
-// #Style theme blank 2 -- Breakpoint large - min 1024px
+// #Style full-visual theme -- Breakpoint small-up - min 480px
+// ==============================================================================
+@media only screen and (min-width: $small-up) {
+  // ===================== #food styles -- _food.liquid ============================================
+  .dish {
+    padding-right: 25px;
+  }
+  // ===================== #menu styles -- _show.liquid ============================================
+  .menus-nav__item {
+    width: 33.3333333%;
+  }
+}
+// ==============================================================================
+// #Style full-visual theme -- Breakpoint large - min 1024px
 // ==============================================================================
 @media only screen and (min-width: $large) {
 // ===================== #nav styles -- _nav.liquid ============================================
@@ -1249,6 +1282,15 @@ hr {
   .coordinate__number {
   	font-size: 1.4em;
   }
+// ===================== #menu styles -- _show.liquid ============================================
+  .menus-nav {
+    margin-top: -25px;
+    width: 72%;
+    margin-left: 375px;
+  }
+  .menus-nav__item {
+    width: 33.3333333%;
+  }
 // ===================== Background #img styles -- home.liquid ============================================
   .full-background {
     height: 100%;
@@ -1271,7 +1313,7 @@ hr {
   .dish {
     padding-right: 40px;
   }
-// ===================== #footer styles -- home.liquid ============================================
+// ===================== #footer styles -- _footer.liquid ============================================
   .subscribe {
     padding-top: 25px;
   }
@@ -1280,7 +1322,7 @@ hr {
   }
 }
 // ==============================================================================
-// #Style theme blank 2 -- Breakpoint - min 1350px
+// #Style full-visual theme -- Breakpoint - min 1350px
 // ==============================================================================
 @media only screen and (min-width: 1350px) {
 // ===================== Background #img styles -- home.liquid ============================================
@@ -1289,9 +1331,16 @@ hr {
     margin-left: 43%;
     padding-top: 25%;
   }
+  // ===================== #menu styles -- _show.liquid ============================================
+  .menus-nav {
+    width: 75%;
+  }
+  .menus-nav__item {
+    width: 25%;
+  }
 }
 // ==============================================================================
-// #Style theme blank 2 -- Breakpoint - min 1500px
+// #Style full-visual theme -- Breakpoint - min 1500px
 // ==============================================================================
 @media only screen and (min-width: 1500px) {
 // ===================== Background #img styles -- home.liquid ============================================
@@ -1300,14 +1349,28 @@ hr {
     margin-left: 43%;
     padding-top: 25%;
   }
+  // ===================== #menu styles -- _show.liquid ============================================
+  .menus-nav {
+    width: 78%;
+  }
+  .menus-nav__item {
+    width: 25%;
+  }
 }
 // ==============================================================================
-// #Style theme blank 2 -- Breakpoint - min 1730px
+// #Style full-visual theme -- Breakpoint - min 1730px
 // ==============================================================================
 @media only screen and (min-width: 1730px) {
 // ===================== Background #img styles -- home.liquid ============================================
   .slogan__slogan  {
 	   font-size: 4em;
 	   margin-left: 40%;
+  }
+  // ===================== #menu styles -- _show.liquid ============================================
+  .menus-nav {
+    width: 85%;
+  }
+  .menus-nav__item {
+    width: 25%;
   }
 }

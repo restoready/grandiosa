@@ -1,37 +1,23 @@
 <section class="menus-food" id="menu-{{menu.id}}">
   {% if title %}
     <header>
-      {% if menu.main_image? %}
-        {% if menu.depth == 1 %}
-          {% if menu.featured %}
-            <div class="menu-image menu-image-level-{{menu.depth}} menu-featured">
-          {% else %}
-            <div class="menu-image menu-image-level-{{menu.depth}}">
-          {% endif %}
-            <h{{ menu.depth | plus: 1 }}>
-              <div class="content-title-level-{{menu.depth}}">
-                {{ menu.name }}
-              </div>
-            </h{{ menu.depth | plus: 1 }}>
-          </div>
-        {% else %}
-          <h{{ menu.depth | plus: 1 }}>
-            <div class="content-title-level-{{menu.depth}}">
-              {{ menu.name }}
-            </div>
-          </h{{ menu.depth | plus: 1 }}>
-        {% endif %}
+      {% if menu.featured %}
+        <div class="menus-food__featured menus-food__title-{{menu.depth}}">
       {% else %}
+        <div class="menus-food__title-{{menu.depth}}">
+      {% endif %}
         <h{{ menu.depth | plus: 1 }}>
-          <div class="content-title-level-{{menu.depth}}">
+          <div class="content-menus-food__title-{{menu.depth}}">
             {{ menu.name }}
           </div>
         </h{{ menu.depth | plus: 1 }}>
-      {% endif %}
+      </div>
     </header>
   {% endif %}
+
+
   {% if menu.summary? %}
-    <div class="content-description content-description-level-{{menu.depth}}">
+    <div class="content-menus-food__description content-menus-food__description-title-{{menu.depth}}">
       {{ menu.summary }}
     </div>
   {% endif %}

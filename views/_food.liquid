@@ -1,8 +1,8 @@
 <div id="food-item-{{food.id}}" class="dish grid-item small--one-whole medium--one-half large--one-third">
   <h5 class="dish__name-dish">{{ food.name }}</h5>
   {% if food.main_image? %}
-    <figure class="dish__image-dish">
-      {{ food | custom_image_url: "260x180#", "main_image" | image_tag }}
+    <figure>
+      {{ food | custom_image_url: "454x256#", "main_image" | image_tag: 'class:dish__image-dish' }}
     </figure>
   {% endif %}
   <div class="dish__description--dish">
@@ -19,7 +19,7 @@
       {% endif %}
     {% endunless %}
     {% if food.summary? %}
-      <p>{{ food.summary }}</p>
+      <p class="dish__description__summary">{{ food.summary }}</p>
     {% endif %}
   </div>
   {% if prices %}
