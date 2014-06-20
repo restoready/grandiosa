@@ -40,7 +40,7 @@
     </li>
   </ul>
 
-  <div class="coordinate">
+  <div class="nav-large__coordinate">
 
     {% if current_tenant.social_urls? %}
     <div class="social-nav">
@@ -131,7 +131,7 @@
       </li>
     </ul>
 
-    <div class="coordinate">
+    <div class="nav-small__coordinate">
       {% if current_tenant.phone? %}
         <a class="coordinate__number" href="tel:{{ current_tenant.phone_uri }}">
           {{ current_tenant.phone }}

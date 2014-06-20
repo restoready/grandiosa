@@ -1,19 +1,21 @@
-<section class="page-header">
+<section class="resto-presentation">
+<div class="resto-presentation__content">
   <header>
-    <h2 class="content-title">{{ "Le restaurant" | t }}</h2>
+    <h2 class="resto-presentation__title">{{ "Le restaurant" | t }}</h2>
   </header>
   {% if current_tenant.summary? %}
-    <div class="restaurant-description restaurant-description-long user-content" itemprop="description">
+    <div class="resto-presentation__description resto-presentation__description-long" itemprop="description">
       {{ current_tenant.summary }}
     </div>
   {% endif %}
   {% if current_tenant.main_photo? or photos.size > 0 %}
-    <div class="gallery">
+    <div class="gallery grid--full">
       {% if photos.size > 0 %}
         {% for photo in photos %}
-          {% include 'shared/photo' with photo:photo %}
+          {% include 'photo' with photo:photo %}
         {% endfor %}
       {% endif %}
     </div>
   {% endif %}
+  </div>
 </section>

@@ -1,4 +1,5 @@
 {% if menu.children? %}
+  <div class="margin"></div>
   <ol class="menus-nav">
     {% for child in menu.children %}
       <li class="menus-nav__item">
@@ -14,8 +15,9 @@
     {% endfor %}
   </ol>
   {% for child in menu.children %}
-    <hr class="separator-2" />
+  <div class="menus-food__content">
     {% include 'menu' with menu:child, title:true %}
+  </div>
   {% endfor %}
 {% else %}
   {% include 'menu' with menu:menu, title:false %}

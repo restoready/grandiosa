@@ -2,6 +2,11 @@
       {% if current_tenant.slogan? %}
         <div class="slogan">
           <h1 class="slogan__slogan">{{ current_tenant.slogan }}</h1>
+          {% if current_tenant.phone? %}
+            <a class="home-number" href="tel:{{ current_tenant.phone_uri }}">
+              {{ current_tenant.phone }}
+            </a>
+          {% endif %}
         </div>
       {% endif %}
 </div>
@@ -57,7 +62,7 @@
     {% endif %}
   </article>
   <footer class="news-footer">
-      <a class="btn" href="{{ current_tenant.menus_path }}">
+      <a class="btn news-footer__btn" href="{{ current_tenant.menus_path }}">
         {{ "Voir toute la carte" | t }}
       </a>
   </footer>
@@ -74,13 +79,13 @@
             {{ current_tenant.summary }}
           </div>
         {% endif %}
-        <footer class="presentation-footer">
-          <a class="btn" href="{{ current_tenant.menus_path }}">
-            {{ "Voir toute la carte" | t }}
-          </a>
-        </footer>
       </section>
     {% endif %}
+    <footer class="presentation-footer">
+      <a class="btn presentation-footer__btn" href="{{ current_tenant.menus_path }}">
+        {{ "Voir toute la carte" | t }}
+      </a>
+    </footer>
 </section>
 
 <aside class="opening-hours">
@@ -127,10 +132,10 @@
         </span>
       </p>
     {% endif %}
-    <footer class="directions-footer btn_itineraire">
-      <a href="{{ current_tenant.google_maps_url }}" class="btn">
-        {{ "Voir l'itinéraire" | t }}
-      </a>
-    </footer>
   </div>
+  <footer class="directions-footer btn_itineraire">
+    <a href="{{ current_tenant.google_maps_url }}" class="btn direction-footer__btn">
+      {{ "Voir l'itinéraire" | t }}
+    </a>
+  </footer>
 </aside>

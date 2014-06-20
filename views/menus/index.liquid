@@ -1,21 +1,21 @@
 {% for menu in menus %}
-<section class="page-header" id="menu-{{ menu.id }}">
+<section class="index-header" id="menu-{{ menu.id }}">
   <header>
     <a href="{{ menu.url }}">
-      <h2 class="content-title">{{ menu.name }}</h2>
+      <h2 class="index-header__title">{{ menu.name }}</h2>
     </a>
   </header>
   <ol class="menus-nav">
     {% for child in menu.children %}
-      <li>
+      <li class="menus-nav__item">
+      <a href="{{ menu.url }}#menu-{{child.id}}" class="menus-nav__link">
         {% if child.main_image? %}
-          <figure>
-            {{ child | small_image_url: 'main_image' | image_tag }}
-          </figure>
+            {{ child | small_image_url: 'main_image' | image_tag: 'class:menus-nav__image' }}
         {% endif %}
-        <h4 class="menu-item-title">
-          <a href="{{ menu.url }}#menu-{{child.id}}">{{ child.name }}</a>
+        <h4 class="menus-nav__title">
+          {{ child.name }}
         </h4>
+      </a>
       </li>
     {% endfor %}
   </ol>

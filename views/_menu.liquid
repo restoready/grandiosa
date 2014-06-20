@@ -1,6 +1,7 @@
 <section class="menus-food" id="menu-{{menu.id}}">
   {% if title %}
     <header>
+      <div class="margin"></div>
       {% if menu.featured %}
         <div class="menus-food__featured menus-food__title-{{menu.depth}}">
       {% else %}
@@ -23,15 +24,8 @@
   {% endif %}
   {% if menu.foods? %}
     {% for food in menu.foods %}
-      {% capture index %}{{ forloop.index0 | modulo:2 }}{% endcapture %}
-      {% if index == '0' %}
-        <div class="row">
-      {% endif %}
       {% assign_prices prices for food in menu %}
       {% include 'food' with food:food, menu:menu %}
-      {% if index != '0' %}
-        </div>
-      {% endif %}
     {% endfor %}
   {% endif %}
   {% if menu.children? %}
@@ -40,15 +34,13 @@
     {% endfor %}
   {% endif %}
   {% if menu.depth == 1 %}
-    <footer class="menu-footer">
-      {% if menu.id != menu.self_and_siblings.last.id %}
+    <footer class="menus-footer">
         <a class="back-to-menu" href="#top">
           <div class="ico">
-            <div class="back-to-menu-label hide-small">{{ "Haut de page" | t }}</div>
-            <div class="arrow-up"></div>
+            <div class="back-to-menu-label">{{ "Haut de page" | t }}</div>
           </div>
         </a>
-      {% endif %}
+        <hr class="separator-2">
     </footer>
   {% endif %}
 </section>
