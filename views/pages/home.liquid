@@ -125,20 +125,6 @@
   <a class="directions__map-link" href="{{ current_tenant.google_maps_url }}">
     <img src="{{ current_tenant | static_map_url: '600x300' }}" class="directions__map-image" />
   </a>
-  <div class="infos-local">
-    {% if current_tenant.street_address? || current_tenant.zip_code? || current_tenant.city? %}
-      <p>
-        <span class="infos-local__address">
-          {% if current_tenant.street_address? %}
-            {{ current_tenant.street_address }}
-            <br />
-          {% endif %}
-          {% if current_tenant.zip_code? %} {{ current_tenant.zip_code }} {% endif %}
-          {% if current_tenant.city? %} <strong>{{ current_tenant.city }}</strong> {% endif %}
-        </span>
-      </p>
-    {% endif %}
-  </div>
   <footer class="directions-footer">
     <a href="{{ current_tenant.google_maps_url }}" class="btn directions-footer__btn">
       {{ "Voir l'itinéraire" | t }}
