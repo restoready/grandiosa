@@ -1871,7 +1871,7 @@ hr {
   position: absolute;
   bottom: 0; }
 
-.direction-footer__btn {
+.directions-footer__btn {
   width: 200px;
   display: block;
   margin-left: auto;
@@ -1879,7 +1879,14 @@ hr {
 
 @media only screen and (min-width: 480px) {
   .dish {
-    padding-right: 25px; }
+    padding-right: 25px;
+    width: 50%;
+    height: auto;
+    display: block;
+    float: left; }
+
+  .block-grid > li:nth-of-type(2n+1) {
+    clear: left; }
 
   .menus-nav__item {
     width: 33.3333333%; } }
@@ -1986,9 +1993,15 @@ hr {
 
   .dish {
     padding-right: 40px;
-    /*&:nth-of-type(n+4) {
-      background-color: #fff
-    }*/ }
+    width: 33.3333333%;
+    display: block;
+    float: left;
+    height: auto; }
+
+  .block-grid > li:nth-of-type(2n+1) {
+    clear: none; }
+  .block-grid > li:nth-of-type(3n+1) {
+    clear: left; }
 
   .news-footer,
   .presentation-footer,
