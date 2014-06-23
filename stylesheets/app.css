@@ -1848,16 +1848,9 @@ hr {
 .directions,
 .directions__map-link {
   width: 100%;
-  position: relative;
-  z-index: -9999; }
+  position: relative; }
 
 .directions__map-image {
-  width: 100%; }
-
-.infos-local {
-  text-align: center;
-  position: absolute;
-  display: none;
   width: 100%; }
 
 .infos-local__address {
@@ -1867,7 +1860,7 @@ hr {
 
 .directions-footer {
   width: 100%;
-  padding-bottom: 1px;
+  bottom: 0;
   position: absolute;
   bottom: 0; }
 
@@ -1987,8 +1980,7 @@ hr {
     margin-right: 0px; }
 
   .home-description,
-  .hours,
-  .infos-local {
+  .hours {
     margin-left: 400px; }
 
   .dish {
@@ -2015,7 +2007,7 @@ hr {
     bottom: 15%; }
 
   .directions-footer {
-    max-width: 65%;
+    max-width: 70%;
     margin-left: 400px; }
 
   .subscribe {
