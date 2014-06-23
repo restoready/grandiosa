@@ -23,10 +23,12 @@
     </div>
   {% endif %}
   {% if menu.foods? %}
+    <ul class="block-grid">
     {% for food in menu.foods %}
       {% assign_prices prices for food in menu %}
       {% include 'food' with food:food, menu:menu %}
     {% endfor %}
+    </ul>
   {% endif %}
   {% if menu.children? %}
     {% for child in menu.children %}

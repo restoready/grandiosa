@@ -33,10 +33,12 @@
             {% if menu.summary? %}
               <div class="week__details">{{ menu.summary }}</div>
             {% endif %}
+            <ul class="block-grid">
             {% for food in menu.foods %}
               {% assign_prices prices for food in menu %}
               {% include 'food' with food:food %}
             {% endfor %}
+            </ul>
           </div>
         {% endfor %}
       </section>
@@ -57,9 +59,11 @@
           <h3 class="new-dish__resume">{{ "Nouveaux plats" | t }}</h3>
         </header>
         <div class="new-dish__details">{{ "Venez découvrir nos derniers plats." | t }}</div>
+        <ul class="block-grid">
         {% for food in featured_foods %}
           {% include 'food' with food:food %}
         {% endfor %}
+        </ul>
       </section>
     {% endif %}
   </article>
@@ -135,8 +139,8 @@
       </p>
     {% endif %}
   </div>
-  <footer class="directions-footer btn_itineraire">
-    <a href="{{ current_tenant.google_maps_url }}" class="btn direction-footer__btn">
+  <footer class="directions-footer">
+    <a href="{{ current_tenant.google_maps_url }}" class="btn directions-footer__btn">
       {{ "Voir l'itinéraire" | t }}
     </a>
   </footer>

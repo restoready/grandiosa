@@ -1417,7 +1417,7 @@ hr {
   position: absolute;
   bottom: 0;
 }
-.direction-footer__btn {
+.directions-footer__btn {
   width: 200px;
   display: block;
   margin-left: auto;
@@ -1430,6 +1430,17 @@ hr {
   // ===================== #food styles -- _food.liquid ============================================
   .dish {
     padding-right: 25px;
+    width: 50%;
+    height: auto;
+    display: block;
+    float: left;
+  }
+  .block-grid {
+    &>li {
+      &:nth-of-type(2n+1) {
+        clear: left;
+      }
+    }
   }
   // ===================== #menu styles -- _show.liquid ============================================
   .menus-nav__item {
@@ -1550,6 +1561,20 @@ hr {
   }
   .dish {
     padding-right: 40px;
+    width: 33.3333333%;
+    display: block;
+    float: left;
+    height: auto;
+  }
+  .block-grid {
+    &>li {
+      &:nth-of-type(2n+1) {
+        clear: none;
+      }
+      &:nth-of-type(3n+1) {
+        clear: left;
+      }
+    }
   }
   .news-footer, 
   .presentation-footer, 
