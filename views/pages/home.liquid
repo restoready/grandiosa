@@ -1,15 +1,17 @@
-<div class="full-background">
-      {% if current_tenant.slogan? %}
-        <div class="slogan">
-          <h1 class="slogan__slogan">{{ current_tenant.slogan }}</h1>
+<section class="full-background">
+    <div class="full-background__image">
+    </div>
+    {% if current_tenant.slogan? %}
+    <div class="slogan">
+        <h1 class="slogan__slogan">RestoReady, simple et rapide.</h1>
           {% if current_tenant.phone? %}
             <a class="home-number" href="tel:{{ current_tenant.phone_uri }}">
               {{ current_tenant.phone }}
             </a>
           {% endif %}
         </div>
-      {% endif %}
-</div>
+    {% endif %}
+</section>
 
 <section class="news">
   <article class="week">
@@ -94,7 +96,7 @@
       <h2 class="hours__title">{{ "Horaires" | t }}</h2>
     </header>
     <table>
-      <tbody>
+      <tbody class="hours__table">
         {% for day in days %}
           <tr class="hours__day day-{{ day.number }} {% cycle 'even', 'odd' %}">
             <th class="hours__day-name">{{ day.name }}</th>

@@ -64,20 +64,20 @@
   {% endif %}
   
     {% if current_tenant.phone? %}
-      <a class="coordinate__number" href="tel:{{ current_tenant.phone_uri }}">
+      <a class="nav-large__coordinate-number" href="tel:{{ current_tenant.phone_uri }}">
           {{ current_tenant.phone }}
       </a>
       </br>
     {% endif %}
     {% if current_tenant.street_address? %}
-      <span class="coordinate__address" itemprop="streetAddress">{{ current_tenant.street_address }}</span>
+      <span class="coordinate-address" itemprop="streetAddress">{{ current_tenant.street_address }}</span>
       </br>
     {% endif %}
     {% if current_tenant.zip_code? %}
-      <span class="coordinate__address" itemprop="postalCode">{{ current_tenant.zip_code }}</span>
+      <span class="coordinate-address" itemprop="postalCode">{{ current_tenant.zip_code }}</span>
     {% endif %}
     {% if current_tenant.city? %}
-      <span class="coordinate__address" itemprop="addressLocality">{{ current_tenant.city }}</span>
+      <span class="coordinate-address" itemprop="addressLocality">{{ current_tenant.city }}</span>
     {% endif %}
   </div>
 </div>
@@ -133,20 +133,20 @@
 
     <div class="nav-small__coordinate">
       {% if current_tenant.phone? %}
-        <a class="coordinate__number" href="tel:{{ current_tenant.phone_uri }}">
+        <a class="nav-small__coordinate-number" href="tel:{{ current_tenant.phone_uri }}">
           {{ current_tenant.phone }}
         </a>
         </br>
       {% endif %}
       {% if current_tenant.street_address? %}
-        <span class="coordinate__address" itemprop="streetAddress">{{ current_tenant.street_address }}</span>
+        <span class="nav-small__coordinate-address" itemprop="streetAddress">{{ current_tenant.street_address }}</span>
         </br>
       {% endif %}
       {% if current_tenant.zip_code? %}
-        <span class="coordinate__address" itemprop="postalCode">{{ current_tenant.zip_code }}</span>
+        <span class="nav-small__coordinate-address" itemprop="postalCode">{{ current_tenant.zip_code }}</span>
       {% endif %}
       {% if current_tenant.city? %}
-        <span class="coordinate__address" itemprop="addressLocality">{{ current_tenant.city }}</span>
+        <span class="nav-small__coordinate-address" itemprop="addressLocality">{{ current_tenant.city }}</span>
       {% endif %}
     </div>
   </div>
