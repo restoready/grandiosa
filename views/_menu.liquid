@@ -1,16 +1,13 @@
 <section class="menus-food" id="menu-{{menu.id}}">
   {% if title %}
     <header>
-      <div class="margin"></div>
       {% if menu.featured %}
         <div class="menus-food__featured menus-food__title-{{menu.depth}}">
       {% else %}
         <div class="menus-food__title-{{menu.depth}}">
       {% endif %}
-        <h{{ menu.depth | plus: 1 }}>
-          <div class="content-menus-food__title-{{menu.depth}}">
+        <h{{ menu.depth | plus: 1 }} class="content-menus-food__title-{{menu.depth}}">
             {{ menu.name }}
-          </div>
         </h{{ menu.depth | plus: 1 }}>
       </div>
     </header>

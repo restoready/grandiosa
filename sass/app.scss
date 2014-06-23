@@ -800,6 +800,7 @@ $clear: $white;
 $border: $light-grey;
 $color-font-button: $soft-grey;
 $bgc-footer: $grey;
+$back-title: $dark-grey;
 // ==============================================================================
 // #Fonts
 // ==============================================================================
@@ -882,6 +883,7 @@ hr {
 }
 .ico {
   width: 100%;
+  margin-bottom: 25px;
 }
 .back-to-menu-label {
   clear: both;
@@ -893,6 +895,11 @@ hr {
   width: 150px;
   margin-left: auto;
   margin-right: auto;
+  transition: color 0.2s;
+  &:hover {
+    color: $dark;
+    transition: color 0.2s;
+  }
 }
 // ===================== #content styles -- front.liquid ============================================
 .footer__infos {
@@ -1026,6 +1033,7 @@ hr {
   position: relative;
   background-color: $dark;
   clear: both;
+  overflow: hidden;
 }
 .menus-nav__item {
   width: 50%;
@@ -1057,6 +1065,7 @@ hr {
 .menus-food {
   clear: both;
   width: 100%;
+  margin-top: 50px;
 }
 .menus-food__content {
   max-width: 85%;
@@ -1072,12 +1081,18 @@ hr {
 }
 .content-menus-food__title-2 {
   font-size: 1.5em;
+  background-color: $back-title;
+  color: white;
 }
 .content-menus-food__description-title-1 {
   font-size: 1em;
 }
 .menus-footer {
   width: 100%;
+  margin-top: 25px;
+}
+.block-grid {
+  overflow: hidden;
 }
 // ===================== #food styles -- _food.liquid ============================================
 .dish {
@@ -1173,6 +1188,7 @@ hr {
 .footer,
 .contact-footer {
   color: $clear;
+  font-family: $coordinate;
 }
 .footer {
   text-align: center;
@@ -1233,7 +1249,6 @@ hr {
   height: auto;
   margin-top: 53px;
   display: inline-block;
-  //background: url(/assets/full-visual-theme/images/design.jpg) no-repeat center;
   background-color: #000;
   position: relative;
 }
@@ -1428,6 +1443,7 @@ hr {
     display: block;
     float: left;
   }
+  // ===================== #menu styles -- _menu.liquid ============================================
   .block-grid {
     &>li {
       &:nth-of-type(2n+1) {
@@ -1501,6 +1517,14 @@ hr {
   .menus-nav__item {
     width: 33.3333333%;
   }
+  // ===================== #food styles -- _food.liquid ============================================
+  .dish {
+    padding-right: 40px;
+    width: 33.3333333%;
+    display: block;
+    float: left;
+    height: auto;
+  }
 // ===================== #menus-food styles -- _menu.liquid ============================================
   .menus-food {
     width: auto;
@@ -1511,10 +1535,25 @@ hr {
   .margin {
     height: 0px;
   }
+  .block-grid {
+    &>li {
+      &:nth-of-type(2n+1) {
+        clear: none;
+      }
+      &:nth-of-type(3n+1) {
+        clear: left;
+      }
+    }
+  }
 // ===================== #resto styles -- tenants _show.liquid ============================================
   .resto-presentation__content {
     margin-left: 400px;
     margin-right: 0;
+    margin-top: 25px;
+  }
+  .resto-presentation__image {
+    background: url(/assets/full-visual-theme/images/design.jpg) no-repeat center;
+    height: 500px;
   }
   .gallery {
     max-width: 100%;
@@ -1550,23 +1589,6 @@ hr {
   .home-description, 
   .hours {
   	margin-left: 400px;
-  }
-  .dish {
-    padding-right: 40px;
-    width: 33.3333333%;
-    display: block;
-    float: left;
-    height: auto;
-  }
-  .block-grid {
-    &>li {
-      &:nth-of-type(2n+1) {
-        clear: none;
-      }
-      &:nth-of-type(3n+1) {
-        clear: left;
-      }
-    }
   }
   .news-footer, 
   .presentation-footer, 

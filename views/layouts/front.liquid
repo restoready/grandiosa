@@ -27,15 +27,14 @@
   </head>
 
   <body itemscope="" itemtype="http://schema.org/Restaurant">
-
-    <header>
-      <nav class="head__nav" role="navigation">
-        {% include 'nav' %}
-      </nav>
-    </header>
-        {{ content_for_layout }}
-    <footer class="footer__infos" role="contentinfo">
-          {% include 'footer' %}
-    </footer>
+      <header id="top">
+        <nav class="head__nav" role="navigation">
+          {% include 'nav' %}
+        </nav>
+      </header>
+          {{ content_for_layout }}
+      <footer class="footer__infos" role="contentinfo">
+            {% include 'footer' %}
+      </footer>
   </body>
 </html>

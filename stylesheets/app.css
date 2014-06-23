@@ -1353,7 +1353,8 @@ hr {
   color: white; }
 
 .ico {
-  width: 100%; }
+  width: 100%;
+  margin-bottom: 25px; }
 
 .back-to-menu-label {
   clear: both;
@@ -1364,7 +1365,11 @@ hr {
   background-color: #e62f2f;
   width: 150px;
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+  transition: color 0.2s; }
+  .back-to-menu-label:hover {
+    color: #1d1d1d;
+    transition: color 0.2s; }
 
 .footer__infos {
   width: 100%;
@@ -1494,7 +1499,8 @@ hr {
   width: 100%;
   position: relative;
   background-color: #1d1d1d;
-  clear: both; }
+  clear: both;
+  overflow: hidden; }
 
 .menus-nav__item {
   width: 50%;
@@ -1524,7 +1530,8 @@ hr {
 
 .menus-food {
   clear: both;
-  width: 100%; }
+  width: 100%;
+  margin-top: 50px; }
 
 .menus-food__content {
   max-width: 85%;
@@ -1539,13 +1546,19 @@ hr {
   font-weight: 700; }
 
 .content-menus-food__title-2 {
-  font-size: 1.5em; }
+  font-size: 1.5em;
+  background-color: #1d1d1d;
+  color: white; }
 
 .content-menus-food__description-title-1 {
   font-size: 1em; }
 
 .menus-footer {
-  width: 100%; }
+  width: 100%;
+  margin-top: 25px; }
+
+.block-grid {
+  overflow: hidden; }
 
 .dish {
   margin-top: 25px;
@@ -1633,7 +1646,8 @@ hr {
 
 .footer,
 .contact-footer {
-  color: #eeeeee; }
+  color: #eeeeee;
+  font-family: "Cabin"; }
 
 .footer {
   text-align: center;
@@ -1937,6 +1951,13 @@ hr {
   .menus-nav__item {
     width: 33.3333333%; }
 
+  .dish {
+    padding-right: 40px;
+    width: 33.3333333%;
+    display: block;
+    float: left;
+    height: auto; }
+
   .menus-food {
     width: auto; }
 
@@ -1946,9 +1967,19 @@ hr {
   .margin {
     height: 0px; }
 
+  .block-grid > li:nth-of-type(2n+1) {
+    clear: none; }
+  .block-grid > li:nth-of-type(3n+1) {
+    clear: left; }
+
   .resto-presentation__content {
     margin-left: 400px;
-    margin-right: 0; }
+    margin-right: 0;
+    margin-top: 25px; }
+
+  .resto-presentation__image {
+    background: url(/assets/full-visual-theme/images/design.jpg) no-repeat center;
+    height: 500px; }
 
   .gallery {
     max-width: 100%;
@@ -1982,18 +2013,6 @@ hr {
   .home-description,
   .hours {
     margin-left: 400px; }
-
-  .dish {
-    padding-right: 40px;
-    width: 33.3333333%;
-    display: block;
-    float: left;
-    height: auto; }
-
-  .block-grid > li:nth-of-type(2n+1) {
-    clear: none; }
-  .block-grid > li:nth-of-type(3n+1) {
-    clear: left; }
 
   .news-footer,
   .presentation-footer,
