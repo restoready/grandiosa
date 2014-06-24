@@ -1,13 +1,13 @@
 <li id="food-item-{{food.id}}" class="dish">
   {% if food.main_image? %}
     <figure>
-      {{ food | custom_image_url: "454x256#", "main_image" | image_tag: 'class:dish__image-dish' }}
+      {{ food | custom_image_url: "454x256#", "main_image" | image_tag: 'class:dish__image' }}
     </figure>
   {% endif %}
-  <h5 class="dish__name-dish">{{ food.name }}</h5>
-  <div class="dish__description--dish">
+  <h5 class="dish__name">{{ food.name }}</h5>
+  <div class="dish__description">
     {% if food.tags? %}
-      <div class="dish__description--label">
+      <div class="dish__description-label">
         {% for tag in food.tags %}
           <i class="label-{{ tag.css_class }}">{{ tag.name }}</i>
         {% endfor %}
@@ -19,7 +19,7 @@
       {% endif %}
     {% endunless %}
     {% if food.summary? %}
-      <p class="dish__description__summary">{{ food.summary }}</p>
+      <div class="dish__description-summary">{{ food.summary }}</div>
     {% endif %}
   </div>
   {% if prices %}
