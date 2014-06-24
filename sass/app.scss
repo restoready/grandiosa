@@ -1077,6 +1077,13 @@ hr {
   width: 100%;
   margin-top: 50px;
 }
+.menus-food__head--featured {
+  background-color: $dark;
+  color: white;
+  display: inline-block;
+  padding: 5px 10px 5px 10px;
+  border-radius: 3px;
+}
 .head-menu {
   display: inline-block;
 }
@@ -1117,6 +1124,9 @@ hr {
 .content-menus-food__description-title-2 {
   margin-top: 15px;
 }
+.content-menus-food__description--featured {
+  color: white;
+}
 .menus-footer {
   width: 100%;
   margin-top: 25px;
@@ -1125,18 +1135,12 @@ hr {
   overflow: hidden;
 }
 .block-grid--featured {
-  border-top: 6px solid $dark;
-  border-right: 6px solid $dark;
-  border-bottom: 6px solid $dark;
-  border-radius: 6px;
-  margin-top: 10px;
+  border: 6px solid $dark;
+  border-radius: 3px;
   padding-bottom: 5px;
   padding-right: 10px;
+  padding-left: 20px;
   margin-right: 5px;
-}
-.menu-featured-image {
-  display: inline-block;
-  margin-left: 20px;
 }
 // ===================== #food styles -- _food.liquid ============================================
 .dish {
@@ -1189,11 +1193,6 @@ hr {
   padding: 5px 5px 5px 5px;
   border-radius: 2px;
   text-align: center;
-}
-.featured-image {
-  margin-bottom: 15px;
-  vertical-align: top;
-  margin-left: 5px;
 }
 .food-price {
   text-align: right;
