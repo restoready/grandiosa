@@ -1614,6 +1614,13 @@ hr {
   border-radius: 2px;
   text-align: center; }
 
+.featured-image {
+  margin-bottom: 15px;
+  vertical-align: middle; }
+
+.featured-dish {
+  font-weight: 700; }
+
 .food-price__price-label,
 .food-price__price-value {
   font-weight: 800;

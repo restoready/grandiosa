@@ -15,7 +15,8 @@
     {% endif %}
     {% unless menu.nil? %}
       {% if food.featured_in_menu? %}
-        <div>{{ "Recommandé par le chef" | t }}</div>
+        <img src="/assets/full-visual-theme/images/toque.png" alt="toque" title="toque" class="featured-image" width="25" />
+        <i class="featured-dish">{{ "Recommandé par le chef" | t }}</i>
       {% endif %}
     {% endunless %}
     {% if food.summary? %}
