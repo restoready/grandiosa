@@ -15,9 +15,9 @@
 
 
   {% if menu.summary? %}
-    <div class="content-menus-food__description content-menus-food__description-title-{{menu.depth}}">
+    <h{{menu.depth}} class="content-menus-food__description content-menus-food__description-title-{{menu.depth}}">
       {{ menu.summary }}
-    </div>
+    </h{{menu.depth}}>
   {% endif %}
   {% if menu.foods? %}
     <ul class="block-grid">

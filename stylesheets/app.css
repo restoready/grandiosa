@@ -1545,13 +1545,24 @@ hr {
   font-size: 2em;
   font-weight: 700; }
 
+.menu-food__title2 {
+  width: auto; }
+
 .content-menus-food__title-2 {
   font-size: 1.5em;
   background-color: #1d1d1d;
-  color: white; }
+  color: white;
+  padding: 5px 5px 5px 5px;
+  border-radius: 2px;
+  display: inline; }
 
 .content-menus-food__description-title-1 {
-  font-size: 1em; }
+  font-size: 1em;
+  color: #1d1d1d;
+  font-style: italic; }
+
+.content-menus-food__description-title-2 {
+  margin-top: 15px; }
 
 .menus-footer {
   width: 100%;
@@ -1564,14 +1575,14 @@ hr {
   margin-top: 25px;
   padding-left: 0px; }
 
-.dish__name-dish {
+.dish__name {
   font-weight: 600;
   margin-bottom: 10px; }
 
-.dish__image-dish {
+.dish__image {
   max-width: 100%; }
 
-.dish__description--label {
+.dish__description-label {
   background-color: #e62f2f;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1715,13 +1726,13 @@ hr {
   background: url(/assets/full-visual-theme/images/design.jpg) no-repeat center;
   opacity: 0.6; }
 
-.slogan {
+.slogan-wrapper {
   width: 100%;
   position: absolute;
   top: 7%;
   text-align: center; }
 
-.slogan__slogan {
+.slogan {
   font-size: 2.5em;
   line-height: 1;
   max-width: 80%;
@@ -1994,7 +2005,7 @@ hr {
   .full-background__image {
     height: 100%; }
 
-  .slogan__slogan {
+  .slogan {
     font-size: 3em;
     margin-left: 400px;
     padding-top: 25%; }
@@ -2040,7 +2051,7 @@ hr {
     text-align: left;
     margin-left: 425px; } }
 @media only screen and (min-width: 1350px) {
-  .slogan__slogan {
+  .slogan {
     font-size: 3.5em;
     padding-top: 20%; }
 
@@ -2059,7 +2070,7 @@ hr {
     max-width: 75%;
     margin-left: 400px; } }
 @media only screen and (min-width: 1500px) {
-  .slogan__slogan {
+  .slogan {
     font-size: 3.5em; }
 
   .menus-nav {
@@ -2071,7 +2082,7 @@ hr {
   .infos-local {
     bottom: 10%; } }
 @media only screen and (min-width: 1730px) {
-  .slogan__slogan {
+  .slogan {
     font-size: 4em; }
 
   .menus-nav {

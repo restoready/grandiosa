@@ -2,8 +2,8 @@
     <div class="full-background__image">
     </div>
     {% if current_tenant.slogan? %}
-    <div class="slogan">
-        <h1 class="slogan__slogan">RestoReady, simple et rapide.</h1>
+    <div class="slogan-wrapper">
+        <h1 class="slogan">RestoReady, simple et rapide.</h1>
           {% if current_tenant.phone? %}
             <a class="home-number" href="tel:{{ current_tenant.phone_uri }}">
               {{ current_tenant.phone }}
