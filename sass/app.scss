@@ -807,6 +807,7 @@ $back-title: $dark-grey;
 $back-label-vegan: $green;
 $back-label-meat: $orange;
 $back-label-porc: $blue;
+$back-price-value: $soft-grey;
 // ==============================================================================
 // #Fonts
 // ==============================================================================
@@ -823,6 +824,7 @@ $text: $raleway;
 $title-menus: $oswald;
 $slogan: $great;
 $hours: $cabin;
+$price: $cabin;
 // ==============================================================================
 // #Style full-visual theme -- RestoReady -- Défault mobile first
 // ==============================================================================
@@ -850,7 +852,7 @@ th {
 }
 hr {
   border: solid 1px $dark;
-  width: 75%;
+  width: 55%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -1117,8 +1119,9 @@ hr {
   padding-left: 0px;
 }
 .dish__name {
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 10px;
+  font-size: 1.2em;
 }
 .dish__image {
   max-width: 100%;
@@ -1162,12 +1165,21 @@ hr {
 .featured-dish {
   font-weight: 700;
 }
-.food-price__price-label, 
-.food-price__price-value {
-  font-weight: 800;
+.food-price {
+  text-align: right;
+}
+.food-price__label, 
+.food-price__value {
+  font-family: $price;
+  font-weight: 600;
   font-style: italic;
-  display: inline-block;
   color: $dark;
+  margin-top: 10px;
+}
+.food-price__value {
+  background-color: $back-price-value;
+  padding: 3px 3px 3px 3px;
+  border-radius: 2px;
 }
 // ===================== #terms styles -- _terms.liquid ============================================
 .terms-content {
@@ -1489,6 +1501,16 @@ hr {
     display: block;
     float: left;
   }
+  .label-new,
+  .label-vegan,
+  .label-no-meat,
+  .label-no-porc {
+    display: block;
+    margin-top: 3px;
+  }
+  .featured-dish {
+    font-size: 0.70em;  
+  }
   // ===================== #menu styles -- _menu.liquid ============================================
   .block-grid {
     &>li {
@@ -1500,6 +1522,22 @@ hr {
   // ===================== #menu styles -- _show.liquid ============================================
   .menus-nav__item {
     width: 33.3333333%;
+  }
+}
+// ==============================================================================
+// #Style full-visual theme -- Breakpoint small-up - min 650px
+// ==============================================================================
+@media only screen and (min-width: 650px) {
+  // ===================== #food styles -- _food.liquid ============================================
+  .label-new,
+  .label-vegan,
+  .label-no-meat,
+  .label-no-porc {
+    display: inline;
+    margin-top: 0px;
+  }
+  .featured-dish {
+    font-size: 1em;  
   }
 }
 // ==============================================================================

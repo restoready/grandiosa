@@ -1317,7 +1317,7 @@ th {
 
 hr {
   border: solid 1px #1d1d1d;
-  width: 75%;
+  width: 55%;
   margin-left: auto;
   margin-right: auto; }
 
@@ -1576,8 +1576,9 @@ hr {
   padding-left: 0px; }
 
 .dish__name {
-  font-weight: 600;
-  margin-bottom: 10px; }
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-size: 1.2em; }
 
 .dish__image {
   max-width: 100%; }
@@ -1621,12 +1622,21 @@ hr {
 .featured-dish {
   font-weight: 700; }
 
-.food-price__price-label,
-.food-price__price-value {
-  font-weight: 800;
+.food-price {
+  text-align: right; }
+
+.food-price__label,
+.food-price__value {
+  font-family: "Cabin";
+  font-weight: 600;
   font-style: italic;
-  display: inline-block;
-  color: #1d1d1d; }
+  color: #1d1d1d;
+  margin-top: 10px; }
+
+.food-price__value {
+  background-color: #dddddd;
+  padding: 3px 3px 3px 3px;
+  border-radius: 2px; }
 
 .terms-content {
   max-width: 85%;
@@ -1932,11 +1942,31 @@ hr {
     display: block;
     float: left; }
 
+  .label-new,
+  .label-vegan,
+  .label-no-meat,
+  .label-no-porc {
+    display: block;
+    margin-top: 3px; }
+
+  .featured-dish {
+    font-size: 0.70em; }
+
   .block-grid > li:nth-of-type(2n+1) {
     clear: left; }
 
   .menus-nav__item {
     width: 33.3333333%; } }
+@media only screen and (min-width: 650px) {
+  .label-new,
+  .label-vegan,
+  .label-no-meat,
+  .label-no-porc {
+    display: inline;
+    margin-top: 0px; }
+
+  .featured-dish {
+    font-size: 1em; } }
 @media only screen and (min-width: 1024px) {
   .nav-large {
     width: 300px;
