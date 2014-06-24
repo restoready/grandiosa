@@ -1583,14 +1583,15 @@ hr {
   max-width: 100%; }
 
 .dish__description-label {
-  background-color: #e62f2f;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  text-align: center;
-  margin-bottom: 5px; }
+  margin-bottom: 15px;
+  color: white; }
 
 .label-new {
-  color: white; }
+  color: white;
+  background-color: #e62f2f;
+  padding: 5px 5px 5px 5px;
+  border-radius: 2px;
+  text-align: center; }
 
 .food-price__price-label,
 .food-price__price-value {
@@ -1662,7 +1663,7 @@ hr {
 
 .footer {
   text-align: center;
-  margin-top: -10px;
+  margin-top: -30px;
   width: 250px;
   margin-left: auto;
   margin-right: auto; }
@@ -2037,7 +2038,7 @@ hr {
     bottom: 15%; }
 
   .directions-footer {
-    max-width: 70%;
+    max-width: 65%;
     margin-left: 400px; }
 
   .subscribe {
