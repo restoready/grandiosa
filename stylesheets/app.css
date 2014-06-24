@@ -1593,6 +1593,27 @@ hr {
   border-radius: 2px;
   text-align: center; }
 
+.label-vegan {
+  color: white;
+  background-color: #3fb330;
+  padding: 5px 5px 5px 5px;
+  border-radius: 2px;
+  text-align: center; }
+
+.label-no-meat {
+  color: white;
+  background-color: #ed8a00;
+  padding: 5px 5px 5px 5px;
+  border-radius: 2px;
+  text-align: center; }
+
+.label-no-porc {
+  color: white;
+  background-color: #00b0d4;
+  padding: 5px 5px 5px 5px;
+  border-radius: 2px;
+  text-align: center; }
+
 .food-price__price-label,
 .food-price__price-value {
   font-weight: 800;

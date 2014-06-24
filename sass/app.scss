@@ -790,6 +790,9 @@ $white: #EEEEEE;
 $light-grey: #4A4A4A;
 $soft-grey: #dddddd;
 $grey: #606060;
+$green: #3FB330;
+$orange: #ED8A00;
+$blue: #00B0D4;
 // ==============================================================================
 // #Proxy color
 // ==============================================================================
@@ -801,6 +804,9 @@ $border: $light-grey;
 $color-font-button: $soft-grey;
 $bgc-footer: $grey;
 $back-title: $dark-grey;
+$back-label-vegan: $green;
+$back-label-meat: $orange;
+$back-label-porc: $blue;
 // ==============================================================================
 // #Fonts
 // ==============================================================================
@@ -1124,6 +1130,27 @@ hr {
 .label-new {
   color: white;
   background-color: $persoColor;
+  padding: 5px 5px 5px 5px;
+  border-radius: 2px;
+  text-align: center;
+}
+.label-vegan {
+  color: white;
+  background-color: $back-label-vegan;
+  padding: 5px 5px 5px 5px;
+  border-radius: 2px;
+  text-align: center;
+}
+.label-no-meat {
+  color: white;
+  background-color: $back-label-meat;
+  padding: 5px 5px 5px 5px;
+  border-radius: 2px;
+  text-align: center;
+}
+.label-no-porc {
+  color: white;
+  background-color: $back-label-porc;
   padding: 5px 5px 5px 5px;
   border-radius: 2px;
   text-align: center;
