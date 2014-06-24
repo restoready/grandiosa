@@ -15,10 +15,10 @@
     {% endfor %}
   </ol>
   {% for child in menu.children %}
-  <div class="menus-food__content">
+    <div class="menus-food__content">
     {% include 'menu' with menu:child, title:true %}
-  </div>
+      </div>
   {% endfor %}
-{% else %}
-  {% include 'menu' with menu:menu, title:false %}
-{% endif %}
+  {% else %}
+    {% include 'menu' with menu:menu, title:false %}
+  {% endif %}

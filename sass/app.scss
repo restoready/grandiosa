@@ -793,6 +793,7 @@ $grey: #606060;
 $green: #3FB330;
 $orange: #ED8A00;
 $blue: #00B0D4;
+$soft-beige: #F9FFBF;
 // ==============================================================================
 // #Proxy color
 // ==============================================================================
@@ -808,6 +809,7 @@ $back-label-vegan: $green;
 $back-label-meat: $orange;
 $back-label-porc: $blue;
 $back-price-value: $soft-grey;
+$back-dish-featured: $soft-beige;
 // ==============================================================================
 // #Fonts
 // ==============================================================================
@@ -852,7 +854,7 @@ th {
 }
 hr {
   border: solid 1px $dark;
-  width: 55%;
+  width: 70%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -1075,10 +1077,15 @@ hr {
   width: 100%;
   margin-top: 50px;
 }
+.head-menu {
+  display: inline-block;
+}
 .menus-food__content {
   max-width: 85%;
   margin-left: auto;
   margin-right: auto;
+  position: relative;
+  padding-bottom: 15px;
 }
 .margin {
   height: 50px;
@@ -1086,9 +1093,13 @@ hr {
 .content-menus-food__title-1 {
   font-size: 2em;
   font-weight: 700;
+  display: inline-block;
 }
 .menu-food__title2 {
   width: auto;
+}
+.menus-food__featured {
+  display: inline-block;
 }
 .content-menus-food__title-2 {
   font-size: 1.5em;
@@ -1113,6 +1124,20 @@ hr {
 .block-grid {
   overflow: hidden;
 }
+.block-grid--featured {
+  border-top: 6px solid $dark;
+  border-right: 6px solid $dark;
+  border-bottom: 6px solid $dark;
+  border-radius: 6px;
+  margin-top: 10px;
+  padding-bottom: 5px;
+  padding-right: 10px;
+  margin-right: 5px;
+}
+.menu-featured-image {
+  display: inline-block;
+  margin-left: 20px;
+}
 // ===================== #food styles -- _food.liquid ============================================
 .dish {
   margin-top: 25px;
@@ -1123,8 +1148,15 @@ hr {
   margin-bottom: 10px;
   font-size: 1.2em;
 }
+.dish__name--featured {
+  color: $persoColor;
+  display: inline-block;
+}
 .dish__image {
   max-width: 100%;
+}
+.dish__description-summary {
+  font-weight: 600;
 }
 .dish__description-label {
   margin-bottom: 15px;
@@ -1160,10 +1192,8 @@ hr {
 }
 .featured-image {
   margin-bottom: 15px;
-  vertical-align: middle;
-}
-.featured-dish {
-  font-weight: 700;
+  vertical-align: top;
+  margin-left: 5px;
 }
 .food-price {
   text-align: right;
@@ -1178,8 +1208,7 @@ hr {
 }
 .food-price__value {
   background-color: $back-price-value;
-  padding: 3px 3px 3px 3px;
-  border-radius: 2px;
+  border-radius: 3px;
 }
 // ===================== #terms styles -- _terms.liquid ============================================
 .terms-content {
@@ -1508,7 +1537,7 @@ hr {
     display: block;
     margin-top: 3px;
   }
-  .featured-dish {
+  .dish--featured {
     font-size: 0.70em;  
   }
   // ===================== #menu styles -- _menu.liquid ============================================
@@ -1519,6 +1548,10 @@ hr {
       }
     }
   }
+  .block-grid--featured {
+    padding-right: 0px;
+    margin-right: 25px;
+  }
   // ===================== #menu styles -- _show.liquid ============================================
   .menus-nav__item {
     width: 33.3333333%;
@@ -1528,6 +1561,10 @@ hr {
 // #Style full-visual theme -- Breakpoint small-up - min 650px
 // ==============================================================================
 @media only screen and (min-width: 650px) {
+  // ===================== #layout ============================================
+  hr {
+    display: none;
+  }
   // ===================== #food styles -- _food.liquid ============================================
   .label-new,
   .label-vegan,
@@ -1536,7 +1573,7 @@ hr {
     display: inline;
     margin-top: 0px;
   }
-  .featured-dish {
+  .dish--featured {
     font-size: 1em;  
   }
 }
@@ -1603,7 +1640,7 @@ hr {
   }
   // ===================== #food styles -- _food.liquid ============================================
   .dish {
-    padding-right: 40px;
+    padding-right: 25px;
     width: 33.3333333%;
     display: block;
     float: left;

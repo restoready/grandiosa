@@ -1,6 +1,6 @@
 <section class="menus-food" id="menu-{{menu.id}}">
   {% if title %}
-    <header>
+    <header class="head-menu">
       {% if menu.featured %}
         <div class="menus-food__featured menus-food__title-{{menu.depth}}">
       {% else %}
@@ -13,6 +13,9 @@
     </header>
   {% endif %}
 
+  {% if menu.featured %}
+  <img src="/assets/full-visual-theme/images/featured.png" alt="toque" title="toque" class="menu-featured-image" width="65" />
+  {% endif %}
 
   {% if menu.summary? %}
     <h{{menu.depth}} class="content-menus-food__description content-menus-food__description-title-{{menu.depth}}">
@@ -20,7 +23,12 @@
     </h{{menu.depth}}>
   {% endif %}
   {% if menu.foods? %}
-    <ul class="block-grid">
+
+    {% if menu.featured %}
+      <ul class="block-grid block-grid--featured">
+    {% else %}
+      <ul class="block-grid">
+    {% endif %}
     {% for food in menu.foods %}
       {% assign_prices prices for food in menu %}
       {% include 'food' with food:food, menu:menu %}

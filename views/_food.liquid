@@ -4,7 +4,17 @@
       {{ food | custom_image_url: "454x256#", "main_image" | image_tag: 'class:dish__image' }}
     </figure>
   {% endif %}
-  <h5 class="dish__name">{{ food.name }}</h5>
+  {% if food.featured_in_menu? %}
+    <h5 class="dish__name dish__name--featured">{{ food.name }}</h5>
+  {% else %}
+    <h5 class="dish__name">{{ food.name }}</h5>
+  {% endif %}
+  {% unless menu.nil? %}
+      {% if food.featured_in_menu? %}
+        <img src="/assets/full-visual-theme/images/featured.png" alt="toque" title="toque" class="featured-image" width="25" />
+        <i class="featured-dish">{{ | t }}</i>
+      {% endif %}
+  {% endunless %}
   <div class="dish__description">
     {% if food.tags? %}
       <div class="dish__description-label">
@@ -13,12 +23,6 @@
         {% endfor %}
       </div>
     {% endif %}
-    {% unless menu.nil? %}
-      {% if food.featured_in_menu? %}
-        <img src="/assets/full-visual-theme/images/toque.png" alt="toque" title="toque" class="featured-image" width="25" />
-        <i class="featured-dish">{{ "Recommandé par le chef" | t }}</i>
-      {% endif %}
-    {% endunless %}
     {% if food.summary? %}
       <div class="dish__description-summary">{{ food.summary }}</div>
     {% endif %}
