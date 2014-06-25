@@ -902,10 +902,11 @@ hr {
   padding-top: 10px;
   padding-bottom: 10px;
   background-color: $persoColor;
-  width: 150px;
+  width: 75px;
   margin-left: auto;
   margin-right: auto;
   transition: color 0.2s;
+  font-size: 0.65em;
   &:hover {
     color: $dark;
     transition: color 0.2s;
@@ -916,6 +917,7 @@ hr {
   width: 100%;
   background-color: $dark;
   clear: both;
+  margin-top: 30px;
 }
 // ===================== #nav styles -- _nav.liquid ============================================
 .nav-small {
@@ -1019,14 +1021,13 @@ hr {
   padding-bottom: 15px;
   margin-top: 25px;
   width: 200px;
-  font-size: 0.85em;
+  font-size: 1em;
   margin-left: 25px;
   text-align: center;
   font-family: $coordinate;
 }
 .nav-small__coordinate-number {
   color: $persoColor;
-  text-decoration: underline;
 }
 // ===================== #menu styles -- _index.liquid ============================================
 .index-header {
@@ -1034,13 +1035,30 @@ hr {
 }
 .index-header__title {
   color: $dark;
-  margin-top: 20px;
   font-size: 2em;
   font-weight: 700;
-  padding-top: 50px;
+  padding-top: 30px;
   margin-left: 15px;
 }
 // ===================== #menu styles -- _show.liquid ============================================
+.menus-number {
+  display: block;
+  font-size: 2em;
+  line-height: 1;
+  width: 220px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-family: $coordinate;
+  transition: color 0.2s;
+  color: $dark;
+  &:hover {
+    color: $persoColor;
+    transition: color 0.2s;
+  }
+}
 .menus-nav {
   width: 100%;
   position: relative;
@@ -1084,7 +1102,7 @@ hr {
   color: white;
   display: inline-block;
   padding: 5px 10px 5px 10px;
-  border-radius: 3px;
+  border-radius: 3px 3px 0 0;
 }
 .head-menu {
   display: inline-block;
@@ -1112,11 +1130,17 @@ hr {
 }
 .content-menus-food__title-2 {
   font-size: 1.5em;
-  background-color: $back-title;
-  color: white;
+  color: $dark;
   padding: 5px 5px 5px 5px;
   border-radius: 2px;
   display: inline;
+}
+.under-title-1 {
+  display: none;
+}
+.under-title-2 {
+  width: 70%;
+  margin-left: 0;
 }
 .content-menus-food__description-title-1 {
   font-size: 1em;
@@ -1138,10 +1162,8 @@ hr {
 }
 .block-grid--featured {
   border: 6px solid $dark;
-  border-radius: 3px;
-  padding-bottom: 5px;
-  padding-right: 10px;
-  padding-left: 20px;
+  border-radius: 0 3px 3px 3px;
+  padding: 0 10px 5px 20px;
   margin-right: 5px;
 }
 // ===================== #food styles -- _food.liquid ============================================
@@ -1149,19 +1171,19 @@ hr {
   margin-top: 25px;
   padding-left: 0px;
 }
-.dish--featured {
-  border: 4px solid $dark;
-  border-radius: 3px;
-  padding: 5px 5px;
-}
 .dish__name {
   font-weight: 700;
   margin-bottom: 10px;
   font-size: 1.2em;
 }
 .dish__name--featured {
-  color: $persoColor;
+  color: white;
   display: inline-block;
+  background-color: $dark;
+  padding: 5px 10px 5px 10px;
+  border-radius: 3px;
+  margin-top: 5px;
+  margin-bottom: 0px;
 }
 .dish__image {
   max-width: 100%;
@@ -1172,31 +1194,32 @@ hr {
 .dish__description-label {
   margin-bottom: 15px;
   color: white;
+  margin-top: 15px;
 }
 .label-new {
-  color: white;
-  background-color: $persoColor;
+  color: $dark;
+  border: 3px solid $persoColor;
   padding: 5px 5px 5px 5px;
   border-radius: 2px;
   text-align: center;
 }
 .label-vegan {
-  color: white;
-  background-color: $back-label-vegan;
+  color: $dark;
+  border: 3px solid $back-label-vegan;
   padding: 5px 5px 5px 5px;
   border-radius: 2px;
   text-align: center;
 }
 .label-no-meat {
-  color: white;
-  background-color: $back-label-meat;
+  color: $dark;
+  border: 3px solid $back-label-meat;
   padding: 5px 5px 5px 5px;
   border-radius: 2px;
   text-align: center;
 }
 .label-no-porc {
-  color: white;
-  background-color: $back-label-porc;
+  color: $dark;
+  border: 3px solid $back-label-porc;
   padding: 5px 5px 5px 5px;
   border-radius: 2px;
   text-align: center;
@@ -1215,6 +1238,7 @@ hr {
 .food-price__value {
   background-color: $back-price-value;
   border-radius: 3px;
+  padding: 3px 3px;
 }
 // ===================== #terms styles -- _terms.liquid ============================================
 .terms-content {
@@ -1222,7 +1246,7 @@ hr {
   margin-left: auto;
   margin-right: auto;
   margin-top: 75px;
-  margin-bottom: 25px;
+  margin-bottom: 50px;
 
   a {
     color: $persoColor;
@@ -1245,11 +1269,15 @@ hr {
 .resto-presentation {
   width: 100%;
 }
+.resto-presentation__image {
+    background: url(/assets/full-visual-theme/images/design.jpg) no-repeat center;
+    height: 200px;
+  }
 .resto-presentation__content {
   max-width: 85%;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 75px;
+  margin-top: 30px;
 }
 .resto-presentation__title {
   font-size: 2em;
@@ -1263,7 +1291,7 @@ hr {
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 25px;
+  margin-bottom: 40px;
 }
 // ===================== #photos styles -- _photo.liquid ============================================
 .gallery-item {
@@ -1367,6 +1395,7 @@ hr {
 	margin-left: auto;
 	margin-right: auto;
 	font-family: $slogan;
+  color: white;
   padding-top: 25px;
   padding-bottom: 25px;
 }
@@ -1381,8 +1410,8 @@ hr {
   padding-top: 10px;
   padding-bottom: 25px;
   font-family: $coordinate;
-  text-decoration: underline;
   transition: color 0.2s;
+  color: white;
   &:hover {
     color: $persoColor;
     transition: color 0.2s;
@@ -1572,13 +1601,8 @@ hr {
   hr {
     display: none;
   }
-  // ===================== #food styles -- _food.liquid ============================================
-  .label-new,
-  .label-vegan,
-  .label-no-meat,
-  .label-no-porc {
-    display: inline;
-    margin-top: 0px;
+  .under-title-2 {
+    display: block;
   }
   // ===================== #footer styles -- _footer.liquid ============================================
   .footer {
@@ -1640,7 +1664,6 @@ hr {
   .nav-large__coordinate-number {
   	font-size: 1.4em;
     color: $persoColor;
-    text-decoration: underline;
   }
 // ===================== #menu styles -- _index.liquid ============================================
   .index-header__title {
@@ -1649,6 +1672,9 @@ hr {
     padding-top: 30px;
   }
 // ===================== #menu styles -- _show.liquid ============================================
+  .menus-number {
+    display: none;
+  }
   .menus-nav {
     margin-top: 0px;
     width: 60%;
@@ -1692,14 +1718,17 @@ hr {
     margin-top: 25px;
   }
   .resto-presentation__image {
-    background: url(/assets/full-visual-theme/images/design.jpg) no-repeat center;
     height: 500px;
   }
   .gallery {
     max-width: 100%;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 45px;
+  }
+// ===================== #terms styles -- _terms.liquid ============================================
+  .terms-content {
+    margin-left: 400px;
+    margin-top: 25px;
   }
 // ===================== Background #img styles -- home.liquid ============================================
   .full-background {
@@ -1770,7 +1799,7 @@ hr {
   }
 }
 // ==============================================================================
-// #Style full-visual theme -- Breakpoint - min 1350px
+// #Style full-visual theme -- Breakpoint - min 1200px
 // ==============================================================================
 @media only screen and (min-width: 1200px) {
   // ===================== #menu styles -- _show.liquid ============================================
@@ -1779,6 +1808,14 @@ hr {
   }
   .menus-nav__item {
     width: 33.3333333%;
+  }
+  // ===================== #food styles -- _food.liquid ============================================
+  .label-new,
+  .label-vegan,
+  .label-no-meat,
+  .label-no-porc {
+    display: inline;
+    margin-top: 0px;
   }
 }
 // ==============================================================================

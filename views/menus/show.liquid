@@ -1,5 +1,12 @@
 {% if menu.children? %}
   <div class="margin"></div>
+
+  {% if current_tenant.phone? %}
+    <a class="menus-number" href="tel:{{ current_tenant.phone_uri }}">
+      {{ current_tenant.phone }}
+    </a>
+  {% endif %}
+
   <ol class="menus-nav">
     {% for child in menu.children %}
       <li class="menus-nav__item">
