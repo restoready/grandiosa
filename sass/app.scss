@@ -1289,6 +1289,7 @@ hr {
   width: 250px;
   margin-left: auto;
   margin-right: auto;
+  padding-top: 15px;
 }
 .social-footer {
   margin-top: 0px;
@@ -1472,8 +1473,9 @@ hr {
   margin-top: -15px;
 }
 .hours {
-  width: auto;
-  margin-left: 25px;
+  max-width: 85%;
+  margin-left: auto;
+  margin-right: auto;
 }
 .hours__title {
   margin-bottom: 25px;
@@ -1578,6 +1580,22 @@ hr {
     display: inline;
     margin-top: 0px;
   }
+  // ===================== #footer styles -- _footer.liquid ============================================
+  .footer {
+    width: 100%;
+  }
+  .contact-footer,
+  .newsletter-footer {
+    display: inline-block;
+    width: 45%;
+    vertical-align: top;
+    margin-top: 15px;
+  }
+  .footer-link {
+    display: block;
+    margin-bottom: 0px;
+    text-align: center;
+  }
 }
 // ==============================================================================
 // #Style full-visual theme -- Breakpoint large - min 1024px
@@ -1611,9 +1629,8 @@ hr {
     display: inline-block;
   } 
   .nav-large__coordinate {
-  	bottom: 25px;
-  	position: fixed;
   	width: 300px;
+    margin-top: 50px;
   }
   .nav-large__coordinate-number, 
   .nav-large__coordinate-address {
@@ -1740,6 +1757,16 @@ hr {
     margin-top: -30px;
     text-align: left;
     margin-left: 425px;
+  }
+  .newsletter-footer {
+    margin-top: 0px;
+    width: 65%;
+  }
+  .footer-link {
+    text-align: left;
+  }
+  .subscribe__submit-subscriber {
+    width: 200px;
   }
 }
 // ==============================================================================
