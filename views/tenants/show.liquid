@@ -1,5 +1,10 @@
 <section class="resto-presentation">
 <div class="resto-presentation__image"></div>
+{% if current_tenant.phone? %}
+    <a class="menus-number" href="tel:{{ current_tenant.phone_uri }}">
+      {{ current_tenant.phone }}
+    </a>
+{% endif %}
 <div class="resto-presentation__content">
   <header>
     <h2 class="resto-presentation__title">{{ "Le restaurant" | t }}</h2>

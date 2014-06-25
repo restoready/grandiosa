@@ -4,13 +4,13 @@
       {{ food | custom_image_url: "454x256#", "main_image" | image_tag: 'class:dish__image' }}
     </figure>
   {% endif %}
+
   {% if food.featured_in_menu? %}
-    <div class="dish--featured">
     <h5 class="dish__name dish__name--featured">{{ food.name }}</h5>
   {% else %}
-    <div>
     <h5 class="dish__name">{{ food.name }}</h5>
   {% endif %}
+
   {% unless menu.nil? %}
       {% if food.featured_in_menu? %}
         <i class="featured-dish">{{ | t }}</i>
@@ -28,7 +28,7 @@
       <div class="dish__description-summary">{{ food.summary }}</div>
     {% endif %}
   </div>
-  {% if prices %}
+  {% if prices.size > 0 %}
     <div class="food-price">
       {% if prices.size > 1 or prices.first.title %}
           {% for price in prices %}
@@ -39,5 +39,4 @@
       {% endif %}
     </div>
   {% endif %}
-  </div>
 </li>

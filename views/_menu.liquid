@@ -18,6 +18,7 @@
         </h{{ menu.depth | plus: 1 }}>
       </div>
     </header>
+    <hr class="under-title-{{menu.depth}}">  
   {% endif %}
 
   {% if menu.summary? %}
@@ -51,9 +52,9 @@
   {% endif %}
   {% if menu.depth == 1 %}
     <footer class="menus-footer">
-        <a class="back-to-menu" href="#top">
+        <a class="back-to-menu" onclick="$('#top').animatescroll();">
           <div class="ico">
-            <div class="back-to-menu-label">{{ "Haut de page" | t }}</div>
+            <div class="back-to-menu-label"><div class="arrow"></div>{{ "Haut de page" | t }}<div class="arrow"></div></div>
           </div>
         </a>
         <hr class="separator-2">

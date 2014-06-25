@@ -1,10 +1,5 @@
 <section class="footer">
-  <a class="back-to-top" href="#top">
-    <div class="ico">
-      <div class="arrow-up"></div>
-    </div>
-  </a>
-  
+
   <div class="contact-footer large--hide" itemprop="address" itemscope="" itemtype="http://schema.org/ PostalAddress">
     <h3 class="contact-footer__name">{{ current_tenant.name }}</h3>
     {% if current_tenant.street_address? %}
@@ -32,38 +27,41 @@
     {% endif %}
   </div>
   
-  {% if settings.footer_display_newsletter %}
-    <div class="subscribe">
-      <h3 class="subscribe__title">{{ "Abonnement Newsletter" | t }}</h3>
-      <br />
-      {% subscriberForm %}
-        <input class="subscribe__email-subscriber" id="subscriber_email" name="subscriber[email]" placeholder="Entrez votre  email" type="text">
+  <div class="newsletter-footer">
+    {% if settings.footer_display_newsletter %}
+      <div class="subscribe">
+        <h3 class="subscribe__title">{{ "Abonnement Newsletter" | t }}</h3>
         <br />
-        <button class="subscribe__submit-subscriber btn" name="button" type="submit">{{ "S'abonner" | t }}</button>
-      {% endsubscriberForm %}
-    </div>
-  {% endif %}
-  
-  {% if current_tenant.social_urls? %}
-    <div class="social-footer large--hide">
-      <ul class="social-footer__networks">
-        {% if current_tenant.facebook_url? %}
-          <li class="social-footer__item">
-            <a href="{{current_tenant.facebook_url}}" class="social-footer__facebook">
-              <div class="facebook"></div>
-            </a>
-          </li>
-        {% endif %}
-        {% if current_tenant.twitter_url? %}
-          <li class="social-footer__item">
-            <a href="{{current_tenant.twitter_url}}" class="social-footer__twitter">
-              <div class="twitter"></div>
-            </a>
-          </li>
-        {% endif %}
-      </ul>
-    </div>
-  {% endif %}
+        {% subscriberForm %}
+          <input class="subscribe__email-subscriber" id="subscriber_email" name="subscriber[email]" placeholder=" Entrez votre  email" type="text">
+          <br />
+          <button class="subscribe__submit-subscriber btn" name="button" type="submit">{{ "S'abonner" | t }}</button>
+        {% endsubscriberForm %}
+      </div>
+    {% endif %} 
+  </div>
+
+    {% if current_tenant.social_urls? %}
+      <div class="social-footer large--hide">
+        <ul class="social-footer__networks">
+          {% if current_tenant.facebook_url? %}
+            <li class="social-footer__item">
+              <a href="{{current_tenant.facebook_url}}" class="social-footer__facebook">
+                <div class="facebook"></div>
+              </a>
+            </li>
+          {% endif %}
+          {% if current_tenant.twitter_url? %}
+            <li class="social-footer__item">
+              <a href="{{current_tenant.twitter_url}}" class="social-footer__twitter">
+                <div class="twitter"></div>
+              </a>
+            </li>
+          {% endif %}
+        </ul>
+      </div>
+    {% endif %}
+
   <a class="footer-link" href="{{ current_tenant.terms_of_use_url }}">
     <span class="contact-footer__mentions" itemprop="terms-of-use">{{ "Mentions légales" | t }}</span>
   </a>

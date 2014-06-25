@@ -1297,8 +1297,7 @@ pre {
 html,
 body {
   font-family: "Raleway", sans-serif;
-  height: 100%;
-  overflow-x: hidden; }
+  height: 100%; }
 
 a {
   text-decoration: none;
@@ -1350,31 +1349,39 @@ hr {
   margin-bottom: 15px; }
 
 .back-to-menu {
-  color: white; }
+  color: white;
+  cursor: pointer; }
 
 .ico {
-  width: 100%;
-  margin-bottom: 25px; }
+  width: 100%; }
 
 .back-to-menu-label {
   clear: both;
-  border-radius: 5px;
   text-align: center;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  background-color: #e62f2f;
-  width: 150px;
+  width: 155px;
   margin-left: auto;
   margin-right: auto;
-  transition: color 0.2s; }
+  transition: color 0.2s;
+  font-size: 0.75em;
+  color: #1d1d1d; }
   .back-to-menu-label:hover {
     color: #1d1d1d;
     transition: color 0.2s; }
 
+.arrow {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 10px 10px 10px;
+  border-color: transparent transparent #1d1d1d transparent;
+  display: inline-block;
+  margin: 0 10px; }
+
 .footer__infos {
   width: 100%;
   background-color: #1d1d1d;
-  clear: both; }
+  clear: both;
+  margin-top: 30px; }
 
 .nav-small {
   position: fixed;
@@ -1447,11 +1454,9 @@ hr {
   cursor: pointer;
   font-size: 1.2em;
   border-top: solid 2px #4a4a4a;
-  padding-left: 25px;
-  padding-top: 10px;
-  padding-bottom: 10px;
   transition: background-color 0.5s;
-  font-weight: 200; }
+  font-weight: 200;
+  width: 100%; }
   .nav-small__item:hover,
   .nav-large__item:hover {
     background-color: #e62f2f; }
@@ -1461,8 +1466,13 @@ hr {
 
 .nav-small__item-links,
 .nav-large__item-links {
+  display: inline-block;
   color: #eeeeee;
-  text-decoration: none; }
+  text-decoration: none;
+  width: 100%;
+  padding-left: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px; }
 
 .nav-large__coordinate {
   padding-bottom: 15px;
@@ -1475,25 +1485,40 @@ hr {
   padding-bottom: 15px;
   margin-top: 25px;
   width: 200px;
-  font-size: 0.85em;
+  font-size: 1em;
   margin-left: 25px;
   text-align: center;
   font-family: "Cabin"; }
 
 .nav-small__coordinate-number {
-  color: #e62f2f;
-  text-decoration: underline; }
+  color: #e62f2f; }
 
 .index-header {
   clear: both; }
 
 .index-header__title {
   color: #1d1d1d;
-  margin-top: 20px;
   font-size: 2em;
   font-weight: 700;
-  padding-top: 50px;
+  padding-top: 30px;
   margin-left: 15px; }
+
+.menus-number {
+  display: block;
+  font-size: 2em;
+  line-height: 1;
+  width: 220px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-family: "Cabin";
+  transition: color 0.2s;
+  color: #1d1d1d; }
+  .menus-number:hover {
+    color: #e62f2f;
+    transition: color 0.2s; }
 
 .menus-nav {
   width: 100%;
@@ -1507,7 +1532,8 @@ hr {
 
 .menus-nav__link {
   display: block;
-  position: relative; }
+  position: relative;
+  cursor: pointer; }
 
 .menus-nav__image {
   width: 100%;
@@ -1537,7 +1563,7 @@ hr {
   color: white;
   display: inline-block;
   padding: 5px 10px 5px 10px;
-  border-radius: 3px; }
+  border-radius: 3px 3px 0 0; }
 
 .head-menu {
   display: inline-block; }
@@ -1565,11 +1591,17 @@ hr {
 
 .content-menus-food__title-2 {
   font-size: 1.5em;
-  background-color: #1d1d1d;
-  color: white;
+  color: #1d1d1d;
   padding: 5px 5px 5px 5px;
   border-radius: 2px;
   display: inline; }
+
+.under-title-1 {
+  display: none; }
+
+.under-title-2 {
+  width: 70%;
+  margin-left: 0; }
 
 .content-menus-food__description-title-1 {
   font-size: 1em;
@@ -1591,20 +1623,13 @@ hr {
 
 .block-grid--featured {
   border: 6px solid #1d1d1d;
-  border-radius: 3px;
-  padding-bottom: 5px;
-  padding-right: 10px;
-  padding-left: 20px;
+  border-radius: 0 3px 3px 3px;
+  padding: 0 10px 5px 20px;
   margin-right: 5px; }
 
 .dish {
   margin-top: 25px;
   padding-left: 0px; }
-
-.dish--featured {
-  border: 4px solid #1d1d1d;
-  border-radius: 3px;
-  padding: 5px 5px; }
 
 .dish__name {
   font-weight: 700;
@@ -1612,8 +1637,13 @@ hr {
   font-size: 1.2em; }
 
 .dish__name--featured {
-  color: #e62f2f;
-  display: inline-block; }
+  color: white;
+  display: inline-block;
+  background-color: #1d1d1d;
+  padding: 5px 10px 5px 10px;
+  border-radius: 3px;
+  margin-top: 5px;
+  margin-bottom: 0px; }
 
 .dish__image {
   max-width: 100%; }
@@ -1623,32 +1653,33 @@ hr {
 
 .dish__description-label {
   margin-bottom: 15px;
-  color: white; }
+  color: white;
+  margin-top: 15px; }
 
 .label-new {
-  color: white;
-  background-color: #e62f2f;
+  color: #1d1d1d;
+  border: 3px solid #e62f2f;
   padding: 5px 5px 5px 5px;
   border-radius: 2px;
   text-align: center; }
 
 .label-vegan {
-  color: white;
-  background-color: #3fb330;
+  color: #1d1d1d;
+  border: 3px solid #3fb330;
   padding: 5px 5px 5px 5px;
   border-radius: 2px;
   text-align: center; }
 
 .label-no-meat {
-  color: white;
-  background-color: #ed8a00;
+  color: #1d1d1d;
+  border: 3px solid #ed8a00;
   padding: 5px 5px 5px 5px;
   border-radius: 2px;
   text-align: center; }
 
 .label-no-porc {
-  color: white;
-  background-color: #00b0d4;
+  color: #1d1d1d;
+  border: 3px solid #00b0d4;
   padding: 5px 5px 5px 5px;
   border-radius: 2px;
   text-align: center; }
@@ -1666,14 +1697,15 @@ hr {
 
 .food-price__value {
   background-color: #dddddd;
-  border-radius: 3px; }
+  border-radius: 3px;
+  padding: 3px 3px; }
 
 .terms-content {
   max-width: 85%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 75px;
-  margin-bottom: 25px; }
+  margin-bottom: 50px; }
   .terms-content a {
     color: #e62f2f; }
 
@@ -1693,11 +1725,15 @@ hr {
 .resto-presentation {
   width: 100%; }
 
+.resto-presentation__image {
+  background: url(/assets/full-visual-theme/images/design.jpg) no-repeat center;
+  height: 200px; }
+
 .resto-presentation__content {
   max-width: 85%;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 75px; }
+  margin-top: 30px; }
 
 .resto-presentation__title {
   font-size: 2em;
@@ -1711,7 +1747,7 @@ hr {
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 25px; }
+  margin-bottom: 40px; }
 
 .gallery-item {
   margin-top: 25px; }
@@ -1734,7 +1770,8 @@ hr {
   margin-top: -30px;
   width: 250px;
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+  padding-top: 15px; }
 
 .social-footer {
   margin-top: 0px; }
@@ -1744,7 +1781,6 @@ hr {
 
 .contact-footer__name,
 .socail-footer__title {
-  padding-top: 15px;
   margin-bottom: 15px;
   font-size: 2em;
   font-weight: 500; }
@@ -1760,9 +1796,6 @@ hr {
 .contact-footer__phone-link,
 .contact-footer__mail-link {
   text-decoration: none; }
-
-.subscribe {
-  margin-top: 25px; }
 
 .subscribe__title {
   color: #eeeeee;
@@ -1780,7 +1813,9 @@ hr {
   width: 70%; }
 
 .footer-link {
-  margin-bottom: 15px; }
+  margin-bottom: 15px;
+  display: inline-block;
+  padding-bottom: 10px; }
 
 .full-background {
   width: 100%;
@@ -1809,6 +1844,7 @@ hr {
   margin-left: auto;
   margin-right: auto;
   font-family: "Great Vibes";
+  color: white;
   padding-top: 25px;
   padding-bottom: 25px; }
 
@@ -1823,8 +1859,8 @@ hr {
   padding-top: 10px;
   padding-bottom: 25px;
   font-family: "Cabin";
-  text-decoration: underline;
-  transition: color 0.2s; }
+  transition: color 0.2s;
+  color: white; }
   .home-number:hover {
     color: #e62f2f;
     transition: color 0.2s; }
@@ -1911,8 +1947,9 @@ hr {
   margin-top: -15px; }
 
 .hours {
-  width: auto;
-  margin-left: 25px; }
+  max-width: 85%;
+  margin-left: auto;
+  margin-right: auto; }
 
 .hours__title {
   margin-bottom: 25px; }
@@ -1992,12 +2029,23 @@ hr {
   hr {
     display: none; }
 
-  .label-new,
-  .label-vegan,
-  .label-no-meat,
-  .label-no-porc {
-    display: inline;
-    margin-top: 0px; } }
+  .under-title-2 {
+    display: block; }
+
+  .footer {
+    width: 100%; }
+
+  .contact-footer,
+  .newsletter-footer {
+    display: inline-block;
+    width: 45%;
+    vertical-align: top;
+    margin-top: 15px; }
+
+  .footer-link {
+    display: block;
+    margin-bottom: 0px;
+    text-align: center; } }
 @media only screen and (min-width: 1024px) {
   .nav-large {
     width: 300px;
@@ -2025,9 +2073,8 @@ hr {
     display: inline-block; }
 
   .nav-large__coordinate {
-    bottom: 25px;
-    position: fixed;
-    width: 300px; }
+    width: 300px;
+    margin-top: 50px; }
 
   .nav-large__coordinate-number,
   .nav-large__coordinate-address {
@@ -2036,13 +2083,15 @@ hr {
 
   .nav-large__coordinate-number {
     font-size: 1.4em;
-    color: #e62f2f;
-    text-decoration: underline; }
+    color: #e62f2f; }
 
   .index-header__title {
     margin-left: 400px;
     margin-top: 0px;
     padding-top: 30px; }
+
+  .menus-number {
+    display: none; }
 
   .menus-nav {
     margin-top: 0px;
@@ -2079,14 +2128,16 @@ hr {
     margin-top: 25px; }
 
   .resto-presentation__image {
-    background: url(/assets/full-visual-theme/images/design.jpg) no-repeat center;
     height: 500px; }
 
   .gallery {
     max-width: 100%;
     margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 45px; }
+    margin-right: auto; }
+
+  .terms-content {
+    margin-left: 400px;
+    margin-top: 25px; }
 
   .full-background {
     height: 100%;
@@ -2139,13 +2190,31 @@ hr {
   .footer {
     margin-top: -30px;
     text-align: left;
-    margin-left: 425px; } }
+    margin-left: 425px;
+    max-width: 55%; }
+
+  .newsletter-footer {
+    margin-top: 0px;
+    width: 65%; }
+
+  .footer-link {
+    text-align: left; }
+
+  .subscribe__submit-subscriber {
+    width: 200px; } }
 @media only screen and (min-width: 1200px) {
   .menus-nav {
     width: 66%; }
 
   .menus-nav__item {
-    width: 33.3333333%; } }
+    width: 33.3333333%; }
+
+  .label-new,
+  .label-vegan,
+  .label-no-meat,
+  .label-no-porc {
+    display: inline;
+    margin-top: 0px; } }
 @media only screen and (min-width: 1350px) {
   .slogan {
     font-size: 3.5em;
