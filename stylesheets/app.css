@@ -1783,7 +1783,9 @@ hr {
   width: 70%; }
 
 .footer-link {
-  margin-bottom: 15px; }
+  margin-bottom: 15px;
+  display: inline-block;
+  padding-bottom: 10px; }
 
 .full-background {
   width: 100%;
