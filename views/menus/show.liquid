@@ -10,7 +10,7 @@
   <ol class="menus-nav">
     {% for child in menu.children %}
       <li class="menus-nav__item">
-        <a href="{{ menu.url }}#menu-{{child.id}}" class="menus-nav__link">
+        <a onclick="$('#menu-{{child.id}}').animatescroll();" class="menus-nav__link">
           {% if child.main_image? %}
             {{ child | small_image_url: 'main_image' | image_tag: 'class:menus-nav__image' }}
           {% endif %}
