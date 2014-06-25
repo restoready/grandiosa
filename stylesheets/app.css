@@ -1447,11 +1447,9 @@ hr {
   cursor: pointer;
   font-size: 1.2em;
   border-top: solid 2px #4a4a4a;
-  padding-left: 25px;
-  padding-top: 10px;
-  padding-bottom: 10px;
   transition: background-color 0.5s;
-  font-weight: 200; }
+  font-weight: 200;
+  width: 100%; }
   .nav-small__item:hover,
   .nav-large__item:hover {
     background-color: #e62f2f; }
@@ -1461,8 +1459,13 @@ hr {
 
 .nav-small__item-links,
 .nav-large__item-links {
+  display: inline-block;
   color: #eeeeee;
-  text-decoration: none; }
+  text-decoration: none;
+  width: 100%;
+  padding-left: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px; }
 
 .nav-large__coordinate {
   padding-bottom: 15px;

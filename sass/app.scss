@@ -988,11 +988,9 @@ hr {
     cursor: pointer;
     font-size: 1.2em;
     border-top: solid 2px $border;
-    padding-left: 25px;
-    padding-top: 10px;
-    padding-bottom: 10px;
     transition: background-color 0.5s;
     font-weight: 200;
+    width: 100%;
     &:hover {
       background-color: $hover;
     }
@@ -1002,8 +1000,13 @@ hr {
 }
 .nav-small__item-links, 
 .nav-large__item-links {
+  display: inline-block;
   color: $clear;
   text-decoration: none;
+  width: 100%;
+  padding-left: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 .nav-large__coordinate {
   padding-bottom: 15px;
