@@ -5,8 +5,10 @@
     </figure>
   {% endif %}
   {% if food.featured_in_menu? %}
+    <div class="dish--featured">
     <h5 class="dish__name dish__name--featured">{{ food.name }}</h5>
   {% else %}
+    <div>
     <h5 class="dish__name">{{ food.name }}</h5>
   {% endif %}
   {% unless menu.nil? %}
@@ -37,4 +39,5 @@
       {% endif %}
     </div>
   {% endif %}
+  </div>
 </li>

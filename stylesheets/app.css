@@ -1602,6 +1602,11 @@ hr {
   margin-top: 25px;
   padding-left: 0px; }
 
+.dish--featured {
+  border: 4px solid #1d1d1d;
+  border-radius: 3px;
+  padding: 5px 5px; }
+
 .dish__name {
   font-weight: 700;
   margin-bottom: 10px;
@@ -1975,9 +1980,6 @@ hr {
     display: block;
     margin-top: 3px; }
 
-  .dish--featured {
-    font-size: 0.70em; }
-
   .block-grid > li:nth-of-type(2n+1) {
     clear: left; }
 
@@ -1996,10 +1998,7 @@ hr {
   .label-no-meat,
   .label-no-porc {
     display: inline;
-    margin-top: 0px; }
-
-  .dish--featured {
-    font-size: 1em; } }
+    margin-top: 0px; } }
 @media only screen and (min-width: 1024px) {
   .nav-large {
     width: 300px;
