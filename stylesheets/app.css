@@ -1516,15 +1516,15 @@ hr {
 
 .menus-nav__title {
   color: white;
-  width: 100%;
+  width: auto;
   background-color: black;
   opacity: 0.8;
   position: absolute;
   bottom: 0;
   -webkit-transform: translateY(-50%);
   left: 0;
-  font-family: "Oswald";
-  font-size: 1em;
+  font-family: "Cabin";
+  font-size: 1.5em;
   padding: 5px 5px; }
 
 .menus-food {
@@ -2046,7 +2046,7 @@ hr {
 
   .menus-nav {
     margin-top: 0px;
-    width: 72%;
+    width: 60%;
     margin-left: 375px; }
 
   .menus-nav__item {
@@ -2140,13 +2140,19 @@ hr {
     margin-top: -30px;
     text-align: left;
     margin-left: 425px; } }
+@media only screen and (min-width: 1200px) {
+  .menus-nav {
+    width: 66%; }
+
+  .menus-nav__item {
+    width: 33.3333333%; } }
 @media only screen and (min-width: 1350px) {
   .slogan {
     font-size: 3.5em;
     padding-top: 20%; }
 
   .menus-nav {
-    width: 75%; }
+    width: 70%; }
 
   .menus-nav__item {
     width: 25%; }
@@ -2164,7 +2170,7 @@ hr {
     font-size: 3.5em; }
 
   .menus-nav {
-    width: 78%; }
+    width: 72%; }
 
   .menus-nav__item {
     width: 25%; }
@@ -2176,7 +2182,7 @@ hr {
     font-size: 4em; }
 
   .menus-nav {
-    width: 85%; }
+    width: 77%; }
 
   .menus-nav__item {
     width: 25%; }

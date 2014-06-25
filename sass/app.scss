@@ -823,7 +823,7 @@ $cabin: "Cabin";
 // ==============================================================================
 $coordinate: $cabin;
 $text: $raleway;
-$title-menus: $oswald;
+$title-menus: $cabin;
 $slogan: $great;
 $hours: $cabin;
 $price: $cabin;
@@ -1059,7 +1059,7 @@ hr {
 } 
 .menus-nav__title {
   color: white;
-  width: 100%;
+  width: auto;
   background-color: black;
   opacity: 0.8;
   position: absolute;
@@ -1067,7 +1067,7 @@ hr {
   -webkit-transform: translateY(-50%);
   left: 0;
   font-family: $title-menus;
-  font-size: 1em;
+  font-size: 1.5em;
   padding: 5px 5px;
 }
 // ===================== #menus-food styles -- _menu.liquid ============================================
@@ -1629,7 +1629,7 @@ hr {
 // ===================== #menu styles -- _show.liquid ============================================
   .menus-nav {
     margin-top: 0px;
-    width: 72%;
+    width: 60%;
     margin-left: 375px;
   }
   .menus-nav__item {
@@ -1740,6 +1740,18 @@ hr {
 // ==============================================================================
 // #Style full-visual theme -- Breakpoint - min 1350px
 // ==============================================================================
+@media only screen and (min-width: 1200px) {
+  // ===================== #menu styles -- _show.liquid ============================================
+  .menus-nav {
+    width: 66%;
+  }
+  .menus-nav__item {
+    width: 33.3333333%;
+  }
+}
+// ==============================================================================
+// #Style full-visual theme -- Breakpoint - min 1350px
+// ==============================================================================
 @media only screen and (min-width: 1350px) {
 // ===================== Background #img styles -- home.liquid ============================================
   .slogan {
@@ -1748,7 +1760,7 @@ hr {
   }
   // ===================== #menu styles -- _show.liquid ============================================
   .menus-nav {
-    width: 75%;
+    width: 70%;
   }
   .menus-nav__item {
     width: 25%;
@@ -1774,7 +1786,7 @@ hr {
   }
   // ===================== #menu styles -- _show.liquid ============================================
   .menus-nav {
-    width: 78%;
+    width: 72%;
   }
   .menus-nav__item {
     width: 25%;
@@ -1794,7 +1806,7 @@ hr {
   }
   // ===================== #menu styles -- _show.liquid ============================================
   .menus-nav {
-    width: 85%;
+    width: 77%;
   }
   .menus-nav__item {
     width: 25%;
