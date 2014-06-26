@@ -831,7 +831,6 @@ $price: $cabin;
 // #Style full-visual theme -- RestoReady -- Défault mobile first
 // ==============================================================================
 // =====================      #layout      ============================================
-
 html, 
 body {
   font-family: $text, sans-serif;
@@ -926,7 +925,9 @@ hr {
   width: 100%;
   background-color: $dark;
   clear: both;
-  margin-top: 25px;
+  padding-top: 20px;
+  /* .push must be the same height as footer */
+  height: 175px;
 }
 // ===================== #nav styles -- _nav.liquid ============================================
 .nav-small {
@@ -1332,6 +1333,17 @@ hr {
   margin-top: 15px;
 }
 // ===================== #contact-page styles -- message _new.liquid & _thanks.liquid ============================================
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -175px; 
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+  /* .push must be the same height as footer */
+  height: 175px; 
+}
 .contact-page {
   padding-top: 75px;
   max-width: 85%;

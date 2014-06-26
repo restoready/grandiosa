@@ -1384,7 +1384,9 @@ hr {
   width: 100%;
   background-color: #1d1d1d;
   clear: both;
-  margin-top: 25px; }
+  padding-top: 20px;
+  /* .push must be the same height as footer */
+  height: 175px; }
 
 .nav-small {
   position: fixed;
@@ -1777,6 +1779,17 @@ hr {
 .subscribe-page__description {
   padding-bottom: 25px;
   margin-top: 15px; }
+
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -175px; }
+
+.page-wrap:after {
+  content: "";
+  display: block;
+  /* .push must be the same height as footer */
+  height: 175px; }
 
 .contact-page {
   padding-top: 75px;
