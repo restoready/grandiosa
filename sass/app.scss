@@ -956,17 +956,17 @@ hr {
   display: block;
   position: relative;
   cursor: pointer;
-}
-.menus-nav__image {
-  width: 100%;
-  display: block;
-  position: relative;
   opacity: 0.75;
   transition: opacity 0.2s;
   -webkit-transform: translateZ(0);
   &:hover {
     opacity: 1;
   }
+}
+.menus-nav__image {
+  width: 100%;
+  display: block;
+  position: relative;
 } 
 .menus-nav__title {
   color: $persoColor3;
@@ -1901,5 +1901,14 @@ hr {
   .infos-local {
     max-width: 80%;
     margin-left: 400px;
+  }
+}
+// ==============================================================================
+// #Style full-visual theme -- Breakpoint - min 1870px
+// ==============================================================================
+@media only screen and (min-width: 1870px) {
+  // ===================== #food styles -- _food.liquid ============================================
+  .food-price {
+    padding-right: 20px;
   }
 }
