@@ -1384,9 +1384,7 @@ hr {
   width: 100%;
   background-color: #1d1d1d;
   clear: both;
-  padding-top: 20px;
-  /* .push must be the same height as footer */
-  height: 175px; }
+  padding-top: 20px; }
 
 .nav-small {
   position: fixed;
@@ -1605,7 +1603,7 @@ hr {
   display: none; }
 
 .under-title-2 {
-  width: 70%;
+  width: 100%;
   margin-left: 0; }
 
 .content-menus-food__description-title-1 {
@@ -1770,6 +1768,19 @@ hr {
   max-width: 85%;
   margin-left: auto;
   margin-right: auto; }
+  .subscribe-page input {
+    display: block;
+    width: 300px;
+    height: 35px;
+    margin-top: 25px; }
+
+.submit-subscriber {
+  margin-top: 0px; }
+
+.subscriber-error {
+  color: #e62f2f;
+  font-weight: 700;
+  text-transform: uppercase; }
 
 .subscribe-page__title {
   color: #1d1d1d;
@@ -1783,7 +1794,7 @@ hr {
 .page-wrap {
   min-height: 100%;
   /* equal to footer height */
-  margin-bottom: -175px; }
+  margin-bottom: -200px; }
 
 .page-wrap:after {
   content: "";
@@ -1852,9 +1863,11 @@ hr {
 .contact-footer__postal-code,
 .contact-footer__address-locality,
 .contact-footer__phone,
-.contact-footer__mail,
-.contact-footer__mentions {
+.contact-footer__mail {
   font-weight: 500; }
+
+.contact-footer__mentions {
+  color: #858585; }
 
 .contact-footer__phone-link,
 .contact-footer__mail-link {
@@ -2055,8 +2068,7 @@ hr {
 .directions-footer {
   width: 100%;
   bottom: 0;
-  position: absolute;
-  bottom: 0; }
+  position: absolute; }
 
 .directions-footer__btn {
   width: 200px;
@@ -2086,14 +2098,34 @@ hr {
     padding-right: 0px;
     margin-right: 25px; }
 
+  .under-title-2 {
+    width: 95%; }
+
   .menus-nav__item {
-    width: 33.3333333%; } }
+    width: 33.3333333%; }
+
+  .news-footer {
+    max-width: 85%;
+    margin-left: auto;
+    margin-right: auto; }
+
+  .news-footer__btn {
+    margin-left: 0; }
+
+  .presentation-footer {
+    max-width: 85%;
+    margin-left: auto;
+    margin-right: auto; }
+
+  .presentation-footer__btn {
+    margin-left: 0; } }
 @media only screen and (min-width: 650px) {
   hr {
     display: none; }
 
   .under-title-2 {
-    display: block; }
+    display: block;
+    width: 97%; }
 
   .footer {
     width: 100%; }
@@ -2110,6 +2142,10 @@ hr {
     margin-bottom: 0px;
     text-align: center; } }
 @media only screen and (min-width: 1024px) {
+  .footer__infos {
+    /* .push must be the same height as footer */
+    height: 200px; }
+
   .nav-large {
     width: 300px;
     height: 100%;
@@ -2185,6 +2221,9 @@ hr {
   .block-grid > li:nth-of-type(3n+1) {
     clear: left; }
 
+  .under-title-2 {
+    width: 63%; }
+
   .resto-presentation__content {
     margin-left: 400px;
     margin-right: 0;
@@ -2241,8 +2280,10 @@ hr {
     bottom: 15%; }
 
   .directions-footer {
-    max-width: 60%;
-    margin-left: 400px; }
+    max-width: 50%; }
+
+  .directions-footer__btn {
+    margin-left: 0; }
 
   .subscribe {
     padding-top: 25px; }
@@ -2256,7 +2297,7 @@ hr {
   .footer {
     margin-top: -30px;
     text-align: left;
-    margin-left: 425px;
+    margin-left: 400px;
     max-width: 55%; }
 
   .newsletter-footer {
@@ -2286,6 +2327,9 @@ hr {
   .menus-nav__item {
     width: 33.3333333%; }
 
+  .under-title-2 {
+    width: 64%; }
+
   .label-new,
   .label-vegan,
   .label-no-meat,
@@ -2306,11 +2350,7 @@ hr {
   .infos-local {
     max-width: 75%;
     margin-left: 400px;
-    bottom: 12%; }
-
-  .directions-footer {
-    max-width: 70%;
-    margin-left: 400px; } }
+    bottom: 12%; } }
 @media only screen and (min-width: 1500px) {
   .slogan {
     font-size: 3.5em; }
@@ -2333,10 +2373,9 @@ hr {
   .menus-nav__item {
     width: 25%; }
 
+  .under-title-2 {
+    width: 65%; }
+
   .infos-local {
     max-width: 80%;
-    margin-left: 400px; }
-
-  .directions-footer {
-    max-width: 75%;
     margin-left: 400px; } }
