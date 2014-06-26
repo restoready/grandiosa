@@ -1,5 +1,7 @@
 <section class="resto-presentation page-wrap">
+<div class="resto-presentation__image-wrapper">
 <div class="resto-presentation__image"></div>
+</div>
 {% if current_tenant.phone? %}
     <a class="menus-number" href="tel:{{ current_tenant.phone_uri }}">
       {{ current_tenant.phone }}

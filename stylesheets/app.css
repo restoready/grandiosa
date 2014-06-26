@@ -22,9 +22,10 @@
   Grid Setup
   Helper Classes
   Links and Buttons
-  Icons
   Color
   Proxy Color
+  Fonts
+  Proxy Fonts
   Style Full-visual theme -- RestoReady -- Défault mobile first
   Style Full-visual theme -- Breakpoint large - min 1024px
   Style Full-visual theme -- Breakpoint large - min 1350px
@@ -1162,141 +1163,9 @@ pre {
   padding: 0;
   margin: 0; }
 
-.icon-fallback-text .icon {
-  display: none; }
-  .supports-fontface .icon-fallback-text .icon {
-    display: inline-block; }
-
-.supports-fontface .icon-fallback-text .fallback-text {
-  /* a generic way to visually hide content while remaining accessible to screen readers (h5bp.com) */
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-  position: absolute;
-  height: 1px;
-  width: 1px; }
-
-.icon:before {
-  display: none; }
-
-.supports-fontface .icon:before {
-  display: inline;
-  font-family: "icons";
-  text-decoration: none;
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
-
-.icon-cart:before {
-  content: "\5b"; }
-
-.icon-american_express:before {
-  content: "\41"; }
-
-.icon-master:before {
-  content: "\4d"; }
-
-.icon-visa:before {
-  content: "\56"; }
-
-.icon-paypal:before {
-  content: "\50"; }
-
-.icon-discover:before {
-  content: "\44"; }
-
-.icon-stripe:before {
-  content: "\53"; }
-
-.icon-interac:before {
-  content: "\49"; }
-
-.icon-cirrus:before {
-  content: "\43"; }
-
-.icon-google_wallet:before {
-  content: "\47"; }
-
-.icon-dk:before {
-  content: "\64"; }
-
-.icon-jcb:before {
-  content: "\4a"; }
-
-.icon-maestro:before {
-  content: "\6d"; }
-
-.icon-diners_club:before {
-  content: "\63"; }
-
-.icon-bitcoin:before {
-  content: "\42"; }
-
-.icon-tumblr:before {
-  content: "\74"; }
-
-.icon-vimeo:before {
-  content: "\76"; }
-
-.icon-youtube:before {
-  content: "\79"; }
-
-.icon-google:before {
-  content: "\67"; }
-
-.icon-twitter:before {
-  content: "\54"; }
-
-.icon-facebook:before {
-  content: "\66"; }
-
-.icon-pinterest:before {
-  content: "\70"; }
-
-.icon-instagram:before {
-  content: "\69"; }
-
-.icon-fancy:before {
-  content: "\46"; }
-
-.payment-icons {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -o-user-select: none;
-  user-select: none;
-  cursor: default; }
-  .payment-icons li {
-    margin: 0 6px 6px;
-    color: red;
-    cursor: default; }
-  .payment-icons .icon {
-    font-size: 30px;
-    line-height: 30px; }
-  .payment-icons .fallback-text {
-    text-transform: capitalize; }
-
-.social-icons li {
-  margin: 0 12px 12px;
-  vertical-align: middle; }
-  @media screen and (min-width: 481px) {
-    .social-icons li {
-      margin-left: 0; } }
-  .social-icons li .icon {
-    font-size: 30px;
-    line-height: 26px; }
-  .social-icons li a {
-    color: red; }
-    .social-icons li a:hover {
-      color: #0000cc; }
-
 html,
 body {
-  font-family: "Raleway", sans-serif;
+  font-family: "Cabin", sans-serif;
   height: 100%; }
 
 a {
@@ -1349,7 +1218,7 @@ hr {
   margin-bottom: 15px; }
 
 .back-to-menu {
-  color: white;
+  color: #eeeeee;
   cursor: pointer; }
 
 .ico {
@@ -1364,9 +1233,6 @@ hr {
   transition: color 0.2s;
   font-size: 0.75em;
   color: #1d1d1d; }
-  .back-to-menu-label:hover {
-    color: #1d1d1d;
-    transition: color 0.2s; }
 
 .arrow {
   width: 0;
@@ -1450,13 +1316,13 @@ hr {
   list-style: none;
   margin-top: 40px;
   margin-left: 0;
-  border-bottom: solid 2px #4a4a4a; }
+  border-bottom: solid 2px #606060; }
 
 .nav-small__item,
 .nav-large__item {
   cursor: pointer;
   font-size: 1.2em;
-  border-top: solid 2px #4a4a4a;
+  border-top: solid 2px #606060;
   transition: background-color 0.5s;
   font-weight: 200;
   width: 100%; }
@@ -1531,7 +1397,8 @@ hr {
 
 .menus-nav__item {
   width: 50%;
-  float: left; }
+  float: left;
+  background-color: #1d1d1d; }
 
 .menus-nav__link {
   display: block;
@@ -1541,13 +1408,18 @@ hr {
 .menus-nav__image {
   width: 100%;
   display: block;
-  position: relative; }
+  position: relative;
+  opacity: 0.75;
+  transition: opacity 0.2s;
+  -webkit-transform: translateZ(0); }
+  .menus-nav__image:hover {
+    opacity: 1; }
 
 .menus-nav__title {
-  color: white;
+  color: #eeeeee;
   width: auto;
-  background-color: black;
-  opacity: 0.8;
+  background-color: #1d1d1d;
+  opacity: 0.9;
   position: absolute;
   bottom: 0;
   -webkit-transform: translateY(-50%);
@@ -1563,7 +1435,7 @@ hr {
 
 .menus-food__head--featured {
   background-color: #1d1d1d;
-  color: white;
+  color: #eeeeee;
   display: inline-block;
   padding: 5px 10px 5px 10px;
   border-radius: 3px 3px 0 0; }
@@ -1615,7 +1487,7 @@ hr {
   margin-top: 15px; }
 
 .content-menus-food__description--featured {
-  color: white; }
+  color: #eeeeee; }
 
 .menus-footer {
   width: 100%;
@@ -1640,7 +1512,7 @@ hr {
   font-size: 1.2em; }
 
 .dish__name--featured {
-  color: white;
+  color: #eeeeee;
   display: inline-block;
   background-color: #1d1d1d;
   padding: 5px 10px 5px 10px;
@@ -1652,11 +1524,11 @@ hr {
   max-width: 100%; }
 
 .dish__description-summary {
-  font-weight: 600; }
+  font-weight: 500; }
 
 .dish__description-label {
   margin-bottom: 15px;
-  color: white;
+  color: #eeeeee;
   margin-top: 15px; }
 
 .label-new {
@@ -1693,7 +1565,7 @@ hr {
 .food-price__label,
 .food-price__value {
   font-family: "Cabin";
-  font-weight: 600;
+  font-weight: 500;
   font-style: italic;
   color: #1d1d1d;
   margin-top: 10px; }
@@ -1728,9 +1600,14 @@ hr {
 .resto-presentation {
   width: 100%; }
 
+.resto-presentation__image-wrapper {
+  background-color: #000; }
+
 .resto-presentation__image {
-  background: url(/assets/full-visual-theme/images/design.jpg) no-repeat center;
-  height: 200px; }
+  background: url(/assets/full-visual-theme/images/restaurant.jpg) no-repeat center;
+  background-size: cover;
+  height: 200px;
+  opacity: 0.7; }
 
 .resto-presentation__content {
   max-width: 85%;
@@ -1818,7 +1695,7 @@ hr {
     display: block;
     margin-top: 25px;
     font-style: italic;
-    font-weight: 600; }
+    font-weight: 500; }
 
 .contact-page__title {
   color: #1d1d1d;
@@ -1903,7 +1780,8 @@ hr {
 
 .full-background__image {
   height: 225px;
-  background: url(/assets/full-visual-theme/images/design.jpg) no-repeat center;
+  background: url(/assets/full-visual-theme/images/full-home.jpg) no-repeat center;
+  background-size: cover;
   opacity: 0.6; }
 
 .slogan-wrapper {
@@ -1920,7 +1798,7 @@ hr {
   margin-left: auto;
   margin-right: auto;
   font-family: "Great Vibes";
-  color: white;
+  color: #eeeeee;
   padding-top: 25px;
   padding-bottom: 25px; }
 
@@ -1936,7 +1814,7 @@ hr {
   padding-bottom: 25px;
   font-family: "Cabin";
   transition: color 0.2s;
-  color: white; }
+  color: #eeeeee; }
   .home-number:hover {
     color: #e62f2f;
     transition: color 0.2s; }
@@ -1986,10 +1864,7 @@ hr {
 .presentation {
   width: 100%;
   height: auto;
-  background: url(/assets/full-visual-theme/images/pres.jpg) no-repeat center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
+  background: url(/assets/full-visual-theme/images/presentation.jpg) no-repeat center;
   background-size: cover; }
 
 .home-description {
@@ -2016,9 +1891,6 @@ hr {
   width: 100%;
   height: auto;
   background: url(/assets/full-visual-theme/images/horaires.jpg) no-repeat center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
   background-size: cover;
   margin-top: -15px; }
 
@@ -2033,7 +1905,7 @@ hr {
 .hours__information {
   color: #eeeeee;
   margin-top: 25px;
-  font-weight: 600;
+  font-weight: 500;
   padding-bottom: 25px; }
 
 .hours__table {
@@ -2063,7 +1935,7 @@ hr {
 .infos-local__address {
   color: #1d1d1d;
   font-size: 1em;
-  font-weight: 600; }
+  font-weight: 500; }
 
 .directions-footer {
   width: 100%;

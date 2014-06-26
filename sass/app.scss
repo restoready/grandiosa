@@ -21,9 +21,10 @@
   Grid Setup
   Helper Classes
   Links and Buttons
-  Icons
   Color
   Proxy Color
+  Fonts
+  Proxy Fonts
   Style Full-visual theme -- RestoReady -- Défault mobile first
   Style Full-visual theme -- Breakpoint large - min 1024px
   Style Full-visual theme -- Breakpoint large - min 1350px
@@ -670,115 +671,6 @@ $class-type: unquote(".");
   padding: 0;
   margin: 0;
 }
-// ==============================================================================
-// #Icons
-// ==============================================================================
-.icon-fallback-text .icon {
-  display: none;
-
-  .supports-fontface & {
-    display: inline-block;
-  }
-}
-
-.supports-fontface .icon-fallback-text .fallback-text {
-  /* a generic way to visually hide content while remaining accessible to screen readers (h5bp.com) */
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-  position: absolute;
-  height: 1px;
-  width: 1px;
-}
-
-.icon:before {
-  display: none;
-}
-
-.supports-fontface .icon:before {
-  display: inline;
-  font-family: $socialIconFontStack;
-  text-decoration: none;
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-// Icon mapping
-.icon-cart:before { content: "\5b"; }
-.icon-american_express:before { content: "\41"; }
-.icon-master:before { content: "\4d"; }
-.icon-visa:before { content: "\56"; }
-.icon-paypal:before { content: "\50"; }
-.icon-discover:before { content: "\44"; }
-.icon-stripe:before { content: "\53"; }
-.icon-interac:before { content: "\49"; }
-.icon-cirrus:before { content: "\43"; }
-.icon-google_wallet:before { content: "\47"; }
-.icon-dk:before { content: "\64"; }
-.icon-jcb:before { content: "\4a"; }
-.icon-maestro:before { content: "\6d"; }
-.icon-diners_club:before { content: "\63"; }
-.icon-bitcoin:before { content: "\42"; }
-.icon-tumblr:before { content: "\74"; }
-.icon-vimeo:before { content: "\76"; }
-.icon-youtube:before { content: "\79"; }
-.icon-google:before { content: "\67"; }
-.icon-twitter:before { content: "\54"; }
-.icon-facebook:before { content: "\66"; }
-.icon-pinterest:before { content: "\70"; }
-.icon-instagram:before { content: "\69"; }
-.icon-fancy:before { content: "\46"; }
-
-.payment-icons {
-  -webkit-user-select: none;
-  -moz-user-select:    none;
-  -ms-user-select:     none;
-  -o-user-select:      none;
-  user-select:         none;
-  cursor: default;
-
-  li {
-    margin: 0 $gutter/4 $gutter/4;
-    color: red;
-    cursor: default;
-  }
-
-  .icon {
-    font-size: 30px;
-    line-height: 30px;
-  }
-
-  .fallback-text {
-    text-transform: capitalize;
-  }
-}
-
-.social-icons li {
-  margin: 0 $gutter/2 $gutter/2;
-  vertical-align: middle;
-
-  @include at-query ($min, $postSmall) {
-    margin-left: 0;
-  }
-
-  .icon {
-    font-size: 30px;
-    line-height: 26px;
-  }
-
-  a {
-    color: red;
-
-    &:hover {
-      color: darken(blue, 10%);
-    }
-  }
-}
 
 // ==============================================================================
 // #Color
@@ -786,7 +678,7 @@ $class-type: unquote(".");
 $red: #e62f2f;
 $dark-grey: #1D1D1D;
 $white: #EEEEEE;
-$light-grey: #4A4A4A;
+$grey: #4A4A4A;
 $soft-grey: #dddddd;
 $grey: #606060;
 $green: #3FB330;
@@ -795,11 +687,10 @@ $blue: #00B0D4;
 // ==============================================================================
 // #Proxy color
 // ==============================================================================
-$dark: $dark-grey;
-$persoColor: $red;
-$clear: $white;
-$border: $light-grey;
-$back-title: $dark-grey;
+$persoColor1: $dark-grey;
+$persoColor2: $red;
+$persoColor3: $white;
+$border: $grey;
 $back-label-vegan: $green;
 $back-label-meat: $orange;
 $back-label-porc: $blue;
@@ -807,21 +698,13 @@ $back-price-value: $soft-grey;
 // ==============================================================================
 // #Fonts
 // ==============================================================================
-$oswald: "Oswald";
-$raleway: "Raleway";
-$helvetica: "Helvetica";
 $great: "Great Vibes";
 $cabin: "Cabin";
 // ==============================================================================
 // #Proxy fonts
 // ==============================================================================
-$coordinate: $cabin;
-$text: $raleway;
-$title-menus: $cabin;
+$text: $cabin;
 $slogan: $great;
-$hours: $cabin;
-$price: $cabin;
-
 // ==============================================================================
 // #Style full-visual theme -- RestoReady -- Défault mobile first
 // ==============================================================================
@@ -833,12 +716,12 @@ body {
 }
 a {
   text-decoration: none;
-  color: $clear;
+  color: $persoColor3;
 }
 h1,
 span, 
 tbody {
-	color: $clear;
+	color: $persoColor3;
 }
 table, 
 tr, 
@@ -847,14 +730,14 @@ th {
   border:0;
 }
 hr {
-  border: solid 1px $dark;
+  border: solid 1px $persoColor1;
   width: 70%;
   margin-left: auto;
   margin-right: auto;
 }
 .btn {
-  background-color: $persoColor;
-  color: $clear;
+  background-color: $persoColor2;
+  color: $persoColor3;
   margin-top: 50px;
   margin-bottom: 25px;
   width: 200px;
@@ -863,7 +746,7 @@ hr {
   transition: color 0.2s;
 
   &:hover {
-    color: $dark;
+    color: $persoColor1;
     transition: color 0.2s;
   }
 }
@@ -883,7 +766,7 @@ hr {
   margin-bottom: 15px;
 }
 .back-to-menu {
-  color: white;
+  color: $persoColor3;
   cursor: pointer;
 }
 .ico {
@@ -897,18 +780,14 @@ hr {
   margin-right: auto;
   transition: color 0.2s;
   font-size: 0.75em;
-  color: $dark;
-  &:hover {
-    color: $dark;
-    transition: color 0.2s;
-  }
+  color: $persoColor1;
 }
 .arrow {
   width: 0;
   height: 0;
   border-style: solid;
   border-width: 0 10px 10px 10px;
-  border-color: transparent transparent $dark transparent;
+  border-color: transparent transparent $persoColor1 transparent;
   display: inline-block;
   margin: 0 10px;
 }
@@ -918,7 +797,7 @@ hr {
 // ===================== #content styles -- front.liquid ============================================
 .footer__infos {
   width: 100%;
-  background-color: $dark;
+  background-color: $persoColor1;
   clear: both;
   padding-top: 20px;
 }
@@ -928,7 +807,7 @@ hr {
   top: 0;
   z-index: 9999;
 	width: 100%;
-	background-color: $dark;
+	background-color: $persoColor1;
 }
 .nav-small__logo {
 	padding-top: 5px;
@@ -974,7 +853,7 @@ hr {
   width: 250px;
   display: none;
   z-index: 99; /* Slidebars sit behind sb-site. */
-  background-color: $dark; /* Default Slidebars background colour, overwrite this with your own css. */
+  background-color: $persoColor1; /* Default Slidebars background colour, overwrite this with your own css. */
 }
 .sb-right {
   right: 0; /* Set Slidebar to the right. */
@@ -997,7 +876,7 @@ hr {
     font-weight: 200;
     width: 100%;
     &:hover {
-      background-color: $persoColor;
+      background-color: $persoColor2;
     }
 }
 .nav-small__item {
@@ -1006,7 +885,7 @@ hr {
 .nav-small__item-links, 
 .nav-large__item-links {
   display: inline-block;
-  color: $clear;
+  color: $persoColor3;
   text-decoration: none;
   width: 100%;
   padding-left: 25px;
@@ -1018,7 +897,7 @@ hr {
   margin-top: 25px;
   width: 200px;
   font-size: 1em;
-  font-family: $coordinate;
+  font-family: $text;
 }
 .nav-small__coordinate {
   padding-bottom: 15px;
@@ -1027,17 +906,17 @@ hr {
   font-size: 1em;
   margin-left: 25px;
   text-align: center;
-  font-family: $coordinate;
+  font-family: $text;
 }
 .nav-small__coordinate-number {
-  color: $persoColor;
+  color: $persoColor2;
 }
 // ===================== #menu styles -- _index.liquid ============================================
 .index-header {
   clear: both;
 }
 .index-header__title {
-  color: $dark;
+  color: $persoColor1;
   font-size: 2em;
   font-weight: 700;
   padding-top: 30px;
@@ -1054,11 +933,11 @@ hr {
   margin-right: auto;
   padding-top: 15px;
   padding-bottom: 15px;
-  font-family: $coordinate;
+  font-family: $text;
   transition: color 0.2s;
-  color: $dark;
+  color: $persoColor1;
   &:hover {
-    color: $persoColor;
+    color: $persoColor2;
     transition: color 0.2s;
   }
 }
@@ -1071,6 +950,7 @@ hr {
 .menus-nav__item {
   width: 50%;
   float: left;
+  background-color: $persoColor1;
 }
 .menus-nav__link {
   display: block;
@@ -1081,17 +961,23 @@ hr {
   width: 100%;
   display: block;
   position: relative;
+  opacity: 0.75;
+  transition: opacity 0.2s;
+  -webkit-transform: translateZ(0);
+  &:hover {
+    opacity: 1;
+  }
 } 
 .menus-nav__title {
-  color: white;
+  color: $persoColor3;
   width: auto;
-  background-color: black;
-  opacity: 0.8;
+  background-color: $persoColor1;
+  opacity: 0.9;
   position: absolute;
   bottom: 0;
   -webkit-transform: translateY(-50%);
   left: 0;
-  font-family: $title-menus;
+  font-family: $text;
   font-size: 1.5em;
   padding: 5px 5px;
 }
@@ -1102,8 +988,8 @@ hr {
   margin-top: 50px;
 }
 .menus-food__head--featured {
-  background-color: $dark;
-  color: white;
+  background-color: $persoColor1;
+  color: $persoColor3;
   display: inline-block;
   padding: 5px 10px 5px 10px;
   border-radius: 3px 3px 0 0;
@@ -1134,7 +1020,7 @@ hr {
 }
 .content-menus-food__title-2 {
   font-size: 1.5em;
-  color: $dark;
+  color: $persoColor1;
   padding: 5px 5px 5px 5px;
   border-radius: 2px;
   display: inline;
@@ -1148,14 +1034,14 @@ hr {
 }
 .content-menus-food__description-title-1 {
   font-size: 1em;
-  color: $dark;
+  color: $persoColor1;
   font-style: italic;
 }
 .content-menus-food__description-title-2 {
   margin-top: 15px;
 }
 .content-menus-food__description--featured {
-  color: white;
+  color: $persoColor3;
 }
 .menus-footer {
   width: 100%;
@@ -1165,7 +1051,7 @@ hr {
   overflow: hidden;
 }
 .block-grid--featured {
-  border: 6px solid $dark;
+  border: 6px solid $persoColor1;
   border-radius: 0 3px 3px 3px;
   padding: 0 10px 5px 20px;
   margin-right: 5px;
@@ -1181,9 +1067,9 @@ hr {
   font-size: 1.2em;
 }
 .dish__name--featured {
-  color: white;
+  color: $persoColor3;
   display: inline-block;
-  background-color: $dark;
+  background-color: $persoColor1;
   padding: 5px 10px 5px 10px;
   border-radius: 3px;
   margin-top: 5px;
@@ -1193,36 +1079,36 @@ hr {
   max-width: 100%;
 }
 .dish__description-summary {
-  font-weight: 600;
+  font-weight: 500;
 }
 .dish__description-label {
   margin-bottom: 15px;
-  color: white;
+  color: $persoColor3;
   margin-top: 15px;
 }
 .label-new {
-  color: $dark;
-  border: 3px solid $persoColor;
+  color: $persoColor1;
+  border: 3px solid $persoColor2;
   padding: 5px 5px 5px 5px;
   border-radius: 2px;
   text-align: center;
 }
 .label-vegan {
-  color: $dark;
+  color: $persoColor1;
   border: 3px solid $back-label-vegan;
   padding: 5px 5px 5px 5px;
   border-radius: 2px;
   text-align: center;
 }
 .label-no-meat {
-  color: $dark;
+  color: $persoColor1;
   border: 3px solid $back-label-meat;
   padding: 5px 5px 5px 5px;
   border-radius: 2px;
   text-align: center;
 }
 .label-no-porc {
-  color: $dark;
+  color: $persoColor1;
   border: 3px solid $back-label-porc;
   padding: 5px 5px 5px 5px;
   border-radius: 2px;
@@ -1233,10 +1119,10 @@ hr {
 }
 .food-price__label, 
 .food-price__value {
-  font-family: $price;
-  font-weight: 600;
+  font-family: $text;
+  font-weight: 500;
   font-style: italic;
-  color: $dark;
+  color: $persoColor1;
   margin-top: 10px;
 }
 .food-price__value {
@@ -1253,7 +1139,7 @@ hr {
   margin-bottom: 50px;
 
   a {
-    color: $persoColor;
+    color: $persoColor2;
   }
 }
 .terms-title {
@@ -1273,10 +1159,15 @@ hr {
 .resto-presentation {
   width: 100%;
 }
+.resto-presentation__image-wrapper {
+  background-color: #000;
+}
 .resto-presentation__image {
-    background: url(/assets/full-visual-theme/images/design.jpg) no-repeat center;
+    background: url(/assets/full-visual-theme/images/restaurant.jpg) no-repeat center;
+    background-size: cover;
     height: 200px;
-  }
+    opacity: 0.7;
+}
 .resto-presentation__content {
   max-width: 85%;
   margin-left: auto;
@@ -1327,12 +1218,12 @@ hr {
   margin-top: 0px;
 }
 .subscriber-error {
-  color: $persoColor;
+  color: $persoColor2;
   font-weight: 700;
   text-transform: uppercase;
 }
 .subscribe-page__title {
-  color: $dark;
+  color: $persoColor1;
   font-size: 2em;
   font-weight: 700;
 }
@@ -1371,11 +1262,11 @@ hr {
     display: block;
     margin-top: 25px;
     font-style: italic;
-    font-weight: 600;
+    font-weight: 500;
   }
 }
 .contact-page__title {
-  color: $dark;
+  color: $persoColor1;
   font-size: 2em;
   font-weight: 700;
 }
@@ -1391,8 +1282,8 @@ hr {
 // ===================== #footer styles -- _footer.liquid ============================================
 .footer,
 .contact-footer {
-  color: $clear;
-  font-family: $coordinate;
+  color: $persoColor3;
+  font-family: $text;
 }
 .footer {
   text-align: center;
@@ -1422,14 +1313,14 @@ hr {
   font-weight: 500;
 }
 .contact-footer__mentions {
-  color: mix($clear, $dark, 50%);
+  color: mix($persoColor3, $persoColor1, 50%);
 }
 .contact-footer__phone-link, 
 .contact-footer__mail-link {
   text-decoration: none;
 }
 .subscribe__title {
-  color: $clear;
+  color: $persoColor3;
   font-style: italic;
 }
 .subscribers-form {
@@ -1459,7 +1350,8 @@ hr {
 }
 .full-background__image {
   height: 225px;
-  background: url(/assets/full-visual-theme/images/design.jpg) no-repeat center;
+  background: url(/assets/full-visual-theme/images/full-home.jpg) no-repeat center;
+  background-size: cover;
   opacity: 0.6;
 }
 .slogan-wrapper {
@@ -1476,7 +1368,7 @@ hr {
 	margin-left: auto;
 	margin-right: auto;
 	font-family: $slogan;
-  color: white;
+  color: $persoColor3;
   padding-top: 25px;
   padding-bottom: 25px;
 }
@@ -1490,11 +1382,11 @@ hr {
   margin-right: auto;
   padding-top: 10px;
   padding-bottom: 25px;
-  font-family: $coordinate;
+  font-family: $text;
   transition: color 0.2s;
-  color: white;
+  color: $persoColor3;
   &:hover {
-    color: $persoColor;
+    color: $persoColor2;
     transition: color 0.2s;
   }
 }
@@ -1545,10 +1437,7 @@ hr {
 .presentation {
   width: 100%;
   height: auto;
-  background: url(/assets/full-visual-theme/images/pres.jpg) no-repeat center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
+  background: url(/assets/full-visual-theme/images/presentation.jpg) no-repeat center;
   background-size: cover;
 }
 .home-description {
@@ -1558,11 +1447,11 @@ hr {
 }
 .home-description__summary {
   margin-top: 25px;
-  color: $clear;
+  color: $persoColor3;
 }
 .home-description__title, 
 .hours__title {
-  color: $clear;
+  color: $persoColor3;
   padding-top: 25px;
 }
 .presentation-footer__btn {
@@ -1576,9 +1465,6 @@ hr {
   width: 100%;
   height: auto;
   background: url(/assets/full-visual-theme/images/horaires.jpg) no-repeat center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
   background-size: cover;
   margin-top: -15px;
 }
@@ -1591,13 +1477,13 @@ hr {
   margin-bottom: 25px;
 }
 .hours__information {
-  color: $clear;
+  color: $persoColor3;
   margin-top: 25px;
-  font-weight: 600;
+  font-weight: 500;
   padding-bottom: 25px;
 }
 .hours__table {
-  font-family: $hours;
+  font-family: $text;
 }
 .hours__day {
   line-height: 3.5;
@@ -1622,9 +1508,9 @@ hr {
   width: 100%;
 }
 .infos-local__address {
-  color: $dark;
+  color: $persoColor1;
   font-size: 1em;
-  font-weight: 600;
+  font-weight: 500;
 }
 .directions-footer {
   width: 100%;
@@ -1736,7 +1622,7 @@ hr {
   .nav-large {
   	width: 300px;
   	height: 100%;
-  	background-color: $dark;
+  	background-color: $persoColor1;
   	position: fixed;
   	display: inline-block;
   	margin-left: 75px;
@@ -1770,7 +1656,7 @@ hr {
   }
   .nav-large__coordinate-number {
   	font-size: 1.4em;
-    color: $persoColor;
+    color: $persoColor2;
   }
 // ===================== #menu styles -- _index.liquid ============================================
   .index-header__title {
