@@ -1,20 +1,24 @@
-<h2 class="content-title">
-  Newsletter
-</h2>
-<div class="create-subscriber">
-  {% subscriberForm %}
-    {% if form.created_successfully? %}
-      <div class="newsletter-description">{{ "Abonnez-vous à notre newsletter pour recevoir les dernières nouveautés du restaurant." | t }}</div>
-    {% else %}
-      <div class="newsletter-description-error">{{ "Une erreur s'est produite lors de votre abonnement." | t }}</div>
-    {% endif %}
-
-    {{ form.email }}
-    {% unless form.created_successfully? %}
-      <p class="subscriber-error">
-        {{ form.error }}
-      </p>
-    {% endunless %}
-    {{ form.submit }}
-  {% endsubscriberForm %}
+<div class="subscribe-page">
+  <h2 class="subscribe-page__title">
+    Newsletter
+  </h2>
+  <div class="subscribe-page__description">
+    {% subscriberForm %}
+      {% if form.created_successfully? %}
+        <div class="newsletter-description">{{ "Abonnez-vous à notre newsletter pour recevoir les dernières   nouveautés du restaurant." | t }}</div>
+      {% else %}
+        <img src="/assets/full-visual-theme/images/error.png" alt="error" title="error" />
+        <div class="newsletter-description-error">{{ "Une erreur s'est produite lors de votre abonnement." | t }}</div>
+        <a href="{{ localized_root_path }}" class="return btn">Retour au site</a>
+      {% endif %}
+  
+      {{ form.email }}
+      {% unless form.created_successfully? %}
+        <p class="subscriber-error">
+          {{ form.error }}
+        </p>
+      {% endunless %}
+      {{ form.submit }}
+    {% endsubscriberForm %}
+  </div>
 </div>

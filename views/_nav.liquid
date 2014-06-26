@@ -112,12 +112,12 @@
         <a class="nav-small__item-links" href="{{ current_tenant.url }}">{{ "Le restaurant" | t }}</a>
       </li>
       {% if settings.display_contact_form %}
-        <li class="nav-small__item">
+        <li class="nav-large__item">
           {% if message_settings.navigation_label? %}
-            <a class="nav-small__item-links" href="{{ current_tenant.contact_path }}">{{ <message_settings class=""></message_settings>vigation_label }}</a>
+            <a class="nav-large__item-links" href="{{ current_tenant.contact_path }}">{{ message_settings.navigation_label }}</a>
           {% else %}
-            <a class="nav-small__item-links" href="{{ current_tenant.contact_path }}">{{ <message_settings class=""></message_settings>contact_title }}</a>
-          {% endif %}
+          <a class="nav-large__item-links" href="{{ current_tenant.contact_path }}">{{ message_settings.contact_title }}</a>
+        {% endif %}
         </li>
       {% endif %}
       <li class="nav-small__item">

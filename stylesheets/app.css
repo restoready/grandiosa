@@ -1377,11 +1377,14 @@ hr {
   display: inline-block;
   margin: 0 10px; }
 
+.return {
+  margin-top: 10px; }
+
 .footer__infos {
   width: 100%;
   background-color: #1d1d1d;
   clear: both;
-  margin-top: 30px; }
+  margin-top: 25px; }
 
 .nav-small {
   position: fixed;
@@ -1759,6 +1762,53 @@ hr {
   font-size: 0.85em;
   font-weight: 700;
   font-style: italic; }
+
+.subscribe-page {
+  padding-top: 75px;
+  max-width: 85%;
+  margin-left: auto;
+  margin-right: auto; }
+
+.subscribe-page__title {
+  color: #1d1d1d;
+  font-size: 2em;
+  font-weight: 700; }
+
+.subscribe-page__description {
+  padding-bottom: 25px;
+  margin-top: 15px; }
+
+.contact-page {
+  padding-top: 75px;
+  max-width: 85%;
+  margin-left: auto;
+  margin-right: auto; }
+  .contact-page input, .contact-page textarea {
+    display: block;
+    width: 100%;
+    height: 35px;
+    margin-top: 10px; }
+  .contact-page textarea {
+    height: 250px; }
+  .contact-page label {
+    display: block;
+    margin-top: 25px;
+    font-style: italic;
+    font-weight: 600; }
+
+.contact-page__title {
+  color: #1d1d1d;
+  font-size: 2em;
+  font-weight: 700; }
+
+.contact-page__description {
+  padding-bottom: 25px;
+  margin-top: 15px; }
+
+.submit-contact {
+  margin-top: 20px;
+  float: right;
+  width: 150px; }
 
 .footer,
 .contact-footer {
@@ -2178,14 +2228,17 @@ hr {
     bottom: 15%; }
 
   .directions-footer {
-    max-width: 65%;
+    max-width: 60%;
     margin-left: 400px; }
 
   .subscribe {
     padding-top: 25px; }
 
   .subscribe__email-subscriber {
-    width: 300px; }
+    width: 300px;
+    height: 35px;
+    float: left;
+    margin: 5px 25px 0 0; }
 
   .footer {
     margin-top: -30px;
@@ -2195,13 +2248,24 @@ hr {
 
   .newsletter-footer {
     margin-top: 0px;
-    width: 65%; }
+    width: 100%; }
 
   .footer-link {
     text-align: left; }
 
   .subscribe__submit-subscriber {
-    width: 200px; } }
+    width: 200px;
+    margin-top: 0; }
+
+  .subscribe-page {
+    margin-left: 400px;
+    padding-top: 25px; }
+
+  .contact-page {
+    margin-left: 400px;
+    padding-top: 25px;
+    margin-right: 25px;
+    max-width: 60%; } }
 @media only screen and (min-width: 1200px) {
   .menus-nav {
     width: 66%; }
@@ -2232,7 +2296,7 @@ hr {
     bottom: 12%; }
 
   .directions-footer {
-    max-width: 75%;
+    max-width: 70%;
     margin-left: 400px; } }
 @media only screen and (min-width: 1500px) {
   .slogan {
@@ -2261,5 +2325,5 @@ hr {
     margin-left: 400px; }
 
   .directions-footer {
-    max-width: 80%;
+    max-width: 75%;
     margin-left: 400px; } }
