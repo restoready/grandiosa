@@ -1232,17 +1232,6 @@ hr {
   margin-top: 15px;
 }
 // ===================== #contact-page styles -- message _new.liquid & _thanks.liquid ============================================
-.page-wrap {
-  min-height: 100%;
-  /* equal to footer height */
-  margin-bottom: -200px; 
-}
-.page-wrap:after {
-  content: "";
-  display: block;
-  /* .push must be the same height as footer */
-  height: 175px; 
-}
 .contact-page {
   padding-top: 75px;
   max-width: 85%;
@@ -1560,6 +1549,17 @@ hr {
   // ===================== #menu styles -- _show.liquid ============================================
   .menus-nav__item {
     width: 33.3333333%;
+  }
+  .page-wrap {
+    min-height: 100%;
+    /* equal to footer height */
+    margin-bottom: -200px; 
+  }
+  .page-wrap:after {
+    content: "";
+    display: block;
+    /* .push must be the same height as footer */
+    height: 175px; 
   }
   // ===================== #week & dish styles -- _home.liquid ============================================
   .news-footer {
