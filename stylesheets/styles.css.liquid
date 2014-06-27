@@ -1,0 +1,129 @@
+body,
+.nav-large__coordinate,
+.nav-small__coordinate,
+.menus-number,
+.menus-nav__title,
+.food-price__label, 
+.food-price__value,
+.footer,
+.contact-footer,
+.home-number,
+.hours__table {
+  font-family: "{{ settings.text_font | remove: 'Google+' | replace: '+', ' ' }}";
+}
+
+.slogan {
+  font-family: "{{ settings.slogan_font | remove: 'Google+' | replace: '+', ' ' }}";
+}
+
+hr,
+.btn:hover,
+.back-to-menu-label,
+.index-header__title,
+.menus-number,
+.content-menus-food__title-2,
+.content-menus-food__description-title-1,
+.label-new,
+.label-vegan,
+.label-no-meat,
+.label-no-porc,
+.food-price__label, 
+.food-price__value,
+.contact-page__title,
+.home-number:hover,
+.infos-local__address {
+  color: {{ settings.perso-color-1 }};
+}
+
+.nav-small__coordinate-number,
+.menus-number:hover,
+.nav-large__coordinate-number {
+  color: {{ settings.perso-color-2 }};
+}
+
+a,
+h1,
+span, 
+tbody,
+.btn,
+.back-to-menu,
+.nav-small__item-links, 
+.nav-large__item-links,
+.menus-nav__title,
+.menus-food__head--featured,
+.content-menus-food__description--featured,
+.dish__name--featured,
+.dish__description-label,
+.footer,
+.contact-footer,
+.subscribe__title,
+.slogan,
+.home-number,
+.home-description__summary,
+.home-description__title, 
+.hours__title,
+.hours__information {
+  color: {{ settings.perso-color-3 }};
+}
+
+.footer__infos,
+.nav-small,
+.sb-slidebar,
+.menus-nav__item,
+.menus-nav__title,
+.menus-food__head--featured,
+.dish__name--featured,
+.subscribe-page__title,
+.nav-large {
+  background-color: {{ settings.perso-color-1 }};
+}
+
+.btn,
+.nav-small__item:hover, 
+.nav-large__item:hover,
+.terms-content a,
+.subscriber-error {
+  background-color: {{ settings.perso-color-2 }};
+}
+
+.food-price__value {
+  background-color: {{ settings.back-price-value }};
+}
+
+.arrow {
+  border-color: transparent transparent {{ settings.perso-color-1 }}; transparent;
+}
+
+.nav-small__list, 
+.nav-large__list {
+  border-bottom: solid 2px {{ settings.border }};
+}
+
+.nav-small__item, 
+.nav-large__item {
+  border-top: solid 2px {{ settings.border }};
+}
+
+.block-grid--featured {
+  border: 6px solid {{ settings.perso-color-1 }};
+}
+
+.label-new {
+  border: 3px solid {{ settings.perso-color-2 }};
+}
+
+.label-vegan {
+  border: 3px solid {{ settings.back-label-vegan }};
+}
+
+.label-no-meat {
+  border: 3px solid {{ settings.back-label-meat }};
+}
+
+.label-no-porc {
+  border: 3px solid {{ settings.back-label-porc }};
+}
+
+.newsletter-description-error {
+  border-left: 5px solid {{ settings.perso-color-2 }};
+}
