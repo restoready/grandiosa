@@ -1231,6 +1231,14 @@ hr {
   padding-bottom: 25px;
   margin-top: 15px;
 }
+.newsletter-description-oups {
+  font-size: 1.5em;
+  font-weight: 700;
+}
+.newsletter-description-error {
+  border-left: 5px solid $persoColor2;
+  padding-left: 5px;
+}
 // ===================== #contact-page styles -- message _new.liquid & _thanks.liquid ============================================
 .contact-page {
   padding-top: 75px;
@@ -1311,6 +1319,7 @@ hr {
 .subscribe__title {
   color: $persoColor3;
   font-style: italic;
+  margin-top: 25px;
 }
 .subscribers-form {
   margin-top: -10px;
@@ -1607,6 +1616,9 @@ hr {
     display: block;
     margin-bottom: 0px;
     text-align: center;
+  }
+  .subscribe__title {
+    margin-top: 10px;
   }
 }
 // ==============================================================================

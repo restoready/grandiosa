@@ -7,7 +7,7 @@
       {% if form.created_successfully? %}
         <div class="newsletter-description">{{ "Abonnez-vous à notre newsletter pour recevoir les dernières   nouveautés du restaurant." | t }}</div>
       {% else %}
-        <img src="/assets/full-visual-theme/images/dest/error.png" alt="error" title="error" />
+        <h2 class="newsletter-description-oups">Oups…</h2>
         <div class="newsletter-description-error">{{ "Une erreur s'est produite lors de votre abonnement." | t }}</div>
       {% endif %}
 
