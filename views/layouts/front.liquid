@@ -7,24 +7,26 @@
     {% title_tag %}
     {% description_tag %}
     <meta content='' name='description'>
-    {{ 'app' | asset_url | stylesheet_tag }}
-    {{ 'jquery-2.1.0' | asset_url | javascript_tag }}
-    {{ 'animatescroll' | asset_url | javascript_tag }}
-    {{ 'script' | asset_url | javascript_tag }}
-    {% if settings.header_font contains 'Google' %}
-      <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family={{ settings.header_font | remove: 'Google+' }}:300,400,700">
+    {{ 'app.min' | asset_url | stylesheet_tag }}
+    
+    <script src="//polyfill.io"></script>
+
+    {% if settings.slogan_font contains 'Google' %}
+      <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family={{ settings.header_font | remove: 'Google+' }}">
     {% endif %}
-    {% if settings.base_font contains 'Google' %}
-      <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family={{ settings.base_font | remove: 'Google+' }}:300,400,700">
+    {% if settings.text_font contains 'Google' %}
+      <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family={{ settings.base_font | remove: 'Google+' }}:500,700">
     {% endif %}
     
     <link href='http://fonts.googleapis.com/css?family=Cabin:500,700,500italic,700italic|Great+Vibes' rel='stylesheet' type='text/css'>
     
-    <script src="//polyfill.io"></script>
     {{ current_tenant.host | url_canonical | canonical_tag }}
-    <link rel="icon" href="{{ 'favicon.ico' | asset_url }}" />
-    <link rel="icon" href="{{ 'favicon.png' | asset_url }}" />
     <meta name="google-site-verification" content="">
+
+    <link rel="apple-touch-icon-precomposed" href="/assets/full-visual-theme/images/favicon-152.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="msapplication-TileImage" content="/assets/full-visual-theme/images/favicon-144.png">
+  
   </head>
 
   <body itemscope="" itemtype="http://schema.org/Restaurant">
@@ -37,5 +39,8 @@
       <footer class="footer__infos" role="contentinfo">
             {% include 'footer' %}
       </footer>
+
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+      {{ 'script.min' | asset_url | javascript_tag }}
   </body>
 </html>
