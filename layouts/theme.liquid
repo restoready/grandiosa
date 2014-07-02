@@ -7,7 +7,7 @@
     {% title_tag %}
     {% description_tag %}
     <meta content='' name='description'>
-    {{ 'app.min' | asset_url | stylesheet_tag }}
+    {{ 'app' | asset_url | stylesheet_tag }}
     
     <script src="//polyfill.io"></script>
 
@@ -39,6 +39,7 @@
       </footer>
 
       <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-      {{ 'script.min' | asset_url | javascript_tag }}
+      {{ 'script' | asset_url | javascript_tag }}
+      {{ 'animatescroll.min' | asset_url | javascript_tag }}
   </body>
 </html>
