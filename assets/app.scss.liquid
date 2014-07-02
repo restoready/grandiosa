@@ -711,17 +711,17 @@ $slogan: $great;
 // =====================      #layout      ============================================
 html, 
 body {
-  font-family: $text, sans-serif;
+  font-family: "{{ settings.text_font | remove: 'Google+' | replace: '+', ' ' }}";
   height: 100%;
 }
 a {
   text-decoration: none;
-  color: $persoColor3;
+  color: {{ settings.perso-color-3 }};
 }
 h1,
 span, 
 tbody {
-	color: $persoColor3;
+	color: {{ settings.perso-color-3 }};
 }
 table, 
 tr, 
@@ -736,8 +736,8 @@ hr {
   margin-right: auto;
 }
 .btn {
-  background-color: $persoColor2;
-  color: $persoColor3;
+  background-color: {{ settings.perso-color-2 }};
+  color: {{ settings.perso-color-3 }};
   margin-top: 50px;
   margin-bottom: 25px;
   width: 200px;
@@ -746,7 +746,7 @@ hr {
   transition: color 0.2s;
 
   &:hover {
-    color: $persoColor1;
+    color: {{ settings.perso-color-1 }};
     transition: color 0.2s;
   }
 }
@@ -766,7 +766,7 @@ hr {
   margin-bottom: 15px;
 }
 .back-to-menu {
-  color: $persoColor3;
+  color: {{ settings.perso-color-3 }};
   cursor: pointer;
 }
 .ico {
@@ -780,14 +780,14 @@ hr {
   margin-right: auto;
   transition: color 0.2s;
   font-size: 0.75em;
-  color: $persoColor1;
+  color: {{ settings.perso-color-1 }};
 }
 .arrow {
   width: 0;
   height: 0;
   border-style: solid;
   border-width: 0 10px 10px 10px;
-  border-color: transparent transparent $persoColor1 transparent;
+  border-color: transparent transparent {{ settings.perso-color-1 }} transparent;
   display: inline-block;
   margin: 0 10px;
 }
@@ -797,7 +797,7 @@ hr {
 // ===================== #content styles -- front.liquid ============================================
 .footer__infos {
   width: 100%;
-  background-color: $persoColor1;
+  background-color: {{ settings.perso-color-1 }};
   clear: both;
   padding-top: 20px;
 }
@@ -807,7 +807,7 @@ hr {
   top: 0;
   z-index: 9999;
 	width: 100%;
-	background-color: $persoColor1;
+	background-color: {{ settings.perso-color-1 }};
 }
 .nav-small__logo {
 	padding-top: 5px;
@@ -853,7 +853,7 @@ hr {
   width: 250px;
   display: none;
   z-index: 99; /* Slidebars sit behind sb-site. */
-  background-color: $persoColor1; /* Default Slidebars background colour, overwrite this with your own css. */
+  background-color: {{ settings.perso-color-1 }}; /* Default Slidebars background colour, overwrite this with your own css. */
 }
 .sb-right {
   right: 0; /* Set Slidebar to the right. */
@@ -865,18 +865,18 @@ hr {
   list-style: none;
   margin-top: 40px;
   margin-left: 0;
-  border-bottom: solid 2px $border;
+  border-bottom: solid 2px {{ settings.border }};
 }
 .nav-small__item, 
 .nav-large__item {
     cursor: pointer;
     font-size: 1.2em;
-    border-top: solid 2px $border;
+    border-top: solid 2px {{ settings.border }};
     transition: background-color 0.5s;
     font-weight: 200;
     width: 100%;
     &:hover {
-      background-color: $persoColor2;
+      background-color: {{ settings.perso-color-2 }};
     }
 }
 .nav-small__item {
@@ -885,7 +885,7 @@ hr {
 .nav-small__item-links, 
 .nav-large__item-links {
   display: inline-block;
-  color: $persoColor3;
+  color: {{ settings.perso-color-3 }};
   text-decoration: none;
   width: 100%;
   padding-left: 25px;
@@ -897,7 +897,7 @@ hr {
   margin-top: 25px;
   width: 200px;
   font-size: 1em;
-  font-family: $text;
+  font-family: "{{ settings.text_font | remove: 'Google+' | replace: '+', ' ' }}";
 }
 .nav-small__coordinate {
   padding-bottom: 15px;
@@ -906,17 +906,17 @@ hr {
   font-size: 1em;
   margin-left: 25px;
   text-align: center;
-  font-family: $text;
+  font-family: "{{ settings.text_font | remove: 'Google+' | replace: '+', ' ' }}";
 }
 .nav-small__coordinate-number {
-  color: $persoColor2;
+  color: {{ settings.perso-color-2 }};
 }
 // ===================== #menu styles -- _index.liquid ============================================
 .index-header {
   clear: both;
 }
 .index-header__title {
-  color: $persoColor1;
+  color: {{ settings.perso-color-1 }};
   font-size: 2em;
   font-weight: 700;
   padding-top: 30px;
@@ -933,11 +933,11 @@ hr {
   margin-right: auto;
   padding-top: 15px;
   padding-bottom: 15px;
-  font-family: $text;
+  font-family: "{{ settings.text_font | remove: 'Google+' | replace: '+', ' ' }}";
   transition: color 0.2s;
-  color: $persoColor1;
+  color: {{ settings.perso-color-1 }};
   &:hover {
-    color: $persoColor2;
+    color: {{ settings.perso-color-2 }};
     transition: color 0.2s;
   }
 }
@@ -950,7 +950,7 @@ hr {
 .menus-nav__item {
   width: 50%;
   float: left;
-  background-color: $persoColor1;
+  background-color: {{ settings.perso-color-1 }};
 }
 .menus-nav__link {
   display: block;
@@ -969,15 +969,15 @@ hr {
   position: relative;
 } 
 .menus-nav__title {
-  color: $persoColor3;
+  color: {{ settings.perso-color-3 }};
   width: auto;
-  background-color: $persoColor1;
+  background-color: {{ settings.perso-color-1 }};
   opacity: 0.9;
   position: absolute;
   bottom: 0;
   -webkit-transform: translateY(-50%);
   left: 0;
-  font-family: $text;
+  font-family: "{{ settings.text_font | remove: 'Google+' | replace: '+', ' ' }}";
   font-size: 1.5em;
   padding: 5px 5px;
 }
@@ -988,8 +988,8 @@ hr {
   margin-top: 50px;
 }
 .menus-food__head--featured {
-  background-color: $persoColor1;
-  color: $persoColor3;
+  background-color: {{ settings.perso-color-1 }};
+  color: {{ settings.perso-color-3 }};
   display: inline-block;
   padding: 5px 10px 5px 10px;
   border-radius: 3px 3px 0 0;
@@ -1020,7 +1020,7 @@ hr {
 }
 .content-menus-food__title-2 {
   font-size: 1.5em;
-  color: $persoColor1;
+  color: {{ settings.perso-color-1 }};
   padding: 5px 5px 5px 5px;
   border-radius: 2px;
   display: inline;
@@ -1034,14 +1034,14 @@ hr {
 }
 .content-menus-food__description-title-1 {
   font-size: 1em;
-  color: $persoColor1;
+  color: {{ settings.perso-color-1 }};
   font-style: italic;
 }
 .content-menus-food__description-title-2 {
   margin-top: 15px;
 }
 .content-menus-food__description--featured {
-  color: $persoColor3;
+  color: {{ settings.perso-color-3 }};
 }
 .menus-footer {
   width: 100%;
@@ -1051,7 +1051,7 @@ hr {
   overflow: hidden;
 }
 .block-grid--featured {
-  border: 6px solid $persoColor1;
+  border: 6px solid {{ settings.perso-color-1 }};
   border-radius: 0 3px 3px 3px;
   padding: 0 10px 5px 20px;
   margin-right: 5px;
@@ -1067,9 +1067,9 @@ hr {
   font-size: 1.2em;
 }
 .dish__name--featured {
-  color: $persoColor3;
+  color: {{ settings.perso-color-3 }};
   display: inline-block;
-  background-color: $persoColor1;
+  background-color: {{ settings.perso-color-1 }};
   padding: 5px 10px 5px 10px;
   border-radius: 3px;
   margin-top: 5px;
@@ -1083,33 +1083,33 @@ hr {
 }
 .dish__description-label {
   margin-bottom: 15px;
-  color: $persoColor3;
+  color: {{ settings.perso-color-3 }};
   margin-top: 15px;
 }
 .label-new {
-  color: $persoColor1;
-  border: 3px solid $persoColor2;
+  color: {{ settings.perso-color-1 }};
+  border: 3px solid {{ settings.perso-color-2 }};
   padding: 5px 5px 5px 5px;
   border-radius: 2px;
   text-align: center;
 }
 .label-vegan {
-  color: $persoColor1;
-  border: 3px solid $back-label-vegan;
+  color: {{ settings.perso-color-1 }};
+  border: 3px solid {{ settings.back-label-vegan }};
   padding: 5px 5px 5px 5px;
   border-radius: 2px;
   text-align: center;
 }
 .label-no-meat {
-  color: $persoColor1;
-  border: 3px solid $back-label-meat;
+  color: {{ settings.perso-color-1 }};
+  border: 3px solid {{ settings.back-label-meat }};
   padding: 5px 5px 5px 5px;
   border-radius: 2px;
   text-align: center;
 }
 .label-no-porc {
-  color: $persoColor1;
-  border: 3px solid $back-label-porc;
+  color: {{ settings.perso-color-1 }};
+  border: 3px solid {{ settings.back-label-porc }};
   padding: 5px 5px 5px 5px;
   border-radius: 2px;
   text-align: center;
@@ -1119,14 +1119,14 @@ hr {
 }
 .food-price__label, 
 .food-price__value {
-  font-family: $text;
+  font-family: "{{ settings.text_font | remove: 'Google+' | replace: '+', ' ' }}";
   font-weight: 500;
   font-style: italic;
-  color: $persoColor1;
+  color: {{ settings.perso-color-1 }};
   margin-top: 10px;
 }
 .food-price__value {
-  background-color: $back-price-value;
+  background-color: {{ settings.back-price-value }};
   border-radius: 3px;
   padding: 3px 3px;
 }
@@ -1139,7 +1139,7 @@ hr {
   margin-bottom: 50px;
 
   a {
-    color: $persoColor2;
+    color: {{ settings.perso-color-2 }};
   }
 }
 .terms-title {
@@ -1218,12 +1218,12 @@ hr {
   margin-top: 0px;
 }
 .subscriber-error {
-  color: $persoColor2;
+  color: {{ settings.perso-color-2 }};
   font-weight: 700;
   text-transform: uppercase;
 }
 .subscribe-page__title {
-  color: $persoColor1;
+  color: {{ settings.perso-color-1 }};
   font-size: 2em;
   font-weight: 700;
 }
@@ -1236,7 +1236,7 @@ hr {
   font-weight: 700;
 }
 .newsletter-description-error {
-  border-left: 5px solid $persoColor2;
+  border-left: 5px solid {{ settings.perso-color-2 }};
   padding-left: 5px;
 }
 // ===================== #contact-page styles -- message _new.liquid & _thanks.liquid ============================================
@@ -1263,7 +1263,7 @@ hr {
   }
 }
 .contact-page__title {
-  color: $persoColor1;
+  color: {{ settings.perso-color-1 }};
   font-size: 2em;
   font-weight: 700;
 }
@@ -1279,8 +1279,8 @@ hr {
 // ===================== #footer styles -- _footer.liquid ============================================
 .footer,
 .contact-footer {
-  color: $persoColor3;
-  font-family: $text;
+  color: {{ settings.perso-color-3 }};
+  font-family: "{{ settings.text_font | remove: 'Google+' | replace: '+', ' ' }}";
 }
 .footer {
   text-align: center;
@@ -1317,7 +1317,7 @@ hr {
   text-decoration: none;
 }
 .subscribe__title {
-  color: $persoColor3;
+  color: {{ settings.perso-color-3 }};
   font-style: italic;
   margin-top: 25px;
 }
@@ -1365,8 +1365,8 @@ hr {
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
-	font-family: $slogan;
-  color: $persoColor3;
+	font-family: "{{ settings.slogan_font | remove: 'Google+' | replace: '+', ' ' }}";
+  color: {{ settings.perso-color-3 }};
   padding-top: 25px;
   padding-bottom: 25px;
 }
@@ -1380,11 +1380,11 @@ hr {
   margin-right: auto;
   padding-top: 10px;
   padding-bottom: 25px;
-  font-family: $text;
+  font-family: "{{ settings.text_font | remove: 'Google+' | replace: '+', ' ' }}";
   transition: color 0.2s;
-  color: $persoColor3;
+  color: {{ settings.perso-color-3 }};
   &:hover {
-    color: $persoColor2;
+    color: {{ settings.perso-color-2 }};
     transition: color 0.2s;
   }
 }
@@ -1445,11 +1445,11 @@ hr {
 }
 .home-description__summary {
   margin-top: 25px;
-  color: $persoColor3;
+  color: {{ settings.perso-color-3 }};
 }
 .home-description__title, 
 .hours__title {
-  color: $persoColor3;
+  color: {{ settings.perso-color-3 }};
   padding-top: 25px;
 }
 .presentation-footer__btn {
@@ -1475,13 +1475,13 @@ hr {
   margin-bottom: 25px;
 }
 .hours__information {
-  color: $persoColor3;
+  color: {{ settings.perso-color-3 }};
   margin-top: 25px;
   font-weight: 500;
   padding-bottom: 25px;
 }
 .hours__table {
-  font-family: $text;
+  font-family: "{{ settings.text_font | remove: 'Google+' | replace: '+', ' ' }}";
 }
 .hours__day {
   line-height: 3.5;
@@ -1506,7 +1506,7 @@ hr {
   width: 100%;
 }
 .infos-local__address {
-  color: $persoColor1;
+  color: {{ settings.perso-color-1 }};
   font-size: 1em;
   font-weight: 500;
 }
@@ -1634,7 +1634,7 @@ hr {
   .nav-large {
   	width: 300px;
   	height: 100%;
-  	background-color: $persoColor1;
+  	background-color: {{ settings.perso-color-1 }};
   	position: fixed;
   	display: inline-block;
   	margin-left: 75px;
@@ -1668,7 +1668,7 @@ hr {
   }
   .nav-large__coordinate-number {
   	font-size: 1.4em;
-    color: $persoColor2;
+    color: {{ settings.perso-color-2 }};
   }
 // ===================== #menu styles -- _index.liquid ============================================
   .index-header__title {
