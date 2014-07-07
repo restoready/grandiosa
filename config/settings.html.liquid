@@ -22,56 +22,56 @@
       <fieldset>
         <legend>Couleur perso 1</legend>
         <div class="small-12 medium-6 large-4 columns">
-          <input name="current[perso-color-1]" type="text" id="perso-color-1" value="{{ settings.perso-color-1 }}" class="minicolors">
+          <input name="admin_theme_settings[perso-color-1]" type="text" id="perso-color-1" value="{{ settings.perso-color-1 }}" class="minicolors">
         </div>
       </fieldset>
 
       <fieldset>
         <legend>Couleur perso 2</legend>
         <div class="small-12 medium-6 large-4 columns">
-          <input name="current[perso-color-2]" type="text" id="perso-color-2" value="{{ settings.perso-color-2 }}" class="minicolors">
+          <input name="admin_theme_settings[perso-color-2]" type="text" id="perso-color-2" value="{{ settings.perso-color-2 }}" class="minicolors">
         </div>
       </fieldset>
 
       <fieldset>
         <legend>Couleur perso 3</legend>
         <div class="small-12 medium-6 large-4 columns">
-          <input name="current[perso-color-3]" type="text" id="perso-color-3" value="{{ settings.perso-color-3 }}" class="minicolors">
+          <input name="admin_theme_settings[perso-color-3]" type="text" id="perso-color-3" value="{{ settings.perso-color-3 }}" class="minicolors">
         </div>
       </fieldset>
 
       <fieldset>
         <legend>Bordure navigation</legend>
         <div class="small-12 medium-6 large-4 columns">
-          <input name="current[border]" type="text" id="border" value="{{ settings.border }}" class="minicolors">
+          <input name="admin_theme_settings[border]" type="text" id="border" value="{{ settings.border }}" class="minicolors">
         </div>
       </fieldset>
 
       <fieldset>
         <legend>Étiquette "Végétarien"</legend>
         <div class="small-12 medium-6 large-4 columns">
-          <input name="current[back-label-vegan]" type="text" id="back-label-vegan" value="{{ settings.back-label-vegan }}" class="minicolors">
+          <input name="admin_theme_settings[back-label-vegan]" type="text" id="back-label-vegan" value="{{ settings.back-label-vegan }}" class="minicolors">
         </div>
       </fieldset>
 
       <fieldset>
         <legend>Étiquette "Pas de viande"</legend>
         <div class="small-12 medium-6 large-4 columns">
-          <input name="current[back-label-meat]" type="text" id="back-label-meat" value="{{ settings.back-label-meat }}" class="minicolors">
+          <input name="admin_theme_settings[back-label-meat]" type="text" id="back-label-meat" value="{{ settings.back-label-meat }}" class="minicolors">
         </div>
       </fieldset>
 
       <fieldset>
         <legend>Étiquette "Pas de porc"</legend>
         <div class="small-12 medium-6 large-4 columns">
-          <input name="current[back-label-porc]" type="text" id="back-label-porc" value="{{ settings.back-label-porc }}" class="minicolors">
+          <input name="admin_theme_settings[back-label-porc]" type="text" id="back-label-porc" value="{{ settings.back-label-porc }}" class="minicolors">
         </div>
       </fieldset>
 
       <fieldset>
         <legend>Prix</legend>
         <div class="small-12 medium-6 large-4 columns">
-          <input name="current[back-price-value]" type="text" id="back-price-value" value="{{ settings.back-price-value }}" class="minicolors">
+          <input name="admin_theme_settings[back-price-value]" type="text" id="back-price-value" value="{{ settings.back-price-value }}" class="minicolors">
         </div>
       </fieldset>
     </div>
@@ -80,7 +80,7 @@
       <fieldset>
         <legend>Texte</legend>
         <div class="small-12 medium-6 large-4 columns">
-          <select id="text_font" name="current[text_font]">
+          <select id="text_font" name="admin_theme_settings[text_font]">
             <optgroup label="Google Web Fonts">
               <option value="{{ settings.text_font }}" selected>{{ settings.text_font | remove: 'Google+' | replace: '+', ' ' }}</option>
               <option value='Google+Cabin'>Cabin</option>
@@ -93,7 +93,7 @@
       <fieldset>
         <legend>Slogan</legend>
         <div class="small-12 medium-6 large-4 columns">
-          <select id="slogan_font" name="current[slogan_font]">
+          <select id="slogan_font" name="admin_theme_settings[slogan_font]">
             <optgroup label="Google Web Fonts">
               <option value="{{ settings.slogan_font }}" selected>{{ settings.slogan_font | remove: 'Google+' | replace: '+', ' ' }}</option>
               <option value='Google+Great+Vibes'>Great Vibes</option>
@@ -109,24 +109,80 @@
         <legend>Images home page</legend>
         <div class="small-12 medium-6 large-4 columns">
           <label for="image-full-home">Image d'acceuil</label>
-          <input name="" type="" id="" value="" class="">
+          
+          <div id="plupload" class="row image-item">
+            <div class="small-12 medium-12 large-11 preview">
+              <div class="filelist">
+                {{ 'full-home.jpg' | asset_url | image_tag }}
+              </div>
+            </div>
+            <div class="small-12 medium-12 large-11">
+              <div id="plupload-full-home-image" class="input-file input-file-asset">
+                <a style="display:block;" id="full-home-image" class="pickfile choose-image fake-input-file-asset" data-url="/admin/themes/{{ theme.id }}/settings" data-fieldname="full-home.jpg">
+                  Fichier
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="small-12 medium-6 large-4 columns">
           <label for="image-presentation">Image block présentation</label>
-          <input name="" type="" id="" value="" class="">
+
+          <div id="plupload" class="row image-item">
+            <div class="small-12 medium-12 large-11 preview">
+              <div class="filelist">
+                {{ 'presentation.jpg' | asset_url | image_tag }}
+              </div>
+            </div>
+            <div class="small-12 medium-12 large-11">
+              <div id="plupload-image-presentation" class="input-file input-file-asset">
+                <a style="display:block;" id="image-presentation" class="pickfile choose-image fake-input-file-asset" data-url="/admin/themes/{{ theme.id }}/settings" data-fieldname="presentation.jpg">
+                  Fichier
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="small-12 medium-6 large-4 columns end">
-          <label for="slider-horaire">Image block horaire</label>
-          <input name="" type="" id="" value="" class="">
+          <label for="image-horaires">Image block horaires</label>
+
+          <div id="plupload" class="row image-item">
+            <div class="small-12 medium-12 large-11 preview">
+              <div class="filelist">
+                {{ 'horaires.jpg' | asset_url | image_tag }}
+                {% comment %}<img src="/assets/preview.png">{% endcomment %}
+              </div>
+            </div>
+            <div class="small-12 medium-12 large-11">
+              <div id="plupload-image-horaires" class="input-file input-file-asset">
+                <a style="display:block;" id="image-horaires" class="pickfile choose-image fake-input-file-asset" data-url="/admin/themes/{{ theme.id }}/settings" data-fieldname="horaires.jpg">
+                  Fichier
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </fieldset>
 
       <fieldset>
         <legend>Image page restaurant</legend>
-        <div class="small-12 medium-6 large-4 columns">
-          <input name="" type="text" id="" value="" class="">
+        <div class="small-12 medium-6 large-4 columns end">
+          <div id="plupload" class="row image-item">
+            <div class="small-12 medium-12 large-11 preview">
+              <div class="filelist">
+                {{ 'restaurant.jpg' | asset_url | image_tag }}
+              </div>
+            </div>
+            <div class="small-12 medium-12 large-11">
+              <div id="plupload-image-restaurant" class="input-file input-file-asset">
+                <a style="display:block;" id="image-restaurant" class="pickfile choose-image fake-input-file-asset" data-url="/admin/themes/{{ theme.id }}/settings" data-fieldname="restaurant.jpg">
+                  Fichier
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </fieldset>
     </div>
@@ -136,18 +192,18 @@
         <legend>Modules</legend>
         <div class="small-12 medium-6 large-4 columns">
           {% if settings.footer_display_newsletter %}
-            <input class="icheck-me" name="current[footer_display_newsletter]" id="footer_display_newsletter" type="checkbox" value="{{ settings.footer_display_newsletter }}" data-skin='black-green' checked/>
+          <input class="icheck-me" name="admin_theme_settings[footer_display_newsletter]" id="footer_display_newsletter" type="checkbox" value="{{ settings.footer_display_newsletter }}" data-skin='black-green' checked/>
           {% else %}
-            <input class="icheck-me" name="current[footer_display_newsletter]" id="footer_display_newsletter" type="checkbox" value="{{ settings.footer_display_newsletter }}" data-skin='black-green' />
+          <input class="icheck-me" name="admin_theme_settings[footer_display_newsletter]" id="footer_display_newsletter" type="checkbox" value="{{ settings.footer_display_newsletter }}" data-skin='black-green' />
           {% endif %}
           <label style="margin-right:.5em;" for="footer_display_newsletter">Afficher la newsletter</label>
         </div>
 
         <div class="small-12 medium-6 large-4 columns end">
           {% if settings.display_contact_form %}
-            <input class="icheck-me" name="current[display_contact_form]" id="display_contact_form" type="checkbox" value="{{ settings.display_contact_form }}" data-skin='black-green' checked/>
+          <input class="icheck-me" name="admin_theme_settings[display_contact_form]" id="display_contact_form" type="checkbox" value="{{ settings.display_contact_form }}" data-skin='black-green' checked/>
           {% else %}
-            <input class="icheck-me" name="current[display_contact_form]" id="display_contact_form" type="checkbox" value="{{ settings.display_contact_form }}" data-skin='black-green' />
+          <input class="icheck-me" name="admin_theme_settings[display_contact_form]" id="display_contact_form" type="checkbox" value="{{ settings.display_contact_form }}" data-skin='black-green' />
           {% endif %}
           <label style="margin-right:.5em;" for="display_contact_form">Afficher le formulaire de contact</label>
         </div>
