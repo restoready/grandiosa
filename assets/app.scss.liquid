@@ -1163,7 +1163,11 @@ hr {
   background-color: #000;
 }
 .resto-presentation__image {
-  background: url({{ 'restaurant.jpg' | asset_url }}) no-repeat center;
+  {% if settings.use_restaurant_image %}
+    background: {{ settings.perso-color-3 }} url({{ 'restaurant.jpg' | asset_url }}) no-repeat center;
+  {% else %}
+    background-color: {{ settings.perso-color-3 }};
+  {% endif %}
   background-size: cover;
   height: 200px;
   opacity: 0.7;
@@ -1348,7 +1352,11 @@ hr {
 }
 .full-background__image {
   height: 225px;
-  background: url({{ 'full-home.jpg' | asset_url }}) no-repeat center;
+  {% if settings.use_full_home_image %}
+    background: {{ settings.perso-color-1 }} url({{ 'full-home.jpg' | asset_url }}) no-repeat center;
+  {% else %}
+    background-color: {{ settings.perso-color-1 }};
+  {% endif %}
   background-size: cover;
   opacity: 0.6;
 }
@@ -1435,7 +1443,11 @@ hr {
 .presentation {
   width: 100%;
   height: auto;
-  background: url({{ 'presentation.jpg' | asset_url }}) no-repeat center;
+  {% if settings.use_presentation_image %}
+    background: {{ settings.perso-color-2 }} url({{ 'presentation.jpg' | asset_url }}) no-repeat center;
+  {% else %}
+    background-color: {{ settings.perso-color-2 }};
+  {% endif %}
   background-size: cover;
 }
 .home-description {
@@ -1462,10 +1474,13 @@ hr {
 .opening-hours {
   width: 100%;
   height: auto;
-  background: url({{ 'horaires.jpg' | asset_url }}) no-repeat center;
+  {% if settings.use_horaires_image %}
+    background: url({{ 'horaires.png' | asset_url }}) no-repeat center;
+  {% else %}
+    background-color: {{ settings.perso-color-3 }};
+  {% endif %}
   background-size: cover;
   margin-top: -15px;
-  background: {{ settings.perso-color-3 }};
 }
 .hours {
   max-width: 85%;

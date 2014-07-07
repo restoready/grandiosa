@@ -106,9 +106,18 @@
     
     <div class="tab-body" id="tab-body-3">
       <fieldset>
-        <legend>Images home page</legend>
+        <legend>Images de la page d'accueil</legend>
         <div class="small-12 medium-6 large-4 columns">
-          <label for="image-full-home">Image d'acceuil</label>
+          <div class="small-12 medium-12 large-11">
+            <label for="image-full-home">
+              Image d'acceuil
+              {% if settings.use_full_home_image %}
+              <input class="icheck-me" name="admin_theme_settings[use_full_home_image]" id="use_full_home_image" type="checkbox" value="{{ settings.use_full_home_image }}" data-skin='visibility' checked/>
+              {% else %}
+              <input class="icheck-me" name="admin_theme_settings[use_full_home_image]" id="use_full_home_image" type="checkbox" value="{{ settings.use_full_home_image }}" data-skin='visibility' />
+              {% endif %}
+            </label>
+          </div>
           
           <div id="plupload" class="row image-item">
             <div class="small-12 medium-12 large-11 preview">
@@ -127,7 +136,16 @@
         </div>
 
         <div class="small-12 medium-6 large-4 columns">
-          <label for="image-presentation">Image block présentation</label>
+          <div class="small-12 medium-12 large-11">
+            <label for="image-presentation">
+              Image de présentation
+              {% if settings.use_presentation_image %}
+              <input class="icheck-me" name="admin_theme_settings[use_presentation_image]" id="use_presentation_image" type="checkbox" value="{{ settings.use_presentation_image }}" data-skin='visibility' checked/>
+              {% else %}
+              <input class="icheck-me" name="admin_theme_settings[use_presentation_image]" id="use_presentation_image" type="checkbox" value="{{ settings.use_presentation_image }}" data-skin='visibility' />
+              {% endif %}
+            </label>
+          </div>
 
           <div id="plupload" class="row image-item">
             <div class="small-12 medium-12 large-11 preview">
@@ -146,13 +164,21 @@
         </div>
 
         <div class="small-12 medium-6 large-4 columns end">
-          <label for="image-horaires">Image block horaires</label>
+          <div class="small-12 medium-12 large-11">
+            <label for="image-horaires">
+              Image des horaires
+              {% if settings.use_horaires_image %}
+              <input class="icheck-me" name="admin_theme_settings[use_horaires_image]" id="use_horaires_image" type="checkbox" value="{{ settings.use_horaires_image }}" data-skin='visibility' checked/>
+              {% else %}
+              <input class="icheck-me" name="admin_theme_settings[use_horaires_image]" id="use_horaires_image" type="checkbox" value="{{ settings.use_horaires_image }}" data-skin='visibility' />
+              {% endif %}
+            </label>
+          </div>
 
           <div id="plupload" class="row image-item">
             <div class="small-12 medium-12 large-11 preview">
               <div class="filelist">
-                {{ 'horaires.jpg' | asset_url | image_tag }}
-                {% comment %}<img src="/assets/preview.png">{% endcomment %}
+                {{ 'horaires.png' | asset_url | image_tag }}
               </div>
             </div>
             <div class="small-12 medium-12 large-11">
@@ -167,8 +193,19 @@
       </fieldset>
 
       <fieldset>
-        <legend>Image page restaurant</legend>
+        <legend>Image de la page restaurant</legend>
         <div class="small-12 medium-6 large-4 columns end">
+          <div class="small-12 medium-12 large-11">
+            <label for="image-restaurant">
+              Image du restaurant
+              {% if settings.use_restaurant_image %}
+              <input class="icheck-me" name="admin_theme_settings[use_restaurant_image]" id="use_restaurant_image" type="checkbox" value="{{ settings.use_restaurant_image }}" data-skin='visibility' checked/>
+              {% else %}
+              <input class="icheck-me" name="admin_theme_settings[use_restaurant_image]" id="use_restaurant_image" type="checkbox" value="{{ settings.use_restaurant_image }}" data-skin='visibility' />
+              {% endif %}
+            </label>
+          </div>
+
           <div id="plupload" class="row image-item">
             <div class="small-12 medium-12 large-11 preview">
               <div class="filelist">
