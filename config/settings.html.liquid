@@ -106,118 +106,114 @@
     
     <div class="tab-body" id="tab-body-3">
       <fieldset>
-        <legend>Images de la page d'accueil</legend>
+        <legend>Page d'accueil</legend>
         <div class="small-12 medium-6 large-4 columns">
           <div class="small-12 medium-12 large-11">
-            <label for="image-full-home">
-              Image d'acceuil
-              {% if settings.use_full_home_image %}
-              <input class="icheck-me" name="admin_theme_settings[use_full_home_image]" id="use_full_home_image" type="checkbox" value="{{ settings.use_full_home_image }}" data-skin='visibility' checked/>
-              {% else %}
-              <input class="icheck-me" name="admin_theme_settings[use_full_home_image]" id="use_full_home_image" type="checkbox" value="{{ settings.use_full_home_image }}" data-skin='visibility' />
-              {% endif %}
-            </label>
+            <label for="image-full-home">Image d'acceuil (jpg)</label>
+          </div>
+
+          <div class="small-12 medium-12 large-11">
+            {% if settings.use_full_home_image %}
+            <input class="icheck-me" name="admin_theme_settings[use_full_home_image]" id="use_full_home_image" type="checkbox" value="{{ settings.use_full_home_image }}" data-skin='black-green' checked/>
+            {% else %}
+            <input class="icheck-me" name="admin_theme_settings[use_full_home_image]" id="use_full_home_image" type="checkbox" value="{{ settings.use_full_home_image }}" data-skin='black-green' />
+            {% endif %}
+            <label for="use_full_home_image">Afficher l'image</label>
           </div>
           
-          <div id="plupload" class="row image-item">
-            <div class="small-12 medium-12 large-11 preview">
-              <div class="filelist">
-                {{ 'full-home.jpg' | asset_url | image_tag }}
-              </div>
+          <div class="small-12 medium-12 large-11">
+            <div id="plupload-full-home-image" class="input-file input-file-asset">
+              <input name="admin_theme_settings[assets][full-home.jpg]" type="file"/>
             </div>
-            <div class="small-12 medium-12 large-11">
-              <div id="plupload-full-home-image" class="input-file input-file-asset">
-                <a style="display:block;" id="full-home-image" class="pickfile choose-image fake-input-file-asset" data-url="/admin/themes/{{ theme.id }}/settings" data-fieldname="full-home.jpg">
-                  Fichier
-                </a>
-              </div>
+          </div>
+
+          <div class="small-12 medium-12 large-11 preview">
+            <div class="filelist">
+              {{ 'full-home.jpg' | asset_url | image_tag }}
             </div>
           </div>
         </div>
 
         <div class="small-12 medium-6 large-4 columns">
           <div class="small-12 medium-12 large-11">
-            <label for="image-presentation">
-              Image de présentation
-              {% if settings.use_presentation_image %}
-              <input class="icheck-me" name="admin_theme_settings[use_presentation_image]" id="use_presentation_image" type="checkbox" value="{{ settings.use_presentation_image }}" data-skin='visibility' checked/>
-              {% else %}
-              <input class="icheck-me" name="admin_theme_settings[use_presentation_image]" id="use_presentation_image" type="checkbox" value="{{ settings.use_presentation_image }}" data-skin='visibility' />
-              {% endif %}
-            </label>
+            <label for="image-presentation">Image de présentation (jpg)</label>
           </div>
 
-          <div id="plupload" class="row image-item">
-            <div class="small-12 medium-12 large-11 preview">
-              <div class="filelist">
-                {{ 'presentation.jpg' | asset_url | image_tag }}
-              </div>
+          <div class="small-12 medium-12 large-11">
+            {% if settings.use_presentation_image %}
+            <input class="icheck-me" name="admin_theme_settings[use_presentation_image]" id="use_presentation_image" type="checkbox" value="{{ settings.use_presentation_image }}" data-skin='black-green' checked/>
+            {% else %}
+            <input class="icheck-me" name="admin_theme_settings[use_presentation_image]" id="use_presentation_image" type="checkbox" value="{{ settings.use_presentation_image }}" data-skin='black-green' />
+            {% endif %}
+            <label for="use_presentation_image">Afficher l'image</label>
+          </div>
+
+          <div class="small-12 medium-12 large-11">
+            <div id="plupload-image-presentation" class="input-file input-file-asset">
+              <input name="admin_theme_settings[assets][presentation.jpg]" type="file"/>
             </div>
-            <div class="small-12 medium-12 large-11">
-              <div id="plupload-image-presentation" class="input-file input-file-asset">
-                <a style="display:block;" id="image-presentation" class="pickfile choose-image fake-input-file-asset" data-url="/admin/themes/{{ theme.id }}/settings" data-fieldname="presentation.jpg">
-                  Fichier
-                </a>
-              </div>
+          </div>
+
+          <div class="small-12 medium-12 large-11 preview">
+            <div class="filelist">
+              {{ 'presentation.jpg' | asset_url | image_tag }}
             </div>
           </div>
         </div>
 
         <div class="small-12 medium-6 large-4 columns end">
           <div class="small-12 medium-12 large-11">
-            <label for="image-horaires">
-              Image des horaires
-              {% if settings.use_horaires_image %}
-              <input class="icheck-me" name="admin_theme_settings[use_horaires_image]" id="use_horaires_image" type="checkbox" value="{{ settings.use_horaires_image }}" data-skin='visibility' checked/>
-              {% else %}
-              <input class="icheck-me" name="admin_theme_settings[use_horaires_image]" id="use_horaires_image" type="checkbox" value="{{ settings.use_horaires_image }}" data-skin='visibility' />
-              {% endif %}
-            </label>
+            <label for="image-horaires">Image des horaires (png)</label>
           </div>
 
-          <div id="plupload" class="row image-item">
-            <div class="small-12 medium-12 large-11 preview">
-              <div class="filelist">
-                {{ 'horaires.png' | asset_url | image_tag }}
-              </div>
+          <div class="small-12 medium-12 large-11">
+            {% if settings.use_horaires_image %}
+            <input class="icheck-me" name="admin_theme_settings[use_horaires_image]" id="use_horaires_image" type="checkbox" value="{{ settings.use_horaires_image }}" data-skin='black-green' checked/>
+            {% else %}
+            <input class="icheck-me" name="admin_theme_settings[use_horaires_image]" id="use_horaires_image" type="checkbox" value="{{ settings.use_horaires_image }}" data-skin='black-green' />
+            {% endif %}
+            <label for="use_horaires_image">Afficher l'image</label>
+          </div>
+
+          <div class="small-12 medium-12 large-11">
+            <div id="plupload-image-horaires" class="input-file input-file-asset">
+              <input name="admin_theme_settings[assets][horaires.png]" type="file"/>
             </div>
-            <div class="small-12 medium-12 large-11">
-              <div id="plupload-image-horaires" class="input-file input-file-asset">
-                <a style="display:block;" id="image-horaires" class="pickfile choose-image fake-input-file-asset" data-url="/admin/themes/{{ theme.id }}/settings" data-fieldname="horaires.jpg">
-                  Fichier
-                </a>
-              </div>
+          </div>
+
+          <div class="small-12 medium-12 large-11 preview">
+            <div class="filelist">
+              {{ 'horaires.png' | asset_url | image_tag }}
             </div>
           </div>
         </div>
       </fieldset>
 
       <fieldset>
-        <legend>Image de la page restaurant</legend>
+        <legend>Page du restaurant</legend>
         <div class="small-12 medium-6 large-4 columns end">
           <div class="small-12 medium-12 large-11">
-            <label for="image-restaurant">
-              Image du restaurant
-              {% if settings.use_restaurant_image %}
-              <input class="icheck-me" name="admin_theme_settings[use_restaurant_image]" id="use_restaurant_image" type="checkbox" value="{{ settings.use_restaurant_image }}" data-skin='visibility' checked/>
-              {% else %}
-              <input class="icheck-me" name="admin_theme_settings[use_restaurant_image]" id="use_restaurant_image" type="checkbox" value="{{ settings.use_restaurant_image }}" data-skin='visibility' />
-              {% endif %}
-            </label>
+            <label for="image-restaurant">Image du restaurant (jpg)</label>
           </div>
 
-          <div id="plupload" class="row image-item">
-            <div class="small-12 medium-12 large-11 preview">
-              <div class="filelist">
-                {{ 'restaurant.jpg' | asset_url | image_tag }}
-              </div>
+          <div class="small-12 medium-12 large-11">
+            {% if settings.use_restaurant_image %}
+            <input class="icheck-me" name="admin_theme_settings[use_restaurant_image]" id="use_restaurant_image" type="checkbox" value="{{ settings.use_restaurant_image }}" data-skin='black-green' checked/>
+            {% else %}
+            <input class="icheck-me" name="admin_theme_settings[use_restaurant_image]" id="use_restaurant_image" type="checkbox" value="{{ settings.use_restaurant_image }}" data-skin='black-green' />
+            {% endif %}
+            <label for="use_restaurant_image">Afficher l'image</label>
+          </div>
+
+          <div class="small-12 medium-12 large-11">
+            <div id="plupload-image-restaurant" class="input-file input-file-asset">
+              <input name="admin_theme_settings[assets][restaurant.jpg]" type="file"/>
             </div>
-            <div class="small-12 medium-12 large-11">
-              <div id="plupload-image-restaurant" class="input-file input-file-asset">
-                <a style="display:block;" id="image-restaurant" class="pickfile choose-image fake-input-file-asset" data-url="/admin/themes/{{ theme.id }}/settings" data-fieldname="restaurant.jpg">
-                  Fichier
-                </a>
-              </div>
+          </div>
+
+          <div class="small-12 medium-12 large-11 preview">
+            <div class="filelist">
+              {{ 'restaurant.jpg' | asset_url | image_tag }}
             </div>
           </div>
         </div>
