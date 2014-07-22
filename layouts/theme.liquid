@@ -5,20 +5,20 @@
     <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
     <meta content='width=device-width,minimum-scale=1.0,maximum-scale=10.0,initial-scale=1.0' id='viewport' name='viewport'>
     {% title_tag %}
-    {% description_tag %}
+    {% meta_description_tag %}
     <meta content='' name='description'>
-    {{ 'app' | asset_url | stylesheet_tag }}
+    {{ 'app.css' | asset_url | stylesheet_tag }}
     
     <script src="//polyfill.io"></script>
 
-    {% if settings.slogan_font contains 'Google' %}
-      <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family={{ settings.slogan_font | remove: 'Google+' }}">
+    {% if theme_settings.slogan_font contains 'Google' %}
+      <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family={{ theme_settings.slogan_font | remove: 'Google+' }}">
     {% endif %}
-    {% if settings.text_font contains 'Google' %}
-      <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family={{ settings.text_font | remove: 'Google+' }}:500,700,500italic,700italic">
+    {% if theme_settings.text_font contains 'Google' %}
+      <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family={{ theme_settings.text_font | remove: 'Google+' }}:500,700,500italic,700italic">
     {% endif %}
     
-    {{ current_tenant.host | url_canonical | canonical_tag }}
+    {{ restaurant.host | canonical_tag }}
     <meta name="google-site-verification" content="">
 
     <link rel="apple-touch-icon-precomposed" href="/assets/full-visual-theme/images/favicon-152.png">
@@ -39,7 +39,7 @@
       </footer>
 
       <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-      {{ 'script' | asset_url | javascript_tag }}
-      {{ 'animatescroll.min' | asset_url | javascript_tag }}
+      {{ 'script.js' | asset_url | javascript_tag }}
+      {{ 'animatescroll.min.js' | asset_url | javascript_tag }}
   </body>
 </html>

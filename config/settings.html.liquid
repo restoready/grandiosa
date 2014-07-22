@@ -22,56 +22,56 @@
       <fieldset>
         <legend>Couleur perso 1</legend>
         <div class="small-12 medium-6 large-4 columns">
-          <input name="admin_theme_settings[perso-color-1]" type="text" id="perso-color-1" value="{{ settings.perso-color-1 }}" class="minicolors">
+          <input name="admin_theme_settings[perso-color-1]" type="text" id="perso-color-1" value="{{ theme_settings.perso-color-1 }}" class="minicolors">
         </div>
       </fieldset>
 
       <fieldset>
         <legend>Couleur perso 2</legend>
         <div class="small-12 medium-6 large-4 columns">
-          <input name="admin_theme_settings[perso-color-2]" type="text" id="perso-color-2" value="{{ settings.perso-color-2 }}" class="minicolors">
+          <input name="admin_theme_settings[perso-color-2]" type="text" id="perso-color-2" value="{{ theme_settings.perso-color-2 }}" class="minicolors">
         </div>
       </fieldset>
 
       <fieldset>
         <legend>Couleur perso 3</legend>
         <div class="small-12 medium-6 large-4 columns">
-          <input name="admin_theme_settings[perso-color-3]" type="text" id="perso-color-3" value="{{ settings.perso-color-3 }}" class="minicolors">
+          <input name="admin_theme_settings[perso-color-3]" type="text" id="perso-color-3" value="{{ theme_settings.perso-color-3 }}" class="minicolors">
         </div>
       </fieldset>
 
       <fieldset>
         <legend>Bordure navigation</legend>
         <div class="small-12 medium-6 large-4 columns">
-          <input name="admin_theme_settings[border]" type="text" id="border" value="{{ settings.border }}" class="minicolors">
+          <input name="admin_theme_settings[border]" type="text" id="border" value="{{ theme_settings.border }}" class="minicolors">
         </div>
       </fieldset>
 
       <fieldset>
         <legend>Étiquette "Végétarien"</legend>
         <div class="small-12 medium-6 large-4 columns">
-          <input name="admin_theme_settings[back-label-vegan]" type="text" id="back-label-vegan" value="{{ settings.back-label-vegan }}" class="minicolors">
+          <input name="admin_theme_settings[back-label-vegan]" type="text" id="back-label-vegan" value="{{ theme_settings.back-label-vegan }}" class="minicolors">
         </div>
       </fieldset>
 
       <fieldset>
         <legend>Étiquette "Pas de viande"</legend>
         <div class="small-12 medium-6 large-4 columns">
-          <input name="admin_theme_settings[back-label-meat]" type="text" id="back-label-meat" value="{{ settings.back-label-meat }}" class="minicolors">
+          <input name="admin_theme_settings[back-label-meat]" type="text" id="back-label-meat" value="{{ theme_settings.back-label-meat }}" class="minicolors">
         </div>
       </fieldset>
 
       <fieldset>
         <legend>Étiquette "Pas de porc"</legend>
         <div class="small-12 medium-6 large-4 columns">
-          <input name="admin_theme_settings[back-label-porc]" type="text" id="back-label-porc" value="{{ settings.back-label-porc }}" class="minicolors">
+          <input name="admin_theme_settings[back-label-porc]" type="text" id="back-label-porc" value="{{ theme_settings.back-label-porc }}" class="minicolors">
         </div>
       </fieldset>
 
       <fieldset>
         <legend>Prix</legend>
         <div class="small-12 medium-6 large-4 columns">
-          <input name="admin_theme_settings[back-price-value]" type="text" id="back-price-value" value="{{ settings.back-price-value }}" class="minicolors">
+          <input name="admin_theme_settings[back-price-value]" type="text" id="back-price-value" value="{{ theme_settings.back-price-value }}" class="minicolors">
         </div>
       </fieldset>
     </div>
@@ -82,7 +82,7 @@
         <div class="small-12 medium-6 large-4 columns">
           <select id="text_font" name="admin_theme_settings[text_font]">
             <optgroup label="Google Web Fonts">
-              <option value="{{ settings.text_font }}" selected>{{ settings.text_font | remove: 'Google+' | replace: '+', ' ' }}</option>
+              <option value="{{ theme_settings.text_font }}" selected>{{ theme_settings.text_font | remove: 'Google+' | replace: '+', ' ' }}</option>
               <option value='Google+Cabin'>Cabin</option>
               <option value='Google+Raleway'>Raleway</option>
             </optgroup>
@@ -95,7 +95,7 @@
         <div class="small-12 medium-6 large-4 columns">
           <select id="slogan_font" name="admin_theme_settings[slogan_font]">
             <optgroup label="Google Web Fonts">
-              <option value="{{ settings.slogan_font }}" selected>{{ settings.slogan_font | remove: 'Google+' | replace: '+', ' ' }}</option>
+              <option value="{{ theme_settings.slogan_font }}" selected>{{ theme_settings.slogan_font | remove: 'Google+' | replace: '+', ' ' }}</option>
               <option value='Google+Great+Vibes'>Great Vibes</option>
               <option value='Google+Lobster'>Lobster</option>
             </optgroup>
@@ -113,10 +113,10 @@
           </div>
 
           <div class="small-12 medium-12 large-11">
-            {% if settings.use_full_home_image %}
-            <input class="icheck-me" name="admin_theme_settings[use_full_home_image]" id="use_full_home_image" type="checkbox" value="{{ settings.use_full_home_image }}" data-skin='black-green' checked/>
+            {% if theme_settings.use_full_home_image %}
+            <input class="icheck-me" name="admin_theme_settings[use_full_home_image]" id="use_full_home_image" type="checkbox" value="{{ theme_settings.use_full_home_image }}" data-skin='black-green' checked/>
             {% else %}
-            <input class="icheck-me" name="admin_theme_settings[use_full_home_image]" id="use_full_home_image" type="checkbox" value="{{ settings.use_full_home_image }}" data-skin='black-green' />
+            <input class="icheck-me" name="admin_theme_settings[use_full_home_image]" id="use_full_home_image" type="checkbox" value="{{ theme_settings.use_full_home_image }}" data-skin='black-green' />
             {% endif %}
             <label for="use_full_home_image">Afficher l'image</label>
           </div>
@@ -140,10 +140,10 @@
           </div>
 
           <div class="small-12 medium-12 large-11">
-            {% if settings.use_presentation_image %}
-            <input class="icheck-me" name="admin_theme_settings[use_presentation_image]" id="use_presentation_image" type="checkbox" value="{{ settings.use_presentation_image }}" data-skin='black-green' checked/>
+            {% if theme_settings.use_presentation_image %}
+            <input class="icheck-me" name="admin_theme_settings[use_presentation_image]" id="use_presentation_image" type="checkbox" value="{{ theme_settings.use_presentation_image }}" data-skin='black-green' checked/>
             {% else %}
-            <input class="icheck-me" name="admin_theme_settings[use_presentation_image]" id="use_presentation_image" type="checkbox" value="{{ settings.use_presentation_image }}" data-skin='black-green' />
+            <input class="icheck-me" name="admin_theme_settings[use_presentation_image]" id="use_presentation_image" type="checkbox" value="{{ theme_settings.use_presentation_image }}" data-skin='black-green' />
             {% endif %}
             <label for="use_presentation_image">Afficher l'image</label>
           </div>
@@ -167,10 +167,10 @@
           </div>
 
           <div class="small-12 medium-12 large-11">
-            {% if settings.use_horaires_image %}
-            <input class="icheck-me" name="admin_theme_settings[use_horaires_image]" id="use_horaires_image" type="checkbox" value="{{ settings.use_horaires_image }}" data-skin='black-green' checked/>
+            {% if theme_settings.use_horaires_image %}
+            <input class="icheck-me" name="admin_theme_settings[use_horaires_image]" id="use_horaires_image" type="checkbox" value="{{ theme_settings.use_horaires_image }}" data-skin='black-green' checked/>
             {% else %}
-            <input class="icheck-me" name="admin_theme_settings[use_horaires_image]" id="use_horaires_image" type="checkbox" value="{{ settings.use_horaires_image }}" data-skin='black-green' />
+            <input class="icheck-me" name="admin_theme_settings[use_horaires_image]" id="use_horaires_image" type="checkbox" value="{{ theme_settings.use_horaires_image }}" data-skin='black-green' />
             {% endif %}
             <label for="use_horaires_image">Afficher l'image</label>
           </div>
@@ -197,10 +197,10 @@
           </div>
 
           <div class="small-12 medium-12 large-11">
-            {% if settings.use_restaurant_image %}
-            <input class="icheck-me" name="admin_theme_settings[use_restaurant_image]" id="use_restaurant_image" type="checkbox" value="{{ settings.use_restaurant_image }}" data-skin='black-green' checked/>
+            {% if theme_settings.use_restaurant_image %}
+            <input class="icheck-me" name="admin_theme_settings[use_restaurant_image]" id="use_restaurant_image" type="checkbox" value="{{ theme_settings.use_restaurant_image }}" data-skin='black-green' checked/>
             {% else %}
-            <input class="icheck-me" name="admin_theme_settings[use_restaurant_image]" id="use_restaurant_image" type="checkbox" value="{{ settings.use_restaurant_image }}" data-skin='black-green' />
+            <input class="icheck-me" name="admin_theme_settings[use_restaurant_image]" id="use_restaurant_image" type="checkbox" value="{{ theme_settings.use_restaurant_image }}" data-skin='black-green' />
             {% endif %}
             <label for="use_restaurant_image">Afficher l'image</label>
           </div>
@@ -224,19 +224,19 @@
       <fieldset>
         <legend>Modules</legend>
         <div class="small-12 medium-6 large-4 columns">
-          {% if settings.footer_display_newsletter %}
-          <input class="icheck-me" name="admin_theme_settings[footer_display_newsletter]" id="footer_display_newsletter" type="checkbox" value="{{ settings.footer_display_newsletter }}" data-skin='black-green' checked/>
+          {% if theme_settings.footer_display_newsletter %}
+          <input class="icheck-me" name="admin_theme_settings[footer_display_newsletter]" id="footer_display_newsletter" type="checkbox" value="{{ theme_settings.footer_display_newsletter }}" data-skin='black-green' checked/>
           {% else %}
-          <input class="icheck-me" name="admin_theme_settings[footer_display_newsletter]" id="footer_display_newsletter" type="checkbox" value="{{ settings.footer_display_newsletter }}" data-skin='black-green' />
+          <input class="icheck-me" name="admin_theme_settings[footer_display_newsletter]" id="footer_display_newsletter" type="checkbox" value="{{ theme_settings.footer_display_newsletter }}" data-skin='black-green' />
           {% endif %}
           <label style="margin-right:.5em;" for="footer_display_newsletter">Afficher la newsletter</label>
         </div>
 
         <div class="small-12 medium-6 large-4 columns end">
-          {% if settings.display_contact_form %}
-          <input class="icheck-me" name="admin_theme_settings[display_contact_form]" id="display_contact_form" type="checkbox" value="{{ settings.display_contact_form }}" data-skin='black-green' checked/>
+          {% if theme_settings.display_contact_form %}
+          <input class="icheck-me" name="admin_theme_settings[display_contact_form]" id="display_contact_form" type="checkbox" value="{{ theme_settings.display_contact_form }}" data-skin='black-green' checked/>
           {% else %}
-          <input class="icheck-me" name="admin_theme_settings[display_contact_form]" id="display_contact_form" type="checkbox" value="{{ settings.display_contact_form }}" data-skin='black-green' />
+          <input class="icheck-me" name="admin_theme_settings[display_contact_form]" id="display_contact_form" type="checkbox" value="{{ theme_settings.display_contact_form }}" data-skin='black-green' />
           {% endif %}
           <label style="margin-right:.5em;" for="display_contact_form">Afficher le formulaire de contact</label>
         </div>

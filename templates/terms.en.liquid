@@ -9,9 +9,9 @@
   <p>
     This website is published by <strong>{{company.name}}</strong>, <strong>{{company.statute}}</strong>
     {% if company.capital? %}
-     with a capital of <strong>{{current_tenant.capital}} euros</strong>
+     with a capital of <strong>{{restaurant.capital}} euros</strong>
     {% endif %}
-    , registered under number <strong>{{ company.registration_number }}</strong> and whose head office is situate at <strong>{{ company.registration_address }}</strong>. The publication manager of <a href="http://{{ current_tenant.host }}/" title="{{ current_tenant.name }} - {{ current_tenant.host }}">{{ current_tenant.host }}</a> is <strong>{{ company.publication_director }}</strong>
+    , registered under number <strong>{{ company.registration_number }}</strong> and whose head office is situate at <strong>{{ company.registration_address }}</strong>. The publication manager of <a href="http://{{ restaurant.host }}/" title="{{ restaurant.name }} - {{ restaurant.host }}">{{ restaurant.host }}</a> is <strong>{{ company.publication_director }}</strong>
   </p>
 </section>
 
@@ -30,7 +30,7 @@
   </p>
 
   <p>
-    All text, graphics, images, logos and photos published on <a href="http://{{ current_tenant.host }}/" title="{{ company.name }} - {{ current_tenant.host }}">{{ current_tenant.host }}</a> may be subject to reproduction on hard or electronic media, provided that the name and address of the website are cited and that this reproduction is not subject to commercial use. Non-compliance with the aforementioned provisions may constitute counterfeiting, for which the author may be held civilly or criminally liable.
+    All text, graphics, images, logos and photos published on <a href="http://{{ restaurant.host }}/" title="{{ company.name }} - {{ restaurant.host }}">{{ restaurant.host }}</a> may be subject to reproduction on hard or electronic media, provided that the name and address of the website are cited and that this reproduction is not subject to commercial use. Non-compliance with the aforementioned provisions may constitute counterfeiting, for which the author may be held civilly or criminally liable.
   </p>
 </section>
 
@@ -43,15 +43,15 @@
   </p>
 
   <p>
-    The <a href="http://{{ current_tenant.host }}/" title="{{ company.name }} - {{ current_tenant.host }}">{{ current_tenant.host }}</a> website is designed to provide information regarding all of the company's activities.
+    The <a href="http://{{ restaurant.host }}/" title="{{ company.name }} - {{ restaurant.host }}">{{ restaurant.host }}</a> website is designed to provide information regarding all of the company's activities.
   </p>
 
   <p>
-    <strong>{{company.name}}</strong> shall endeavour to provide as accurate information as possible on the <a href="http://{{ current_tenant.host }}/" title="{{ company.name }} - {{ current_tenant.host }}">{{ current_tenant.host }}</a> website. However, it may not be held liable for any omissions, inaccuracies and updating deficiencies, regardless of whether the latter originate from the former or from third party partners providing this information.
+    <strong>{{company.name}}</strong> shall endeavour to provide as accurate information as possible on the <a href="http://{{ restaurant.host }}/" title="{{ company.name }} - {{ restaurant.host }}">{{ restaurant.host }}</a> website. However, it may not be held liable for any omissions, inaccuracies and updating deficiencies, regardless of whether the latter originate from the former or from third party partners providing this information.
   </p>
 
   <p>
-    All information on the <a href="http://{{ current_tenant.host }}/" title="{{ company.name }} - {{ current_tenant.host }}">{{ current_tenant.host }}</a> website is provided for information purposes only and is subject to modification. Furthermore, the information published on the <a href="http://{{ current_tenant.host }}/" title="{{ company.name }} - {{ current_tenant.host }}">{{ current_tenant.host }}</a> website is not exhaustive in nature. It is provided subject to any modifications implemented since its publication online.
+    All information on the <a href="http://{{ restaurant.host }}/" title="{{ company.name }} - {{ restaurant.host }}">{{ restaurant.host }}</a> website is provided for information purposes only and is subject to modification. Furthermore, the information published on the <a href="http://{{ restaurant.host }}/" title="{{ company.name }} - {{ restaurant.host }}">{{ restaurant.host }}</a> website is not exhaustive in nature. It is provided subject to any modifications implemented since its publication online.
   </p>
 
   <p>
@@ -67,11 +67,11 @@
   </p>
 
   <p>
-    The following information may be collected when using the <a href="http://{{ current_tenant.host }}/" title="{{ company.name }} - {{ current_tenant.host }}">{{ current_tenant.host }}</a> website: the URL of links via which the user accessed the <a href="http://{{ current_tenant.host }}/" title="{{ company.name }} - {{ current_tenant.host }}">{{ current_tenant.host }}</a> website, the user's service provider and the user's Internet Protocol (IP) address.
+    The following information may be collected when using the <a href="http://{{ restaurant.host }}/" title="{{ company.name }} - {{ restaurant.host }}">{{ restaurant.host }}</a> website: the URL of links via which the user accessed the <a href="http://{{ restaurant.host }}/" title="{{ company.name }} - {{ restaurant.host }}">{{ restaurant.host }}</a> website, the user's service provider and the user's Internet Protocol (IP) address.
   </p>
 
   <p>
-    In any event, <strong>{{company.name}}</strong> only collects personal information on the user for the requirements of certain services proposed by the <a href="http://{{ current_tenant.host }}/" title="{{ company.name }} - {{ current_tenant.host }}">{{ current_tenant.host }}</a> website. The user provides this information knowingly, in particular as he/she is the person entering this information. <a href="http://{{ current_tenant.host }}/" title="{{ company.name }} - {{ current_tenant.host }}">{{ current_tenant.host }}</a> users are therefore advised on whether or not provision of this information is mandatory.
+    In any event, <strong>{{company.name}}</strong> only collects personal information on the user for the requirements of certain services proposed by the <a href="http://{{ restaurant.host }}/" title="{{ company.name }} - {{ restaurant.host }}">{{ restaurant.host }}</a> website. The user provides this information knowingly, in particular as he/she is the person entering this information. <a href="http://{{ restaurant.host }}/" title="{{ company.name }} - {{ restaurant.host }}">{{ restaurant.host }}</a> users are therefore advised on whether or not provision of this information is mandatory.
   </p>
 
   <p>
@@ -79,7 +79,7 @@
   </p>
 
   <p>
-    No personal information on <a href="http://{{ current_tenant.host }}/" title="{{ company.name }} - {{ current_tenant.host }}">{{ current_tenant.host }}</a> users is published without the knowledge of the latter, or exchanged, transferred or sold on any medium whatsoever to third parties. Only the hypothesis of the sale of <strong>{{company.name}}</strong> and of its rights could lead to the transmission of said information to a potential buyer, who in turn shall be bound by the same duty regarding the storage and modification of data on <a href="http://{{ current_tenant.host }}/" title="{{ company.name }} - {{ current_tenant.host }}">{{ current_tenant.host }}</a> users.
+    No personal information on <a href="http://{{ restaurant.host }}/" title="{{ company.name }} - {{ restaurant.host }}">{{ restaurant.host }}</a> users is published without the knowledge of the latter, or exchanged, transferred or sold on any medium whatsoever to third parties. Only the hypothesis of the sale of <strong>{{company.name}}</strong> and of its rights could lead to the transmission of said information to a potential buyer, who in turn shall be bound by the same duty regarding the storage and modification of data on <a href="http://{{ restaurant.host }}/" title="{{ company.name }} - {{ restaurant.host }}">{{ restaurant.host }}</a> users.
   </p>
 
   <p>
@@ -91,11 +91,11 @@
 <hr>
 <section class="term-item">
   <p>
-    The <a href="http://{{ current_tenant.host }}/" title="{{ company.name }} - {{ current_tenant.host }}">{{ current_tenant.host }}</a> website contains a certain number of hyperlinks to other websites, inserted with the authorisation of <strong>{{company.name}}</strong>. However, <strong>{{company.name}}</strong> is not able to verify the content of websites thus visited and therefore cannot be held liable in any form for the latter.
+    The <a href="http://{{ restaurant.host }}/" title="{{ company.name }} - {{ restaurant.host }}">{{ restaurant.host }}</a> website contains a certain number of hyperlinks to other websites, inserted with the authorisation of <strong>{{company.name}}</strong>. However, <strong>{{company.name}}</strong> is not able to verify the content of websites thus visited and therefore cannot be held liable in any form for the latter.
   </p>
 
   <p>
-    Browsing the <a href="http://{{ current_tenant.host }}/" title="{{ company.name }} - {{ current_tenant.host }}">{{ current_tenant.host }}</a> website is capable of leading to the installation of cookie(s) on the user's computer. A cookie is a small file which does not identify the user, but which records information regarding a computer's browsing of a website. The data thus obtained is intended to facilitate subsequent browsing of the website, as well as to perform various visit-related measurements.
+    Browsing the <a href="http://{{ restaurant.host }}/" title="{{ company.name }} - {{ restaurant.host }}">{{ restaurant.host }}</a> website is capable of leading to the installation of cookie(s) on the user's computer. A cookie is a small file which does not identify the user, but which records information regarding a computer's browsing of a website. The data thus obtained is intended to facilitate subsequent browsing of the website, as well as to perform various visit-related measurements.
   </p>
 </section>
 
@@ -103,7 +103,7 @@
 <hr>
 <section class="term-item">
   <p>
-    Any dispute regarding use of the <a href="http://{{ current_tenant.host }}/" title="{{ company.name }} - {{ current_tenant.host }}">{{ current_tenant.host }}</a> website is subject to French law. It falls exclusively under the jurisdiction of the competent courts of {{ company.city }}.
+    Any dispute regarding use of the <a href="http://{{ restaurant.host }}/" title="{{ company.name }} - {{ restaurant.host }}">{{ restaurant.host }}</a> website is subject to French law. It falls exclusively under the jurisdiction of the competent courts of {{ company.city }}.
   </p>
 </section>
 </div>

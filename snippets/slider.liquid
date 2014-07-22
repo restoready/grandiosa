@@ -6,7 +6,7 @@
       jqueryScriptTag.src = '//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js';
       jqueryScriptTag.onload = function() {
         $.getScript(
-          '{{ "jquery.bxslider.min" | asset_url }}', 
+          '{{ "jquery.bxslider.min.js" | asset_url }}', 
           function() {
             $('.home-header').hide();
 

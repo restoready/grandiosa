@@ -1,7 +1,7 @@
 <li id="food-item-{{food.id}}" class="dish">
   {% if food.main_image? %}
     <figure>
-      {{ food | custom_image_url: "454x256#", "main_image" | image_tag: 'class:dish__image' }}
+      {{ food.main_image | custom_image_url: "454x256#" | image_tag: 'class:dish__image' }}
     </figure>
   {% endif %}
 
@@ -32,10 +32,10 @@
     <div class="food-price">
       {% if prices.size > 1 or prices.first.title %}
           {% for price in prices %}
-            <p class="food-price__label">{{ price.title }} : <span class="food-price__value">{{ price.amount_with_decimals | currency }}</span></p>
+            <p class="food-price__label">{{ price.title }} : <span class="food-price__value">{{ price.amount | money }}</span></p>
           {% endfor %}
       {% else %}
-        <span class="food-price__value">{{ prices.first.amount_with_decimals | currency }}</span>
+        <span class="food-price__value">{{ prices.first.amount | money }}</span>
       {% endif %}
     </div>
   {% endif %}

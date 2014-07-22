@@ -2,21 +2,21 @@
 <div class="resto-presentation__image-wrapper">
 <div class="resto-presentation__image"></div>
 </div>
-{% if current_tenant.phone? %}
-    <a class="menus-number" href="tel:{{ current_tenant.phone_uri }}">
-      {{ current_tenant.phone }}
+{% if restaurant.phone? %}
+    <a class="menus-number" href="tel:{{ restaurant.phone_uri }}">
+      {{ restaurant.phone }}
     </a>
 {% endif %}
 <div class="resto-presentation__content">
   <header>
     <h2 class="resto-presentation__title">{{ "Le restaurant" | t }}</h2>
   </header>
-  {% if current_tenant.summary? %}
+  {% if restaurant.summary? %}
     <div class="resto-presentation__description resto-presentation__description-long" itemprop="description">
-      {{ current_tenant.summary }}
+      {{ restaurant.summary }}
     </div>
   {% endif %}
-  {% if current_tenant.main_photo? or photos.size > 0 %}
+  {% if restaurant.main_image? or photos.size > 0 %}
     <div class="gallery grid--full">
       {% if photos.size > 0 %}
         {% for photo in photos %}

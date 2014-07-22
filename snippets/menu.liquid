@@ -40,7 +40,7 @@
       <ul class="block-grid">
     {% endif %}
     {% for food in menu.foods %}
-      {% assign_prices prices for food in menu %}
+      {% assign_prices_to prices for food in menu %}
       {% include 'food' with food:food, menu:menu %}
     {% endfor %}
     </ul>

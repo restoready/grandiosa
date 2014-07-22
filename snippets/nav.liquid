@@ -1,11 +1,11 @@
 <div class="nav-large small--hide medium--hide">
-  {% if current_tenant.logo? %}
+  {% if restaurant.logo? %}
     <a href="{{ localized_root_path }}">
-      <div class="nav-large__logo">{{ current_tenant.logo_url | image_tag }}</div>
+      <div class="nav-large__logo">{{ restaurant.logo_url | image_tag }}</div>
     </a>
   {% endif %}
   <a href="{{ localized_root_path }}">
-    <h1 class="nav-large__name-resto">{{ current_tenant.name }}</h1>
+    <h1 class="nav-large__name-resto">{{ restaurant.name }}</h1>
   </a>
 
   <ul class="nav-large__list">
@@ -18,19 +18,19 @@
       </li>
     {% endfor %}
     <li class="nav-large__item">
-      <a class="nav-large__item-links" href="{{ current_tenant.url }}">{{ "Le restaurant" | t }}</a>
+      <a class="nav-large__item-links" href="{{ restaurant.url }}">{{ "Le restaurant" | t }}</a>
     </li>
-    {% if settings.display_contact_form %}
+    {% if theme_settings.display_contact_form %}
       <li class="nav-large__item">
-        {% if message_settings.navigation_label? %}
-          <a class="nav-large__item-links" href="{{ current_tenant.contact_path }}">{{ message_settings.navigation_label }}</a>
+        {% if contact_settings.navigation_label? %}
+          <a class="nav-large__item-links" href="{{ restaurant.contact_path }}">{{ contact_settings.navigation_label }}</a>
         {% else %}
-          <a class="nav-large__item-links" href="{{ current_tenant.contact_path }}">{{ message_settings.contact_title }}</a>
+          <a class="nav-large__item-links" href="{{ restaurant.contact_path }}">{{ contact_settings.contact_title }}</a>
         {% endif %}
       </li>
     {% endif %}
     <li class="lang-switch nav-large__item">
-      {% for path in alternate_paths %}
+      {% for path in localized_page_paths %}
         <a class="nav-large__item-links" href="{{ path.url }}">
           <img alt="Flag-{{ path.locale_code }}" src="{{ path.flag_url }}" />
           <span>{{ path.locale_name }}</span>
@@ -42,19 +42,19 @@
 
   <div class="nav-large__coordinate">
 
-    {% if current_tenant.social_urls? %}
+    {% if restaurant.social_urls? %}
     <div class="social-nav">
       <ul class="social-nav__networks">
-        {% if current_tenant.facebook_url? %}
+        {% if restaurant.facebook_url? %}
           <li class="social-nav__item">
-            <a href="{{current_tenant.facebook_url}}" class="social-nav__facebook">
+            <a href="{{restaurant.facebook_url}}" class="social-nav__facebook">
               <div class="facebook"></div>
             </a>
           </li>
         {% endif %}
-        {% if current_tenant.twitter_url? %}
+        {% if restaurant.twitter_url? %}
           <li class="social-nav__item">
-            <a href="{{current_tenant.twitter_url}}" class="social-nav__twitter">
+            <a href="{{restaurant.twitter_url}}" class="social-nav__twitter">
               <div class="twitter"></div>
             </a>
           </li>
@@ -63,33 +63,33 @@
     </div>
   {% endif %}
   
-    {% if current_tenant.phone? %}
-      <a class="nav-large__coordinate-number" href="tel:{{ current_tenant.phone_uri }}">
-          {{ current_tenant.phone }}
+    {% if restaurant.phone? %}
+      <a class="nav-large__coordinate-number" href="tel:{{ restaurant.phone_uri }}">
+          {{ restaurant.phone }}
       </a>
       </br>
     {% endif %}
-    {% if current_tenant.street_address? %}
-      <span class="coordinate-address" itemprop="streetAddress">{{ current_tenant.street_address }}</span>
+    {% if restaurant.street_address? %}
+      <span class="coordinate-address" itemprop="streetAddress">{{ restaurant.street_address }}</span>
       </br>
     {% endif %}
-    {% if current_tenant.zip_code? %}
-      <span class="coordinate-address" itemprop="postalCode">{{ current_tenant.zip_code }}</span>
+    {% if restaurant.zip_code? %}
+      <span class="coordinate-address" itemprop="postalCode">{{ restaurant.zip_code }}</span>
     {% endif %}
-    {% if current_tenant.city? %}
-      <span class="coordinate-address" itemprop="addressLocality">{{ current_tenant.city }}</span>
+    {% if restaurant.city? %}
+      <span class="coordinate-address" itemprop="addressLocality">{{ restaurant.city }}</span>
     {% endif %}
   </div>
 </div>
 
 <div class="nav-small large--hide">
-  {% if current_tenant.logo? %}
+  {% if restaurant.logo? %}
     <a href="{{ localized_root_path }}">
-      <div class="nav-small__logo">{{ current_tenant.logo_url | image_tag }}</div>
+      <div class="nav-small__logo">{{ restaurant.logo_url | image_tag }}</div>
     </a>
   {% endif %}
   <a href="{{ localized_root_path }}">
-    <h1 class="nav-small__name-resto">{{ current_tenant.name }}</h1>
+    <h1 class="nav-small__name-resto">{{ restaurant.name }}</h1>
   </a>
 
   <div class="nav-small__btn">
@@ -109,19 +109,19 @@
         </li>
       {% endfor %}
       <li class="nav-small__item">
-        <a class="nav-small__item-links" href="{{ current_tenant.url }}">{{ "Le restaurant" | t }}</a>
+        <a class="nav-small__item-links" href="{{ restaurant.url }}">{{ "Le restaurant" | t }}</a>
       </li>
-      {% if settings.display_contact_form %}
+      {% if theme_settings.display_contact_form %}
         <li class="nav-large__item">
-          {% if message_settings.navigation_label? %}
-            <a class="nav-large__item-links" href="{{ current_tenant.contact_path }}">{{ message_settings.navigation_label }}</a>
+          {% if contact_settings.navigation_label? %}
+            <a class="nav-large__item-links" href="{{ restaurant.contact_path }}">{{ contact_settings.navigation_label }}</a>
           {% else %}
-          <a class="nav-large__item-links" href="{{ current_tenant.contact_path }}">{{ message_settings.contact_title }}</a>
+          <a class="nav-large__item-links" href="{{ restaurant.contact_path }}">{{ contact_settings.contact_title }}</a>
         {% endif %}
         </li>
       {% endif %}
       <li class="nav-small__item">
-        {% for path in alternate_paths %}
+        {% for path in localized_page_paths %}
           <a class="nav-small__item-links" href="{{ path.url }}">
             <img alt="Flag-{{ path.locale_code }}" src="{{ path.flag_url }}" />
             <span>{{ path.locale_name }}</span>
@@ -132,21 +132,21 @@
     </ul>
 
     <div class="nav-small__coordinate">
-      {% if current_tenant.phone? %}
-        <a class="nav-small__coordinate-number" href="tel:{{ current_tenant.phone_uri }}">
-          {{ current_tenant.phone }}
+      {% if restaurant.phone? %}
+        <a class="nav-small__coordinate-number" href="tel:{{ restaurant.phone_uri }}">
+          {{ restaurant.phone }}
         </a>
         </br>
       {% endif %}
-      {% if current_tenant.street_address? %}
-        <span class="nav-small__coordinate-address" itemprop="streetAddress">{{ current_tenant.street_address }}</span>
+      {% if restaurant.street_address? %}
+        <span class="nav-small__coordinate-address" itemprop="streetAddress">{{ restaurant.street_address }}</span>
         </br>
       {% endif %}
-      {% if current_tenant.zip_code? %}
-        <span class="nav-small__coordinate-address" itemprop="postalCode">{{ current_tenant.zip_code }}</span>
+      {% if restaurant.zip_code? %}
+        <span class="nav-small__coordinate-address" itemprop="postalCode">{{ restaurant.zip_code }}</span>
       {% endif %}
-      {% if current_tenant.city? %}
-        <span class="nav-small__coordinate-address" itemprop="addressLocality">{{ current_tenant.city }}</span>
+      {% if restaurant.city? %}
+        <span class="nav-small__coordinate-address" itemprop="addressLocality">{{ restaurant.city }}</span>
       {% endif %}
     </div>
   </div>

@@ -1,58 +1,58 @@
 <section class="footer">
 
   <div class="contact-footer large--hide" itemprop="address" itemscope="" itemtype="http://schema.org/ PostalAddress">
-    <h3 class="contact-footer__name">{{ current_tenant.name }}</h3>
-    {% if current_tenant.street_address? %}
-      <span class="contact-footer__street-address" itemprop="streetAddress">{{ current_tenant.street_address }}</span>
+    <h3 class="contact-footer__name">{{ restaurant.name }}</h3>
+    {% if restaurant.street_address? %}
+      <span class="contact-footer__street-address" itemprop="streetAddress">{{ restaurant.street_address }}</span>
       <br />
     {% endif %}
-    {% if current_tenant.zip_code? %}
-      <span class="contact-footer__postal-code" itemprop="postalCode">{{ current_tenant.zip_code }}</span>
+    {% if restaurant.zip_code? %}
+      <span class="contact-footer__postal-code" itemprop="postalCode">{{ restaurant.zip_code }}</span>
     {% endif %}
-    {% if current_tenant.city? %}
-      <span class="contact-footer__address-locality" itemprop="addressLocality">{{ current_tenant.city }}</span>
+    {% if restaurant.city? %}
+      <span class="contact-footer__address-locality" itemprop="addressLocality">{{ restaurant.city }}</span>
       <br />
     {% endif %}
-    {% if current_tenant.phone? %}
-      <a class="contact-footer__phone-link" href="tel:#{{current_tenant.phone_uri}}">
-        <span class="contact-footer__phone" itemprop="telephone">{{ current_tenant.phone }}</span>
+    {% if restaurant.phone? %}
+      <a class="contact-footer__phone-link" href="tel:#{{restaurant.phone_uri}}">
+        <span class="contact-footer__phone" itemprop="telephone">{{ restaurant.phone }}</span>
       </a>
       <br />
     {% endif %}
-    {% if current_tenant.email %}
-      <a class="contact-footer__mail-link" href="mailto:#{{current_tenant.email}}">
-        <span class="contact-footer__mail" itemprop="email">{{ current_tenant.email }}</span>
+    {% if restaurant.email %}
+      <a class="contact-footer__mail-link" href="mailto:#{{restaurant.email}}">
+        <span class="contact-footer__mail" itemprop="email">{{ restaurant.email }}</span>
       </a>
       <br />
     {% endif %}
   </div>
   
   <div class="newsletter-footer">
-    {% if settings.footer_display_newsletter %}
+    {% if theme_settings.footer_display_newsletter %}
       <div class="subscribe">
         <h3 class="subscribe__title">{{ "Abonnement Newsletter" | t }}</h3>
         <br />
-        {% subscriberForm %}
+        {% newsletter_subscribe_form %}
           <input class="subscribe__email-subscriber" id="subscriber_email" name="subscriber[email]" placeholder=" Entrez votre  email" type="text">
           <button class="subscribe__submit-subscriber btn" name="button" type="submit">{{ "S'abonner" | t }}</button>
-        {% endsubscriberForm %}
+        {% endnewsletter_subscribe_form %}
       </div>
     {% endif %} 
   </div>
 
-    {% if current_tenant.social_urls? %}
+    {% if restaurant.social_urls? %}
       <div class="social-footer large--hide">
         <ul class="social-footer__networks">
-          {% if current_tenant.facebook_url? %}
+          {% if restaurant.facebook_url? %}
             <li class="social-footer__item">
-              <a href="{{current_tenant.facebook_url}}" class="social-footer__facebook">
+              <a href="{{restaurant.facebook_url}}" class="social-footer__facebook">
                 <div class="facebook"></div>
               </a>
             </li>
           {% endif %}
-          {% if current_tenant.twitter_url? %}
+          {% if restaurant.twitter_url? %}
             <li class="social-footer__item">
-              <a href="{{current_tenant.twitter_url}}" class="social-footer__twitter">
+              <a href="{{restaurant.twitter_url}}" class="social-footer__twitter">
                 <div class="twitter"></div>
               </a>
             </li>
@@ -61,7 +61,7 @@
       </div>
     {% endif %}
 
-  <a class="footer-link" href="{{ current_tenant.terms_of_use_url }}">
+  <a class="footer-link" href="{{ restaurant.terms_of_use_url }}">
     <span class="contact-footer__mentions" itemprop="terms-of-use">{{ "Mentions légales" | t }}</span>
   </a>
 </section>

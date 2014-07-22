@@ -3,7 +3,7 @@
     Newsletter
   </h2>
   <div class="subscribe-page__description">
-    {% subscriberForm %}
+    {% newsletter_subscribe_form %}
       {% if form.created_successfully? %}
         <div class="newsletter-description">{{ "Abonnez-vous à notre newsletter pour recevoir les dernières   nouveautés du restaurant." | t }}</div>
       {% else %}
@@ -20,7 +20,7 @@
       {% endunless %}
     <br />
     <button class="submit-subscriber btn" name="button" type="submit"><span>{{ "S'abonner" | t }}</span></button>
-  {% endsubscriberForm %}
+  {% endnewsletter_subscribe_form %}
   
   </div>
 </div>

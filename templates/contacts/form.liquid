@@ -1,9 +1,9 @@
 <div class="contact-page page-wrap">
-    <h2 class="contact-page__title">{{ message_settings.contact_title }}</h2>
+    <h2 class="contact-page__title">{{ contact_settings.contact_title }}</h2>
     
     <div id="contact">
-      {% contactForm %}
-        <div class="contact-page__description">{{ message_settings.contact_content }}</div>
+      {% contact_form %}
+        <div class="contact-page__description">{{ contact_settings.contact_content }}</div>
     
         <label for="message_from_name">{{ "Nom" | t }}</label>
         <input class="name-contact" id="message_from_name" name="message[from_name]" placeholder="Entrez votre nom"  type="text">
@@ -18,6 +18,6 @@
         <textarea class="message-contact" id="message_body" name="message[body]"></textarea>
         
         <button class="submit-contact btn" name="button" type="submit"><span>{{ "Envoyer" | t }}</span></button>
-      {% endcontactForm %}
+      {% endcontact_form %}
     </div>
 </div>

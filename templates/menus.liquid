@@ -1,7 +1,7 @@
 <div class="margin"></div>
-{% if current_tenant.phone? %}
-    <a class="menus-number" href="tel:{{ current_tenant.phone_uri }}">
-      {{ current_tenant.phone }}
+{% if restaurant.phone? %}
+    <a class="menus-number" href="tel:{{ restaurant.phone_uri }}">
+      {{ restaurant.phone }}
     </a>
 {% endif %}
 
@@ -17,7 +17,7 @@
       <li class="menus-nav__item">
       <a href="{{ menu.url }}#menu-{{child.id}}" class="menus-nav__link">
         {% if child.main_image? %}
-            {{ child | small_image_url: 'main_image' | image_tag: 'class:menus-nav__image' }}
+            {{ child.main_image | small_image_url | image_tag: 'class:menus-nav__image' }}
         {% endif %}
         <h4 class="menus-nav__title">
           {{ child.name }}

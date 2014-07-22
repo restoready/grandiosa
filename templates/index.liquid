@@ -1,12 +1,12 @@
 <section class="full-background">
     <div class="full-background__image">
     </div>
-    {% if current_tenant.slogan? %}
+    {% if restaurant.slogan? %}
     <div class="slogan-wrapper">
-        <h1 class="slogan">RestoReady, simple et rapide.</h1>
-          {% if current_tenant.phone? %}
-            <a class="home-number" href="tel:{{ current_tenant.phone_uri }}">
-              {{ current_tenant.phone }}
+        <h1 class="slogan">{{ restaurant.slogan }}</h1>
+          {% if restaurant.phone? %}
+            <a class="home-number" href="tel:{{ restaurant.phone_uri }}">
+              {{ restaurant.phone }}
             </a>
           {% endif %}
         </div>
@@ -15,13 +15,13 @@
 
 <section class="news">
   <article class="week">
-    {% if featured_menus.size > 0 %}
+    {% if home_menus.size > 0 %}
         <section>
         <header>
           <h2 class="week__title">{{ "Cette semaine" | t }}</h2>
         </header>
       
-        {% for menu in featured_menus %}
+        {% for menu in home_menus %}
           <div class="grid--full">
             <header>
               <h3 class="week__resume">{{ menu.name }}</h3>
@@ -31,7 +31,7 @@
             {% endif %}
             <ul class="block-grid">
             {% for food in menu.foods %}
-              {% assign_prices prices for food in menu %}
+              {% assign_prices_to prices for food in menu %}
               {% include 'food' with food:food %}
             {% endfor %}
             </ul>
@@ -42,7 +42,7 @@
   </article>
   
   <article class="new-dish grid--full">
-    {% if featured_foods.size > 0 %}
+    {% if home_foods.size > 0 %}
         <section>
         <header>
           <h2 class="new-dish__title">{{ "Plats de la semaine" | t }}</h2>
@@ -52,7 +52,7 @@
         </header>
         <div class="new-dish__details">{{ "Venez découvrir nos derniers plats." | t }}</div>
         <ul class="block-grid">
-        {% for food in featured_foods %}
+        {% for food in home_foods %}
           {% include 'food' with food:food %}
         {% endfor %}
         </ul>
@@ -60,27 +60,27 @@
     {% endif %}
   </article>
   <footer class="news-footer">
-      <a class="btn news-footer__btn" href="{{ current_tenant.menus_path }}">
+      <a class="btn news-footer__btn" href="{{ restaurant.menus_path }}">
         {{ "Voir toute la carte" | t }}
       </a>
   </footer>
 </section>
 
 <section class="presentation">
-    {% if current_tenant.summary? %}
+    {% if restaurant.summary? %}
       <section class="home-description grid--full">
         <header>
           <h2 class="home-description__title">{{ "Notre restaurant" | t }}</h2>
         </header>
-        {% if current_tenant.summary? %}
+        {% if restaurant.summary? %}
           <div class="home-description__summary small--one-whole large--one-half">
-            {{ current_tenant.summary }}
+            {{ restaurant.summary }}
           </div>
         {% endif %}
       </section>
     {% endif %}
     <footer class="presentation-footer">
-      <a class="btn presentation-footer__btn" href="{{ current_tenant.menus_path }}">
+      <a class="btn presentation-footer__btn" href="{{ restaurant.menus_path }}">
         {{ "Voir toute la carte" | t }}
       </a>
     </footer>
@@ -93,7 +93,7 @@
     </header>
     <table>
       <tbody class="hours__table">
-        {% for day in days %}
+        {% for day in opening_hours %}
           <tr class="hours__day day-{{ day.number }} {% cycle 'even', 'odd' %}">
             <th class="hours__day-name">{{ day.name }}</th>
             <td class="hours__day-shifts">
@@ -104,9 +104,9 @@
       </tbody>
     </table>
     <footer>
-      {% if current_tenant.opening_hours_information? %}
+      {% if restaurant.opening_hours_information? %}
         <div class="hours__information">
-          {{ current_tenant.opening_hours_information }}
+          {{ restaurant.opening_hours_information }}
         </div>
       {% endif %}
     </footer>
@@ -114,11 +114,11 @@
 </aside>
 
 <aside id="directions" class="directions">
-  <a class="directions__map-link" href="{{ current_tenant.google_maps_url }}">
-    <img src="{{ current_tenant | static_map_url: '640x320' }}" class="directions__map-image" />
+  <a class="directions__map-link" href="{{ restaurant.google_maps_url }}">
+    <img src="{% google_map_image_url size:640x320 %}" class="directions__map-image" />
   </a>
   <footer class="directions-footer">
-    <a href="{{ current_tenant.google_maps_url }}" class="btn directions-footer__btn">
+    <a href="{{ restaurant.google_maps_url }}" class="btn directions-footer__btn">
       {{ "Voir l'itinéraire" | t }}
     </a>
   </footer>

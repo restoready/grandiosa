@@ -9,11 +9,11 @@ body,
 .contact-footer,
 .home-number,
 .hours__table {
-  font-family: "{{ settings.text_font | remove: 'Google+' | replace: '+', ' ' }}";
+  font-family: "{{ theme_settings.text_font | remove: 'Google+' | replace: '+', ' ' }}";
 }
 
 .slogan {
-  font-family: "{{ settings.slogan_font | remove: 'Google+' | replace: '+', ' ' }}";
+  font-family: "{{ theme_settings.slogan_font | remove: 'Google+' | replace: '+', ' ' }}";
 }
 
 hr,
@@ -32,13 +32,13 @@ hr,
 .contact-page__title,
 .home-number:hover,
 .infos-local__address {
-  color: {{ settings.perso-color-1 }};
+  color: {{ theme_settings.perso-color-1 }};
 }
 
 .nav-small__coordinate-number,
 .menus-number:hover,
 .nav-large__coordinate-number {
-  color: {{ settings.perso-color-2 }};
+  color: {{ theme_settings.perso-color-2 }};
 }
 
 a,
@@ -63,7 +63,7 @@ tbody,
 .home-description__title, 
 .hours__title,
 .hours__information {
-  color: {{ settings.perso-color-3 }};
+  color: {{ theme_settings.perso-color-3 }};
 }
 
 .footer__infos,
@@ -75,7 +75,7 @@ tbody,
 .dish__name--featured,
 .subscribe-page__title,
 .nav-large {
-  background-color: {{ settings.perso-color-1 }};
+  background-color: {{ theme_settings.perso-color-1 }};
 }
 
 .btn,
@@ -83,47 +83,47 @@ tbody,
 .nav-large__item:hover,
 .terms-content a,
 .subscriber-error {
-  background-color: {{ settings.perso-color-2 }};
+  background-color: {{ theme_settings.perso-color-2 }};
 }
 
 .food-price__value {
-  background-color: {{ settings.back-price-value }};
+  background-color: {{ theme_settings.back-price-value }};
 }
 
 .arrow {
-  border-color: transparent transparent {{ settings.perso-color-1 }} transparent;
+  border-color: transparent transparent {{ theme_settings.perso-color-1 }} transparent;
 }
 
 .nav-small__list, 
 .nav-large__list {
-  border-bottom: solid 2px {{ settings.border }};
+  border-bottom: solid 2px {{ theme_settings.border }};
 }
 
 .nav-small__item, 
 .nav-large__item {
-  border-top: solid 2px {{ settings.border }};
+  border-top: solid 2px {{ theme_settings.border }};
 }
 
 .block-grid--featured {
-  border: 6px solid {{ settings.perso-color-1 }};
+  border: 6px solid {{ theme_settings.perso-color-1 }};
 }
 
 .label-new {
-  border: 3px solid {{ settings.perso-color-2 }};
+  border: 3px solid {{ theme_settings.perso-color-2 }};
 }
 
 .label-vegan {
-  border: 3px solid {{ settings.back-label-vegan }};
+  border: 3px solid {{ theme_settings.back-label-vegan }};
 }
 
 .label-no-meat {
-  border: 3px solid {{ settings.back-label-meat }};
+  border: 3px solid {{ theme_settings.back-label-meat }};
 }
 
 .label-no-porc {
-  border: 3px solid {{ settings.back-label-porc }};
+  border: 3px solid {{ theme_settings.back-label-porc }};
 }
 
 .newsletter-description-error {
-  border-left: 5px solid {{ settings.perso-color-2 }};
+  border-left: 5px solid {{ theme_settings.perso-color-2 }};
 }
