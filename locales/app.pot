@@ -106,3 +106,8 @@ msgstr "Message"
 msgid "Envoyer"
 msgstr "Send"
 
+msgid "Visite virtuelle"
+msgstr "Virtual tour"
+
+msgid "Visiter"
+msgstr "Visit"

@@ -222,23 +222,81 @@
 
     <div class="tab-body" id="tab-body-4">
       <fieldset>
-        <legend>Modules</legend>
-        <div class="small-12 medium-6 large-4 columns">
+        <legend>Communication</legend>
+        <div class="small-12 medium-6 large-6 columns">
           {% if theme_settings.footer_display_newsletter %}
-          <input class="icheck-me" name="admin_theme_settings[footer_display_newsletter]" id="footer_display_newsletter" type="checkbox" value="{{ theme_settings.footer_display_newsletter }}" data-skin='black-green' checked/>
+            <input class="icheck-me" name="admin_theme_settings[footer_display_newsletter]" id="footer_display_newsletter" type="checkbox" value="{{ theme_settings.footer_display_newsletter }}" data-skin='black-green' checked/>
           {% else %}
-          <input class="icheck-me" name="admin_theme_settings[footer_display_newsletter]" id="footer_display_newsletter" type="checkbox" value="{{ theme_settings.footer_display_newsletter }}" data-skin='black-green' />
+            <input class="icheck-me" name="admin_theme_settings[footer_display_newsletter]" id="footer_display_newsletter" type="checkbox" value="{{ theme_settings.footer_display_newsletter }}" data-skin='black-green' />
           {% endif %}
           <label style="margin-right:.5em;" for="footer_display_newsletter">Afficher la newsletter</label>
         </div>
 
-        <div class="small-12 medium-6 large-4 columns end">
+        <div class="small-12 medium-6 large-6 columns end">
           {% if theme_settings.display_contact_form %}
-          <input class="icheck-me" name="admin_theme_settings[display_contact_form]" id="display_contact_form" type="checkbox" value="{{ theme_settings.display_contact_form }}" data-skin='black-green' checked/>
+            <input class="icheck-me" name="admin_theme_settings[display_contact_form]" id="display_contact_form" type="checkbox" value="{{ theme_settings.display_contact_form }}" data-skin='black-green' checked/>
           {% else %}
-          <input class="icheck-me" name="admin_theme_settings[display_contact_form]" id="display_contact_form" type="checkbox" value="{{ theme_settings.display_contact_form }}" data-skin='black-green' />
+            <input class="icheck-me" name="admin_theme_settings[display_contact_form]" id="display_contact_form" type="checkbox" value="{{ theme_settings.display_contact_form }}" data-skin='black-green' />
           {% endif %}
           <label style="margin-right:.5em;" for="display_contact_form">Afficher le formulaire de contact</label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Carte Google</legend>
+        <div class="small-12 medium-6 large-6 columns">
+          <input class="icheck-me" name="admin_theme_settings[google_map_type]" id="radio_google_none" type="radio" value="" data-skin='black-green' {% if theme_settings.google_map_type == "" %}checked{% endif %}/>
+          <label style="margin-right:.5em;" for="radio_google_none">Ne pas afficher la carte</label>
+          <input class="icheck-me" name="admin_theme_settings[google_map_type]" id="radio_google_map_image" type="radio" value="image" data-skin='black-green' {% if theme_settings.google_map_type == "image" %}checked{% endif %}/>
+          <label style="margin-right:.5em;" for="radio_google_map_image">Afficher la carte sous forme d'image</label>
+          <input class="icheck-me" name="admin_theme_settings[google_map_type]" id="radio_google_map_embed" type="radio" value="embed" data-skin='black-green' {% if theme_settings.google_map_type == "embed" %}checked{% endif %}/>
+          <label style="margin-right:.5em;" for="radio_google_map_embed">Afficher la carte interactive</label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>
+          Visite virtuelle
+          <a class="small dropdown" data-options="align:top" data-dropdown="informations-link" style="display:inline;width:25px;text-align:center;">
+            &nbsp<i class="fa fa-info"></i>&nbsp
+          </a>
+          <div class="f-dropdown content info" id="informations-link" data-dropdown-content="">
+            <p>
+              Où trouver vos informations ? <a target="blank" href='https://www.google.com/maps?output=classic'>google.com/maps?output=classic</a>
+            </p>
+            <img src="/assets/business-view-info.jpg">
+          </div>
+        </legend>
+        <div class="small-12 medium-6 large-6 columns end">
+          <div class="row">
+            {% if theme_settings.display_google_business_view_embed %}
+              <input class="icheck-me" name="admin_theme_settings[display_google_business_view_embed]" id="display_google_business_view_embed" type="checkbox" value="{{ theme_settings.display_google_business_view_embed }}" data-skin='black-green' checked/>
+            {% else %}
+              <input class="icheck-me" name="admin_theme_settings[display_google_business_view_embed]" id="display_google_business_view_embed" type="checkbox" value="{{ theme_settings.display_google_business_view_embed }}" data-skin='black-green' />
+            {% endif %}
+            <label style="margin-right:.5em;" for="display_google_business_view_embed">Afficher la visite virtuelle</label>
+          </div>
+
+          <div class="row">
+            <label class="left" for="google_business_view_embed">Code HTML</label>
+            <input name="admin_theme_settings[google_business_view_embed]" type="text" id="google_business_view_embed" value="{{ theme_settings.google_business_view_embed | escape_once }}" />
+          </div>
+        </div>
+
+        <div class="small-12 medium-6 large-6 columns">
+          <div class="row">
+            {% if theme_settings.display_google_business_view_url %}
+              <input class="icheck-me" name="admin_theme_settings[display_google_business_view_url]" id="display_google_business_view_url" type="checkbox" value="{{ theme_settings.display_google_business_view_url }}" data-skin='black-green' checked/>
+            {% else %}
+              <input class="icheck-me" name="admin_theme_settings[display_google_business_view_url]" id="display_google_business_view_url" type="checkbox" value="{{ theme_settings.display_google_business_view_url }}" data-skin='black-green' />
+            {% endif %}
+            <label style="margin-right:.5em;" for="display_google_business_view_url">Afficher le lien</label>
+          </div>
+
+          <div class="row">
+            <label class="left" for="google_business_view_url">Url</label>
+            <input name="admin_theme_settings[google_business_view_url]" type="text" id="google_business_view_url" value="{{ theme_settings.google_business_view_url }}" />
+          </div>
         </div>
       </fieldset>
     </div>

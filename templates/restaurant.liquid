@@ -1,29 +1,47 @@
 <section class="resto-presentation page-wrap">
-<div class="resto-presentation__image-wrapper">
-<div class="resto-presentation__image"></div>
-</div>
-{% if restaurant.phone? %}
-    <a class="menus-number" href="tel:{{ restaurant.phone_uri }}">
-      {{ restaurant.phone }}
-    </a>
-{% endif %}
-<div class="resto-presentation__content">
-  <header>
-    <h2 class="resto-presentation__title">{{ "Le restaurant" | t }}</h2>
-  </header>
-  {% if restaurant.summary? %}
-    <div class="resto-presentation__description resto-presentation__description-long" itemprop="description">
-      {{ restaurant.summary }}
-    </div>
+  <div class="resto-presentation__image-wrapper">
+  <div class="resto-presentation__image"></div>
+  </div>
+  {% if restaurant.phone? %}
+      <a class="menus-number" href="tel:{{ restaurant.phone_uri }}">
+        {{ restaurant.phone }}
+      </a>
   {% endif %}
-  {% if restaurant.main_image? or photos.size > 0 %}
-    <div class="gallery grid--full">
-      {% if photos.size > 0 %}
-        {% for photo in photos %}
-          {% include 'photo' with photo:photo %}
-        {% endfor %}
+  <div class="resto-presentation__content">
+    <header>
+      <h2 class="resto-presentation__title">{{ "Le restaurant" | t }}</h2>
+    </header>
+    {% if restaurant.summary? %}
+      <div class="resto-presentation__description resto-presentation__description-long" itemprop="description">
+        {{ restaurant.summary }}
+      </div>
+    {% endif %}
+    {% if restaurant.main_image? or photos.size > 0 %}
+      <div class="gallery grid--full">
+        {% if photos.size > 0 %}
+          {% for photo in photos %}
+            {% include 'photo' with photo:photo %}
+          {% endfor %}
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+
+  {% if theme_settings.display_google_business_view_embed %}
+    <div class="business-view resto-presentation__content">
+      <header>
+        <h2 class="resto-presentation__title">{{ "Visite virtuelle" | t }}</h2>
+      </header>
+      {% google_business_view_embed: "size:98%x300" %}
+      {% if theme_settings.display_google_business_view_url %}
+        <footer>
+          <a class="btn" href="{{ restaurant.menus_path }}">
+            {{ "Visiter" | t }}
+          </a>
+        </footer>
+        <br /><br />
       {% endif %}
     </div>
   {% endif %}
-  </div>
+
 </section>

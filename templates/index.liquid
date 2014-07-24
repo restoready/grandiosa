@@ -113,13 +113,19 @@
   </div>
 </aside>
 
-<aside id="directions" class="directions">
-  <a class="directions__map-link" href="{{ restaurant.google_maps_url }}">
-    <img src="{% google_map_image_url size:640x320 %}" class="directions__map-image" />
-  </a>
-  <footer class="directions-footer">
-    <a href="{{ restaurant.google_maps_url }}" class="btn directions-footer__btn">
-      {{ "Voir l'itinéraire" | t }}
-    </a>
-  </footer>
-</aside>
+{% if theme_settings.google_map_type != "" %}
+  <aside id="directions" class="directions">
+    {% if theme_settings.google_map_type == "embed" %}
+      {% google_map_embed: "size:100%x320" %}
+    {% elsif theme_settings.google_map_type == "image" %}
+      <a class="directions__map-link" href="{% google_map_url %}">
+        <img class="directions__map-image" src="{% google_map_image_url: "size:640x320" %}" />
+      </a>
+    {% endif %}
+    <footer class="directions-footer">
+      <a href="{% google_map_url %}" class="btn directions-footer__btn">
+        {{ "Voir l'itinéraire" | t }}
+      </a>
+    </footer>
+  </aside>
+{% endif %}
