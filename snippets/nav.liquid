@@ -59,6 +59,13 @@
             </a>
           </li>
         {% endif %}
+        {% if restaurant.tripadvisor_url? %}
+          <li class="social-nav__item">
+            <a href="{{restaurant.tripadvisor_url}}" class="social-nav__tripadvisor">
+              <div class="tripadvisor"></div>
+            </a>
+          </li>
+        {% endif %}
       </ul>
     </div>
   {% endif %}
