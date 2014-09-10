@@ -735,6 +735,29 @@ hr {
   margin-left: auto;
   margin-right: auto;
 }
+
+.page-header {
+  background-color: #fff;
+  padding: 1em 0;
+}
+  .page-header__header {
+  }
+    .page-header__title {
+      color: #000;
+    }
+    .page-header__description {
+      color: #000;
+      p {
+        font-size: 1.2em;
+        margin-bottom: 0;
+      }
+    }
+.section__title {
+  color: #000;
+  font-weight: 700;
+  font-size: 1.5em;
+}
+
 .btn {
   background-color: {{ theme_settings.perso-color-2 }};
   color: {{ theme_settings.perso-color-3 }};
@@ -846,6 +869,33 @@ hr {
 	font-size: 1.2em;
   padding-bottom: 15px;
   position: absolute;
+}
+
+.sub-nav__items {
+  padding: 0;
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  margin: 0;
+  background-color: {{ theme_settings.perso-color-1 }};
+}
+.sub-nav__item {
+  display: block;
+  width: 100%;
+  padding: 0 0 0 10px;
+}
+.sub-nav__link{
+  @extend .nav-small__item-links;
+  transition: color .25s;
+  &:hover {
+    color: {{ theme_settings.perso-color-2 }};
+  }
+}
+.nav-large__item:hover .sub-nav__items,
+.nav-small__item:hover .sub-nav__items {
+  display: block;
+  opacity: 1;
+  visibility: visible;
 }
 
 .sb-slidebar {
@@ -1162,6 +1212,23 @@ hr {
 }
 .terms-title-level-2 {
   font-size: 1.1em;
+}
+// ===================== #pages -- page.liquid ============================================================
+.page-wrapper {
+  max-width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+}
+// ===================== #404 -- 404.liquid ============================================================
+.page-error {
+  max-width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+}
+.ribbon-content {
+  color: {{ theme_settings.perso-color-2 }};
 }
 // ===================== #resto styles -- tenants _show.liquid ============================================
 .resto-presentation {
@@ -1678,6 +1745,9 @@ hr {
   	margin-top: 15px;
   	font-weight: 300;
   }
+  .sub-nav__link{
+    @extend .nav-small__item-links;
+  }
   .social-nav__item {
     display: inline-block;
   } 
@@ -1743,6 +1813,18 @@ hr {
   .under-title-2 {
     width: 63%;
   }
+// ===================== #pages -- page.liquid ============================================================
+  .page-wrapper {
+    margin-left: 400px;
+    margin-right: 0;
+    margin-top: 25px;
+  }
+// ===================== #404 -- 404.liquid ============================================================
+.page-error {
+  margin-left: 400px;
+  margin-right: 0;
+  margin-top: 25px;
+}
 // ===================== #resto styles -- tenants _show.liquid ============================================
   .resto-presentation__content {
     margin-left: 400px;

@@ -1,1 +1,17 @@
-<h1>Not found</h1>
+<section class="page-header page-error">
+    <header class="section__header">
+      <h1 class="page-header__title">{{ "Page introuvable" | t }}</h1>
+    </header>
+    <main class="section__main page-header__description">
+      <p>{{ "La page que vous avez demandée n'existe pas." | t }}</p>
+    </main>
+    <footer class="section__footer">
+      <div class="non-semantic-protector">
+        <a class="featured__link button--ribbon" href="{{ restaurant.root_path }}">
+         <span class="ribbon-content">
+          {{ "Retour à l'accueil" | t }}
+         </span>
+        </a>
+      </div>
+    </footer>
+</section>

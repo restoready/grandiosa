@@ -9,26 +9,24 @@
   </a>
 
   <ul class="nav-large__list">
-    <li class="nav-large__item">
-      <a class="nav-large__item-links" href="{{ localized_root_path }}" id="back-home">{{ "Accueil" | t }}</a>
-    </li>
-    {% for menu in menus %}
-      <li class="nav-large__item">
-        <a class="nav-large__item-links" href="{{ menu.url }}">{{ menu.name }}</a>
-      </li>
+    {% for link in linklists.navigation-primaire.links %}
+      {% if link.linklist_handle == "" %}
+        <li class="nav-large__item">
+          <a class="nav-large__item-links" href="{{ link.url }}">{{ link.title }}</a>
+        </li>
+      {% else %}
+        <li class="nav-large__item">
+          <a class="nav-large__item-links" href="{{ link.url }}">{{ link.title }} </a>
+          <ul class="sub-nav__items">
+            {% for l in linklists[link.linklist_handle].links %}
+            <li class="sub-nav__item">
+              <a class="sub-nav__link" href="{{ l.url }}">{{ l.title }}</a>
+            </li>
+            {% endfor %}
+          </ul>
+        </li>
+      {% endif %}
     {% endfor %}
-    <li class="nav-large__item">
-      <a class="nav-large__item-links" href="{{ restaurant.url }}">{{ "Le restaurant" | t }}</a>
-    </li>
-    {% if theme_settings.display_contact_form %}
-      <li class="nav-large__item">
-        {% if contact_settings.navigation_label? %}
-          <a class="nav-large__item-links" href="{{ restaurant.contact_path }}">{{ contact_settings.navigation_label }}</a>
-        {% else %}
-          <a class="nav-large__item-links" href="{{ restaurant.contact_path }}">{{ contact_settings.contact_title }}</a>
-        {% endif %}
-      </li>
-    {% endif %}
     <li class="lang-switch nav-large__item">
       {% for path in localized_page_paths %}
         <a class="nav-large__item-links" href="{{ path.url }}">
@@ -107,26 +105,24 @@
 
   <div class="sb-slidebar sb-right">
     <ul class="nav-small__list">
-      <li class="nav-small__item">
-        <a class="nav-small__item-links" href="{{ localized_root_path }}" id="back-home">{{ "Accueil" | t }}</a>
-      </li>
-      {% for menu in menus %}
+      {% for link in linklists.navigation-primaire.links %}
+        {% if link.linklist_handle == "" %}
+          <li class="nav-small__item">
+            <a class="nav-small__item-links" href="{{ link.url }}">{{ link.title }}</a>
+          </li>
+        {% else %}
         <li class="nav-small__item">
-          <a class="nav-small__item-links" href="{{ menu.url }}">{{ menu.name }}</a>
-        </li>
-      {% endfor %}
-      <li class="nav-small__item">
-        <a class="nav-small__item-links" href="{{ restaurant.url }}">{{ "Le restaurant" | t }}</a>
-      </li>
-      {% if theme_settings.display_contact_form %}
-        <li class="nav-large__item">
-          {% if contact_settings.navigation_label? %}
-            <a class="nav-large__item-links" href="{{ restaurant.contact_path }}">{{ contact_settings.navigation_label }}</a>
-          {% else %}
-          <a class="nav-large__item-links" href="{{ restaurant.contact_path }}">{{ contact_settings.contact_title }}</a>
-        {% endif %}
+          <a class="nav-small__item-links" href="{{ link.url }}">{{ link.title }} </a>
+          <ul class="sub-nav__items">
+            {% for l in linklists[link.linklist_handle].links %}
+            <li class="sub-nav__item">
+              <a class="sub-nav__link" href="{{ l.url }}">{{ l.title }}</a>
+            </li>
+            {% endfor %}
+          </ul>
         </li>
       {% endif %}
+    {% endfor %}
       <li class="nav-small__item">
         {% for path in localized_page_paths %}
           <a class="nav-small__item-links" href="{{ path.url }}">
