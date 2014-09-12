@@ -1631,6 +1631,49 @@ hr {
   margin-left: auto;
   margin-right: auto;
 }
+// ===================== Section #page styles -- page.liquid ============================================
+.page-header {
+  padding: 1em 0 0 0;
+}
+.page-header__header {
+  font-size: 3rem;
+  h1 {
+    color: {{ theme_settings.perso-color-2 }};
+  }
+}
+.page-body {
+    margin-bottom: 3rem;
+    margin-right: 0.5rem;
+    ol, ul, dl {
+      margin: 1rem 1rem 1rem 2rem;
+    }
+    ol {
+      list-style: decimal;
+    }
+    ul {
+      list-style: disc;
+    }
+    img {
+      max-width: 100% !important;
+      height: auto !important;
+    }
+    p {
+      margin-bottom: 0.5rem;
+    }
+    a {
+      color: {{ theme_settings.perso-color-2 }};
+      text-decoration: none;
+      &:hover, &:focus {
+        color: #999;
+      }
+    }
+    h1 { font-size: 3em; }     
+    h2 { font-size: 2.35em; } 
+    h3 { font-size: 2em; }      
+    h4 { font-size: 1.429em; }  
+    h5 { font-size: 1.143em; }  
+    h6 { font-size: 1em; }    
+  }
 // ==============================================================================
 // #Style full-visual theme -- Breakpoint small-up - min 480px
 // ==============================================================================

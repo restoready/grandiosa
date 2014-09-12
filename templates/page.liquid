@@ -1,8 +1,13 @@
-<section class="page-header page-wrapper page-wrap">
-    <header class="section__header page-header__header">
-      <h1 class="section__title page-header__title">{{ page.title }}</h1>
-    </header>
-    <main class="section__main page-header__description">
-      {{ page.content }}
-    </main>
+<section class="page-wrapper page-wrap">
+	<section class="page-header page-header--page">
+	    <header class="section__header page-header__header">
+	      <h1>{{ page.title }}</h1>
+	    </header>
+	</section>
+
+	<section class="page-body">
+	    <main class="section__main">
+	      {{ page.content }}
+	    </main>
+	</section>
 </section>
