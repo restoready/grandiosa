@@ -17,7 +17,7 @@
       </div>
     {% endif %}
     {% if restaurant.main_image? or photos.size > 0 %}
-      <div class="gallery grid--full">
+      <div class="gallery">
         {% if photos.size > 0 %}
           {% for photo in photos %}
             {% include 'photo' with photo:photo %}

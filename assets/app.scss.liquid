@@ -1,4 +1,5 @@
 /*
+* Grandiosa 1.0
 * RestoReady v1.0
 * Copyright 2014 MH Communication.
 * Author MH Communication @MHCommunication
@@ -20,6 +21,7 @@
   Reset
   Grid Setup
   Helper Classes
+  Images & Iframes
   Links and Buttons
   Color
   Proxy Color
@@ -628,6 +630,19 @@ $class-type: unquote(".");
   vertical-align: middle;
 }
 
+// ==============================================================================
+// #Images and Iframes
+// ==============================================================================
+img.auto,
+.grid-item img,
+.grid-item iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+img.circle {
+  border-radius: 50%;
+}
 
 // ==============================================================================
 // #Links and Buttons
@@ -1268,12 +1283,15 @@ hr {
   margin-right: auto;
   margin-bottom: 40px;
 }
+
 // ===================== #photos styles -- _photo.liquid ============================================
-.gallery-item {
-  margin-top: 25px;
+.gallery__item {
+    position: relative;
+    margin-bottom: 1em;
+    margin-top: 25px;
 }
 .gallery-item__image {
-  max-width: 99%;
+  @extend .auto;
 }
 .gallery-item__caption {
   font-size: 0.85em;
@@ -1680,6 +1698,13 @@ hr {
   .presentation-footer__btn {
     margin-left: 0;
   }
+  // ===================== Section #photo styles -- photo.liquid ============================================
+  .gallery__item {
+    display: inline-block;
+    vertical-align: top;
+    width: 45%;
+    margin: 2%;
+  }
 }
 // ==============================================================================
 // #Style full-visual theme -- Breakpoint small-up - min 650px
@@ -1930,6 +1955,11 @@ hr {
     padding-top: 25px;
     margin-right: 25px;
     max-width: 60%;
+  }
+  // ===================== Section #photo styles -- photo.liquid ============================================
+  .gallery__item {
+    width: 30%;
+    margin: 1%;
   }
 }
 // ==============================================================================

@@ -1,5 +1,5 @@
 {% if photo %}
-  <div class="gallery-item grid-item small--one-whole medium--one-half large--one-third">
+  <div class="gallery__item">
     {{ photo.image | small_image_url | image_tag: 'class:gallery-item__image' }}
     {% if photo.caption %}
       <figcaption class="gallery-item__caption">
