@@ -22,7 +22,7 @@
         </header>
       
         {% for menu in home_menus %}
-          <div class="grid--full">
+          <div>
             <header>
               <h3 class="week__resume">{{ menu.name }}</h3>
             </header>
@@ -41,7 +41,7 @@
     {% endif %}
   </article>
   
-  <article class="new-dish grid--full">
+  <article class="new-dish">
     {% if home_foods.size > 0 %}
         <section>
         <header>
@@ -68,7 +68,7 @@
 
 <section class="presentation">
     {% if restaurant.summary? %}
-      <section class="home-description grid--full">
+      <section class="home-description">
         <header>
           <h2 class="home-description__title">{{ "Notre restaurant" | t }}</h2>
         </header>
