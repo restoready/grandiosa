@@ -24,8 +24,11 @@
   {% for child in menu.children %}
     <div class="menus-food__content">
     {% include 'menu' with menu:child, title:true %}
-      </div>
+    </div>
   {% endfor %}
-  {% else %}
+
+{% else %}
+  <div class="menus-food__content">
     {% include 'menu' with menu:menu, title:false %}
-  {% endif %}
+  </div>
+{% endif %}
