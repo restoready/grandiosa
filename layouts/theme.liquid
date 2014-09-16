@@ -41,5 +41,11 @@
       <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
       {{ 'script.js' | asset_url | javascript_tag }}
       {{ 'animatescroll.min.js' | asset_url | javascript_tag }}
+      {{ 'doubletaptogo.min.js' | javascript_tag }}
+      <script type="text/javascript">
+        $( function() {
+          $( '.has-sub-nav' ).doubleTapToGo();
+        });
+      </script>
   </body>
 </html>

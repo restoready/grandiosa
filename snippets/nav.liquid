@@ -15,7 +15,7 @@
           <a class="nav-large__item-links" href="{{ link.url }}">{{ link.title }}</a>
         </li>
       {% else %}
-        <li class="nav-large__item">
+        <li class="nav-large__item has-sub-nav">
           <a class="nav-large__item-links" href="{{ link.url }}">{{ link.title }} </a>
           <ul class="sub-nav__items">
             {% for l in linklists[link.linklist_handle].links %}
@@ -111,7 +111,7 @@
             <a class="nav-small__item-links" href="{{ link.url }}">{{ link.title }}</a>
           </li>
         {% else %}
-        <li class="nav-small__item">
+        <li class="nav-small__item has-sub-nav">
           <a class="nav-small__item-links" href="{{ link.url }}">{{ link.title }} </a>
           <ul class="sub-nav__items">
             {% for l in linklists[link.linklist_handle].links %}
