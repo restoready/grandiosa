@@ -10,7 +10,7 @@
 
   <ul class="nav-large__list">
     {% for link in linklists.navigation-primaire.links %}
-      {% if link.linklist_handle == "" %}
+      {% if link.linklist_handle == "" or link.linklist_handle == null %}
         <li class="nav-large__item">
           <a class="nav-large__item-links" href="{{ link.url }}">{{ link.title }}</a>
         </li>
