@@ -10,6 +10,8 @@
     "back-price-value": "#dddddd",
     "text_font": "Google+Cabin",
     "slogan_font": "Google+Great+Vibes",
+    "home_menus_featured_text": "Cette semaine",
+    "home_foods_featured_text": "Plats de la semaine",
     "google_business_view_url": "",
     "display_google_business_view_url": false,
     "google_business_view_embed": "",

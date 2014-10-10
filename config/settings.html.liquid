@@ -15,6 +15,10 @@
   <label for="tab4">
     Modules
   </label>
+  <input class="tab-head" id="tab5" name="tab" type="radio">
+  <label for="tab5">
+    Titres
+  </label>
   
   <div class="tab-body-wrapper">
     <div class="tab-body" id="tab-body-1">
@@ -296,6 +300,21 @@
           <div class="row">
             <label class="left" for="google_business_view_url">Url</label>
             <input name="admin_theme_settings[google_business_view_url]" type="text" id="google_business_view_url" value="{{ theme_settings.google_business_view_url }}" />
+          </div>
+        </div>
+      </fieldset>
+    </div>
+    <div class="tab-body" id="tab-body-5">
+      <fieldset>
+        <legend>Page d'accueil</legend>
+        <div class="row">
+          <div class="columns medium-4 large-3">
+            <label for="home-menus-featured-text">Titre menus en avant</label>
+            <input name="admin_theme_settings[home_menus_featured_text]" id="home_menus_featured_text" value="{{ theme_settings.home_menus_featured_text }}" type="text">
+          </div>
+          <div class="columns medium-4 large-3 end">
+            <label for="home-foods-featured-text">Titre plats en avant</label>
+            <input name="admin_theme_settings[home_foods_featured_text]" id="home_foods_featured_text" value="{{ theme_settings.home_foods_featured_text }}" type="text">
           </div>
         </div>
       </fieldset>

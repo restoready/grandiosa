@@ -18,7 +18,7 @@
     {% if home_menus.size > 0 %}
         <section>
         <header>
-          <h2 class="week__title">{{ "Cette semaine" | t }}</h2>
+          <h2 class="week__title">{{ theme_settings.home_menus_featured_text | t }}</h2>
         </header>
       
         {% for menu in home_menus %}
@@ -45,7 +45,7 @@
     {% if home_foods.size > 0 %}
         <section>
         <header>
-          <h2 class="new-dish__title">{{ "Plats de la semaine" | t }}</h2>
+          <h2 class="new-dish__title">{{ theme_settings.home_foods_featured_text | t }}</h2>
         </header>
         <header>
           <h3 class="new-dish__resume">{{ "Nouveaux plats" | t }}</h3>
