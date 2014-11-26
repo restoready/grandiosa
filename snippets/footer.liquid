@@ -19,7 +19,7 @@
       </a>
       <br />
     {% endif %}
-    {% if restaurant.email %}
+    {% if restaurant.email? %}
       <a class="contact-footer__mail-link" href="mailto:#{{restaurant.email}}">
         <span class="contact-footer__mail" itemprop="email">{{ restaurant.email }}</span>
       </a>
