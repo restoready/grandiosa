@@ -106,3 +106,12 @@ msgstr "Message"
 
 msgid "Envoyer"
 msgstr "Send"
+
+msgid "Entrez votre email"
+msgstr "Enter your email"
+
+msgid "Entrez votre nom"
+msgstr "Enter your name"
+
+msgid "Entrez votre téléphone"
+msgstr "Enter your phone number"

@@ -33,7 +33,7 @@
         <h3 class="subscribe__title">{{ "Abonnement Newsletter" | t }}</h3>
         <br />
         {% newsletter_subscribe_form %}
-          <input class="subscribe__email-subscriber" id="subscriber_email" name="subscriber[email]" placeholder=" Entrez votre  email" type="email" required>
+          <input class="subscribe__email-subscriber" id="subscriber_email" name="subscriber[email]" placeholder="{{ 'Entrez votre email' | t }}" type="email" required>
           <button class="subscribe__submit-subscriber btn" name="button" type="submit">{{ "S'abonner" | t }}</button>
         {% endnewsletter_subscribe_form %}
       </div>
