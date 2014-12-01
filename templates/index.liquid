@@ -18,7 +18,7 @@
     {% if home_menus.size > 0 %}
         <section>
         <header>
-          <h2 class="week__title">{{ theme_settings.home_menus_featured_text | t }}</h2>
+          <h2 class="week__title">{% if current_locale == 'fr' %}{{ theme_settings.home_menus_featured_text_fr | t }}{% else %}{{ theme_settings.home_menus_featured_text_en | t }}{% endif %}</h2>
         </header>
       
         {% for menu in home_menus %}
@@ -45,12 +45,11 @@
     {% if home_foods.size > 0 %}
         <section>
         <header>
-          <h2 class="new-dish__title">{{ theme_settings.home_foods_featured_text | t }}</h2>
+          <h2 class="new-dish__title">{% if current_locale == 'fr' %}{{ theme_settings.home_foods_featured_text_fr | t }}{% else %}{{ theme_settings.home_foods_featured_text_en | t }}{% endif %}</h2>
         </header>
         <header>
-          <h3 class="new-dish__resume">{{ "Nouveaux plats" | t }}</h3>
+          <h3 class="new-dish__resume">{% if current_locale == 'fr' %}{{ theme_settings.home_foods_featured_subtext_fr | t }}{% else %}{{ theme_settings.home_foods_featured_subtext_en | t }}{% endif %}</h3>
         </header>
-        <div class="new-dish__details">{{ "Venez découvrir nos derniers plats." | t }}</div>
         <ul class="block-grid">
         {% for food in home_foods %}
           {% include 'food' with food:food %}
