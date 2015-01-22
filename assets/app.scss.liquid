@@ -89,14 +89,16 @@ $socialIconFontStack: "icons";
   &:after {
     content: "";
     display: table;
-    clear: both; }
+    clear: both;
+  }
   *zoom: 1; //hack IE6 et 7
 }
 @mixin clearfix() {
   &:after {
     content: "";
     display: table;
-    clear: both; }
+    clear: both;
+  }
   *zoom: 1; //hack IE6 et 7
 }
 
@@ -884,14 +886,7 @@ hr {
 .terms-title-level-2 {
   font-size: 1.1em;
 }
-// ===================== #pages -- page.liquid ============================================================
-.page-wrapper {
-  max-width: 85%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 50px;
-  overflow: hidden;
-}
+
 // ===================== #404 -- 404.liquid ============================================================
 .page-error {
   max-width: 85%;
@@ -1331,6 +1326,53 @@ hr {
     h5 { font-size: 1.143em; }  
     h6 { font-size: 1em; }    
   }
+
+.page-wrapper {
+  max-width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  overflow: hidden;
+}
+
+// ===================== #news -- news_index.liquid =======================================================
+.page-header--news {
+  margin-bottom: 1.25em;
+}
+.news {
+  margin-bottom: 3.5em;
+}
+.news__title {
+  font-size: 1.45em;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+.news__one-news-date {
+}
+.news__one-news-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: .5em;
+}
+.news__body {
+  color: #000;
+}
+.news__one-news-link {
+  color: #000;
+}
+.news__one-news-image {
+  height: 300px;
+}
+.news__one-news-summary {
+  margin-top: .5em;
+}
+.news__separator {
+  margin: 1.5em 0;
+  width: 100%;
+}
+.news__separator--last {
+  display: none;
+}
 // ==============================================================================
 // #Style full-visual theme -- Breakpoint small-up - min 480px
 // ==============================================================================
@@ -1364,7 +1406,7 @@ hr {
   }
   .under-title-2 {
     width: 95%;
-  } 
+  }
   // ===================== #menu styles -- _show.liquid ============================================
   .menus-nav__item {
     width: 33.3333333%;
@@ -1372,13 +1414,13 @@ hr {
   .page-wrap {
     min-height: 100%;
     /* equal to footer height */
-    margin-bottom: -200px; 
+    margin-bottom: -200px;
   }
   .page-wrap:after {
     content: "";
     display: block;
     /* .push must be the same height as footer */
-    height: 175px; 
+    height: 175px;
   }
   // ===================== #week & dish styles -- _home.liquid ============================================
   .news-footer {
@@ -1436,6 +1478,41 @@ hr {
   }
   .subscribe__title {
     margin-top: 10px;
+  }
+
+  // ===================== #news styles -- news_index.liquid ============================================
+  .news {
+    margin-bottom: 5em;
+  }
+  .news__one-news {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+  .news__one-news-image {
+    position: absolute;
+    width: 30%;
+    display: block;
+    height: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+  }
+  .news__one-news-content-wrapper {
+    width: 70%;
+    float: right;
+    padding: 1em 2em;
+  }
+  .news__one-news-content-wrapper--no-image {
+    width: 100%;
+  }
+  .news__separator {
+    display: block;
+    width: 70%;
+    margin: 1.5em auto;
+  }
+  .news__separator--last {
+    display: none;
   }
 }
 // ==============================================================================
@@ -1670,6 +1747,10 @@ hr {
   .gallery__item {
     width: 30%;
     margin: 1%;
+  }
+  // ===================== Section #news styles -- news_index.liquid ============================================
+  .news__separator {
+    width: 50%;
   }
 }
 // ==============================================================================

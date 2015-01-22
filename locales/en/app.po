@@ -71,6 +71,9 @@ msgstr "Subscribe to our newsletter for the latest news of the restaurant."
 msgid "Abonnement Newsletter"
 msgstr "Newsletter Subscription"
 
+msgid "Actualités"
+msgstr "News"
+
 msgid "S'abonner"
 msgstr "Subscribe"
 
