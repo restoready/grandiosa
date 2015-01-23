@@ -105,14 +105,6 @@
       <p class="nav-small__btn-title">Menu</p>
   </div>
 
-  <div class="local-choice">
-    {% for path in localized_page_paths %}
-      <a href="{{ path.url }}" class="local-choice-item {% if path.current? %}local-choice-item--current{% endif %}">
-        <span class="local-choice-code">{% if forloop.last %}{{ path.locale_code }}{% else %}{{ path.locale_code }} <span class="local-separator"> | </span>{% endif%}</span>
-      </a>
-    {% endfor %}
-  </div>
-
   <div class="sb-slidebar sb-right">
     <ul class="nav-small__list">
       {% for link in linklists.navigation-primaire.links %}
@@ -152,6 +144,13 @@
       {% if restaurant.city? %}
         <span class="nav-small__coordinate-address" itemprop="addressLocality">{{ restaurant.city }}</span>
       {% endif %}
+    </div>
+    <div class="local-choice">
+      {% for path in localized_page_paths %}
+        <a href="{{ path.url }}" class="local-choice-item {% if path.current? %}local-choice-item--current{% endif %}">
+          <span class="local-choice-code">{% if forloop.last %}{{ path.locale_code }}{% else %}{{ path.locale_code }} <span class="local-separator"> | </span>{% endif%}</span>
+        </a>
+      {% endfor %}
     </div>
   </div>
 </div>
