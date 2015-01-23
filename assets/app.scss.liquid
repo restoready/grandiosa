@@ -93,7 +93,11 @@ $socialIconFontStack: "icons";
   *zoom: 1; //hack IE6 et 7
 }
 @mixin clearfix() {
-  @extend .clearfix;
+  &:after {
+    content: "";
+    display: table;
+    clear: both; }
+  *zoom: 1; //hack IE6 et 7
 }
 
 @mixin box-shadow($shadow) {
@@ -526,7 +530,13 @@ hr {
   background-color: {{ theme_settings.perso-color-1 }};
 }
 .sub-nav__link{
-  @extend .nav-small__item-links;
+  display: inline-block;
+  color: {{ theme_settings.perso-color-3 }};
+  text-decoration: none;
+  width: 100%;
+  padding-left: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   transition: color .25s;
   &:hover {
     color: {{ theme_settings.perso-color-2 }};
@@ -918,7 +928,8 @@ hr {
     margin-top: 25px;
 }
 .gallery-item__image {
-  @extend .auto;
+  max-width: 100%;
+  height: auto;
 }
 .gallery-item__caption {
   font-size: 0.85em;
@@ -1442,7 +1453,13 @@ hr {
   	font-weight: 300;
   }
   .sub-nav__link{
-    @extend .nav-small__item-links;
+    display: inline-block;
+    color: {{ theme_settings.perso-color-3 }};
+    text-decoration: none;
+    width: 100%;
+    padding-left: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
   .social-nav__item {
     display: inline-block;
