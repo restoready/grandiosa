@@ -621,6 +621,25 @@ hr {
 .nav-small__coordinate-number {
   color: {{ theme_settings.perso-color-2 }};
 }
+.local-choice {
+  margin-bottom: .5em;
+  margin-left: 1em;
+}
+.local-choice-item {
+  font-size: 1.25em;
+  .local-choice-code {
+    color: $persoColor3;
+    .local-separator {
+      margin: 0 .25em;
+      color: $persoColor3;
+    }
+  }
+}
+.local-choice-item--current {
+  .local-choice-code {
+    color: $persoColor2;
+  }
+}
 // ===================== #menu styles -- _index.liquid ============================================
 .index-header {
   clear: both;
@@ -1077,7 +1096,7 @@ hr {
 .full-background {
 	width: 100%;
   height: auto;
-  margin-top: 53px;
+  margin-top: 62px;
   display: inline-block;
   background-color: #000;
   position: relative;
@@ -1476,6 +1495,10 @@ hr {
   .nav-large__coordinate-number {
   	font-size: 1.4em;
     color: {{ theme_settings.perso-color-2 }};
+  }
+  .local-choice {
+    margin-left: 0;
+    margin-top: 1em;
   }
 // ===================== #menu styles -- _index.liquid ============================================
   .index-header__title {

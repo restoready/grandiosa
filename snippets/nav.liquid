@@ -8,6 +8,14 @@
     <h1 class="nav-large__name-resto">{{ restaurant.name }}</h1>
   </a>
 
+  <div class="local-choice">
+    {% for path in localized_page_paths %}
+      <a href="{{ path.url }}" class="local-choice-item {% if path.current? %}local-choice-item--current{% endif %}">
+        <span class="local-choice-code">{% if forloop.last %}{{ path.locale_code }}{% else %}{{ path.locale_code }}<span class="local-separator">|</span>{% endif%}</span>
+      </a>
+    {% endfor %}
+  </div>
+
   <ul class="nav-large__list">
     {% for link in linklists.navigation-primaire.links %}
       {% if link.linklist_handle == "" or link.linklist_handle == null %}
@@ -27,15 +35,6 @@
         </li>
       {% endif %}
     {% endfor %}
-    <li class="lang-switch nav-large__item">
-      {% for path in localized_page_paths %}
-        <a class="nav-large__item-links" href="{{ path.url }}">
-          <img alt="Flag-{{ path.locale_code }}" src="{{ path.flag_url }}" />
-          <span>{{ path.locale_name }}</span>
-          <span style="float:none;"></span>
-        </a>
-      {% endfor %}
-    </li>
   </ul>
 
   <div class="nav-large__coordinate">
@@ -67,7 +66,7 @@
       </ul>
     </div>
   {% endif %}
-  
+
     {% if restaurant.phone? %}
       <a class="nav-large__coordinate-number" href="tel:{{ restaurant.phone_uri }}">
           {{ restaurant.phone }}
@@ -98,10 +97,20 @@
   </a>
 
   <div class="nav-small__btn">
-      <p>Menu</p>
-      <div></div>
-      <div></div>
-      <div></div>
+      <div class="nav-small__btn-hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <p class="nav-small__btn-title">Menu</p>
+  </div>
+
+  <div class="local-choice">
+    {% for path in localized_page_paths %}
+      <a href="{{ path.url }}" class="local-choice-item {% if path.current? %}local-choice-item--current{% endif %}">
+        <span class="local-choice-code">{% if forloop.last %}{{ path.locale_code }}{% else %}{{ path.locale_code }} <span class="local-separator"> | </span>{% endif%}</span>
+      </a>
+    {% endfor %}
   </div>
 
   <div class="sb-slidebar sb-right">
@@ -124,15 +133,6 @@
         </li>
       {% endif %}
     {% endfor %}
-      <li class="nav-small__item">
-        {% for path in localized_page_paths %}
-          <a class="nav-small__item-links" href="{{ path.url }}">
-            <img alt="Flag-{{ path.locale_code }}" src="{{ path.flag_url }}" />
-            <span>{{ path.locale_name }}</span>
-            <span style="float:none;"></span>
-          </a>
-        {% endfor %}
-      </li>
     </ul>
 
     <div class="nav-small__coordinate">
