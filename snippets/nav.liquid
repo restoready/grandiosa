@@ -8,7 +8,7 @@
     <h1 class="nav-large__name-resto">{{ restaurant.name }}</h1>
   </a>
 
-  <div class="local-choice">
+  <div class="local-choice local-choice--large">
     {% for path in localized_page_paths %}
       <a href="{{ path.url }}" class="local-choice-item {% if path.current? %}local-choice-item--current{% endif %}">
         <span class="local-choice-code">{% if forloop.last %}{{ path.locale_code }}{% else %}{{ path.locale_code }}<span class="local-separator">|</span>{% endif%}</span>
