@@ -20,7 +20,7 @@
     {% if food.tags? %}
       <div class="dish__description-label">
         {% for tag in food.tags %}
-          <i class="label-{{ tag.css_class }}">{{ tag.name }}</i>
+          <i class="label label-{{ tag.css_class }}">{{ tag.name }}</i>
         {% endfor %}
       </div>
     {% endif %}

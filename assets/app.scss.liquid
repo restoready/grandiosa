@@ -824,33 +824,36 @@ hr {
   color: {{ theme_settings.perso-color-3 }};
   margin-top: 15px;
 }
-.label-new {
-  color: {{ theme_settings.perso-color-1 }};
-  border: 3px solid {{ theme_settings.perso-color-2 }};
+.label {
   padding: 5px 5px 5px 5px;
   border-radius: 2px;
   text-align: center;
+  color: #000000;
+  border: 3px solid #AAAAAA;
+}
+.label-new {
+  color: {{ theme_settings.font-color-label-new }};
+  border: 3px solid {{ theme_settings.back-label-new }};
 }
 .label-vegan {
-  color: {{ theme_settings.perso-color-1 }};
+  color: {{ theme_settings.font-color-label-vegan }};
   border: 3px solid {{ theme_settings.back-label-vegan }};
-  padding: 5px 5px 5px 5px;
-  border-radius: 2px;
-  text-align: center;
 }
 .label-no-meat {
-  color: {{ theme_settings.perso-color-1 }};
+  color: {{ theme_settings.font-color-label-meat }};
   border: 3px solid {{ theme_settings.back-label-meat }};
-  padding: 5px 5px 5px 5px;
-  border-radius: 2px;
-  text-align: center;
 }
 .label-no-pork {
-  color: {{ theme_settings.perso-color-1 }};
+  color: {{ theme_settings.font-color-label-pork}};
   border: 3px solid {{ theme_settings.back-label-pork }};
-  padding: 5px 5px 5px 5px;
-  border-radius: 2px;
-  text-align: center;
+}
+.label-alcohol-free {
+  color: {{ theme_settings.font-color-label-alcohol-free }};
+  border: 3px solid {{ theme_settings.back-label-alcohol-free }};
+}
+.label-daily-food {
+  color: {{ theme_settings.font-color-label-daily-food }};
+  border: 3px solid {{ theme_settings.back-label-daily-food }};
 }
 .food-price {
   text-align: right;
