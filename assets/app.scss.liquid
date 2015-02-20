@@ -334,9 +334,6 @@ $persoColor1: $dark-grey;
 $persoColor2: $red;
 $persoColor3: $white;
 $border: $grey;
-$back-label-vegan: $green;
-$back-label-meat: $orange;
-$back-label-porc: $blue;
 $back-price-value: $soft-grey;
 // ==============================================================================
 // #Fonts
@@ -824,37 +821,24 @@ hr {
   color: {{ theme_settings.perso-color-3 }};
   margin-top: 15px;
 }
-.label {
+.tag {
   padding: 5px 5px 5px 5px;
   border-radius: 2px;
   text-align: center;
   color: #000000;
-  border: 3px solid #AAAAAA;
+  background-color: #AAAAAA;
 }
-.label-new {
-  color: {{ theme_settings.font-color-label-new }};
-  border: 3px solid {{ theme_settings.back-label-new }};
-}
-.label-vegan {
-  color: {{ theme_settings.font-color-label-vegan }};
-  border: 3px solid {{ theme_settings.back-label-vegan }};
-}
-.label-no-meat {
-  color: {{ theme_settings.font-color-label-meat }};
-  border: 3px solid {{ theme_settings.back-label-meat }};
-}
-.label-no-pork {
-  color: {{ theme_settings.font-color-label-pork}};
-  border: 3px solid {{ theme_settings.back-label-pork }};
-}
-.label-alcohol-free {
-  color: {{ theme_settings.font-color-label-alcohol-free }};
-  border: 3px solid {{ theme_settings.back-label-alcohol-free }};
-}
-.label-daily-food {
-  color: {{ theme_settings.font-color-label-daily-food }};
-  border: 3px solid {{ theme_settings.back-label-daily-food }};
-}
+{% for tag in tags %}
+  .tag--{{tag.css_class}} {
+    {% if tag.background_value != "" %}
+      background-color: {{ tag.background_value }};
+    {% endif %}
+    {% if tag.color_value != "" %}
+      color: {{ tag.color_value }};
+    {% endif %}
+  }
+{% endfor %}
+
 .food-price {
   text-align: right;
 }
@@ -1395,13 +1379,6 @@ hr {
     display: block;
     float: left;
   }
-  .label-new,
-  .label-vegan,
-  .label-no-meat,
-  .label-no-porc {
-    display: block;
-    margin-top: 3px;
-  }
   // ===================== #menu styles -- _menu.liquid ============================================
   .block-grid {
     &>li {
@@ -1778,13 +1755,6 @@ hr {
     width: 64%;
   }
   // ===================== #food styles -- _food.liquid ============================================
-  .label-new,
-  .label-vegan,
-  .label-no-meat,
-  .label-no-porc {
-    display: inline;
-    margin-top: 0px;
-  }
 }
 // ==============================================================================
 // #Style full-visual theme -- Breakpoint - min 1350px

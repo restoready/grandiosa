@@ -52,74 +52,22 @@
       </fieldset>
 
       <fieldset>
-        <legend>Étiquette "Végétarien"</legend>
-        <div class="small-12 medium-6 large-4 columns">
-          <label for="back-label-vegan">Fond</label>
-          <input name="admin_theme_settings[back-label-vegan]" type="text" id="back-label-vegan" value="{{ theme_settings.back-label-vegan }}" class="minicolors">
-        </div>
-        <div class="small-12 medium-6 large-4 columns end">
-          <label for="font-color-label-vegan">Texte</label>
-          <input name="admin_theme_settings[font-color-label-vegan]" type="text" id="font-color-label-vegan" value="{{ theme_settings.font-color-label-vegan }}" class="minicolors">
-        </div>
-      </fieldset>
-
-      <fieldset>
-        <legend>Étiquette "Pas de viande"</legend>
-        <div class="small-12 medium-6 large-4 columns">
-          <label for="back-label-meat">Fond</label>
-          <input name="admin_theme_settings[back-label-meat]" type="text" id="back-label-meat" value="{{ theme_settings.back-label-meat }}" class="minicolors">
-        </div>
-        <div class="small-12 medium-6 large-4 columns end">
-          <label for="font-color-label-meat">Texte</label>
-          <input name="admin_theme_settings[font-color-label-meat]" type="text" id="font-color-label-meat" value="{{ theme_settings.font-color-label-meat }}" class="minicolors">
-        </div>
-      </fieldset>
-
-      <fieldset>
-        <legend>Étiquette "Pas de porc"</legend>
-        <div class="small-12 medium-6 large-4 columns">
-          <label for="back-label-pork">Fond</label>
-          <input name="admin_theme_settings[back-label-pork]" type="text" id="back-label-pork" value="{{ theme_settings.back-label-pork }}" class="minicolors">
-        </div>
-        <div class="small-12 medium-6 large-4 columns end">
-          <label for="font-color-label-pork">Texte</label>
-          <input name="admin_theme_settings[font-color-label-pork]" type="text" id="font-color-label-pork" value="{{ theme_settings.font-color-label-pork }}" class="minicolors">
-        </div>
-      </fieldset>
-
-      <fieldset>
-        <legend>Étiquette "Nouveau"</legend>
-        <div class="small-12 medium-6 large-4 columns">
-          <label for="back-label-new">Fond</label>
-          <input name="admin_theme_settings[back-label-new]" type="text" id="back-label-new" value="{{ theme_settings.back-label-new }}" class="minicolors">
-        </div>
-        <div class="small-12 medium-6 large-4 columns end">
-          <label for="font-color-label-new">Texte</label>
-          <input name="admin_theme_settings[font-color-label-new]" type="text" id="font-color-label-new" value="{{ theme_settings.font-color-label-new }}" class="minicolors">
-        </div>
-      </fieldset>
-
-      <fieldset>
-        <legend>Étiquette "Sans alcool"</legend>
-        <div class="small-12 medium-6 large-4 columns">
-          <label for="back-label-alcohol-free">Fond</label>
-          <input name="admin_theme_settings[back-label-alcohol-free]" type="text" id="back-label-alcohol-free" value="{{ theme_settings.back-label-alcohol-free }}" class="minicolors">
-        </div>
-        <div class="small-12 medium-6 large-4 columns end">
-          <label for="font-color-label-alcohol-free">Texte</label>
-          <input name="admin_theme_settings[font-color-label-alcohol-free]" type="text" id="font-color-label-alcohol-free" value="{{ theme_settings.font-color-label-alcohol-free }}" class="minicolors">
-        </div>
-      </fieldset>
-
-      <fieldset>
-        <legend>Étiquette "Suggestion du jour"</legend>
-        <div class="small-12 medium-6 large-4 columns">
-          <label for="back-label-daily-food">Fond</label>
-          <input name="admin_theme_settings[back-label-daily-food]" type="text" id="back-label-daily-food" value="{{ theme_settings.back-label-daily-food }}" class="minicolors">
-        </div>
-        <div class="small-12 medium-6 large-4 columns end">
-          <label for="font-color-label-daily-food">Texte</label>
-          <input name="admin_theme_settings[font-color-label-daily-food]" type="text" id="font-color-label-daily-food" value="{{ theme_settings.font-color-label-daily-food }}" class="minicolors">
+        <legend>Etiquettes</legend>
+        <div class="row">
+          {% for tag in tags %}
+            <div class="columns medium-4 large-3">
+              <label for="label-{{ tag.css_class }}-background">{{ tag.name }} (fond)</label>
+              <input name="admin_theme_settings[tags][{{ tag.css_class }}-background]" id="label-{{ tag.css_class }}-background" value="{{ tag.background_value }}" type="text" class="minicolors">
+            </div>
+            {% if forloop.last %}
+              <div class="columns medium-4 large-3 end">
+            {% else %}
+              <div class="columns medium-4 large-3">
+            {% endif %}
+              <label for="label-{{ tag.css_class }}-color">{{ tag.name }} (texte)</label>
+              <input name="admin_theme_settings[tags][{{ tag.css_class }}-color]" id="label-{{ tag.css_class }}-color" value="{{ tag.color_value }}" type="text" class="minicolors">
+            </div>
+          {% endfor %}
         </div>
       </fieldset>
 
