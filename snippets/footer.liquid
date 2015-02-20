@@ -57,6 +57,20 @@
               </a>
             </li>
           {% endif %}
+          {% if restaurant.google_plus_url? %}
+          <li class="social-footer__item">
+            <a href="{{restaurant.google_plus_url}}" class="social-footer__google">
+              <div class="google"></div>
+            </a>
+          </li>
+          {% endif %}
+          {% if restaurant.tripadvisor_url? %}
+            <li class="social-footer__item">
+              <a href="{{restaurant.tripadvisor_url}}" class="social-footer__tripadvisor">
+                <div class="tripadvisor"></div>
+              </a>
+            </li>
+          {% endif %}
         </ul>
       </div>
     {% endif %}
