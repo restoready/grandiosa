@@ -1207,7 +1207,7 @@ hr {
   margin-top: 25px;
   color: {{ theme_settings.perso-color-3 }};
 }
-.home-description__title, 
+.home-description__title,
 .hours__title {
   color: {{ theme_settings.perso-color-3 }};
   padding-top: 25px;
@@ -1223,7 +1223,7 @@ hr {
   width: 100%;
   height: auto;
   {% if theme_settings.use_horaires_image %}
-    background: #e62f2f url({{ 'horaires.png' | asset_url }}) no-repeat center;
+    background: {{ theme_settings.perso-color-2 }} url({{ 'horaires.png' | asset_url }}) no-repeat center;
   {% else %}
     background-color: {{ theme_settings.perso-color-3 }};
   {% endif %}
@@ -1268,6 +1268,7 @@ hr {
 }
 .directions__map-image {
   width: 100%;
+  display: inline-block;
 }
 .infos-local__address {
   color: {{ theme_settings.perso-color-1 }};
@@ -1321,12 +1322,12 @@ hr {
         color: #999;
       }
     }
-    h1 { font-size: 3em; }     
-    h2 { font-size: 2.35em; } 
-    h3 { font-size: 2em; }      
-    h4 { font-size: 1.429em; }  
-    h5 { font-size: 1.143em; }  
-    h6 { font-size: 1em; }    
+    h1 { font-size: 3em; }
+    h2 { font-size: 2.35em; }
+    h3 { font-size: 2em; }
+    h4 { font-size: 1.429em; }
+    h5 { font-size: 1.143em; }
+    h6 { font-size: 1em; }
   }
 
 .page-wrapper {
