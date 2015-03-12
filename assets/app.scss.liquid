@@ -330,28 +330,23 @@ $blue: #00B0D4;
 // ==============================================================================
 // #Proxy color
 // ==============================================================================
-$persoColor1: $dark-grey;
-$persoColor2: $red;
-$persoColor3: $white;
+$persoColor1: {{ theme_settings.perso-color-1 }};
+$persoColor2: {{ theme_settings.perso-color-2 }};
+$persoColor3: {{ theme_settings.perso-color-3 }};
 $border: $grey;
 $back-price-value: $soft-grey;
 // ==============================================================================
 // #Fonts
 // ==============================================================================
-$great: "Great Vibes";
-$cabin: "Cabin";
-// ==============================================================================
-// #Proxy fonts
-// ==============================================================================
-$text: $cabin;
-$slogan: $great;
+$sloganFontStack: {{ theme_settings.slogan-font }};
+$bodyFontStack: {{ theme_settings.body-font }};
 // ==============================================================================
 // #Style full-visual theme -- RestoReady -- Défault mobile first
 // ==============================================================================
 // =====================      #layout      ============================================
-html, 
+html,
 body {
-  font-family: "{{ theme_settings.text_font | remove: 'Google+' | replace: '+', ' ' }}";
+  font-family: $bodyFontStack;
   height: 100%;
 }
 a {
@@ -359,13 +354,13 @@ a {
   color: {{ theme_settings.perso-color-3 }};
 }
 h1,
-span, 
+span,
 tbody {
 	color: {{ theme_settings.perso-color-3 }};
 }
-table, 
-tr, 
-td, 
+table,
+tr,
+td,
 th {
   border:0;
 }
@@ -579,7 +574,7 @@ hr {
   right: 0; /* Set Slidebar to the right. */
   top: 0;
 }
-.nav-small__list, 
+.nav-small__list,
 .nav-large__list {
   text-align: left;
   list-style: none;
@@ -587,7 +582,7 @@ hr {
   margin-left: 0;
   border-bottom: solid 2px {{ theme_settings.border }};
 }
-.nav-small__item, 
+.nav-small__item,
 .nav-large__item {
     cursor: pointer;
     font-size: 1.2em;
@@ -603,7 +598,7 @@ hr {
 .nav-small__item {
   width: 250px;
 }
-.nav-small__item-links, 
+.nav-small__item-links,
 .nav-large__item-links {
   display: inline-block;
   color: {{ theme_settings.perso-color-3 }};
@@ -618,7 +613,7 @@ hr {
   margin-top: 25px;
   width: 200px;
   font-size: 1em;
-  font-family: "{{ theme_settings.text_font | remove: 'Google+' | replace: '+', ' ' }}";
+  font-family: $bodyFontStack;
 }
 .nav-small__coordinate {
   padding-bottom: 15px;
@@ -627,7 +622,7 @@ hr {
   font-size: 1em;
   margin-left: 25px;
   text-align: center;
-  font-family: "{{ theme_settings.text_font | remove: 'Google+' | replace: '+', ' ' }}";
+  font-family: $bodyFontStack;
 }
 .nav-small__coordinate-number {
   color: {{ theme_settings.perso-color-2 }};
@@ -676,7 +671,7 @@ hr {
   margin-right: auto;
   padding-top: 15px;
   padding-bottom: 15px;
-  font-family: "{{ theme_settings.text_font | remove: 'Google+' | replace: '+', ' ' }}";
+  font-family: $bodyFontStack;
   transition: color 0.2s;
   color: {{ theme_settings.perso-color-1 }};
   &:hover {
@@ -710,7 +705,7 @@ hr {
   width: 100%;
   display: block;
   position: relative;
-} 
+}
 .menus-nav__title {
   color: {{ theme_settings.perso-color-3 }};
   width: auto;
@@ -720,7 +715,7 @@ hr {
   bottom: 0;
   -webkit-transform: translateY(-50%);
   left: 0;
-  font-family: "{{ theme_settings.text_font | remove: 'Google+' | replace: '+', ' ' }}";
+  font-family: $bodyFontStack;
   font-size: 1.5em;
   padding: 5px 5px;
 }
@@ -850,9 +845,9 @@ hr {
 .food-price {
   text-align: right;
 }
-.food-price__label, 
+.food-price__label,
 .food-price__value {
-  font-family: "{{ theme_settings.text_font | remove: 'Google+' | replace: '+', ' ' }}";
+  font-family: $bodyFontStack;
   font-weight: 500;
   font-style: italic;
   color: {{ theme_settings.perso-color-1 }};
@@ -1032,7 +1027,7 @@ hr {
 .footer,
 .contact-footer {
   color: {{ theme_settings.perso-color-3 }};
-  font-family: "{{ theme_settings.text_font | remove: 'Google+' | replace: '+', ' ' }}";
+  font-family: $bodyFontStack;
 }
 .footer {
   text-align: center;
@@ -1048,23 +1043,23 @@ hr {
 .social-footer__item {
   display: inline-block;
 }
-.contact-footer__name, 
+.contact-footer__name,
 .social-footer__title {
   margin-bottom: 15px;
   font-size: 2em;
   font-weight: 500;
 }
-.contact-footer__street-address, 
-.contact-footer__postal-code, 
-.contact-footer__address-locality, 
-.contact-footer__phone, 
+.contact-footer__street-address,
+.contact-footer__postal-code,
+.contact-footer__address-locality,
+.contact-footer__phone,
 .contact-footer__mail {
   font-weight: 500;
 }
 .contact-footer__mentions {
   color: mix($persoColor3, $persoColor1, 50%);
 }
-.contact-footer__phone-link, 
+.contact-footer__phone-link,
 .contact-footer__mail-link {
   text-decoration: none;
 }
@@ -1121,7 +1116,7 @@ hr {
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
-	font-family: "{{ theme_settings.slogan_font | remove: 'Google+' | replace: '+', ' ' }}";
+	font-family: $sloganFontStack;
   color: {{ theme_settings.perso-color-3 }};
   padding-top: 25px;
   padding-bottom: 25px;
@@ -1136,7 +1131,7 @@ hr {
   margin-right: auto;
   padding-top: 10px;
   padding-bottom: 25px;
-  font-family: "{{ theme_settings.text_font | remove: 'Google+' | replace: '+', ' ' }}";
+  font-family: $bodyFontStack;
   transition: color 0.2s;
   color: {{ theme_settings.perso-color-3 }};
   &:hover {
@@ -1155,28 +1150,28 @@ hr {
   margin-left: auto;
   margin-right: auto;
 }
-.week__title, 
-.new-dish__title, 
-.home-description__title, 
+.week__title,
+.new-dish__title,
+.home-description__title,
 .hours__title {
 	font-size: 2em;
 	font-weight: 700;
   margin-top: 15px;
 }
-.week__resume, 
+.week__resume,
 .new-dish__resume {
 	font-size: 1.2em;
 	font-weight: 500;
 	font-style: italic;
   margin-top: 25px;
 }
-.week__details, 
+.week__details,
 .new-dish__details {
 	font-size: 1em;
 	font-weight: 200;
 	font-style: italic;
 }
-.news-footer, 
+.news-footer,
 .presentation-footer {
   max-width: 100%;
   padding-bottom: 1px;
@@ -1245,7 +1240,7 @@ hr {
   padding-bottom: 25px;
 }
 .hours__table {
-  font-family: "{{ theme_settings.text_font | remove: 'Google+' | replace: '+', ' ' }}";
+  font-family: $bodyFontStack;
 }
 .hours__day {
   line-height: 3.5;
@@ -1261,14 +1256,14 @@ hr {
   font-style: italic;
 }
 // ===================== Section #map styles -- home.liquid ============================================
-.directions, 
+.directions,
 .directions__map-link {
   width: 100%;
   position: relative;
 }
 .directions__map-image {
   width: 100%;
-  display: inline-block;
+  display: block;
 }
 .infos-local__address {
   color: {{ theme_settings.perso-color-1 }};
@@ -1555,12 +1550,12 @@ hr {
   }
   .social-nav__item {
     display: inline-block;
-  } 
+  }
   .nav-large__coordinate {
   	width: 300px;
     margin-top: 50px;
   }
-  .nav-large__coordinate-number, 
+  .nav-large__coordinate-number,
   .nav-large__coordinate-address {
   	font-size: 1em;
   	font-weight: 200;
@@ -1678,14 +1673,14 @@ hr {
     margin-left: 400px;
     margin-right: 0px;
   }
-  .home-description, 
+  .home-description,
   .hours {
   	margin-left: 400px;
   }
-  .news-footer, 
-  .presentation-footer, 
+  .news-footer,
+  .presentation-footer,
   .directions-footer {
-    margin-left: 400px;  
+    margin-left: 400px;
   }
 // ===================== #map styles -- home.liquid ============================================
   .infos-local {

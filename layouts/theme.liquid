@@ -8,23 +8,20 @@
     {% meta_description_tag %}
     <meta content='' name='description'>
     {{ 'app.css' | asset_url | stylesheet_tag }}
-    
+
     <script src="https://cdn.polyfill.io/v1/polyfill.min.js"></script>
 
-    {% if theme_settings.slogan_font contains 'Google' %}
-      <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family={{ theme_settings.slogan_font | remove: 'Google+' }}">
+    {% if theme_settings.google-fonts-link %}
+      {{ theme_settings.google-fonts-link | replace:'http:','https:' }}
     {% endif %}
-    {% if theme_settings.text_font contains 'Google' %}
-      <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family={{ theme_settings.text_font | remove: 'Google+' }}:500,700,500italic,700italic">
-    {% endif %}
-    
+
     {{ restaurant.host | canonical_tag }}
     <meta name="google-site-verification" content="">
 
     <link rel="apple-touch-icon-precomposed" href="/assets/full-visual-theme/images/favicon-152.png">
     <meta name="msapplication-TileColor" content="#000000">
     <meta name="msapplication-TileImage" content="/assets/full-visual-theme/images/favicon-144.png">
-  
+
   </head>
 
   <body itemscope="" itemtype="http://schema.org/Restaurant">

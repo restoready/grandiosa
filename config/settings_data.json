@@ -19,6 +19,11 @@
     },
 
     "back-price-value": "#dddddd",
+
+    "google-fonts-link": "<link href='http://fonts.googleapis.com/css?family=Cabin:400,700,500italic,700italic|Great+Vibes' rel='stylesheet' type='text/css'>",
+    "slogan-font": "'Great Vibes'",
+    "body-font": "'Cabin', sans-serif",
+
     "text_font": "Google+Cabin",
     "slogan_font": "Google+Great+Vibes",
     "home_menus_featured_text_fr": "Cette semaine",
@@ -62,6 +67,11 @@
       },
 
       "back-price-value": "#dddddd",
+
+      "google-fonts-link": "<link href='http://fonts.googleapis.com/css?family=Cabin:400,700,500italic,700italic|Great+Vibes' rel='stylesheet' type='text/css'>",
+      "slogan-font": "'Great Vibes'",
+      "body-font": "'Cabin', sans-serif",
+
       "text_font": "Google+Cabin",
       "slogan_font": "Google+Great+Vibes",
       "home_menus_featured_text_fr": "Cette semaine",
