@@ -568,7 +568,7 @@ hr {
   width: 250px;
   display: none;
   z-index: 99; /* Slidebars sit behind sb-site. */
-  background-color: {{ theme_settings.perso-color-1 }}; /* Default Slidebars background colour, overwrite this with your own css. */
+  background-color: {{ theme_settings.perso-color-1 }}; /* Default Slidebars background color, overwrite this with your own css. */
 }
 .sb-right {
   right: 0; /* Set Slidebar to the right. */
@@ -590,7 +590,7 @@ hr {
     transition: background-color 0.5s;
     font-weight: 200;
     width: 100%;
-    background-color: {{ theme_settings.perso-color-1 }};
+    background-color: scale-color({{ theme_settings.perso-color-1 }}, $lightness: +5%);
     &:hover {
       background-color: {{ theme_settings.perso-color-2 }};
     }
