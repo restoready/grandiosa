@@ -12,7 +12,9 @@
       <li class="menus-nav__item">
         <a onclick="$('#menu-{{child.id}}').animatescroll();" class="menus-nav__link">
           {% if child.main_image? %}
-            {{ child.main_image | small_image_url | image_tag: 'class:menus-nav__image' }}
+            <div class="menus-nav__image" style="background-image: url('{{ child.main_image | small_image_url }}');background-size: cover;"></div>
+          {% else %}
+            <div class="menus-nav__image"></div>
           {% endif %}
           <h4 class="menus-nav__title">
             {{ child.name }}
