@@ -8,14 +8,6 @@
     <h1 class="nav-large__name-resto">{{ restaurant.name }}</h1>
   </a>
 
-  <div class="local-choice local-choice--large">
-    {% for path in localized_page_paths %}
-      <a href="{{ path.url }}" class="local-choice-item {% if path.current? %}local-choice-item--current{% endif %}">
-        <span class="local-choice-code">{% if forloop.last %}{{ path.locale_code }}{% else %}{{ path.locale_code }}<span class="local-separator">|</span>{% endif%}</span>
-      </a>
-    {% endfor %}
-  </div>
-
   <ul class="nav-large__list">
     {% for link in linklists.navigation-primaire.links %}
       {% if link.linklist_handle == "" or link.linklist_handle == null %}
@@ -36,6 +28,22 @@
       {% endif %}
     {% endfor %}
   </ul>
+
+  {% if localized_page_paths.size > 0 %}
+    <div class="local-choice local-choice--large">
+      {% for path in localized_page_paths %}
+        {% if path.current? %}
+          <strong class="local-choice-item--current">
+            <span class="local-choice-code">{% if forloop.last %}{{ path.locale_code }}{% else %}{{ path.locale_code }}<span class="local-separator"> |</span>{% endif%}</span>
+          </strong>
+        {% else %}
+          <a href="{{ path.url }}" class="local-choice-item">
+            <span class="local-choice-code">{% if forloop.last %}{{ path.locale_code }}{% else %}{{ path.locale_code }}<span class="local-separator"> |</span>{% endif%}</span>
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  {% endif %}
 
   <div class="nav-large__coordinate">
 
@@ -152,12 +160,22 @@
         <span class="nav-small__coordinate-address" itemprop="addressLocality">{{ restaurant.city }}</span>
       {% endif %}
     </div>
-    <div class="local-choice">
-      {% for path in localized_page_paths %}
-        <a href="{{ path.url }}" class="local-choice-item {% if path.current? %}local-choice-item--current{% endif %}">
-          <span class="local-choice-code">{% if forloop.last %}{{ path.locale_code }}{% else %}{{ path.locale_code }} <span class="local-separator"> | </span>{% endif%}</span>
-        </a>
-      {% endfor %}
-    </div>
+
+    {% if localized_page_paths.size > 0 %}
+      <div class="local-choice">
+        {% for path in localized_page_paths %}
+          {% if path.current? %}
+            <strong class="local-choice-item--current">
+              <span class="local-choice-code">{% if forloop.last %}{{ path.locale_code }}{% else %}{{ path.locale_code }}<span class="local-separator"> |</span>{% endif%}</span>
+            </strong>
+          {% else %}
+            <a href="{{ path.url }}" class="local-choice-item">
+              <span class="local-choice-code">{% if forloop.last %}{{ path.locale_code }}{% else %}{{ path.locale_code }}<span class="local-separator"> |</span>{% endif%}</span>
+            </a>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+
   </div>
 </div>
