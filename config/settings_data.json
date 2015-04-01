@@ -3,6 +3,8 @@
     "perso-color-1": "#1d1d1d",
     "perso-color-2": "#e62f2f",
     "perso-color-3": "#eeeeee",
+    "body-background": "#ffffff",
+    "background-image": true,
     "border": "#606060",
 
     "tags":{
@@ -51,6 +53,8 @@
       "perso-color-1": "#1d1d1d",
       "perso-color-2": "#e62f2f",
       "perso-color-3": "#eeeeee",
+      "body-background": "#ffffff",
+      "background-image": true,
       "border": "#606060",
 
       "tags":{

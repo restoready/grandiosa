@@ -24,7 +24,7 @@
 
   </head>
 
-  <body itemscope="" itemtype="http://schema.org/Restaurant">
+  <body itemscope="" itemtype="http://schema.org/Restaurant" class="{% if current_paths contains localized_root_path %}body{% endif %}">
       <header id="top">
         <nav class="head__nav" role="navigation">
           {% include 'nav' %}

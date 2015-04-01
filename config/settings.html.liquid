@@ -19,6 +19,10 @@
   <label for="tab5">
     Titres
   </label>
+    <input class="tab-head" id="tab6" name="tab" type="radio">
+  <label for="tab6">
+    Fond
+  </label>
 
   <div class="tab-body-wrapper">
     <div class="tab-body" id="tab-body-1">
@@ -353,5 +357,42 @@
         </div>
       </fieldset>
     </div>
+
+    <div class="tab-body" id="tab-body-6">
+      <fieldset>
+        <legend>Fond de page</legend>
+        <div class="small-12 medium-6 large-4 columns">
+          <input name="admin_theme_settings[body-background]" type="text" id="body-background" value="{{ theme_settings.body-background }}" class="minicolors">
+        </div>
+
+        <div class="small-12 medium-6 large-4 columns end">
+          <div class="small-12 medium-12 large-11">
+            <label for="background-image">Image fond de page</label>
+          </div>
+
+          <div class="small-12 medium-12 large-11">
+            {% if theme_settings.background-image %}
+            <input class="icheck-me boolean-icheck" name="admin_theme_settings[background-image]" id="background-image" type="checkbox" value="{{ theme_settings.background-image }}" data-skin='black-green' checked/>
+            {% else %}
+            <input class="icheck-me boolean-icheck" name="admin_theme_settings[background-image]" id="background-image" type="checkbox" value="{{ theme_settings.background-image }}" data-skin='black-green' />
+            {% endif %}
+            <label for="background-image">Afficher l'image</label>
+          </div>
+
+          <div class="small-12 medium-12 large-11">
+            <div id="plupload-background-image" class="input-file input-file-asset">
+              <input name="admin_theme_settings[assets][back.png]" type="file"/>
+            </div>
+          </div>
+
+          <div class="small-12 medium-12 large-11 preview">
+            <div class="filelist">
+              {{ 'back.png' | asset_url | image_tag }}
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
   </div>
 </div>

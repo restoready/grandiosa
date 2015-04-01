@@ -345,9 +345,16 @@ $bodyFontStack: {{ theme_settings.body-font }};
 // ==============================================================================
 // =====================      #layout      ============================================
 html,
+.body {
+  height: 100%;
+}
 body {
   font-family: $bodyFontStack;
-  height: 100%;
+  {% if theme_settings.background-image %}
+    background: {{ theme_settings.body-background }} url({{ 'back.png' | asset_url }});
+  {% else %}
+    background-color: {{ theme_settings.body-background }};
+  {% endif %}
 }
 a {
   text-decoration: none;
